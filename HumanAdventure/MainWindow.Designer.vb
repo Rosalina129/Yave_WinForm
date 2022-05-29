@@ -28,6 +28,8 @@ Partial Class MainWindow
         Me.NewSaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TextFormatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.JSONFormatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,8 +41,6 @@ Partial Class MainWindow
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.CDLabel = New System.Windows.Forms.Label()
-        Me.CharNameStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ChangeNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CRLabel = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -55,24 +55,34 @@ Partial Class MainWindow
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.UpgradeLabel = New System.Windows.Forms.Label()
+        Me.XPLabel = New System.Windows.Forms.Label()
         Me.CharName = New System.Windows.Forms.Label()
+        Me.CharNameStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ChangeNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.XPBar = New System.Windows.Forms.ProgressBar()
         Me.XPMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.XPMenuStrip1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UpgradeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LabelLevel = New System.Windows.Forms.Label()
         Me.Level = New System.Windows.Forms.Label()
         Me.SaveDataDialog = New System.Windows.Forms.SaveFileDialog()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.UpgradeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TextFormatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.CharNameStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.CharNameStrip.SuspendLayout()
         Me.XPMenu.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -114,11 +124,22 @@ Partial Class MainWindow
         Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.SaveAsToolStripMenuItem.Text = "Save As..."
         '
+        'TextFormatToolStripMenuItem
+        '
+        Me.TextFormatToolStripMenuItem.Name = "TextFormatToolStripMenuItem"
+        Me.TextFormatToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.TextFormatToolStripMenuItem.Text = "Text Format"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(140, 6)
+        '
         'JSONFormatToolStripMenuItem
         '
         Me.JSONFormatToolStripMenuItem.Enabled = False
         Me.JSONFormatToolStripMenuItem.Name = "JSONFormatToolStripMenuItem"
-        Me.JSONFormatToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.JSONFormatToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.JSONFormatToolStripMenuItem.Text = "JSON Format"
         '
         'LoadDataToolStripMenuItem
@@ -164,10 +185,11 @@ Partial Class MainWindow
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 4)
+        Me.PictureBox1.Image = Global.HumanAdventure.My.Resources.Resources.YaveYuFamily
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 3)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(72, 84)
+        Me.PictureBox1.Size = New System.Drawing.Size(31, 73)
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
@@ -201,9 +223,9 @@ Partial Class MainWindow
         Me.Panel3.Controls.Add(Me.HEALTHLabel)
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.Label1)
-        Me.Panel3.Location = New System.Drawing.Point(3, 91)
+        Me.Panel3.Location = New System.Drawing.Point(4, 78)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(219, 224)
+        Me.Panel3.Size = New System.Drawing.Size(219, 152)
         Me.Panel3.TabIndex = 7
         '
         'CDLabel
@@ -212,23 +234,10 @@ Partial Class MainWindow
         Me.CDLabel.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.CDLabel.Location = New System.Drawing.Point(113, 125)
         Me.CDLabel.Name = "CDLabel"
-        Me.CDLabel.Size = New System.Drawing.Size(38, 20)
+        Me.CDLabel.Size = New System.Drawing.Size(47, 20)
         Me.CDLabel.TabIndex = 18
-        Me.CDLabel.Text = "+0.5"
+        Me.CDLabel.Text = "cdmg"
         Me.CDLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'CharNameStrip
-        '
-        Me.CharNameStrip.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CharNameStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangeNameToolStripMenuItem})
-        Me.CharNameStrip.Name = "ContextMenuStrip1"
-        Me.CharNameStrip.Size = New System.Drawing.Size(151, 26)
-        '
-        'ChangeNameToolStripMenuItem
-        '
-        Me.ChangeNameToolStripMenuItem.Name = "ChangeNameToolStripMenuItem"
-        Me.ChangeNameToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
-        Me.ChangeNameToolStripMenuItem.Text = "Change Name"
         '
         'CRLabel
         '
@@ -236,9 +245,9 @@ Partial Class MainWindow
         Me.CRLabel.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.CRLabel.Location = New System.Drawing.Point(113, 105)
         Me.CRLabel.Name = "CRLabel"
-        Me.CRLabel.Size = New System.Drawing.Size(36, 20)
+        Me.CRLabel.Size = New System.Drawing.Size(42, 20)
         Me.CRLabel.TabIndex = 17
-        Me.CRLabel.Text = "0.01"
+        Me.CRLabel.Text = "crate"
         Me.CRLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label6
@@ -267,9 +276,9 @@ Partial Class MainWindow
         Me.SELabel.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.SELabel.Location = New System.Drawing.Point(113, 85)
         Me.SELabel.Name = "SELabel"
-        Me.SELabel.Size = New System.Drawing.Size(25, 20)
+        Me.SELabel.Size = New System.Drawing.Size(60, 20)
         Me.SELabel.TabIndex = 14
-        Me.SELabel.Text = "50"
+        Me.SELabel.Text = "senergy"
         Me.SELabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label7
@@ -296,9 +305,9 @@ Partial Class MainWindow
         Me.DEFLabel.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.DEFLabel.Location = New System.Drawing.Point(113, 65)
         Me.DEFLabel.Name = "DEFLabel"
-        Me.DEFLabel.Size = New System.Drawing.Size(17, 20)
+        Me.DEFLabel.Size = New System.Drawing.Size(61, 20)
         Me.DEFLabel.TabIndex = 12
-        Me.DEFLabel.Text = "4"
+        Me.DEFLabel.Text = "defense"
         Me.DEFLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label2
@@ -317,9 +326,9 @@ Partial Class MainWindow
         Me.ATKLabel.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.ATKLabel.Location = New System.Drawing.Point(113, 45)
         Me.ATKLabel.Name = "ATKLabel"
-        Me.ATKLabel.Size = New System.Drawing.Size(17, 20)
+        Me.ATKLabel.Size = New System.Drawing.Size(49, 20)
         Me.ATKLabel.TabIndex = 10
-        Me.ATKLabel.Text = "8"
+        Me.ATKLabel.Text = "attack"
         Me.ATKLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label5
@@ -338,9 +347,9 @@ Partial Class MainWindow
         Me.HEALTHLabel.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.HEALTHLabel.Location = New System.Drawing.Point(113, 25)
         Me.HEALTHLabel.Name = "HEALTHLabel"
-        Me.HEALTHLabel.Size = New System.Drawing.Size(63, 20)
+        Me.HEALTHLabel.Size = New System.Drawing.Size(133, 20)
         Me.HEALTHLabel.TabIndex = 8
-        Me.HEALTHLabel.Text = "100/100"
+        Me.HEALTHLabel.Text = "health / maxhealth"
         Me.HEALTHLabel.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label3
@@ -366,33 +375,69 @@ Partial Class MainWindow
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.UpgradeLabel)
+        Me.Panel2.Controls.Add(Me.XPLabel)
         Me.Panel2.Controls.Add(Me.CharName)
         Me.Panel2.Controls.Add(Me.XPBar)
         Me.Panel2.Controls.Add(Me.LabelLevel)
         Me.Panel2.Controls.Add(Me.Level)
-        Me.Panel2.Location = New System.Drawing.Point(81, 4)
+        Me.Panel2.Location = New System.Drawing.Point(36, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(141, 84)
+        Me.Panel2.Size = New System.Drawing.Size(187, 73)
         Me.Panel2.TabIndex = 6
+        '
+        'UpgradeLabel
+        '
+        Me.UpgradeLabel.AutoSize = True
+        Me.UpgradeLabel.ForeColor = System.Drawing.Color.DarkOliveGreen
+        Me.UpgradeLabel.Location = New System.Drawing.Point(107, 24)
+        Me.UpgradeLabel.Name = "UpgradeLabel"
+        Me.UpgradeLabel.Size = New System.Drawing.Size(68, 15)
+        Me.UpgradeLabel.TabIndex = 7
+        Me.UpgradeLabel.Text = "Upgradable"
+        Me.UpgradeLabel.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'XPLabel
+        '
+        Me.XPLabel.AutoSize = True
+        Me.XPLabel.Location = New System.Drawing.Point(3, 55)
+        Me.XPLabel.Name = "XPLabel"
+        Me.XPLabel.Size = New System.Drawing.Size(20, 15)
+        Me.XPLabel.TabIndex = 6
+        Me.XPLabel.Text = "xp"
+        Me.XPLabel.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'CharName
         '
         Me.CharName.AutoSize = True
         Me.CharName.ContextMenuStrip = Me.CharNameStrip
-        Me.CharName.Location = New System.Drawing.Point(3, 9)
+        Me.CharName.Location = New System.Drawing.Point(3, 0)
         Me.CharName.Name = "CharName"
         Me.CharName.Size = New System.Drawing.Size(86, 15)
         Me.CharName.TabIndex = 2
         Me.CharName.Text = "charactername"
         '
+        'CharNameStrip
+        '
+        Me.CharNameStrip.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CharNameStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangeNameToolStripMenuItem})
+        Me.CharNameStrip.Name = "ContextMenuStrip1"
+        Me.CharNameStrip.Size = New System.Drawing.Size(151, 26)
+        '
+        'ChangeNameToolStripMenuItem
+        '
+        Me.ChangeNameToolStripMenuItem.Name = "ChangeNameToolStripMenuItem"
+        Me.ChangeNameToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.ChangeNameToolStripMenuItem.Text = "Change Name"
+        '
         'XPBar
         '
         Me.XPBar.ContextMenuStrip = Me.XPMenu
-        Me.XPBar.Location = New System.Drawing.Point(3, 57)
+        Me.XPBar.Location = New System.Drawing.Point(6, 42)
         Me.XPBar.MarqueeAnimationSpeed = 1
         Me.XPBar.Maximum = 400
         Me.XPBar.Name = "XPBar"
-        Me.XPBar.Size = New System.Drawing.Size(132, 23)
+        Me.XPBar.Size = New System.Drawing.Size(169, 10)
         Me.XPBar.Step = 1
         Me.XPBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.XPBar.TabIndex = 5
@@ -402,20 +447,26 @@ Partial Class MainWindow
         Me.XPMenu.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XPMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XPMenuStrip1})
         Me.XPMenu.Name = "ContextMenuStrip1"
-        Me.XPMenu.Size = New System.Drawing.Size(104, 26)
+        Me.XPMenu.Size = New System.Drawing.Size(88, 26)
         '
         'XPMenuStrip1
         '
         Me.XPMenuStrip1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpgradeToolStripMenuItem})
         Me.XPMenuStrip1.Enabled = False
         Me.XPMenuStrip1.Name = "XPMenuStrip1"
-        Me.XPMenuStrip1.Size = New System.Drawing.Size(180, 22)
-        Me.XPMenuStrip1.Text = "0/100"
+        Me.XPMenuStrip1.Size = New System.Drawing.Size(87, 22)
+        Me.XPMenuStrip1.Text = "xp"
+        '
+        'UpgradeToolStripMenuItem
+        '
+        Me.UpgradeToolStripMenuItem.Name = "UpgradeToolStripMenuItem"
+        Me.UpgradeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UpgradeToolStripMenuItem.Text = "Upgrade"
         '
         'LabelLevel
         '
         Me.LabelLevel.AutoSize = True
-        Me.LabelLevel.Location = New System.Drawing.Point(3, 36)
+        Me.LabelLevel.Location = New System.Drawing.Point(3, 24)
         Me.LabelLevel.Name = "LabelLevel"
         Me.LabelLevel.Size = New System.Drawing.Size(34, 15)
         Me.LabelLevel.TabIndex = 3
@@ -425,7 +476,7 @@ Partial Class MainWindow
         '
         Me.Level.AutoSize = True
         Me.Level.Font = New System.Drawing.Font("Segoe UI", 16.0!)
-        Me.Level.Location = New System.Drawing.Point(43, 24)
+        Me.Level.Location = New System.Drawing.Point(43, 12)
         Me.Level.Name = "Level"
         Me.Level.Size = New System.Drawing.Size(25, 30)
         Me.Level.TabIndex = 4
@@ -441,35 +492,81 @@ Partial Class MainWindow
         'Timer1
         '
         Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 16
+        Me.Timer1.Interval = 10
         '
-        'UpgradeToolStripMenuItem
+        'Panel4
         '
-        Me.UpgradeToolStripMenuItem.Name = "UpgradeToolStripMenuItem"
-        Me.UpgradeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.UpgradeToolStripMenuItem.Text = "Upgrade"
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Location = New System.Drawing.Point(242, 28)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(309, 529)
+        Me.Panel4.TabIndex = 3
         '
-        'ToolStripSeparator1
+        'Panel5
         '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
+        Me.Panel5.Controls.Add(Me.PictureBox2)
+        Me.Panel5.Controls.Add(Me.Button2)
+        Me.Panel5.Controls.Add(Me.Button1)
+        Me.Panel5.Controls.Add(Me.Label8)
+        Me.Panel5.Location = New System.Drawing.Point(0, 23)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(557, 542)
+        Me.Panel5.TabIndex = 8
+        Me.Panel5.Visible = False
         '
-        'TextFormatToolStripMenuItem
+        'Label8
         '
-        Me.TextFormatToolStripMenuItem.Name = "TextFormatToolStripMenuItem"
-        Me.TextFormatToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.TextFormatToolStripMenuItem.Text = "Text Format"
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(12, 6)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(192, 45)
+        Me.Label8.TabIndex = 0
+        Me.Label8.Text = "Yave's Tours"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(389, 504)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Load Game"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(472, 504)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "New Game"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Image = Global.HumanAdventure.My.Resources.Resources.YaveYuFamily
+        Me.PictureBox2.Location = New System.Drawing.Point(175, 150)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(216, 217)
+        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabStop = False
         '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(557, 562)
+        Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.MaximizeBox = False
         Me.Name = "MainWindow"
         Me.Text = "Yave's Tours"
         Me.MenuStrip1.ResumeLayout(False)
@@ -478,10 +575,13 @@ Partial Class MainWindow
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.CharNameStrip.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.CharNameStrip.ResumeLayout(False)
         Me.XPMenu.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -530,4 +630,12 @@ Partial Class MainWindow
     Friend WithEvents UpgradeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TextFormatToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents XPLabel As Label
+    Friend WithEvents UpgradeLabel As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

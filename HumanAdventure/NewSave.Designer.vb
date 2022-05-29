@@ -22,14 +22,16 @@ Partial Class NewSave
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -88,15 +90,6 @@ Partial Class NewSave
         Me.Panel1.Size = New System.Drawing.Size(528, 364)
         Me.Panel1.TabIndex = 9
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(327, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(75, 15)
-        Me.Label3.TabIndex = 9
-        Me.Label3.Text = "Select Avatar"
-        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.Label1)
@@ -107,6 +100,21 @@ Partial Class NewSave
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(512, 326)
         Me.Panel2.TabIndex = 10
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(327, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(75, 15)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Select Avatar"
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
+        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
         'NewSave
         '
@@ -138,4 +146,5 @@ Partial Class NewSave
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents ImageList1 As ImageList
 End Class

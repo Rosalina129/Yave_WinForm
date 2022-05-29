@@ -6,8 +6,10 @@
     "Jove", "Smith", "Faye", "Amber",
     "Save", "Kate", "Slash", "Orama",
     "Tive", "Bill", "Jean", "Sucrose"}
-    Public Shared HP As Double  'Health
-    Public Shared HPM As Double 'Health Max
-    Public Shared ATK As Double 'Attack
-    Public Shared DEF As Double 'Defense
+    Public Shared DockSizeX() As Integer = {
+    219, 152
+    }
+    Public Shared DockSizeY() As Integer = {
+    219, 152
+    }
 End Class
