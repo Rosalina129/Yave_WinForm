@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MainWindow
     Inherits System.Windows.Forms.Form
 
     'Form 重写 Dispose，以清理组件列表。
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class MainWindow
     '注意: 以下过程是 Windows 窗体设计器所必需的
     '可以使用 Windows 窗体设计器修改它。  
     '不要使用代码编辑器修改它。
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -34,11 +34,14 @@ Partial Class MainWindow
         Me.LoadDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ItemListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShowDebugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.ProBasic = New System.Windows.Forms.TabPage()
+        Me.SkillBasic = New System.Windows.Forms.TabPage()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.CDLabel = New System.Windows.Forms.Label()
         Me.CRLabel = New System.Windows.Forms.Label()
@@ -66,21 +69,25 @@ Partial Class MainWindow
         Me.UpgradeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LabelLevel = New System.Windows.Forms.Label()
         Me.Level = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.SaveDataDialog = New System.Windows.Forms.SaveFileDialog()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.ProBasic.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.CharNameStrip.SuspendLayout()
         Me.XPMenu.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -92,7 +99,7 @@ Partial Class MainWindow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(7, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(557, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(710, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -152,16 +159,22 @@ Partial Class MainWindow
         '
         'ViewToolStripMenuItem
         '
-        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItemListToolStripMenuItem})
+        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItemListToolStripMenuItem, Me.SettingsToolStripMenuItem})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.ViewToolStripMenuItem.Text = "View"
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.ViewToolStripMenuItem.Text = "Options"
         '
         'ItemListToolStripMenuItem
         '
         Me.ItemListToolStripMenuItem.Name = "ItemListToolStripMenuItem"
         Me.ItemListToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
         Me.ItemListToolStripMenuItem.Text = "Item List"
+        '
+        'SettingsToolStripMenuItem
+        '
+        Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
+        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.SettingsToolStripMenuItem.Text = "Settings"
         '
         'ShowDebugToolStripMenuItem
         '
@@ -182,21 +195,11 @@ Partial Class MainWindow
         Me.AboutsToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.AboutsToolStripMenuItem.Text = "About Software"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Image = Global.HumanAdventure.My.Resources.Resources.YaveYuFamily
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 3)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(31, 73)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
         'Panel1
         '
         Me.Panel1.AutoScroll = True
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.TabControl1)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.PictureBox1)
@@ -205,6 +208,37 @@ Partial Class MainWindow
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(228, 529)
         Me.Panel1.TabIndex = 2
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.ProBasic)
+        Me.TabControl1.Controls.Add(Me.SkillBasic)
+        Me.TabControl1.Location = New System.Drawing.Point(4, 248)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(219, 273)
+        Me.TabControl1.TabIndex = 8
+        '
+        'ProBasic
+        '
+        Me.ProBasic.Controls.Add(Me.TextBox2)
+        Me.ProBasic.Location = New System.Drawing.Point(4, 24)
+        Me.ProBasic.Name = "ProBasic"
+        Me.ProBasic.Padding = New System.Windows.Forms.Padding(3)
+        Me.ProBasic.Size = New System.Drawing.Size(211, 257)
+        Me.ProBasic.TabIndex = 0
+        Me.ProBasic.Text = "Basic"
+        Me.ProBasic.UseVisualStyleBackColor = True
+        '
+        'SkillBasic
+        '
+        Me.SkillBasic.Location = New System.Drawing.Point(4, 24)
+        Me.SkillBasic.Name = "SkillBasic"
+        Me.SkillBasic.Padding = New System.Windows.Forms.Padding(3)
+        Me.SkillBasic.Size = New System.Drawing.Size(211, 245)
+        Me.SkillBasic.TabIndex = 1
+        Me.SkillBasic.Text = "Skill"
+        Me.SkillBasic.UseVisualStyleBackColor = True
         '
         'Panel3
         '
@@ -223,7 +257,7 @@ Partial Class MainWindow
         Me.Panel3.Controls.Add(Me.HEALTHLabel)
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.Label1)
-        Me.Panel3.Location = New System.Drawing.Point(4, 78)
+        Me.Panel3.Location = New System.Drawing.Point(4, 90)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(219, 152)
         Me.Panel3.TabIndex = 7
@@ -383,14 +417,14 @@ Partial Class MainWindow
         Me.Panel2.Controls.Add(Me.Level)
         Me.Panel2.Location = New System.Drawing.Point(36, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(187, 73)
+        Me.Panel2.Size = New System.Drawing.Size(187, 81)
         Me.Panel2.TabIndex = 6
         '
         'UpgradeLabel
         '
         Me.UpgradeLabel.AutoSize = True
         Me.UpgradeLabel.ForeColor = System.Drawing.Color.DarkOliveGreen
-        Me.UpgradeLabel.Location = New System.Drawing.Point(107, 24)
+        Me.UpgradeLabel.Location = New System.Drawing.Point(107, 30)
         Me.UpgradeLabel.Name = "UpgradeLabel"
         Me.UpgradeLabel.Size = New System.Drawing.Size(68, 15)
         Me.UpgradeLabel.TabIndex = 7
@@ -400,7 +434,7 @@ Partial Class MainWindow
         'XPLabel
         '
         Me.XPLabel.AutoSize = True
-        Me.XPLabel.Location = New System.Drawing.Point(3, 55)
+        Me.XPLabel.Location = New System.Drawing.Point(3, 61)
         Me.XPLabel.Name = "XPLabel"
         Me.XPLabel.Size = New System.Drawing.Size(20, 15)
         Me.XPLabel.TabIndex = 6
@@ -411,7 +445,7 @@ Partial Class MainWindow
         '
         Me.CharName.AutoSize = True
         Me.CharName.ContextMenuStrip = Me.CharNameStrip
-        Me.CharName.Location = New System.Drawing.Point(3, 0)
+        Me.CharName.Location = New System.Drawing.Point(3, 9)
         Me.CharName.Name = "CharName"
         Me.CharName.Size = New System.Drawing.Size(86, 15)
         Me.CharName.TabIndex = 2
@@ -433,7 +467,7 @@ Partial Class MainWindow
         'XPBar
         '
         Me.XPBar.ContextMenuStrip = Me.XPMenu
-        Me.XPBar.Location = New System.Drawing.Point(6, 42)
+        Me.XPBar.Location = New System.Drawing.Point(6, 48)
         Me.XPBar.MarqueeAnimationSpeed = 1
         Me.XPBar.Maximum = 400
         Me.XPBar.Name = "XPBar"
@@ -460,13 +494,13 @@ Partial Class MainWindow
         'UpgradeToolStripMenuItem
         '
         Me.UpgradeToolStripMenuItem.Name = "UpgradeToolStripMenuItem"
-        Me.UpgradeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UpgradeToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
         Me.UpgradeToolStripMenuItem.Text = "Upgrade"
         '
         'LabelLevel
         '
         Me.LabelLevel.AutoSize = True
-        Me.LabelLevel.Location = New System.Drawing.Point(3, 24)
+        Me.LabelLevel.Location = New System.Drawing.Point(3, 30)
         Me.LabelLevel.Name = "LabelLevel"
         Me.LabelLevel.Size = New System.Drawing.Size(34, 15)
         Me.LabelLevel.TabIndex = 3
@@ -475,13 +509,23 @@ Partial Class MainWindow
         'Level
         '
         Me.Level.AutoSize = True
-        Me.Level.Font = New System.Drawing.Font("Segoe UI", 16.0!)
-        Me.Level.Location = New System.Drawing.Point(43, 12)
+        Me.Level.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Level.Location = New System.Drawing.Point(36, 24)
         Me.Level.Name = "Level"
-        Me.Level.Size = New System.Drawing.Size(25, 30)
+        Me.Level.Size = New System.Drawing.Size(19, 21)
         Me.Level.TabIndex = 4
         Me.Level.Text = "1"
         Me.Level.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.HumanAdventure.My.Resources.Resources.yave_1
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 13)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(28, 66)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
         '
         'SaveDataDialog
         '
@@ -499,7 +543,7 @@ Partial Class MainWindow
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel4.Location = New System.Drawing.Point(242, 28)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(309, 529)
+        Me.Panel4.Size = New System.Drawing.Size(465, 529)
         Me.Panel4.TabIndex = 3
         '
         'Panel5
@@ -508,11 +552,41 @@ Partial Class MainWindow
         Me.Panel5.Controls.Add(Me.Button2)
         Me.Panel5.Controls.Add(Me.Button1)
         Me.Panel5.Controls.Add(Me.Label8)
-        Me.Panel5.Location = New System.Drawing.Point(0, 23)
+        Me.Panel5.Location = New System.Drawing.Point(704, 27)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(557, 542)
+        Me.Panel5.Size = New System.Drawing.Size(699, 542)
         Me.Panel5.TabIndex = 8
         Me.Panel5.Visible = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Image = Global.HumanAdventure.My.Resources.Resources.YaveYuFamily
+        Me.PictureBox2.Location = New System.Drawing.Point(247, 146)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(217, 217)
+        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabStop = False
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(582, 484)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(108, 42)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "New Game"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(468, 484)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(108, 42)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Load Game"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label8
         '
@@ -524,41 +598,22 @@ Partial Class MainWindow
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Yave's Tours"
         '
-        'Button1
+        'TextBox2
         '
-        Me.Button1.Location = New System.Drawing.Point(389, 504)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Load Game"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(472, 504)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "New Game"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Image = Global.HumanAdventure.My.Resources.Resources.YaveYuFamily
-        Me.PictureBox2.Location = New System.Drawing.Point(175, 150)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(216, 217)
-        Me.PictureBox2.TabIndex = 3
-        Me.PictureBox2.TabStop = False
+        Me.TextBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(0, 0)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(211, 257)
+        Me.TextBox2.TabIndex = 16
         '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(557, 562)
+        Me.ClientSize = New System.Drawing.Size(710, 562)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel1)
@@ -571,14 +626,17 @@ Partial Class MainWindow
         Me.Text = "Yave's Tours"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.TabControl1.ResumeLayout(False)
+        Me.ProBasic.ResumeLayout(False)
+        Me.ProBasic.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.CharNameStrip.ResumeLayout(False)
         Me.XPMenu.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -638,4 +696,9 @@ Partial Class MainWindow
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents ProBasic As TabPage
+    Friend WithEvents SkillBasic As TabPage
+    Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TextBox2 As TextBox
 End Class

@@ -23,6 +23,7 @@ Partial Class NewSave
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NewSave))
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -30,15 +31,22 @@ Partial Class NewSave
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(393, 382)
+        Me.Button2.Location = New System.Drawing.Point(393, 306)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(147, 23)
         Me.Button2.TabIndex = 7
@@ -47,7 +55,7 @@ Partial Class NewSave
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(211, 18)
+        Me.Button1.Location = New System.Drawing.Point(211, 25)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 6
@@ -56,7 +64,7 @@ Partial Class NewSave
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(3, 18)
+        Me.TextBox1.Location = New System.Drawing.Point(3, 25)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(202, 23)
         Me.TextBox1.TabIndex = 5
@@ -64,7 +72,7 @@ Partial Class NewSave
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
+        Me.Label1.Location = New System.Drawing.Point(3, 7)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(97, 15)
         Me.Label1.TabIndex = 4
@@ -87,24 +95,87 @@ Partial Class NewSave
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(528, 364)
+        Me.Panel1.Size = New System.Drawing.Size(528, 292)
         Me.Panel1.TabIndex = 9
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.TextBox2)
+        Me.Panel2.Controls.Add(Me.Button3)
+        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.PictureBox1)
+        Me.Panel2.Controls.Add(Me.ListBox1)
+        Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Location = New System.Drawing.Point(3, 33)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(512, 326)
+        Me.Panel2.Size = New System.Drawing.Size(512, 254)
         Me.Panel2.TabIndex = 10
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(87, 113)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(199, 129)
+        Me.TextBox2.TabIndex = 15
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(3, 81)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 14
+        Me.Button3.Text = "Random"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(84, 85)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(108, 15)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "No Basic Attributes"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.HumanAdventure.My.Resources.Resources.yave_1
+        Me.PictureBox1.Location = New System.Drawing.Point(325, 25)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(34, 79)
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 15
+        Me.ListBox1.Items.AddRange(New Object() {"Default", "Skin 1", "Skin 2", "Skin 3", "Skin 4", "Skin 5", "Skin 6"})
+        Me.ListBox1.Location = New System.Drawing.Point(365, 25)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(134, 79)
+        Me.ListBox1.TabIndex = 11
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(3, 55)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(130, 15)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Allocation of Attributes"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(327, 0)
+        Me.Label3.Location = New System.Drawing.Point(322, 7)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(75, 15)
         Me.Label3.TabIndex = 9
@@ -112,15 +183,21 @@ Partial Class NewSave
         '
         'ImageList1
         '
-        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
-        Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "yave_1.png")
+        Me.ImageList1.Images.SetKeyName(1, "yave_2.png")
+        Me.ImageList1.Images.SetKeyName(2, "yave_3.png")
+        Me.ImageList1.Images.SetKeyName(3, "yave_4.png")
+        Me.ImageList1.Images.SetKeyName(4, "yave_5.png")
+        Me.ImageList1.Images.SetKeyName(5, "yave_6.png")
+        Me.ImageList1.Images.SetKeyName(6, "yave_7.png")
         '
         'NewSave
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(552, 417)
+        Me.ClientSize = New System.Drawing.Size(552, 337)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button2)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -134,6 +211,7 @@ Partial Class NewSave
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -147,4 +225,10 @@ Partial Class NewSave
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents ImageList1 As ImageList
+    Friend WithEvents Label4 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TextBox2 As TextBox
 End Class

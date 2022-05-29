@@ -6,16 +6,22 @@
     'b(a)
     'Next
     'End Function
-    Shared progress As Boolean
+    Public Shared progress As Boolean
     Dim a As Integer
+    Dim amax As Integer = 60
     Public Class Properties
-        Public Shared Level As Integer = 1              'Level
-        Public Shared XP As Double = 0                  'XP
-        Public Shared XPNeed As Double = 200            'Need some XPs
-        Public Shared HP As Double = 0                  'Health
-        Public Shared HPM As Double = 0                 'Max Health
-        Public Shared ATK As Double = 0                 'Attack
-        Public Shared DEF As Double = 0                 'Defense
+        Public Shared Level As Integer              'Level
+        Public Shared XP As Double                  'XP
+        Public Shared XPNeed As Double              'Need some XPs
+        Public Shared HP As Double                  'Health
+        Public Shared HPM As Double                 'Max Health
+        Public Shared ATK As Double                 'Attack
+        Public Shared DEF As Double                 'Defense
+        Public Shared SE As Double                  'Star Energy
+        Public Shared CRate As Double               'Crit Rate
+        Public Shared CDMG As Double                'Crit Damage
+        Public Shared BasicString() As String     'Basic 
+        Public Shared Basic(20) As Integer          'Crit Damage
     End Class
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim InitDatas As New InitData
@@ -36,14 +42,22 @@
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If progress = True Then
             Panel5.Visible = False
+            Properties.HPM = Properties.HPM + 100 * (2.45 * (Properties.Level - 1))
+            Properties.ATK = Properties.ATK + 4 * (2.45 * (Properties.Level - 1))
+            Properties.DEF = Properties.DEF + 3 * (2.45 * (Properties.Level - 1))
             CharName.Text = InitData.CName
             HEALTHLabel.Text = Properties.HP & " / " & Properties.HPM
             ATKLabel.Text = Properties.ATK
             DEFLabel.Text = Properties.DEF
+            SELabel.Text = Properties.SE
+            CRLabel.Text = Properties.CRate
+            CDLabel.Text = Properties.CDMG
             a += 1
-            If a >= 6 Then
+            If a >= amax Then
+                Dim b As New Random
                 Properties.XP += 1
                 a = 0
+                amax = Int(60 + b.Next(0, 120))
             End If
             XPBar.Maximum = Properties.XPNeed
             UpgradeLabel.Visible = False
@@ -59,6 +73,7 @@
             XPMenuStrip1.Text = Properties.XP & "/" & Properties.XPNeed
         Else
             Panel5.Visible = True
+            Panel5.Location = New Point(0, 23)
         End If
     End Sub
     Private Sub AboutsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutsToolStripMenuItem.Click
