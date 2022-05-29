@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form2
+Partial Class ChangeName
     Inherits System.Windows.Forms.Form
 
     'Form 重写 Dispose，以清理组件列表。
@@ -62,7 +62,7 @@ Partial Class Form2
         Me.Button2.Text = "OK!"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Form2
+        'ChangeName
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -73,8 +73,8 @@ Partial Class Form2
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Name = "Form2"
-        Me.Text = "Form2"
+        Me.Name = "ChangeName"
+        Me.Text = "Change Name"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

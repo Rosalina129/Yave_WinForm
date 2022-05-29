@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class MainWindow
     Inherits System.Windows.Forms.Form
 
     'Form 重写 Dispose，以清理组件列表。
@@ -29,7 +29,6 @@ Partial Class Form1
         Me.SaveDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.JSONFormatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BinaryDatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ItemListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -57,17 +56,23 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.CharName = New System.Windows.Forms.Label()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.XPBar = New System.Windows.Forms.ProgressBar()
+        Me.XPMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.XPMenuStrip1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LabelLevel = New System.Windows.Forms.Label()
         Me.Level = New System.Windows.Forms.Label()
         Me.SaveDataDialog = New System.Windows.Forms.SaveFileDialog()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.UpgradeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TextFormatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.CharNameStrip.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.XPMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -104,22 +109,17 @@ Partial Class Form1
         '
         'SaveAsToolStripMenuItem
         '
-        Me.SaveAsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.JSONFormatToolStripMenuItem, Me.BinaryDatToolStripMenuItem})
+        Me.SaveAsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TextFormatToolStripMenuItem, Me.ToolStripSeparator1, Me.JSONFormatToolStripMenuItem})
         Me.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
         Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.SaveAsToolStripMenuItem.Text = "Save As..."
         '
         'JSONFormatToolStripMenuItem
         '
+        Me.JSONFormatToolStripMenuItem.Enabled = False
         Me.JSONFormatToolStripMenuItem.Name = "JSONFormatToolStripMenuItem"
-        Me.JSONFormatToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.JSONFormatToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.JSONFormatToolStripMenuItem.Text = "JSON Format"
-        '
-        'BinaryDatToolStripMenuItem
-        '
-        Me.BinaryDatToolStripMenuItem.Name = "BinaryDatToolStripMenuItem"
-        Me.BinaryDatToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
-        Me.BinaryDatToolStripMenuItem.Text = "Binary Format"
         '
         'LoadDataToolStripMenuItem
         '
@@ -209,7 +209,6 @@ Partial Class Form1
         'CDLabel
         '
         Me.CDLabel.AutoSize = True
-        Me.CDLabel.ContextMenuStrip = Me.CharNameStrip
         Me.CDLabel.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.CDLabel.Location = New System.Drawing.Point(113, 125)
         Me.CDLabel.Name = "CDLabel"
@@ -234,7 +233,6 @@ Partial Class Form1
         'CRLabel
         '
         Me.CRLabel.AutoSize = True
-        Me.CRLabel.ContextMenuStrip = Me.CharNameStrip
         Me.CRLabel.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.CRLabel.Location = New System.Drawing.Point(113, 105)
         Me.CRLabel.Name = "CRLabel"
@@ -246,7 +244,6 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.ContextMenuStrip = Me.CharNameStrip
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.Label6.Location = New System.Drawing.Point(3, 125)
         Me.Label6.Name = "Label6"
@@ -257,7 +254,6 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.ContextMenuStrip = Me.CharNameStrip
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.Label4.Location = New System.Drawing.Point(3, 105)
         Me.Label4.Name = "Label4"
@@ -268,7 +264,6 @@ Partial Class Form1
         'SELabel
         '
         Me.SELabel.AutoSize = True
-        Me.SELabel.ContextMenuStrip = Me.CharNameStrip
         Me.SELabel.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.SELabel.Location = New System.Drawing.Point(113, 85)
         Me.SELabel.Name = "SELabel"
@@ -280,7 +275,6 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.ContextMenuStrip = Me.CharNameStrip
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.Label7.Location = New System.Drawing.Point(3, 85)
         Me.Label7.Name = "Label7"
@@ -299,7 +293,6 @@ Partial Class Form1
         'DEFLabel
         '
         Me.DEFLabel.AutoSize = True
-        Me.DEFLabel.ContextMenuStrip = Me.CharNameStrip
         Me.DEFLabel.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.DEFLabel.Location = New System.Drawing.Point(113, 65)
         Me.DEFLabel.Name = "DEFLabel"
@@ -311,7 +304,6 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.ContextMenuStrip = Me.CharNameStrip
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.Label2.Location = New System.Drawing.Point(3, 65)
         Me.Label2.Name = "Label2"
@@ -322,7 +314,6 @@ Partial Class Form1
         'ATKLabel
         '
         Me.ATKLabel.AutoSize = True
-        Me.ATKLabel.ContextMenuStrip = Me.CharNameStrip
         Me.ATKLabel.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.ATKLabel.Location = New System.Drawing.Point(113, 45)
         Me.ATKLabel.Name = "ATKLabel"
@@ -334,7 +325,6 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.ContextMenuStrip = Me.CharNameStrip
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.Label5.Location = New System.Drawing.Point(3, 45)
         Me.Label5.Name = "Label5"
@@ -345,7 +335,6 @@ Partial Class Form1
         'HEALTHLabel
         '
         Me.HEALTHLabel.AutoSize = True
-        Me.HEALTHLabel.ContextMenuStrip = Me.CharNameStrip
         Me.HEALTHLabel.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.HEALTHLabel.Location = New System.Drawing.Point(113, 25)
         Me.HEALTHLabel.Name = "HEALTHLabel"
@@ -357,7 +346,6 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.ContextMenuStrip = Me.CharNameStrip
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.0!)
         Me.Label3.Location = New System.Drawing.Point(3, 25)
         Me.Label3.Name = "Label3"
@@ -379,7 +367,7 @@ Partial Class Form1
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.CharName)
-        Me.Panel2.Controls.Add(Me.ProgressBar1)
+        Me.Panel2.Controls.Add(Me.XPBar)
         Me.Panel2.Controls.Add(Me.LabelLevel)
         Me.Panel2.Controls.Add(Me.Level)
         Me.Panel2.Location = New System.Drawing.Point(81, 4)
@@ -397,13 +385,32 @@ Partial Class Form1
         Me.CharName.TabIndex = 2
         Me.CharName.Text = "charactername"
         '
-        'ProgressBar1
+        'XPBar
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(3, 57)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(132, 23)
-        Me.ProgressBar1.TabIndex = 5
-        Me.ProgressBar1.Value = 45
+        Me.XPBar.ContextMenuStrip = Me.XPMenu
+        Me.XPBar.Location = New System.Drawing.Point(3, 57)
+        Me.XPBar.MarqueeAnimationSpeed = 1
+        Me.XPBar.Maximum = 400
+        Me.XPBar.Name = "XPBar"
+        Me.XPBar.Size = New System.Drawing.Size(132, 23)
+        Me.XPBar.Step = 1
+        Me.XPBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous
+        Me.XPBar.TabIndex = 5
+        '
+        'XPMenu
+        '
+        Me.XPMenu.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XPMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XPMenuStrip1})
+        Me.XPMenu.Name = "ContextMenuStrip1"
+        Me.XPMenu.Size = New System.Drawing.Size(104, 26)
+        '
+        'XPMenuStrip1
+        '
+        Me.XPMenuStrip1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpgradeToolStripMenuItem})
+        Me.XPMenuStrip1.Enabled = False
+        Me.XPMenuStrip1.Name = "XPMenuStrip1"
+        Me.XPMenuStrip1.Size = New System.Drawing.Size(180, 22)
+        Me.XPMenuStrip1.Text = "0/100"
         '
         'LabelLevel
         '
@@ -436,7 +443,24 @@ Partial Class Form1
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 16
         '
-        'Form1
+        'UpgradeToolStripMenuItem
+        '
+        Me.UpgradeToolStripMenuItem.Name = "UpgradeToolStripMenuItem"
+        Me.UpgradeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UpgradeToolStripMenuItem.Text = "Upgrade"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
+        '
+        'TextFormatToolStripMenuItem
+        '
+        Me.TextFormatToolStripMenuItem.Name = "TextFormatToolStripMenuItem"
+        Me.TextFormatToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TextFormatToolStripMenuItem.Text = "Text Format"
+        '
+        'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
@@ -446,7 +470,7 @@ Partial Class Form1
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Name = "Form1"
+        Me.Name = "MainWindow"
         Me.Text = "Yave's Tours"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -457,6 +481,7 @@ Partial Class Form1
         Me.CharNameStrip.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.XPMenu.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -475,7 +500,7 @@ Partial Class Form1
     Friend WithEvents ShowDebugToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LabelLevel As Label
     Friend WithEvents Level As Label
-    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents XPBar As ProgressBar
     Friend WithEvents CharNameStrip As ContextMenuStrip
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutsToolStripMenuItem As ToolStripMenuItem
@@ -486,7 +511,6 @@ Partial Class Form1
     Friend WithEvents SaveDataDialog As SaveFileDialog
     Friend WithEvents SaveAsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents JSONFormatToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BinaryDatToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HEALTHLabel As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents ATKLabel As Label
@@ -501,4 +525,9 @@ Partial Class Form1
     Friend WithEvents CDLabel As Label
     Friend WithEvents CRLabel As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents XPMenu As ContextMenuStrip
+    Friend WithEvents XPMenuStrip1 As ToolStripMenuItem
+    Friend WithEvents UpgradeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TextFormatToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
 End Class
