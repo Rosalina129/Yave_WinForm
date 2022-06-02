@@ -1,7 +1,7 @@
 ﻿Public Class ChangeName
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         If TextBox1.Text <> "" Then
-            InitData.CName = TextBox1.Text
+            MainWindow.PlayerData.CName1 = TextBox1.Text
             Close()
         Else
             MsgBox("Please Input your name!", vbYes, MainWindow.Text)
