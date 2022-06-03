@@ -111,6 +111,12 @@
     <Compile Include="Init\InitItem.vb" />
     <Compile Include="Init\InitPlayer.vb" />
     <Compile Include="Init\InitSkill.vb" />
+    <Compile Include="Window\EasterEgg.Designer.vb">
+      <DependentUpon>EasterEgg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Window\EasterEgg.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Window\NewSave.Designer.vb">
       <DependentUpon>NewSave.vb</DependentUpon>
     </Compile>
@@ -157,6 +163,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Window\About.resx">
       <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\EasterEgg.resx">
+      <DependentUpon>EasterEgg.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\MainWindow.resx">
       <DependentUpon>MainWindow.vb</DependentUpon>
