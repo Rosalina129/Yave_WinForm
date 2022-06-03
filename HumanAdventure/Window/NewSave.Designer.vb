@@ -35,11 +35,11 @@ Partial Class NewSave
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -161,6 +161,15 @@ Partial Class NewSave
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "No Basic Attributes"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.HumanAdventure.My.Resources.Resources.yave_1
+        Me.PictureBox1.Location = New System.Drawing.Point(325, 25)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(34, 75)
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
+        '
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
@@ -168,7 +177,7 @@ Partial Class NewSave
         Me.ListBox1.Items.AddRange(New Object() {"Default", "Skin 1", "Skin 2", "Skin 3", "Skin 4", "Skin 5", "Skin 6"})
         Me.ListBox1.Location = New System.Drawing.Point(365, 25)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(134, 79)
+        Me.ListBox1.Size = New System.Drawing.Size(134, 64)
         Me.ListBox1.TabIndex = 11
         '
         'Label4
@@ -201,18 +210,10 @@ Partial Class NewSave
         Me.ImageList1.Images.SetKeyName(5, "yave_6.png")
         Me.ImageList1.Images.SetKeyName(6, "yave_7.png")
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.HumanAdventure.My.Resources.Resources.yave_1
-        Me.PictureBox1.Location = New System.Drawing.Point(325, 25)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(34, 79)
-        Me.PictureBox1.TabIndex = 12
-        Me.PictureBox1.TabStop = False
-        '
         'NewSave
         '
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(552, 337)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button2)

@@ -30,6 +30,7 @@ Partial Class About
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -85,7 +86,7 @@ Partial Class About
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(180, 15)
         Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Build Time: 2022/6/1 (China CST)"
+        Me.Label4.Text = "Build Time: 2022/6/3 (China CST)"
         '
         'Label5
         '
@@ -107,11 +108,21 @@ Partial Class About
         Me.Label6.TabIndex = 7
         Me.Label6.Text = "License: GPL-3.0"
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(83, 218)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(118, 23)
+        Me.Button3.TabIndex = 8
+        Me.Button3.Text = "Unlock GM Mode"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'About
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(414, 253)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -141,4 +152,5 @@ Partial Class About
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents Button3 As Button
 End Class

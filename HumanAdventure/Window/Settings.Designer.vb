@@ -22,10 +22,10 @@ Partial Class Settings
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Game Work")
-        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Language")
-        Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Other")
-        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Common", New System.Windows.Forms.TreeNode() {TreeNode13, TreeNode14, TreeNode15})
+        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Game Work")
+        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Language")
+        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Other")
+        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Common", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3})
         Me.TreeView1 = New System.Windows.Forms.TreeView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -35,6 +35,7 @@ Partial Class Settings
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.LanguagePanel = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.LanguagesEN = New System.Windows.Forms.RadioButton()
         Me.LanguagesCH = New System.Windows.Forms.RadioButton()
@@ -50,7 +51,6 @@ Partial Class Settings
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Labela1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.Panel1.SuspendLayout()
         Me.SettingPanel.SuspendLayout()
@@ -65,20 +65,20 @@ Partial Class Settings
         Me.TreeView1.Location = New System.Drawing.Point(0, 0)
         Me.TreeView1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode13.Name = "GameWork"
-        TreeNode13.Tag = "1"
-        TreeNode13.Text = "Game Work"
-        TreeNode14.Name = "Language"
-        TreeNode14.Tag = "2"
-        TreeNode14.Text = "Language"
-        TreeNode15.Name = "Other"
-        TreeNode15.Tag = "3"
-        TreeNode15.Text = "Other"
-        TreeNode16.Checked = True
-        TreeNode16.Name = "Common"
-        TreeNode16.Tag = "0"
-        TreeNode16.Text = "Common"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode16})
+        TreeNode1.Name = "GameWork"
+        TreeNode1.Tag = "1"
+        TreeNode1.Text = "Game Work"
+        TreeNode2.Name = "Language"
+        TreeNode2.Tag = "2"
+        TreeNode2.Text = "Language"
+        TreeNode3.Name = "Other"
+        TreeNode3.Tag = "3"
+        TreeNode3.Text = "Other"
+        TreeNode4.Checked = True
+        TreeNode4.Name = "Common"
+        TreeNode4.Tag = "0"
+        TreeNode4.Text = "Common"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode4})
         Me.TreeView1.Size = New System.Drawing.Size(187, 318)
         Me.TreeView1.TabIndex = 0
         '
@@ -162,6 +162,16 @@ Partial Class Settings
         Me.LanguagePanel.Size = New System.Drawing.Size(346, 316)
         Me.LanguagePanel.TabIndex = 5
         Me.LanguagePanel.Visible = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(8, 124)
+        Me.Label7.Name = "Label7"
+        Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label7.Size = New System.Drawing.Size(277, 15)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "Your Settings will be changed when program starts."
         '
         'Panel2
         '
@@ -316,20 +326,10 @@ Partial Class Settings
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Game Work"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(8, 124)
-        Me.Label7.Name = "Label7"
-        Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label7.Size = New System.Drawing.Size(277, 15)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Your Settings will be changed when program starts."
-        '
         'Settings
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(988, 645)
         Me.Controls.Add(Me.OtherPanel)
         Me.Controls.Add(Me.GameWorkPanel)

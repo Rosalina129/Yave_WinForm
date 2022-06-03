@@ -39,10 +39,12 @@ Partial Class MainWindow
         Me.ShowDebugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HealHPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetAttackTo9999ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SetDefenseTo999ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FeedbackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CoinsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ItemShopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UpgradeShopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.ProBasic = New System.Windows.Forms.TabPage()
@@ -65,6 +67,8 @@ Partial Class MainWindow
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.UpgradeLabel = New System.Windows.Forms.Label()
         Me.XPLabel = New System.Windows.Forms.Label()
+        Me.LabelLevel = New System.Windows.Forms.Label()
+        Me.Level = New System.Windows.Forms.Label()
         Me.CharName = New System.Windows.Forms.Label()
         Me.CharNameStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ChangeNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -72,19 +76,66 @@ Partial Class MainWindow
         Me.XPMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.XPMenuStrip1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.UpgradeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LabelLevel = New System.Windows.Forms.Label()
-        Me.Level = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.SaveDataDialog = New System.Windows.Forms.SaveFileDialog()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TabControl2 = New System.Windows.Forms.TabControl()
+        Me.Battlezone = New System.Windows.Forms.TabPage()
+        Me.TourDistanceLabel = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Item = New System.Windows.Forms.TabPage()
+        Me.Manual = New System.Windows.Forms.TabPage()
+        Me.Experimental = New System.Windows.Forms.TabPage()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.DamageCountBox = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.EnemyXPBox = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.EnemyHealthBox = New System.Windows.Forms.TextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.EnemyDefenseBox = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.EnemyAttackBox = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.PlaceLabel = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.RegionLabel = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.CoinsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
+        Me.AttributeToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.AutoBattleTimer = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -93,19 +144,31 @@ Partial Class MainWindow
         Me.Panel2.SuspendLayout()
         Me.CharNameStrip.SuspendLayout()
         Me.XPMenu.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.TabControl2.SuspendLayout()
+        Me.Battlezone.SuspendLayout()
+        Me.Panel9.SuspendLayout()
+        Me.Experimental.SuspendLayout()
+        Me.Panel8.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.Panel7.SuspendLayout()
+        Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ViewToolStripMenuItem, Me.ShowDebugToolStripMenuItem, Me.AboutToolStripMenuItem, Me.CoinsToolStripMenuItem, Me.ToolStripTextBox1})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ViewToolStripMenuItem, Me.ShowDebugToolStripMenuItem, Me.AboutToolStripMenuItem, Me.CoinsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(7, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(713, 27)
+        Me.MenuStrip1.Size = New System.Drawing.Size(713, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -113,13 +176,13 @@ Partial Class MainWindow
         '
         Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewSaveToolStripMenuItem, Me.SaveDataToolStripMenuItem, Me.SaveAsToolStripMenuItem, Me.LoadDataToolStripMenuItem})
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
-        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 23)
+        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
         Me.MenuToolStripMenuItem.Text = "Menu"
         '
         'NewSaveToolStripMenuItem
         '
         Me.NewSaveToolStripMenuItem.Name = "NewSaveToolStripMenuItem"
-        Me.NewSaveToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.NewSaveToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.NewSaveToolStripMenuItem.Text = "New Save"
         '
         'SaveDataToolStripMenuItem
@@ -127,14 +190,14 @@ Partial Class MainWindow
         Me.SaveDataToolStripMenuItem.Name = "SaveDataToolStripMenuItem"
         Me.SaveDataToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveDataToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
-        Me.SaveDataToolStripMenuItem.Text = "Save Data..."
+        Me.SaveDataToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.SaveDataToolStripMenuItem.Text = "Save Game..."
         '
         'SaveAsToolStripMenuItem
         '
         Me.SaveAsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TextFormatToolStripMenuItem, Me.ToolStripSeparator1, Me.JSONFormatToolStripMenuItem})
         Me.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
-        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.SaveAsToolStripMenuItem.Text = "Save As..."
         '
         'TextFormatToolStripMenuItem
@@ -160,14 +223,14 @@ Partial Class MainWindow
         Me.LoadDataToolStripMenuItem.Name = "LoadDataToolStripMenuItem"
         Me.LoadDataToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.L), System.Windows.Forms.Keys)
-        Me.LoadDataToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
-        Me.LoadDataToolStripMenuItem.Text = "Load Data..."
+        Me.LoadDataToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.LoadDataToolStripMenuItem.Text = "Load Game..."
         '
         'ViewToolStripMenuItem
         '
         Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItemListToolStripMenuItem, Me.SettingsToolStripMenuItem})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(61, 23)
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.ViewToolStripMenuItem.Text = "Options"
         '
         'ItemListToolStripMenuItem
@@ -184,34 +247,28 @@ Partial Class MainWindow
         '
         'ShowDebugToolStripMenuItem
         '
-        Me.ShowDebugToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HealHPToolStripMenuItem, Me.SetAttackTo9999ToolStripMenuItem, Me.SetDefenseTo999ToolStripMenuItem})
+        Me.ShowDebugToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HealHPToolStripMenuItem, Me.SetAttackTo9999ToolStripMenuItem})
         Me.ShowDebugToolStripMenuItem.Name = "ShowDebugToolStripMenuItem"
-        Me.ShowDebugToolStripMenuItem.Size = New System.Drawing.Size(88, 23)
+        Me.ShowDebugToolStripMenuItem.Size = New System.Drawing.Size(88, 20)
         Me.ShowDebugToolStripMenuItem.Text = "Experimental"
         '
         'HealHPToolStripMenuItem
         '
         Me.HealHPToolStripMenuItem.Name = "HealHPToolStripMenuItem"
-        Me.HealHPToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
+        Me.HealHPToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.HealHPToolStripMenuItem.Text = "Heal HP"
         '
         'SetAttackTo9999ToolStripMenuItem
         '
         Me.SetAttackTo9999ToolStripMenuItem.Name = "SetAttackTo9999ToolStripMenuItem"
-        Me.SetAttackTo9999ToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
-        Me.SetAttackTo9999ToolStripMenuItem.Text = "Set Attack to 9999"
-        '
-        'SetDefenseTo999ToolStripMenuItem
-        '
-        Me.SetDefenseTo999ToolStripMenuItem.Name = "SetDefenseTo999ToolStripMenuItem"
-        Me.SetDefenseTo999ToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
-        Me.SetDefenseTo999ToolStripMenuItem.Text = "Set Defense to 999"
+        Me.SetAttackTo9999ToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.SetAttackTo9999ToolStripMenuItem.Text = "Custom Player Properties"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutsToolStripMenuItem, Me.FeedbackToolStripMenuItem})
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 23)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'AboutsToolStripMenuItem
@@ -225,6 +282,28 @@ Partial Class MainWindow
         Me.FeedbackToolStripMenuItem.Name = "FeedbackToolStripMenuItem"
         Me.FeedbackToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.FeedbackToolStripMenuItem.Text = "Feedback"
+        '
+        'CoinsToolStripMenuItem
+        '
+        Me.CoinsToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.CoinsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItemShopToolStripMenuItem, Me.UpgradeShopToolStripMenuItem})
+        Me.CoinsToolStripMenuItem.Image = Global.HumanAdventure.My.Resources.Resources.spr_coin_0
+        Me.CoinsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.CoinsToolStripMenuItem.Name = "CoinsToolStripMenuItem"
+        Me.CoinsToolStripMenuItem.Size = New System.Drawing.Size(28, 20)
+        Me.CoinsToolStripMenuItem.ToolTipText = "Test"
+        '
+        'ItemShopToolStripMenuItem
+        '
+        Me.ItemShopToolStripMenuItem.Name = "ItemShopToolStripMenuItem"
+        Me.ItemShopToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.ItemShopToolStripMenuItem.Text = "Item Shop"
+        '
+        'UpgradeShopToolStripMenuItem
+        '
+        Me.UpgradeShopToolStripMenuItem.Name = "UpgradeShopToolStripMenuItem"
+        Me.UpgradeShopToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.UpgradeShopToolStripMenuItem.Text = "Upgrade Shop"
         '
         'Panel1
         '
@@ -270,7 +349,7 @@ Partial Class MainWindow
         Me.TextBox2.Location = New System.Drawing.Point(4, 3)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(224, 257)
+        Me.TextBox2.Size = New System.Drawing.Size(224, 335)
         Me.TextBox2.TabIndex = 16
         '
         'SkillBasic
@@ -314,6 +393,7 @@ Partial Class MainWindow
         Me.CDLabel.TabIndex = 18
         Me.CDLabel.Text = "cdmg"
         Me.CDLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AttributeToolTip.SetToolTip(Me.CDLabel, "Crit damage is the percentage of damage done based on a percentage of health.")
         '
         'CRLabel
         '
@@ -325,6 +405,8 @@ Partial Class MainWindow
         Me.CRLabel.TabIndex = 17
         Me.CRLabel.Text = "crate"
         Me.CRLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AttributeToolTip.SetToolTip(Me.CRLabel, "Crit rate determines how much chance you have to make a Crit Damage if you take t" &
+        "o damage for enemy.")
         '
         'Label6
         '
@@ -356,6 +438,7 @@ Partial Class MainWindow
         Me.SELabel.TabIndex = 14
         Me.SELabel.Text = "senergy"
         Me.SELabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AttributeToolTip.SetToolTip(Me.SELabel, "Star Energy is an attribute used to use skills.")
         '
         'Label7
         '
@@ -377,6 +460,7 @@ Partial Class MainWindow
         Me.DEFLabel.TabIndex = 12
         Me.DEFLabel.Text = "defense"
         Me.DEFLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AttributeToolTip.SetToolTip(Me.DEFLabel, "Defense can block some of the damage done by the enemy.")
         '
         'Label2
         '
@@ -398,6 +482,7 @@ Partial Class MainWindow
         Me.ATKLabel.TabIndex = 10
         Me.ATKLabel.Text = "attack"
         Me.ATKLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AttributeToolTip.SetToolTip(Me.ATKLabel, "Your attack determines how much damage is take to the enemy.")
         '
         'Label5
         '
@@ -419,6 +504,7 @@ Partial Class MainWindow
         Me.HEALTHLabel.TabIndex = 8
         Me.HEALTHLabel.Text = "health / maxhealth"
         Me.HEALTHLabel.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.AttributeToolTip.SetToolTip(Me.HEALTHLabel, "Your Health.")
         '
         'Label3
         '
@@ -445,10 +531,10 @@ Partial Class MainWindow
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.UpgradeLabel)
         Me.Panel2.Controls.Add(Me.XPLabel)
-        Me.Panel2.Controls.Add(Me.CharName)
-        Me.Panel2.Controls.Add(Me.XPBar)
         Me.Panel2.Controls.Add(Me.LabelLevel)
         Me.Panel2.Controls.Add(Me.Level)
+        Me.Panel2.Controls.Add(Me.CharName)
+        Me.Panel2.Controls.Add(Me.XPBar)
         Me.Panel2.Location = New System.Drawing.Point(36, 3)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(200, 81)
@@ -459,11 +545,11 @@ Partial Class MainWindow
         Me.UpgradeLabel.AutoSize = True
         Me.UpgradeLabel.Cursor = System.Windows.Forms.Cursors.UpArrow
         Me.UpgradeLabel.ForeColor = System.Drawing.Color.DarkOliveGreen
-        Me.UpgradeLabel.Location = New System.Drawing.Point(127, 30)
+        Me.UpgradeLabel.Location = New System.Drawing.Point(73, 29)
         Me.UpgradeLabel.Name = "UpgradeLabel"
-        Me.UpgradeLabel.Size = New System.Drawing.Size(68, 15)
+        Me.UpgradeLabel.Size = New System.Drawing.Size(52, 15)
         Me.UpgradeLabel.TabIndex = 7
-        Me.UpgradeLabel.Text = "Upgradable"
+        Me.UpgradeLabel.Text = "Upgrade"
         Me.UpgradeLabel.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'XPLabel
@@ -475,6 +561,26 @@ Partial Class MainWindow
         Me.XPLabel.TabIndex = 6
         Me.XPLabel.Text = "xp"
         Me.XPLabel.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'LabelLevel
+        '
+        Me.LabelLevel.AutoSize = True
+        Me.LabelLevel.Location = New System.Drawing.Point(3, 30)
+        Me.LabelLevel.Name = "LabelLevel"
+        Me.LabelLevel.Size = New System.Drawing.Size(34, 15)
+        Me.LabelLevel.TabIndex = 3
+        Me.LabelLevel.Text = "Level"
+        '
+        'Level
+        '
+        Me.Level.AutoSize = True
+        Me.Level.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Level.Location = New System.Drawing.Point(36, 24)
+        Me.Level.Name = "Level"
+        Me.Level.Size = New System.Drawing.Size(19, 21)
+        Me.Level.TabIndex = 4
+        Me.Level.Text = "1"
+        Me.Level.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'CharName
         '
@@ -532,25 +638,15 @@ Partial Class MainWindow
         Me.UpgradeToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
         Me.UpgradeToolStripMenuItem.Text = "Upgrade"
         '
-        'LabelLevel
+        'PictureBox1
         '
-        Me.LabelLevel.AutoSize = True
-        Me.LabelLevel.Location = New System.Drawing.Point(3, 30)
-        Me.LabelLevel.Name = "LabelLevel"
-        Me.LabelLevel.Size = New System.Drawing.Size(34, 15)
-        Me.LabelLevel.TabIndex = 3
-        Me.LabelLevel.Text = "Level"
-        '
-        'Level
-        '
-        Me.Level.AutoSize = True
-        Me.Level.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Level.Location = New System.Drawing.Point(36, 24)
-        Me.Level.Name = "Level"
-        Me.Level.Size = New System.Drawing.Size(19, 21)
-        Me.Level.TabIndex = 4
-        Me.Level.Text = "1"
-        Me.Level.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.PictureBox1.Image = Global.HumanAdventure.My.Resources.Resources.yave_1
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 13)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(28, 66)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
         '
         'SaveDataDialog
         '
@@ -566,10 +662,491 @@ Partial Class MainWindow
         'Panel4
         '
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.GroupBox2)
+        Me.Panel4.Controls.Add(Me.GroupBox1)
         Me.Panel4.Location = New System.Drawing.Point(255, 28)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(452, 529)
         Me.Panel4.TabIndex = 3
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.TabControl2)
+        Me.GroupBox2.Location = New System.Drawing.Point(5, 190)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(437, 334)
+        Me.GroupBox2.TabIndex = 3
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Workspace"
+        '
+        'TabControl2
+        '
+        Me.TabControl2.Controls.Add(Me.Battlezone)
+        Me.TabControl2.Controls.Add(Me.Item)
+        Me.TabControl2.Controls.Add(Me.Manual)
+        Me.TabControl2.Controls.Add(Me.Experimental)
+        Me.TabControl2.Location = New System.Drawing.Point(6, 20)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedIndex = 0
+        Me.TabControl2.Size = New System.Drawing.Size(431, 308)
+        Me.TabControl2.TabIndex = 1
+        '
+        'Battlezone
+        '
+        Me.Battlezone.Controls.Add(Me.CheckBox1)
+        Me.Battlezone.Controls.Add(Me.TourDistanceLabel)
+        Me.Battlezone.Controls.Add(Me.Label24)
+        Me.Battlezone.Controls.Add(Me.Panel9)
+        Me.Battlezone.Controls.Add(Me.Button7)
+        Me.Battlezone.Location = New System.Drawing.Point(4, 24)
+        Me.Battlezone.Name = "Battlezone"
+        Me.Battlezone.Size = New System.Drawing.Size(423, 280)
+        Me.Battlezone.TabIndex = 3
+        Me.Battlezone.Text = "Battlezone"
+        Me.Battlezone.UseVisualStyleBackColor = True
+        '
+        'TourDistanceLabel
+        '
+        Me.TourDistanceLabel.AutoSize = True
+        Me.TourDistanceLabel.Location = New System.Drawing.Point(84, 258)
+        Me.TourDistanceLabel.Name = "TourDistanceLabel"
+        Me.TourDistanceLabel.Size = New System.Drawing.Size(30, 15)
+        Me.TourDistanceLabel.TabIndex = 6
+        Me.TourDistanceLabel.Text = "0km"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(3, 258)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(84, 15)
+        Me.Label24.TabIndex = 4
+        Me.Label24.Text = "Tour Distance: "
+        '
+        'Panel9
+        '
+        Me.Panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel9.Controls.Add(Me.Label25)
+        Me.Panel9.Location = New System.Drawing.Point(3, 3)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(417, 249)
+        Me.Panel9.TabIndex = 5
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(323, 254)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(98, 23)
+        Me.Button7.TabIndex = 4
+        Me.Button7.Text = "Go Forward"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Item
+        '
+        Me.Item.Location = New System.Drawing.Point(4, 24)
+        Me.Item.Name = "Item"
+        Me.Item.Padding = New System.Windows.Forms.Padding(3)
+        Me.Item.Size = New System.Drawing.Size(423, 287)
+        Me.Item.TabIndex = 0
+        Me.Item.Text = "Item"
+        Me.Item.UseVisualStyleBackColor = True
+        '
+        'Manual
+        '
+        Me.Manual.Location = New System.Drawing.Point(4, 24)
+        Me.Manual.Name = "Manual"
+        Me.Manual.Padding = New System.Windows.Forms.Padding(3)
+        Me.Manual.Size = New System.Drawing.Size(423, 287)
+        Me.Manual.TabIndex = 1
+        Me.Manual.Text = "Manual"
+        Me.Manual.UseVisualStyleBackColor = True
+        '
+        'Experimental
+        '
+        Me.Experimental.Controls.Add(Me.Panel8)
+        Me.Experimental.Controls.Add(Me.Label22)
+        Me.Experimental.Controls.Add(Me.GroupBox4)
+        Me.Experimental.Controls.Add(Me.GroupBox3)
+        Me.Experimental.Controls.Add(Me.Label11)
+        Me.Experimental.Location = New System.Drawing.Point(4, 24)
+        Me.Experimental.Name = "Experimental"
+        Me.Experimental.Size = New System.Drawing.Size(423, 287)
+        Me.Experimental.TabIndex = 2
+        Me.Experimental.Text = "Experimental"
+        Me.Experimental.UseVisualStyleBackColor = True
+        '
+        'Panel8
+        '
+        Me.Panel8.AutoScroll = True
+        Me.Panel8.Controls.Add(Me.DamageCountBox)
+        Me.Panel8.Location = New System.Drawing.Point(3, 212)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(417, 72)
+        Me.Panel8.TabIndex = 26
+        '
+        'DamageCountBox
+        '
+        Me.DamageCountBox.AutoSize = True
+        Me.DamageCountBox.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.DamageCountBox.Location = New System.Drawing.Point(3, 0)
+        Me.DamageCountBox.Name = "DamageCountBox"
+        Me.DamageCountBox.Size = New System.Drawing.Size(49, 15)
+        Me.DamageCountBox.TabIndex = 25
+        Me.DamageCountBox.Text = "Defense"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.Label22.Location = New System.Drawing.Point(3, 191)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(109, 20)
+        Me.Label22.TabIndex = 11
+        Me.Label22.Text = "Damage Count"
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.Button6)
+        Me.GroupBox4.Controls.Add(Me.Label21)
+        Me.GroupBox4.Controls.Add(Me.Button5)
+        Me.GroupBox4.Controls.Add(Me.Label18)
+        Me.GroupBox4.Controls.Add(Me.Label12)
+        Me.GroupBox4.Controls.Add(Me.Label19)
+        Me.GroupBox4.Controls.Add(Me.Label17)
+        Me.GroupBox4.Controls.Add(Me.Label20)
+        Me.GroupBox4.Controls.Add(Me.Label16)
+        Me.GroupBox4.Location = New System.Drawing.Point(211, 28)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(209, 160)
+        Me.GroupBox4.TabIndex = 10
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Enemy Status"
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(105, 122)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(98, 23)
+        Me.Button6.TabIndex = 24
+        Me.Button6.Text = "Automation"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(9, 104)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(88, 15)
+        Me.Label21.TabIndex = 23
+        Me.Label21.Text = "Start Simulaton"
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(6, 122)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(98, 23)
+        Me.Button5.TabIndex = 22
+        Me.Button5.Text = "Damage Once"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label18.Location = New System.Drawing.Point(65, 59)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(48, 15)
+        Me.Label18.TabIndex = 21
+        Me.Label18.Text = "defense"
+        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label12.Location = New System.Drawing.Point(7, 59)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(49, 15)
+        Me.Label12.TabIndex = 21
+        Me.Label12.Text = "Defense"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label19.Location = New System.Drawing.Point(65, 39)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(39, 15)
+        Me.Label19.TabIndex = 20
+        Me.Label19.Text = "attack"
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label17.Location = New System.Drawing.Point(7, 19)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(42, 15)
+        Me.Label17.TabIndex = 19
+        Me.Label17.Text = "Health"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label20.Location = New System.Drawing.Point(65, 19)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(107, 15)
+        Me.Label20.TabIndex = 19
+        Me.Label20.Text = "health / maxhealth"
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label16.Location = New System.Drawing.Point(7, 39)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(41, 15)
+        Me.Label16.TabIndex = 20
+        Me.Label16.Text = "Attack"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.EnemyXPBox)
+        Me.GroupBox3.Controls.Add(Me.Label23)
+        Me.GroupBox3.Controls.Add(Me.EnemyHealthBox)
+        Me.GroupBox3.Controls.Add(Me.Button4)
+        Me.GroupBox3.Controls.Add(Me.Label13)
+        Me.GroupBox3.Controls.Add(Me.EnemyDefenseBox)
+        Me.GroupBox3.Controls.Add(Me.Label14)
+        Me.GroupBox3.Controls.Add(Me.EnemyAttackBox)
+        Me.GroupBox3.Controls.Add(Me.Label15)
+        Me.GroupBox3.Location = New System.Drawing.Point(3, 28)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(202, 160)
+        Me.GroupBox3.TabIndex = 9
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Enemy Propetries"
+        '
+        'EnemyXPBox
+        '
+        Me.EnemyXPBox.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.EnemyXPBox.Location = New System.Drawing.Point(96, 101)
+        Me.EnemyXPBox.MaxLength = 5
+        Me.EnemyXPBox.Name = "EnemyXPBox"
+        Me.EnemyXPBox.Size = New System.Drawing.Size(100, 23)
+        Me.EnemyXPBox.TabIndex = 10
+        Me.EnemyXPBox.Tag = "EnemyData4"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(9, 104)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(55, 15)
+        Me.Label23.TabIndex = 9
+        Me.Label23.Text = "Give XPs:"
+        '
+        'EnemyHealthBox
+        '
+        Me.EnemyHealthBox.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.EnemyHealthBox.Location = New System.Drawing.Point(96, 17)
+        Me.EnemyHealthBox.MaxLength = 9
+        Me.EnemyHealthBox.Name = "EnemyHealthBox"
+        Me.EnemyHealthBox.Size = New System.Drawing.Size(100, 23)
+        Me.EnemyHealthBox.TabIndex = 2
+        Me.EnemyHealthBox.Tag = "EnemyData1"
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(121, 131)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 8
+        Me.Button4.Text = "Set"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(9, 20)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(45, 15)
+        Me.Label13.TabIndex = 3
+        Me.Label13.Text = "Health:"
+        '
+        'EnemyDefenseBox
+        '
+        Me.EnemyDefenseBox.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.EnemyDefenseBox.Location = New System.Drawing.Point(96, 73)
+        Me.EnemyDefenseBox.MaxLength = 5
+        Me.EnemyDefenseBox.Name = "EnemyDefenseBox"
+        Me.EnemyDefenseBox.Size = New System.Drawing.Size(100, 23)
+        Me.EnemyDefenseBox.TabIndex = 7
+        Me.EnemyDefenseBox.Tag = "EnemyData3"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(9, 47)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(44, 15)
+        Me.Label14.TabIndex = 4
+        Me.Label14.Text = "Attack:"
+        '
+        'EnemyAttackBox
+        '
+        Me.EnemyAttackBox.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.EnemyAttackBox.Location = New System.Drawing.Point(96, 44)
+        Me.EnemyAttackBox.MaxLength = 5
+        Me.EnemyAttackBox.Name = "EnemyAttackBox"
+        Me.EnemyAttackBox.Size = New System.Drawing.Size(100, 23)
+        Me.EnemyAttackBox.TabIndex = 6
+        Me.EnemyAttackBox.Tag = "EnemyData2"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(9, 76)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(52, 15)
+        Me.Label15.TabIndex = 5
+        Me.Label15.Text = "Defense:"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.Label11.Location = New System.Drawing.Point(3, 2)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(137, 20)
+        Me.Label11.TabIndex = 0
+        Me.Label11.Text = "Damage Calculator"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.PlaceLabel)
+        Me.GroupBox1.Controls.Add(Me.Button3)
+        Me.GroupBox1.Controls.Add(Me.Panel7)
+        Me.GroupBox1.Controls.Add(Me.Panel6)
+        Me.GroupBox1.Controls.Add(Me.RegionLabel)
+        Me.GroupBox1.Location = New System.Drawing.Point(5, 4)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(440, 180)
+        Me.GroupBox1.TabIndex = 1
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Region"
+        '
+        'PlaceLabel
+        '
+        Me.PlaceLabel.AutoSize = True
+        Me.PlaceLabel.Location = New System.Drawing.Point(94, 19)
+        Me.PlaceLabel.Name = "PlaceLabel"
+        Me.PlaceLabel.Size = New System.Drawing.Size(41, 15)
+        Me.PlaceLabel.TabIndex = 4
+        Me.PlaceLabel.Text = "region"
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(336, 15)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(98, 23)
+        Me.Button3.TabIndex = 3
+        Me.Button3.Text = "Introduction"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.Label10)
+        Me.Panel7.Controls.Add(Me.RadioButton1)
+        Me.Panel7.Controls.Add(Me.RadioButton4)
+        Me.Panel7.Controls.Add(Me.RadioButton2)
+        Me.Panel7.Controls.Add(Me.RadioButton3)
+        Me.Panel7.Location = New System.Drawing.Point(9, 37)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(428, 131)
+        Me.Panel7.TabIndex = 2
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(3, 45)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(159, 15)
+        Me.Label10.TabIndex = 4
+        Me.Label10.Text = "More Region Coming soon..."
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Checked = True
+        Me.RadioButton1.Location = New System.Drawing.Point(3, 3)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(102, 19)
+        Me.RadioButton1.TabIndex = 0
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Emerald Plains"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Enabled = False
+        Me.RadioButton4.Location = New System.Drawing.Point(3, 83)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(138, 19)
+        Me.RadioButton4.TabIndex = 3
+        Me.RadioButton4.Text = "Harmonic Dark Valley"
+        Me.RadioButton4.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(3, 23)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(82, 19)
+        Me.RadioButton2.TabIndex = 1
+        Me.RadioButton2.Text = "Drip Forest"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Enabled = False
+        Me.RadioButton3.Location = New System.Drawing.Point(3, 63)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(100, 19)
+        Me.RadioButton3.TabIndex = 2
+        Me.RadioButton3.Text = "Dolphin Shore"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.Label9)
+        Me.Panel6.Location = New System.Drawing.Point(9, 37)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(428, 131)
+        Me.Panel6.TabIndex = 3
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(158, 54)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(103, 15)
+        Me.Label9.TabIndex = 0
+        Me.Label9.Text = "Level 15 to Unlock"
+        '
+        'RegionLabel
+        '
+        Me.RegionLabel.AutoSize = True
+        Me.RegionLabel.Location = New System.Drawing.Point(6, 19)
+        Me.RegionLabel.Name = "RegionLabel"
+        Me.RegionLabel.Size = New System.Drawing.Size(90, 15)
+        Me.RegionLabel.TabIndex = 0
+        Me.RegionLabel.Text = "Current Region:"
         '
         'Panel5
         '
@@ -582,6 +1159,18 @@ Partial Class MainWindow
         Me.Panel5.Size = New System.Drawing.Size(710, 542)
         Me.Panel5.TabIndex = 8
         Me.Panel5.Visible = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Image = Global.HumanAdventure.My.Resources.Resources.YaveYuFamily
+        Me.PictureBox2.Location = New System.Drawing.Point(247, 146)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(228, 217)
+        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabStop = False
         '
         'Button2
         '
@@ -611,43 +1200,37 @@ Partial Class MainWindow
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Yave's Tours"
         '
-        'PictureBox2
+        'AttributeToolTip
         '
-        Me.PictureBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Image = Global.HumanAdventure.My.Resources.Resources.YaveYuFamily
-        Me.PictureBox2.Location = New System.Drawing.Point(247, 146)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(228, 217)
-        Me.PictureBox2.TabIndex = 3
-        Me.PictureBox2.TabStop = False
+        Me.AttributeToolTip.IsBalloon = True
+        Me.AttributeToolTip.ToolTipTitle = "Properties"
         '
-        'PictureBox1
+        'Timer2
         '
-        Me.PictureBox1.Image = Global.HumanAdventure.My.Resources.Resources.yave_1
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 13)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(28, 66)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.Timer2.Interval = 10
         '
-        'CoinsToolStripMenuItem
+        'Label25
         '
-        Me.CoinsToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.CoinsToolStripMenuItem.Image = Global.HumanAdventure.My.Resources.Resources.spr_coin_0
-        Me.CoinsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.CoinsToolStripMenuItem.Name = "CoinsToolStripMenuItem"
-        Me.CoinsToolStripMenuItem.Size = New System.Drawing.Size(63, 23)
-        Me.CoinsToolStripMenuItem.Text = "coins"
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(173, 119)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(65, 15)
+        Me.Label25.TabIndex = 0
+        Me.Label25.Text = "No Mobs..."
         '
-        'ToolStripTextBox1
+        'CheckBox1
         '
-        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!)
-        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
-        Me.ToolStripTextBox1.Size = New System.Drawing.Size(100, 23)
-        Me.ToolStripTextBox1.Text = "0"
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(232, 257)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(85, 19)
+        Me.CheckBox1.TabIndex = 7
+        Me.CheckBox1.Text = "Auto Battle"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'AutoBattleTimer
+        '
+        Me.AutoBattleTimer.Interval = 1500
         '
         'MainWindow
         '
@@ -679,10 +1262,31 @@ Partial Class MainWindow
         Me.Panel2.PerformLayout()
         Me.CharNameStrip.ResumeLayout(False)
         Me.XPMenu.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.TabControl2.ResumeLayout(False)
+        Me.Battlezone.ResumeLayout(False)
+        Me.Battlezone.PerformLayout()
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
+        Me.Experimental.ResumeLayout(False)
+        Me.Experimental.PerformLayout()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -746,7 +1350,58 @@ Partial Class MainWindow
     Friend WithEvents FeedbackToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HealHPToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SetAttackTo9999ToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SetDefenseTo999ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CoinsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
+    Friend WithEvents ItemShopToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UpgradeShopToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents RegionLabel As Label
+    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents Button3 As Button
+    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents Label10 As Label
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents TabControl2 As TabControl
+    Friend WithEvents Item As TabPage
+    Friend WithEvents Manual As TabPage
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Experimental As TabPage
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents EnemyHealthBox As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Button4 As Button
+    Friend WithEvents EnemyDefenseBox As TextBox
+    Friend WithEvents EnemyAttackBox As TextBox
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Label22 As Label
+    Friend WithEvents AttributeToolTip As ToolTip
+    Friend WithEvents DamageCountBox As Label
+    Friend WithEvents EnemyXPBox As TextBox
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Battlezone As TabPage
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Label24 As Label
+    Friend WithEvents TourDistanceLabel As Label
+    Friend WithEvents PlaceLabel As Label
+    Friend WithEvents Timer2 As Timer
+    Friend WithEvents Label25 As Label
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents AutoBattleTimer As Timer
 End Class

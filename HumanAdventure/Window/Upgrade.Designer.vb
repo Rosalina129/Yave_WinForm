@@ -38,17 +38,20 @@ Partial Class Upgrade
         Me.atkafter = New System.Windows.Forms.Label()
         Me.mhafter = New System.Windows.Forms.Label()
         Me.lvlafter = New System.Windows.Forms.Label()
-        Me.RandomLabel = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(349, 163)
+        Me.Button1.Location = New System.Drawing.Point(381, 188)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(108, 46)
+        Me.Button1.Size = New System.Drawing.Size(76, 23)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Upgrade"
         Me.Button1.UseVisualStyleBackColor = True
@@ -56,12 +59,12 @@ Partial Class Upgrade
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 16.0!)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.0!)
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(198, 30)
+        Me.Label1.Size = New System.Drawing.Size(176, 25)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Upgrade Attributes"
+        Me.Label1.Text = "Upgrade Properties"
         '
         'Label2
         '
@@ -193,16 +196,6 @@ Partial Class Upgrade
         Me.lvlafter.TabIndex = 14
         Me.lvlafter.Text = "levelafter"
         '
-        'RandomLabel
-        '
-        Me.RandomLabel.AutoSize = True
-        Me.RandomLabel.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.RandomLabel.Location = New System.Drawing.Point(13, 188)
-        Me.RandomLabel.Name = "RandomLabel"
-        Me.RandomLabel.Size = New System.Drawing.Size(56, 21)
-        Me.RandomLabel.TabIndex = 15
-        Me.RandomLabel.Text = "Label6"
-        '
         'Timer1
         '
         Me.Timer1.Enabled = True
@@ -213,12 +206,54 @@ Partial Class Upgrade
         Me.Timer2.Enabled = True
         Me.Timer2.Interval = 1
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(14, 36)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(190, 15)
+        Me.Label6.TabIndex = 16
+        Me.Label6.Text = "Select a property point to upgrade."
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(398, 99)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(14, 13)
+        Me.RadioButton1.TabIndex = 17
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(398, 120)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(14, 13)
+        Me.RadioButton2.TabIndex = 18
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(398, 141)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(14, 13)
+        Me.RadioButton3.TabIndex = 19
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
         'Upgrade
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(469, 222)
-        Me.Controls.Add(Me.RandomLabel)
+        Me.Controls.Add(Me.RadioButton1)
+        Me.Controls.Add(Me.RadioButton3)
+        Me.Controls.Add(Me.RadioButton2)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lvlafter)
         Me.Controls.Add(Me.defafter)
         Me.Controls.Add(Me.atkafter)
@@ -262,7 +297,10 @@ Partial Class Upgrade
     Friend WithEvents atkafter As Label
     Friend WithEvents mhafter As Label
     Friend WithEvents lvlafter As Label
-    Friend WithEvents RandomLabel As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents Label6 As Label
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton3 As RadioButton
 End Class

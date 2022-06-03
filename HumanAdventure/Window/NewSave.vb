@@ -14,8 +14,9 @@
     Public CRate As Double
     Public CDMG As Double
     Public Coins As Integer
+    Public PlaceID As Integer
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim Rand As New Random
+        Dim Rand As New Random()
         TextBox1.Text = InitData.Name_Dictionary(Rand.Next(0, InitData.Name_Dictionary.Length))
     End Sub
 
@@ -44,6 +45,7 @@
             CRate = 0.05
             CDMG = 0.5
             Coins = 0
+            PlaceID = 0
             MainWindow.NewSaveWindowProgress = True
             Close()
         Else

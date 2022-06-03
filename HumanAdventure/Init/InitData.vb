@@ -27,12 +27,12 @@
     "Electric"      '雷电
     }
     Public Shared ECR() As Integer = {
-    32, 129, 32, 66, 172, 125, 199
+    32, 32, 129, 32, 66, 172, 125, 199
     }
     Public Shared ECG() As Integer = {
-    123, 20, 46, 109, 156, 125, 175
+    32, 123, 20, 46, 109, 156, 125, 175
     }
     Public Shared ECB() As Integer = {
-    134, 20, 175, 20, 20, 125, 78
+    32, 134, 20, 175, 20, 20, 125, 78
     }
 End Class
