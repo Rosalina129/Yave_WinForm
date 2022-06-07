@@ -49,11 +49,10 @@
             MainWindow.NewSaveWindowProgress = True
             Close()
         Else
-            MsgBox("Please Input your name!", vbYes, MainWindow.Text)
+            MainWindow.DebugShow(Strings.s_string(41, MainWindow.Language))
         End If
     End Sub
-
     Private Sub NewSave_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        ListBox1.SelectedIndex = 0
     End Sub
 End Class

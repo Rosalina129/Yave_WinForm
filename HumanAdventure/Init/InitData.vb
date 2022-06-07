@@ -18,6 +18,7 @@
     "Save", "Kate", "Slash", "Orama",
     "Tive", "Bill", "Jean", "Fluent"}
     Public Shared Elementname() As String = {
+    "Common",       '普通
     "Ice",          '冰
     "Fire",         '火
     "Water",        '水
@@ -26,13 +27,13 @@
     "Metal",        '钢铁
     "Electric"      '雷电
     }
-    Public Shared ECR() As Integer = {
+    Public Shared ReadOnly ECR() As Integer = {
     32, 32, 129, 32, 66, 172, 125, 199
     }
-    Public Shared ECG() As Integer = {
+    Public Shared ReadOnly ECG() As Integer = {
     32, 123, 20, 46, 109, 156, 125, 175
     }
-    Public Shared ECB() As Integer = {
+    Public Shared ReadOnly ECB() As Integer = {
     32, 134, 20, 175, 20, 20, 125, 78
     }
 End Class

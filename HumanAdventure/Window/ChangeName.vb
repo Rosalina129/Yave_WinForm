@@ -4,7 +4,7 @@
             MainWindow.PlayerData.CName1 = TextBox1.Text
             Close()
         Else
-            MsgBox("Please Input your name!", vbYes, MainWindow.Text)
+            MainWindow.DebugShow(Strings.s_string(41, MainWindow.Language))
         End If
     End Sub
 

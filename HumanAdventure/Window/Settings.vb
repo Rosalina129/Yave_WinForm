@@ -1,6 +1,5 @@
 ﻿Public Class Settings
     Private Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles TreeView1.AfterSelect
-        Dim a As Integer
         Select Case TreeView1.SelectedNode.Tag
             Case 1
                 GameWorkPanel.Visible = True
@@ -22,7 +21,11 @@
     End Sub
 
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TextBox1.Text = MainWindow.DefaultPath
+        If MainWindow.WorkUserPath = "" Then
+            TextBox1.Text = MainWindow.WorkDefaultPath
+        Else
+            TextBox1.Text = MainWindow.WorkUserPath
+        End If
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -33,5 +36,9 @@
         Else
             MsgBox("You selected: " & LoadPath.SelectedPath & Chr(13) & "Are you sure to set this location?", vbYesNo, MainWindow.Text)
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        TextBox1.Text = MainWindow.WorkDefaultPath
     End Sub
 End Class

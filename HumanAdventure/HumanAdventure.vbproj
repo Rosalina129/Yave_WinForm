@@ -93,7 +93,11 @@
   <ItemGroup>
     <Compile Include="Init\Enemies.vb" />
     <Compile Include="Program\Calculate.vb" />
-    <Compile Include="Program\Language.vb" />
+    <Compile Include="Program\IniFile.vb" />
+    <Compile Include="Program\Lang.vb" />
+    <Compile Include="Program\Strings.vb" />
+    <Compile Include="Program\StringSave.vb" />
+    <Compile Include="Program\Threading.vb" />
     <Compile Include="Window\ChangeName.Designer.vb">
       <DependentUpon>ChangeName.vb</DependentUpon>
     </Compile>

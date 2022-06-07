@@ -22,10 +22,10 @@ Partial Class Settings
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Game Work")
-        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Language")
-        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Other")
-        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Common", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3})
+        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Game Work")
+        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Language")
+        Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Other")
+        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Common", New System.Windows.Forms.TreeNode() {TreeNode13, TreeNode14, TreeNode15})
         Me.TreeView1 = New System.Windows.Forms.TreeView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -65,20 +65,20 @@ Partial Class Settings
         Me.TreeView1.Location = New System.Drawing.Point(0, 0)
         Me.TreeView1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode1.Name = "GameWork"
-        TreeNode1.Tag = "1"
-        TreeNode1.Text = "Game Work"
-        TreeNode2.Name = "Language"
-        TreeNode2.Tag = "2"
-        TreeNode2.Text = "Language"
-        TreeNode3.Name = "Other"
-        TreeNode3.Tag = "3"
-        TreeNode3.Text = "Other"
-        TreeNode4.Checked = True
-        TreeNode4.Name = "Common"
-        TreeNode4.Tag = "0"
-        TreeNode4.Text = "Common"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode4})
+        TreeNode13.Name = "GameWork"
+        TreeNode13.Tag = "1"
+        TreeNode13.Text = "Game Work"
+        TreeNode14.Name = "Language"
+        TreeNode14.Tag = "2"
+        TreeNode14.Text = "Language"
+        TreeNode15.Name = "Other"
+        TreeNode15.Tag = "3"
+        TreeNode15.Text = "Other"
+        TreeNode16.Checked = True
+        TreeNode16.Name = "Common"
+        TreeNode16.Tag = "0"
+        TreeNode16.Text = "Common"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode16})
         Me.TreeView1.Size = New System.Drawing.Size(187, 318)
         Me.TreeView1.TabIndex = 0
         '
@@ -312,9 +312,9 @@ Partial Class Settings
         Me.Labela1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Labela1.Location = New System.Drawing.Point(4, 25)
         Me.Labela1.Name = "Labela1"
-        Me.Labela1.Size = New System.Drawing.Size(151, 21)
+        Me.Labela1.Size = New System.Drawing.Size(95, 21)
         Me.Labela1.TabIndex = 1
-        Me.Labela1.Text = "Game Work Position"
+        Me.Labela1.Text = "Save folders"
         '
         'Label3
         '
@@ -322,9 +322,9 @@ Partial Class Settings
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 14.0!)
         Me.Label3.Location = New System.Drawing.Point(3, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(110, 25)
+        Me.Label3.Size = New System.Drawing.Size(183, 25)
         Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Game Work"
+        Me.Label3.Text = "Game Configuration"
         '
         'Settings
         '

@@ -12,7 +12,7 @@
     Dim SE As UInteger                  'Star Energy
     Dim CRate As Double                 'Crit Rate
     Dim CDMG As Double                  'Crit Damage
-    Dim Coins As Integer                'Coins
+    Dim Coins As UInt32                'Coins
     Public Sub New()
 
     End Sub
@@ -145,11 +145,11 @@
             CDMG = value
         End Set
     End Property
-    Public Property Coins1 As Double
+    Public Property Coins1 As UInt32
         Get
             Return Coins
         End Get
-        Set(value As Double)
+        Set(value As UInt32)
             Coins = value
         End Set
     End Property
