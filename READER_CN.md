@@ -8,5 +8,9 @@ __重点是，完全开源！__ 你完全可以基于源代码进行二次创作
 
 所有程序均使用 GPL-3.0 协议发布。
 
+## 游戏列表
+
+[Yave's Tours](https://github.com/Rosalina129/WinForm_GameCollection/blob/main/HumanAdventure/READER.md)
+
 ## 授权
 Yave Yu - 形象图片
