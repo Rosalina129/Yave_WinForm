@@ -9,4 +9,4 @@ __IMPORTANT! COMPLETELY OPEN-SOURCE!__ You can do secondary making from source-c
 All softwares publishing with GPL-3.0 License.
 
 ## Credits:
-Yave Yu - Avatar Image
+Yave Yu - Author Image
