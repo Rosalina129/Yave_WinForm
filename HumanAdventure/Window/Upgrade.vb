@@ -10,7 +10,6 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         With MainWindow.PlayerData
-            .Level1 = Levela
             If RadioButton1.Checked Then
                 .HPM1 = HPMa
                 .HP1 = .HPM1
@@ -21,9 +20,8 @@
             If RadioButton3.Checked Then
                 .DEF1 = DEFa
             End If
-            .XP1 = 0
-            .XPNeed1 += 65 + MainWindow.r1.Next(20, 100)
         End With
+        MainWindow.UpgradePoint -= 1
         MsgBox("Upgrade Successful!", vbYes, MainWindow.Text)
         InitData.isUpgrade = True
         Close()

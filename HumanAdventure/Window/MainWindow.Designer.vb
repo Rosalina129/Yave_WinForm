@@ -83,7 +83,6 @@ Partial Class MainWindow
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.Tour = New System.Windows.Forms.TabPage()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.TourDistanceLabel = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
@@ -107,8 +106,8 @@ Partial Class MainWindow
         Me.CurEnemyData1 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.Item = New System.Windows.Forms.TabPage()
-        Me.Manual = New System.Windows.Forms.TabPage()
+        Me.Inventory = New System.Windows.Forms.TabPage()
+        Me.Equipment = New System.Windows.Forms.TabPage()
         Me.Experimental = New System.Windows.Forms.TabPage()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.DamageCountBox = New System.Windows.Forms.Label()
@@ -256,13 +255,13 @@ Partial Class MainWindow
         'ItemListToolStripMenuItem
         '
         Me.ItemListToolStripMenuItem.Name = "ItemListToolStripMenuItem"
-        Me.ItemListToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.ItemListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ItemListToolStripMenuItem.Text = "Item List"
         '
         'SettingsToolStripMenuItem
         '
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
-        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SettingsToolStripMenuItem.Text = "Settings"
         '
         'ShowDebugToolStripMenuItem
@@ -294,13 +293,13 @@ Partial Class MainWindow
         'AboutsToolStripMenuItem
         '
         Me.AboutsToolStripMenuItem.Name = "AboutsToolStripMenuItem"
-        Me.AboutsToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.AboutsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AboutsToolStripMenuItem.Text = "About Software"
         '
         'FeedbackToolStripMenuItem
         '
         Me.FeedbackToolStripMenuItem.Name = "FeedbackToolStripMenuItem"
-        Me.FeedbackToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.FeedbackToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.FeedbackToolStripMenuItem.Text = "Feedback"
         '
         'CoinsToolStripMenuItem
@@ -695,8 +694,8 @@ Partial Class MainWindow
         'TabControl2
         '
         Me.TabControl2.Controls.Add(Me.Tour)
-        Me.TabControl2.Controls.Add(Me.Item)
-        Me.TabControl2.Controls.Add(Me.Manual)
+        Me.TabControl2.Controls.Add(Me.Inventory)
+        Me.TabControl2.Controls.Add(Me.Equipment)
         Me.TabControl2.Controls.Add(Me.Experimental)
         Me.TabControl2.Location = New System.Drawing.Point(6, 20)
         Me.TabControl2.Name = "TabControl2"
@@ -707,7 +706,6 @@ Partial Class MainWindow
         'Tour
         '
         Me.Tour.Controls.Add(Me.CheckBox1)
-        Me.Tour.Controls.Add(Me.TourDistanceLabel)
         Me.Tour.Controls.Add(Me.Label24)
         Me.Tour.Controls.Add(Me.Panel9)
         Me.Tour.Controls.Add(Me.Button7)
@@ -727,15 +725,6 @@ Partial Class MainWindow
         Me.CheckBox1.TabIndex = 7
         Me.CheckBox1.Text = "Auto Battle"
         Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'TourDistanceLabel
-        '
-        Me.TourDistanceLabel.AutoSize = True
-        Me.TourDistanceLabel.Location = New System.Drawing.Point(84, 258)
-        Me.TourDistanceLabel.Name = "TourDistanceLabel"
-        Me.TourDistanceLabel.Size = New System.Drawing.Size(30, 15)
-        Me.TourDistanceLabel.TabIndex = 6
-        Me.TourDistanceLabel.Text = "0km"
         '
         'Label24
         '
@@ -831,7 +820,7 @@ Partial Class MainWindow
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(98, 23)
         Me.Button10.TabIndex = 16
-        Me.Button10.Text = "Skill"
+        Me.Button10.Text = "Block"
         Me.Button10.UseVisualStyleBackColor = True
         '
         'Button9
@@ -840,7 +829,7 @@ Partial Class MainWindow
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(98, 23)
         Me.Button9.TabIndex = 15
-        Me.Button9.Text = "Star Skills"
+        Me.Button9.Text = "Ele. Attack"
         Me.Button9.UseVisualStyleBackColor = True
         '
         'Button8
@@ -963,25 +952,25 @@ Partial Class MainWindow
         Me.Button7.Text = "Go Forward"
         Me.Button7.UseVisualStyleBackColor = True
         '
-        'Item
+        'Inventory
         '
-        Me.Item.Location = New System.Drawing.Point(4, 24)
-        Me.Item.Name = "Item"
-        Me.Item.Padding = New System.Windows.Forms.Padding(3)
-        Me.Item.Size = New System.Drawing.Size(423, 280)
-        Me.Item.TabIndex = 0
-        Me.Item.Text = "Item"
-        Me.Item.UseVisualStyleBackColor = True
+        Me.Inventory.Location = New System.Drawing.Point(4, 24)
+        Me.Inventory.Name = "Inventory"
+        Me.Inventory.Padding = New System.Windows.Forms.Padding(3)
+        Me.Inventory.Size = New System.Drawing.Size(423, 280)
+        Me.Inventory.TabIndex = 0
+        Me.Inventory.Text = "Inventory"
+        Me.Inventory.UseVisualStyleBackColor = True
         '
-        'Manual
+        'Equipment
         '
-        Me.Manual.Location = New System.Drawing.Point(4, 24)
-        Me.Manual.Name = "Manual"
-        Me.Manual.Padding = New System.Windows.Forms.Padding(3)
-        Me.Manual.Size = New System.Drawing.Size(423, 280)
-        Me.Manual.TabIndex = 1
-        Me.Manual.Text = "Manual"
-        Me.Manual.UseVisualStyleBackColor = True
+        Me.Equipment.Location = New System.Drawing.Point(4, 24)
+        Me.Equipment.Name = "Equipment"
+        Me.Equipment.Padding = New System.Windows.Forms.Padding(3)
+        Me.Equipment.Size = New System.Drawing.Size(423, 280)
+        Me.Equipment.TabIndex = 1
+        Me.Equipment.Text = "Equipment"
+        Me.Equipment.UseVisualStyleBackColor = True
         '
         'Experimental
         '
@@ -1296,10 +1285,10 @@ Partial Class MainWindow
         Me.RadioButton1.Checked = True
         Me.RadioButton1.Location = New System.Drawing.Point(3, 3)
         Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(102, 19)
+        Me.RadioButton1.Size = New System.Drawing.Size(95, 19)
         Me.RadioButton1.TabIndex = 0
         Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Emerald Plains"
+        Me.RadioButton1.Text = "regionname1"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'RadioButton4
@@ -1308,9 +1297,9 @@ Partial Class MainWindow
         Me.RadioButton4.Enabled = False
         Me.RadioButton4.Location = New System.Drawing.Point(3, 83)
         Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(138, 19)
+        Me.RadioButton4.Size = New System.Drawing.Size(95, 19)
         Me.RadioButton4.TabIndex = 3
-        Me.RadioButton4.Text = "Harmonic Dark Valley"
+        Me.RadioButton4.Text = "regionname4"
         Me.RadioButton4.UseVisualStyleBackColor = True
         '
         'RadioButton2
@@ -1318,9 +1307,9 @@ Partial Class MainWindow
         Me.RadioButton2.AutoSize = True
         Me.RadioButton2.Location = New System.Drawing.Point(3, 23)
         Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(82, 19)
+        Me.RadioButton2.Size = New System.Drawing.Size(95, 19)
         Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.Text = "Drip Forest"
+        Me.RadioButton2.Text = "regionname2"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'RadioButton3
@@ -1329,9 +1318,9 @@ Partial Class MainWindow
         Me.RadioButton3.Enabled = False
         Me.RadioButton3.Location = New System.Drawing.Point(3, 63)
         Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(100, 19)
+        Me.RadioButton3.Size = New System.Drawing.Size(95, 19)
         Me.RadioButton3.TabIndex = 2
-        Me.RadioButton3.Text = "Dolphin Shore"
+        Me.RadioButton3.Text = "regionname3"
         Me.RadioButton3.UseVisualStyleBackColor = True
         '
         'Panel6
@@ -1567,8 +1556,8 @@ Partial Class MainWindow
     Friend WithEvents Label10 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents TabControl2 As TabControl
-    Friend WithEvents Item As TabPage
-    Friend WithEvents Manual As TabPage
+    Friend WithEvents Inventory As TabPage
+    Friend WithEvents Equipment As TabPage
     Friend WithEvents Label11 As Label
     Friend WithEvents Experimental As TabPage
     Friend WithEvents Label14 As Label
@@ -1599,7 +1588,6 @@ Partial Class MainWindow
     Friend WithEvents Button7 As Button
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Label24 As Label
-    Friend WithEvents TourDistanceLabel As Label
     Friend WithEvents Timer2 As Timer
     Friend WithEvents Label25 As Label
     Friend WithEvents CheckBox1 As CheckBox

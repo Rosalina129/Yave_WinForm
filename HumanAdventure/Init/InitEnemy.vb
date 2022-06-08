@@ -10,6 +10,8 @@
     Dim CDMG As Double
     Dim EXP As UInt64
     Dim Coins As Integer
+    Dim Basics As ULong
+    Dim Skills As ULong
     Public Sub New()
 
     End Sub

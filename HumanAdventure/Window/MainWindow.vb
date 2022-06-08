@@ -1,5 +1,6 @@
 ﻿
 Imports System.IO
+Imports System.Threading
 Public Class MainWindow
 
     Public Shared progress As Boolean               'Make public share
@@ -11,7 +12,11 @@ Public Class MainWindow
     Dim RegionID As Integer
     'Beta Test
     Const Cooldown As Integer = 1500
+    'IMPORTANT!!! This save version determines which version you play the save on,
+    'and whether it is compatible with the current version!
     Const SaveVersion As Integer = 1
+    Const CompatibleVersion As Integer = 1
+
     Public Shared ReadOnly WorkDefaultPath As String = Environment.CurrentDirectory & "\Save"
     Public Shared WorkUserPath As String
     Dim TourDistance_1 As UInt64           '100 = 1 Meters
@@ -27,6 +32,8 @@ Public Class MainWindow
     Dim ase As Integer
     Dim DES As Integer                      'Disable Enemy Spawn
     Dim DeathCount As Integer
+
+    Public Shared UpgradePoint As Integer
 
     Public Shared r1 As New Random
     Public Shared r1r As Double
@@ -49,19 +56,12 @@ Public Class MainWindow
         Select Case RegionID
             Case 0
                 Select Case PlayerData.Level1
-                    Case 1 To 5
-                        a = r1.Next(0, 2)
-                        CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1,
-                                                     Enemies.Enemy(a).Name1,
-                                                     Enemies.Enemy(a).HP1,
-                                                     Enemies.Enemy(a).HPM1,
-                                                     Enemies.Enemy(a).ATK1,
-                                                     Enemies.Enemy(a).DEF1,
-                                                     Enemies.Enemy(a).CRate1,
-                                                     Enemies.Enemy(a).CDMG1,
-                                                     Enemies.Enemy(a).EXP1,
-                                                     Enemies.Enemy(a).Coins1
-                                                     )
+                    Case 0 To 5
+                        a = r1.Next(0, 5)
+                        CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+                    Case 6 To 15
+                        a = r1.Next(5, 11)
+                        CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
                 End Select
         End Select
     End Sub
@@ -77,7 +77,7 @@ Public Class MainWindow
         With PlayerData
             PictureBox1.Image = InitData.SkinGallery(.Sk)
             CharName.ForeColor = Color.FromArgb(InitData.ECR(.element1), InitData.ECG(.element1), InitData.ECB(.element1))
-            CharName.Text = "[" & InitData.Elementname(.element1) & "] " & .CName1
+            CharName.Text = "[" & Strings.s_string(80 + .element1, Language) & "] " & .CName1
             HEALTHLabel.Text = .HP1 & "/" & .HPM1
             Level.Text = .Level1
             ATKLabel.Text = .ATK1
@@ -87,19 +87,20 @@ Public Class MainWindow
             CDLabel.Text = .CDMG1 * 100 & "%"
             XPLabel.Text = .XP1 & "/" & .XPNeed1
             XPMenuStrip1.Text = .XP1 & "/" & .XPNeed1
-            RegionLabel.Text = Strings.s_string(42, Language) & ":" & " " & Strings.s_string(48 + RegionID, Language)
+            RegionLabel.Text = Strings.s_string(42, Language) & ": " & Strings.s_string(48 + RegionID, Language)
             If TourDistanceCache >= 100000 Then
-                TourDistanceLabel.Text = Math.Round(TourDistanceCache / 10 ^ 5, 2) & "km"
+                Label24.Text = Strings.s_string(63, Language) & ": " & Math.Round(TourDistanceCache / 10 ^ 5, 2) & "km"
             Else
-                TourDistanceLabel.Text = Math.Round(TourDistanceCache / 10 ^ 2, 2) & "m"
+                Label24.Text = Strings.s_string(63, Language) & ": " & Math.Round(TourDistanceCache / 10 ^ 2, 2) & "m"
             End If
             CheckXP()
             XPBar.Maximum = .XPNeed1
             XPBar.Value = .XP1
+            Label31.Text = Strings.s_string(37, Language) & ": " & UpgradePoint
             CoinsToolStripMenuItem.Text = .Coins1
             If isBattleDisplay Then
                 With CurrentEnemy
-                    CurEnemyData1.Text = "[" & InitData.Elementname(.ID1) & "] " & .Name1
+                    CurEnemyData1.Text = "[" & Strings.s_string(80 + .ID1, Language) & "] " & .Name1
                     CurEnemyData1.ForeColor = Color.FromArgb(InitData.ECR(.ID1), InitData.ECG(.ID1), InitData.ECB(.ID1))
                     CurEnemyData2.Text = .HP1 & "/" & .HPM1
                     CurEnemyData3.Text = .ATK1
@@ -124,11 +125,65 @@ Public Class MainWindow
     End Sub
     Private Sub CheckXP()
         If PlayerData.XP1 >= PlayerData.XPNeed1 Then
+            UpgradeProp()
+            PlayerData.XP1 = 0
+        End If
+    End Sub
+    Private Sub CUP()
+        If UpgradePoint > 0 Then
             UpgradeLabel.Visible = True
-            PlayerData.XP1 = PlayerData.XPNeed1
         Else
             UpgradeLabel.Visible = False
         End If
+    End Sub
+    Private Sub UpgradeProp()
+        With PlayerData
+            .Level1 += 1
+            If .Level1 Mod 3 = 0 Then
+                UpgradePoint += 1
+            End If
+            Select Case .Level1
+                Case 0 To 20
+                    .HPM1 += 30 + MainWindow.r1.Next(0, 10)
+                    Thread.Sleep(1)
+                    .ATK1 += 2 + MainWindow.r1.Next(0, 4)
+                    Thread.Sleep(1)
+                    .DEF1 += 1 + MainWindow.r1.Next(0, 3)
+                Case 21 To 40
+                    .HPM1 += 45 + MainWindow.r1.Next(0, 29)
+                    Thread.Sleep(1)
+                    .ATK1 += 2 + MainWindow.r1.Next(0, 8)
+                    Thread.Sleep(1)
+                    .DEF1 += 2 + MainWindow.r1.Next(0, 5)
+                Case 41 To 60
+                    .HPM1 += 50 + MainWindow.r1.Next(0, 48)
+                    Thread.Sleep(1)
+                    .ATK1 += 3 + MainWindow.r1.Next(0, 16)
+                    Thread.Sleep(1)
+                    .DEF1 += 3 + MainWindow.r1.Next(0, 9)
+                Case 61 To 70
+                    .HPM1 += 30 + MainWindow.r1.Next(0, 29)
+                    Thread.Sleep(1)
+                    .ATK1 += 2 + MainWindow.r1.Next(0, 7)
+                    Thread.Sleep(1)
+                    .DEF1 += 2 + MainWindow.r1.Next(0, 6)
+                Case 71 To 80
+                    .HPM1 += 24 + MainWindow.r1.Next(0, 16)
+                    Thread.Sleep(1)
+                    .ATK1 += 1 + MainWindow.r1.Next(0, 9)
+                    Thread.Sleep(1)
+                    .DEF1 += 1 + MainWindow.r1.Next(0, 8)
+                Case 81 To 99
+                    .HPM1 += 18 + MainWindow.r1.Next(0, 10)
+                    Thread.Sleep(1)
+                    .ATK1 += 0 + MainWindow.r1.Next(0, 6)
+                    Thread.Sleep(1)
+                    .DEF1 += 0 + MainWindow.r1.Next(0, 4)
+            End Select
+            .XPNeed1 += 65 + MainWindow.r1.Next(20, 100)
+            .XP1 = 0
+            .HP1 = .HPM1
+        End With
     End Sub
 
     Public Function DebugShow(pstring As String)
@@ -139,16 +194,19 @@ Public Class MainWindow
         Dim health(2) As Integer
         health(0) = PlayerData.HP1
         health(1) = EnemyData.HP1
-        PlayerData.HP1 = Calculate.ADCount(PlayerData.HP1, EnemyData.ATK1, PlayerData.DEF1, EnemyData.CRate1, EnemyData.CDMG1, EnemyData.ID1, PlayerData.element1)
         EnemyData.HP1 = Calculate.ADCount(EnemyData.HP1, PlayerData.ATK1, EnemyData.DEF1, PlayerData.CRate1, PlayerData.CDMG1, PlayerData.element1, EnemyData.ID1)
-        DamageCountBox.Text = "Player Taked " & (health(0) - PlayerData.HP1) & " Damages" & Chr(13) & "Enemy Taked " & (health(1) - EnemyData.HP1) & " Damages"
+        DamageCountBox.Text = Strings.s_string(96, Language) & (health(0) - PlayerData.HP1) & " Damages" & Chr(13) & "Enemy Taked " & (health(1) - EnemyData.HP1) & " Damages"
+        If EnemyData.HP1 > 0 Then
+            PlayerData.HP1 = Calculate.ADCount(PlayerData.HP1, EnemyData.ATK1, PlayerData.DEF1, EnemyData.CRate1, EnemyData.CDMG1, EnemyData.ID1, PlayerData.element1)
+            DamageCountBox.Text = DamageCountBox.Text & vbCrLf & Strings.s_string(96, Language) & (health(0) - PlayerData.HP1) & Strings.s_string(98, Language)
+        End If
         If PlayerData.HP1 <= 0 Then
             PlayerData.HP1 = PlayerData.HPM1
-            DamageCountBox.Text = DamageCountBox.Text & Chr(13) & "You fall down. The system heals for you."
+            DamageCountBox.Text = DamageCountBox.Text & vbCrLf & Strings.s_string(102, Language)
         End If
         If EnemyData.HP1 <= 0 Then
             PlayerData.XP1 += EnemyData.EXP1
-            DamageCountBox.Text = DamageCountBox.Text & Chr(13) & "You win! You Earned " & EnemyData.Coins1 & " Coins, " & EnemyData.EXP1 & " XPs."
+            DamageCountBox.Text = DamageCountBox.Text & vbCrLf & Strings.s_string(103, Language) & " " & CurrentEnemy.Coins1 & Strings.s_string(104, Language) & CurrentEnemy.EXP1 & " " & Strings.s_string(105, Language)
             EnemyData = New InitEnemy()
         End If
     End Sub
@@ -158,21 +216,21 @@ Public Class MainWindow
         health(0) = PlayerData.HP1
         health(1) = CurrentEnemy.HP1
         CurrentEnemy.HP1 = Calculate.ADCount(CurrentEnemy.HP1, PlayerData.ATK1, CurrentEnemy.DEF1, PlayerData.CRate1, PlayerData.CDMG1, PlayerData.element1, CurrentEnemy.ID1)
-        BattleMessage.Text = "Enemy Taked " & (health(1) - CurrentEnemy.HP1) & " Damages"
+        BattleMessage.Text = Strings.s_string(97, Language) & (health(1) - CurrentEnemy.HP1) & Strings.s_string(98, Language)
         If CurrentEnemy.HP1 > 0 Then
             PlayerData.HP1 = Calculate.ADCount(PlayerData.HP1, CurrentEnemy.ATK1, PlayerData.DEF1, CurrentEnemy.CRate1, CurrentEnemy.CDMG1, CurrentEnemy.ID1, PlayerData.element1)
-            BattleMessage.Text = BattleMessage.Text & vbCrLf & "Player Taked " & (health(0) - PlayerData.HP1) & " Damages"
+            BattleMessage.Text = BattleMessage.Text & vbCrLf & Strings.s_string(96, Language) & (health(0) - PlayerData.HP1) & Strings.s_string(98, Language)
         End If
         If PlayerData.HP1 <= 0 Then
             PlayerData.HP1 = PlayerData.HPM1
             Dim b As Integer
-            BattleMessage.Text = BattleMessage.Text & vbCrLf & "You fall down. The system heals for you."
+            BattleMessage.Text = BattleMessage.Text & vbCrLf & Strings.s_string(102, Language)
         End If
         If CurrentEnemy.HP1 <= 0 Then
             DES = 5000 + r1.Next(50, 2501)
             PlayerData.XP1 += CurrentEnemy.EXP1
             PlayerData.Coins1 += CurrentEnemy.Coins1
-            BattleMessage.Text = BattleMessage.Text & vbCrLf & "You win! You Earned " & CurrentEnemy.Coins1 & " Coins, " & CurrentEnemy.EXP1 & " XPs."
+            BattleMessage.Text = BattleMessage.Text & vbCrLf & Strings.s_string(103, Language) & " " & CurrentEnemy.Coins1 & Strings.s_string(104, Language) & CurrentEnemy.EXP1 & " " & Strings.s_string(105, Language)
             BattleComplete = True
             CurrentEnemy = New InitEnemy()
         End If
@@ -192,6 +250,7 @@ Public Class MainWindow
         Dim fs As New FileStream(SaveFileName, FileMode.Create)
         Dim bw As New BinaryWriter(fs)
         Dim a As Integer
+        bw.Write(SaveVersion)
         bw.Write(PlayerData.Sk)
         bw.Write(PlayerData.element1)
         bw.Write(PlayerData.Level1)
@@ -206,6 +265,7 @@ Public Class MainWindow
         bw.Write(PlayerData.CRate1)
         bw.Write(PlayerData.CDMG1)
         bw.Write(PlayerData.Coins1)
+        bw.Write(UpgradePoint)
         bw.Write(RegionID)
         bw.Write(TourDistance_1)
         bw.Write(TourDistance_2)
@@ -221,33 +281,45 @@ Public Class MainWindow
         Else
             a.InitialDirectory = WorkUserPath
         End If
-        a.Filter = "Yave's Tours Save File|*.yts" '|Yave's Tours Text File|*.txt|Yave's Tours Json File|*.json
+        a.Filter = Strings.s_string(106, Language) & "|*.yts" '|Yave's Tours Text File|*.txt|Yave's Tours Json File|*.json
         If a.ShowDialog = Windows.Forms.DialogResult.OK Then
             LoadData(a.FileName)
         End If
     End Sub
     Private Sub LoadData(LoadFileName)
         PlayerData = New InitPlayer
+        Dim SaveVer As Integer
         'MsgBox(LoadFileName, vbYes, Me.Text)
         Dim fs As New FileStream(LoadFileName, FileMode.Open)
         Dim br As New BinaryReader(fs)
-        PlayerData.Sk = br.ReadInt32
-        PlayerData.element1 = br.ReadInt32
-        PlayerData.Level1 = br.ReadInt32
-        PlayerData.CName1 = br.ReadString
-        PlayerData.XP1 = br.ReadUInt64
-        PlayerData.XPNeed1 = br.ReadUInt64
-        PlayerData.HP1 = br.ReadInt32
-        PlayerData.HPM1 = br.ReadInt32
-        PlayerData.ATK1 = br.ReadInt32
-        PlayerData.DEF1 = br.ReadInt32
-        PlayerData.SE1 = br.ReadUInt32
-        PlayerData.CRate1 = br.ReadDouble
-        PlayerData.CDMG1 = br.ReadDouble
-        PlayerData.Coins1 = br.ReadInt32
-        RegionID = br.ReadInt32
-        TourDistance_1 = br.ReadUInt64
-        TourDistance_2 = br.ReadUInt64
+        SaveVer = br.ReadInt32
+        If SaveVer = 1 Then
+            PlayerData.Sk = br.ReadInt32
+            PlayerData.element1 = br.ReadInt32
+            PlayerData.Level1 = br.ReadInt32
+            PlayerData.CName1 = br.ReadString
+            PlayerData.XP1 = br.ReadUInt64
+            PlayerData.XPNeed1 = br.ReadUInt64
+            PlayerData.HP1 = br.ReadInt32
+            PlayerData.HPM1 = br.ReadInt32
+            PlayerData.ATK1 = br.ReadInt32
+            PlayerData.DEF1 = br.ReadInt32
+            PlayerData.SE1 = br.ReadUInt32
+            PlayerData.CRate1 = br.ReadDouble
+            PlayerData.CDMG1 = br.ReadDouble
+            PlayerData.Coins1 = br.ReadInt32
+            UpgradePoint = br.ReadInt32
+            RegionID = br.ReadInt32
+            TourDistance_1 = br.ReadUInt64
+            TourDistance_2 = br.ReadUInt64
+            progress = True
+        Else
+            DebugShow(Strings.s_string(73, Language) & vbCrLf &
+                      Strings.s_string(56, Language) & ":" & SaveVersion & vbCrLf &
+                      Strings.s_string(57, Language) & ":" & SaveVer & vbCrLf &
+                      Strings.s_string(58, Language) & ":" & CompatibleVersion
+                      )
+        End If
         br.Close()
         fs.Close()
         'CalibrationData(PlayerData.Sk)
@@ -272,7 +344,6 @@ Public Class MainWindow
         'RegionID = 0
         'MsgBox("This save data is corrupted.", vbYes, Me.Text)
         'Else
-        progress = True
         'End If
     End Sub
     Private Function CalibrationData(a As Object)
@@ -329,7 +400,7 @@ Public Class MainWindow
             Else
                 b.InitialDirectory = WorkUserPath
             End If
-            b.Filter = "Yave's Tours Save File|*.yts"
+            b.Filter = Strings.s_string(106, Language) & "|*.yts"
             If b.ShowDialog = Windows.Forms.DialogResult.OK Then
                 SaveData(b.FileName)
             End If
@@ -373,10 +444,10 @@ Public Class MainWindow
                     TourDistanceCache = TourDistance_2
             End Select
             If Touring Then
-                Button7.Text = "Stop"
+                Button7.Text = Strings.s_string(61, Language)
                 Timer2.Enabled = True
             Else
-                Button7.Text = "Go Forward"
+                Button7.Text = Strings.s_string(60, Language)
                 Timer2.Enabled = False
             End If
             If PlayerData.Level1 >= 15 Then
@@ -388,6 +459,13 @@ Public Class MainWindow
                 Button7.Enabled = False
             Else
                 Button7.Enabled = True
+            End If
+            If isBattle Or Touring Or AutoBattle Then
+                RadioButton1.Enabled = False
+                RadioButton2.Enabled = False
+            Else
+                RadioButton1.Enabled = True
+                RadioButton2.Enabled = True
             End If
             If AutoBattle Then
                 DAB = True
@@ -408,11 +486,15 @@ Public Class MainWindow
                 Button11.Enabled = True
             End If
             If BattleComplete Then
+                Panel10.Enabled = False
                 DAB = True
                 isBattle = False
                 Button7.Enabled = True
+            Else
+                Panel10.Enabled = True
             End If
             RefreshData()
+            CUP()
             Panel5.Visible = False
         Else
             Panel5.Visible = True
@@ -441,7 +523,7 @@ Public Class MainWindow
                     Panel10.Visible = True
                     Touring = False
                     isBattle = True
-                    BattleMessage.Text = "Oh no! A wild " & CurrentEnemy.Name1 & " appear out on the road!"
+                    BattleMessage.Text = Strings.s_string(93, Language) & " " & CurrentEnemy.Name1 & " " & Strings.s_string(94, Language)
             End Select
         End If
     End Sub

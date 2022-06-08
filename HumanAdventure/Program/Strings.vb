@@ -56,14 +56,14 @@
         {"Shangri-La", "桃花源"},
         {"Deepevil Volcano", "幽恶火山"},
         {"Karst Cave Mine", "溶洞矿场"},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
+        {"Current Save Version", "当前的存档版本"},'56
+        {"Loading Save Version", "读取的存档版本"},
+        {"Compatible Save Version", "兼容的存档版本"},
+        {"Coming Soon...", "敬请期待..."},
+        {"Go Forward", "开始前行"},
+        {"Stop", "停止前行"},
+        {"Auto Battle", "自动战斗"},
+        {"Tour Distance", "旅行距离"},
         {"OK", "确定"},'64
         {"Cancel", "取消"},
         {"Abort", "中止"},
@@ -72,10 +72,101 @@
         {"Yes", "是"},
         {"No", "否"},
         {"List", "列表"},
-        {"to Unlock", "以解锁"},
+        {"to Unlock", "以解锁"},'72
+        {"This save version is not compatible with the current play version!", "此存档的版本不兼容当前游玩的版本！"},
+        {"Your Health.", "你的生命值。"},
+        {"Your attack determines how much damage you can deal to enemies.", "你的攻击力决定了你能对敌人造成多少伤害。"},
+        {"Your defense can block some of the damage done by the enemies.", "你的防御力可以阻挡敌人造成的一些伤害。"},
+        {"Star energy determines the multiple of elemental damage you deal to enemies.", "星星能量决定了你对敌方造成的元素伤害的倍数。"},
+        {"Crit rate determines chance you have to make a Critical hit if you take to damage for enemy.", "暴击率决定了你对敌人造成伤害时暴击的几率。"},
+        {"Crit damage is the damage done based on the percentage of attacks.", "暴击伤害是基于攻击力的百分比造成的伤害。"},
+        {"Common", "普通"},'80
+        {"Ice", "冰"},
+        {"Fire", "火"},
+        {"Water", "水"},
+        {"Earth", "土"},
+        {"Grass", "草"},
+        {"Star", "星"},
+        {"Metal", "钢铁"},
+        {"Electric", "雷电"},'88
+        {"Workspace", "工作区"},
+        {"Tour", "旅行"},
+        {"Inventory", "物品"},
+        {"Equipment", "装备"},'92
+        {"Oh no! A wild", "一个野生的"},
+        {"appear out on the road!", "出现在了路上！"},
+        {"No Mobs...", "无怪物骚扰..."},
+        {"Player Taked", "玩家受到了"},
+        {"Enemy Taked", "敌方受到了"},
+        {"Damages", "伤害"},
+        {"Elemental Damages", "元素伤害"},
+        {"Elementals are restrained and deal less damage.", "元素被克制，造成的伤害减少。"},'100
+        {"Restrained enemy elementals, dealing increased damage.", "克制了敌方元素，造成的伤害增加。"},
+        {"You fall down and a god comes along and saves you and restores all your life!", "你倒下了，此时走过来一个神，拯救了你，恢复了全部生命！"},
+        {"You beat the enemies! You Earned", "你打败了敌人！你获得了"},
+        {"Coins", "金币"},
+        {"XPs", "XP"},
+        {"Yave's Tours Save File", "Yave's Tours 存档文件"},'106
+        {"Ele. Attack", "元素攻击"},
+        {"Block", "格挡"},
+        {"Run", "逃跑"},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
         {"", ""},
         {"", ""},
         {"", ""},
         {"", ""}
     }
+    Public Shared s_enemy As String(,) = {
+        {"Slime", "史莱姆"},
+        {"Spider", "蜘蛛"},
+        {"Bat", "蝙蝠"},
+        {"Cockroach", "蟑螂"},
+        {"Mosquito", "蚊虫"},
+        {"Ice Slime", "冰史莱姆"},
+        {"Fire Slime", "火史莱姆"},
+        {"Water Slime", "水史莱姆"},
+        {"Earth Slime", "土史莱姆"},
+        {"Zombie", "僵尸"},
+        {"Infected birds", "感染的鸟"}
+        }
+    Public Shared s_basic As String(,) = {
+        {"No Basic", "无基础"}，
+        {"Ordinary", "平凡"}，
+        {"Brave", "勇敢"}，
+        {"Coward", "胆小"}，
+        {"Fearless", "无畏"}，
+        {"Confused", "迷茫"}，
+        {"Obesity", "肥胖"}，
+        {"Thin", "瘦小"}，
+        {"Rapid", "急速"}，
+        {"Timidity", "胆怯"}，
+        {"Genius", "天才"}
+        }
+    Public Shared s_skill As String(,) = {
+        {"No Skill", "无技能"}，
+        {"Alchemy", "炼金术"}，
+        {"Freeze", "冻结"}，
+        {"Burn", "燃烧"}，
+        {"Humidity", "潮湿"}，
+        {"Rampancy", "蔓生"}，
+        {"Rage", "暴怒"}
+        }
+    Public Shared s_skilldes As String(,) = {
+        {"No Skill", "无技能"}，
+        {"Felt the power of alchemy,", "感受到了炼金的力量，"}，
+        {"Deals frostbite damage to enemies.", "对敌方造成冻伤伤害。"}，
+        {"Deals burn damage to enemies.", "对敌方造成燃烧伤害。"}，
+        {"Deals spread-wet damage to enemies", "对敌方造成湿蔓伤害。"}，
+        {"Entangling an enemy has a chance to make it unable to attack. (Except ele. atk)", "对敌方造成缠绕伤害，有一定几率令对方无法发起攻击。（元素攻击除外）"}，
+        {"Deals double damage to enemies.", "对敌方造成二倍伤害。"}
+        }
 End Class

@@ -41,7 +41,7 @@
             HP = HPM
             ATK = 3 + Rand.Next(0, 2)
             DEF = 1 + Rand.Next(0, 3)
-            SE = 5
+            SE = 0
             CRate = 0.05
             CDMG = 0.5
             Coins = 0

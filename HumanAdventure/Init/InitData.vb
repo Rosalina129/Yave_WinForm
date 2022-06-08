@@ -22,7 +22,7 @@
     "Ice",          '冰
     "Fire",         '火
     "Water",        '水
-    "Earth",        '草
+    "Grass",        '草
     "Star",         '星
     "Metal",        '钢铁
     "Electric"      '雷电
