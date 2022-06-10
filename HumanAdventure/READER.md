@@ -12,6 +12,12 @@
 本质上是一个半放置游戏，但可以作为你感到非常无聊的时间里打发时间用（或者摸鱼（doge））
 
 ## 版本更新
+[0.0.1_alpha.2](https://github.com/Rosalina129/WinForm_GameCollection/releases/tag/0.0.1_alpha.2)
+
+Demo 版本的 Patch 2，主要添加了自动保存和调整语言的功能。
+
+另外完善了一些窗体框架。
+
 [0.0.1_alpha.1](https://github.com/Rosalina129/WinForm_GameCollection/releases/tag/0.0.1_alpha.1)
 
 首个版本，一些内容还未完善
