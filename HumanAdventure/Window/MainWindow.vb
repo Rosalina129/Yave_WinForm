@@ -29,9 +29,13 @@ Public Class MainWindow
     Dim isBattleDisplay As Boolean
     Dim BattleComplete As Boolean
     Dim DAB As Boolean                      'Disable Action Buttons
-    Dim ase As Integer
     Dim DES As Integer                      'Disable Enemy Spawn
     Dim DeathCount As Integer
+    Dim ABP As Byte
+    Dim CacheSaveFileName As String
+    Dim AutoSaving As Boolean
+    Dim AutoSavingCooldown As Integer
+    Dim SavedLabelShowTime As Integer
 
     Public Shared UpgradePoint As Integer
 
@@ -59,8 +63,11 @@ Public Class MainWindow
                     Case 0 To 5
                         a = r1.Next(0, 5)
                         CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
-                    Case 6 To 15
+                    Case 6 To 19
                         a = r1.Next(5, 11)
+                        CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+                    Case 20 To 35
+                        a = r1.Next(11, 13)
                         CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
                 End Select
         End Select
@@ -83,20 +90,20 @@ Public Class MainWindow
             ATKLabel.Text = .ATK1
             DEFLabel.Text = .DEF1
             SELabel.Text = .SE1
-            CRLabel.Text = .CRate1 * 100 & "%"
-            CDLabel.Text = .CDMG1 * 100 & "%"
+            CRLabel.Text = Math.Round(.CRate1 * 100, 1) & "%"
+            CDLabel.Text = Math.Round(.CDMG1 * 100, 1) & "%"
             XPLabel.Text = .XP1 & "/" & .XPNeed1
             XPMenuStrip1.Text = .XP1 & "/" & .XPNeed1
-            RegionLabel.Text = Strings.s_string(42, Language) & ": " & Strings.s_string(48 + RegionID, Language)
+            RegionLabel.Text = Strings.s_string(42, Language) & " " & Strings.s_string(48 + RegionID, Language)
             If TourDistanceCache >= 100000 Then
-                Label24.Text = Strings.s_string(63, Language) & ": " & Math.Round(TourDistanceCache / 10 ^ 5, 2) & "km"
+                Label24.Text = Strings.s_string(63, Language) & " " & Math.Round(TourDistanceCache / 10 ^ 5, 2) & "km"
             Else
-                Label24.Text = Strings.s_string(63, Language) & ": " & Math.Round(TourDistanceCache / 10 ^ 2, 2) & "m"
+                Label24.Text = Strings.s_string(63, Language) & " " & Math.Round(TourDistanceCache / 10 ^ 2, 2) & "m"
             End If
             CheckXP()
             XPBar.Maximum = .XPNeed1
             XPBar.Value = .XP1
-            Label31.Text = Strings.s_string(37, Language) & ": " & UpgradePoint
+            Label31.Text = Strings.s_string(37, Language) & " " & UpgradePoint
             CoinsToolStripMenuItem.Text = .Coins1
             If isBattleDisplay Then
                 With CurrentEnemy
@@ -121,6 +128,24 @@ Public Class MainWindow
             Label20.Text = EnemyData.HP1 & "/" & EnemyData.HPM1
             Label19.Text = EnemyData.ATK1
             Label18.Text = EnemyData.DEF1
+            If UpgradePoint >= 1 Then
+                UpgradeBut1.Visible = True
+                UpgradeBut2.Visible = True
+                UpgradeBut3.Visible = True
+                UpgradeBut6.Visible = True
+            Else
+                UpgradeBut1.Visible = False
+                UpgradeBut2.Visible = False
+                UpgradeBut3.Visible = False
+                UpgradeBut6.Visible = False
+            End If
+            If UpgradePoint >= 2 Then
+                UpgradeBut4.Visible = True
+                UpgradeBut5.Visible = True
+            Else
+                UpgradeBut4.Visible = False
+                UpgradeBut5.Visible = False
+            End If
         End With
     End Sub
     Private Sub CheckXP()
@@ -129,19 +154,10 @@ Public Class MainWindow
             PlayerData.XP1 = 0
         End If
     End Sub
-    Private Sub CUP()
-        If UpgradePoint > 0 Then
-            UpgradeLabel.Visible = True
-        Else
-            UpgradeLabel.Visible = False
-        End If
-    End Sub
     Private Sub UpgradeProp()
         With PlayerData
             .Level1 += 1
-            If .Level1 Mod 3 = 0 Then
-                UpgradePoint += 1
-            End If
+            UpgradePoint += 1 + r1.Next(0, 3)
             Select Case .Level1
                 Case 0 To 20
                     .HPM1 += 30 + MainWindow.r1.Next(0, 10)
@@ -152,15 +168,21 @@ Public Class MainWindow
                 Case 21 To 40
                     .HPM1 += 45 + MainWindow.r1.Next(0, 29)
                     Thread.Sleep(1)
-                    .ATK1 += 2 + MainWindow.r1.Next(0, 8)
+                    .ATK1 += 4 + MainWindow.r1.Next(0, 8)
                     Thread.Sleep(1)
-                    .DEF1 += 2 + MainWindow.r1.Next(0, 5)
-                Case 41 To 60
+                    .DEF1 += 4 + MainWindow.r1.Next(0, 7)
+                Case 41 To 50
                     .HPM1 += 50 + MainWindow.r1.Next(0, 48)
                     Thread.Sleep(1)
                     .ATK1 += 3 + MainWindow.r1.Next(0, 16)
                     Thread.Sleep(1)
                     .DEF1 += 3 + MainWindow.r1.Next(0, 9)
+                Case 51 To 60
+                    .HPM1 += 42 + MainWindow.r1.Next(0, 36)
+                    Thread.Sleep(1)
+                    .ATK1 += 3 + MainWindow.r1.Next(0, 12)
+                    Thread.Sleep(1)
+                    .DEF1 += 3 + MainWindow.r1.Next(0, 7)
                 Case 61 To 70
                     .HPM1 += 30 + MainWindow.r1.Next(0, 29)
                     Thread.Sleep(1)
@@ -194,12 +216,14 @@ Public Class MainWindow
         Dim health(2) As Integer
         health(0) = PlayerData.HP1
         health(1) = EnemyData.HP1
-        EnemyData.HP1 = Calculate.ADCount(EnemyData.HP1, PlayerData.ATK1, EnemyData.DEF1, PlayerData.CRate1, PlayerData.CDMG1, PlayerData.element1, EnemyData.ID1)
+        EnemyData.HP1 = Calculate.ADCount(EnemyData.HP1, PlayerData.ATK1, EnemyData.DEF1, PlayerData.CRate1, PlayerData.CDMG1)
         DamageCountBox.Text = Strings.s_string(96, Language) & (health(0) - PlayerData.HP1) & " Damages" & Chr(13) & "Enemy Taked " & (health(1) - EnemyData.HP1) & " Damages"
+        Thread.Sleep(1)
         If EnemyData.HP1 > 0 Then
-            PlayerData.HP1 = Calculate.ADCount(PlayerData.HP1, EnemyData.ATK1, PlayerData.DEF1, EnemyData.CRate1, EnemyData.CDMG1, EnemyData.ID1, PlayerData.element1)
+            PlayerData.HP1 = Calculate.ADCount(PlayerData.HP1, EnemyData.ATK1, PlayerData.DEF1, EnemyData.CRate1, EnemyData.CDMG1)
             DamageCountBox.Text = DamageCountBox.Text & vbCrLf & Strings.s_string(96, Language) & (health(0) - PlayerData.HP1) & Strings.s_string(98, Language)
         End If
+        Thread.Sleep(1)
         If PlayerData.HP1 <= 0 Then
             PlayerData.HP1 = PlayerData.HPM1
             DamageCountBox.Text = DamageCountBox.Text & vbCrLf & Strings.s_string(102, Language)
@@ -215,22 +239,33 @@ Public Class MainWindow
         Dim health(2) As Integer
         health(0) = PlayerData.HP1
         health(1) = CurrentEnemy.HP1
-        CurrentEnemy.HP1 = Calculate.ADCount(CurrentEnemy.HP1, PlayerData.ATK1, CurrentEnemy.DEF1, PlayerData.CRate1, PlayerData.CDMG1, PlayerData.element1, CurrentEnemy.ID1)
+        CurrentEnemy.HP1 = Calculate.ADCount(CurrentEnemy.HP1, PlayerData.ATK1, CurrentEnemy.DEF1, PlayerData.CRate1, PlayerData.CDMG1)
         BattleMessage.Text = Strings.s_string(97, Language) & (health(1) - CurrentEnemy.HP1) & Strings.s_string(98, Language)
+        Thread.Sleep(1)
+        If (health(1) - CurrentEnemy.HP1) = 1 Then
+            If Language = 0 Then
+                BattleMessage.Text = BattleMessage.Text & "s"
+            End If
+        End If
+        Thread.Sleep(1)
         If CurrentEnemy.HP1 > 0 Then
-            PlayerData.HP1 = Calculate.ADCount(PlayerData.HP1, CurrentEnemy.ATK1, PlayerData.DEF1, CurrentEnemy.CRate1, CurrentEnemy.CDMG1, CurrentEnemy.ID1, PlayerData.element1)
+            PlayerData.HP1 = Calculate.ADCount(PlayerData.HP1, CurrentEnemy.ATK1, PlayerData.DEF1, CurrentEnemy.CRate1, CurrentEnemy.CDMG1)
             BattleMessage.Text = BattleMessage.Text & vbCrLf & Strings.s_string(96, Language) & (health(0) - PlayerData.HP1) & Strings.s_string(98, Language)
+            If (health(0) - PlayerData.HP1) = 1 Then
+                If Language = 0 Then
+                    BattleMessage.Text = BattleMessage.Text & "s"
+                End If
+            End If
         End If
         If PlayerData.HP1 <= 0 Then
             PlayerData.HP1 = PlayerData.HPM1
-            Dim b As Integer
             BattleMessage.Text = BattleMessage.Text & vbCrLf & Strings.s_string(102, Language)
         End If
         If CurrentEnemy.HP1 <= 0 Then
             DES = 5000 + r1.Next(50, 2501)
             PlayerData.XP1 += CurrentEnemy.EXP1
             PlayerData.Coins1 += CurrentEnemy.Coins1
-            BattleMessage.Text = BattleMessage.Text & vbCrLf & Strings.s_string(103, Language) & " " & CurrentEnemy.Coins1 & Strings.s_string(104, Language) & CurrentEnemy.EXP1 & " " & Strings.s_string(105, Language)
+            BattleMessage.Text = BattleMessage.Text & vbCrLf & Strings.s_string(103, Language) & " " & CurrentEnemy.Coins1 & " " & Strings.s_string(104, Language) & ", " & CurrentEnemy.EXP1 & " " & Strings.s_string(105, Language)
             BattleComplete = True
             CurrentEnemy = New InitEnemy()
         End If
@@ -247,9 +282,9 @@ Public Class MainWindow
         End If
     End Sub
     Private Sub SaveData(SaveFileName As String)
+        CacheSaveFileName = SaveFileName
         Dim fs As New FileStream(SaveFileName, FileMode.Create)
         Dim bw As New BinaryWriter(fs)
-        Dim a As Integer
         bw.Write(SaveVersion)
         bw.Write(PlayerData.Sk)
         bw.Write(PlayerData.element1)
@@ -271,7 +306,7 @@ Public Class MainWindow
         bw.Write(TourDistance_2)
         bw.Close()
         fs.Close()
-        MsgBox("Saved!", vbYes, Me.Text)
+        SavedLabelShowTime = 180
     End Sub
     Private Sub OpenFileDialog()
         Dim a As New OpenFileDialog
@@ -287,6 +322,7 @@ Public Class MainWindow
         End If
     End Sub
     Private Sub LoadData(LoadFileName)
+        CacheSaveFileName = LoadFileName
         PlayerData = New InitPlayer
         Dim SaveVer As Integer
         'MsgBox(LoadFileName, vbYes, Me.Text)
@@ -353,6 +389,8 @@ Public Class MainWindow
             Return a
         End If
     End Function
+
+    ''Program Start!!!
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not Directory.Exists(DefaultFolderPath) Then
             Directory.CreateDirectory(DefaultFolderPath)
@@ -362,8 +400,10 @@ Public Class MainWindow
             a = File.Create(DefaultINIPath)
             a.Close()
             writeINI(DefaultINIPath, "Options", "Language", "en_us")
+            writeINI(DefaultINIPath, "Options", "Autosave", "false")
         Else
             Dim a As String
+            Dim b As Boolean
             a = sGetINI(DefaultINIPath, "Options", "Language", "en_us")
             Select Case a
                 Case "en_us"
@@ -371,6 +411,9 @@ Public Class MainWindow
                 Case "zh_cn"
                     Language = 1
             End Select
+            b = sGetINI(DefaultINIPath, "Options", "Autosave", "false")
+            CheckBox2.Checked = b
+            AutoSaving = b
         End If
         Lang.setstr(Language)
         Panel10.Visible = False
@@ -384,6 +427,15 @@ Public Class MainWindow
         CurrentEnemy = New InitEnemy()
 
         CheckDirectory()
+        ComboBox1.SelectedIndex = 0
+        ComboBox2.SelectedIndex = 0
+        ComboBox3.SelectedIndex = 0
+        Select Case Language
+            Case 0
+                RadioButton5.Checked = True
+            Case 1
+                RadioButton6.Checked = True
+        End Select
     End Sub
     Private Sub SaveDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveDataToolStripMenuItem.Click
         Dim a As Integer
@@ -393,16 +445,20 @@ Public Class MainWindow
                 OpenFileDialog()
             End If
         Else
-            Dim b As New SaveFileDialog
-            CheckDirectory()
-            If WorkUserPath <> "" Then
-                b.InitialDirectory = WorkDefaultPath
+            If CacheSaveFileName = "" Then
+                Dim b As New SaveFileDialog
+                CheckDirectory()
+                If WorkUserPath <> "" Then
+                    b.InitialDirectory = WorkDefaultPath
+                Else
+                    b.InitialDirectory = WorkUserPath
+                End If
+                b.Filter = Strings.s_string(106, Language) & "|*.yts"
+                If b.ShowDialog = Windows.Forms.DialogResult.OK Then
+                    SaveData(b.FileName)
+                End If
             Else
-                b.InitialDirectory = WorkUserPath
-            End If
-            b.Filter = Strings.s_string(106, Language) & "|*.yts"
-            If b.ShowDialog = Windows.Forms.DialogResult.OK Then
-                SaveData(b.FileName)
+                SaveData(CacheSaveFileName)
             End If
         End If
     End Sub
@@ -413,16 +469,9 @@ Public Class MainWindow
     End Sub
 
     Private Sub NewSaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewSaveToolStripMenuItem.Click
-        NewSave.ShowDialog()
-    End Sub
-    Public Sub LanguageChange(a As Byte)
-        Language = a
-        Select Case a
-            Case 0
-
-            Case 1
-
-        End Select
+        If Not isBattle Then
+            NewSave.ShowDialog()
+        End If
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         r1r = r1.NextDouble
@@ -493,8 +542,30 @@ Public Class MainWindow
             Else
                 Panel10.Enabled = True
             End If
+            If PlayerData.HP1 > PlayerData.HPM1 Then
+                PlayerData.HP1 = PlayerData.HPM1
+            End If
+            If AutoSaving Then
+                If Not isBattle Then
+                    AutoSavingCooldown += 1
+                    If AutoSavingCooldown = 100 * 60 Then
+                        If Not CacheSaveFileName = "" Then
+                            SaveData(CacheSaveFileName)
+                            SavedLabelShowTime = 180
+                        End If
+                        AutoSavingCooldown = 0
+                    End If
+                End If
+            Else
+                Label37.Visible = False
+            End If
+            If SavedLabelShowTime > 0 Then
+                SavedLabelShowTime -= 1
+                Label37.Visible = True
+            Else
+                Label37.Visible = False
+            End If
             RefreshData()
-            CUP()
             Panel5.Visible = False
         Else
             Panel5.Visible = True
@@ -511,10 +582,14 @@ Public Class MainWindow
         DES -= (1 + r1.Next(0, 4))
         Dim b As Double
         b = r1.NextDouble()
-        Select Case b
-            Case 0 To 0.008
-                PlayerData.XP1 += 1
-        End Select
+        With PlayerData
+            Select Case b
+                Case 0 To 0.01
+                    .XP1 += 1
+                Case 0.01 To 0.013
+                    .HP1 += .HPM1 / 100
+            End Select
+        End With
         If DES <= 0 Then
             Select Case b
                 Case 0 To 0.005
@@ -536,13 +611,17 @@ Public Class MainWindow
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        NewSave.ShowDialog()
+        If Not isBattle Then
+            NewSave.ShowDialog()
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        OpenFileDialog()
+        If Not isBattle Then
+            OpenFileDialog()
+        End If
     End Sub
-    Private Sub UpgradeLabel_Click(sender As Object, e As EventArgs) Handles UpgradeLabel.Click
+    Private Sub UpgradeLabel_Click(sender As Object, e As EventArgs)
         Upgrade.Show()
     End Sub
 
@@ -551,7 +630,7 @@ Public Class MainWindow
         System.Diagnostics.Process.Start("https://github.com/Rosalina129/abattlegame/issues")
     End Sub
 
-    Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
+    Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Settings.ShowDialog()
     End Sub
 
@@ -664,4 +743,138 @@ Public Class MainWindow
         OpenFileDialog()
     End Sub
 
+    Private Sub CPPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CPPToolStripMenuItem.Click
+        If progress Then
+            CPP.Show()
+        End If
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        With ComboBox1
+            If .SelectedIndex = 1 Then
+                ComboBox2.Enabled = True
+            Else
+                ComboBox2.Enabled = False
+            End If
+        End With
+    End Sub
+
+    Private Sub RadioButton5_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton5.CheckedChanged
+        Language = 0
+        writeINI(DefaultINIPath, "Options", "Language", "en_us")
+    End Sub
+    Private Sub RadioButton6_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton6.CheckedChanged
+        Language = 1
+        writeINI(DefaultINIPath, "Options", "Language", "zh_cn")
+    End Sub
+
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+        Select Case CheckBox2.Checked
+            Case True
+                writeINI(DefaultINIPath, "Options", "Autosave", "true")
+                AutoSaving = True
+            Case False
+                writeINI(DefaultINIPath, "Options", "Autosave", "false")
+                AutoSaving = False
+        End Select
+    End Sub
+    Private Sub UpgradeBut1_Click(sender As Object, e As EventArgs) Handles UpgradeBut1.Click
+        With PlayerData
+            Select Case .Level1
+                Case 0 To 20
+                    .HPM1 += 48 + MainWindow.r1.Next(0, 30)
+                Case 21 To 40
+                    .HPM1 += 72 + MainWindow.r1.Next(0, 56)
+                Case 41 To 50
+                    .HPM1 += 114 + MainWindow.r1.Next(0, 109)
+                Case 51 To 60
+                    .HPM1 += 76 + MainWindow.r1.Next(0, 80)
+                Case 61 To 70
+                    .HPM1 += 52 + MainWindow.r1.Next(0, 56)
+                Case 71 To 80
+                    .HPM1 += 34 + MainWindow.r1.Next(0, 32)
+                Case 81 To 99
+                    .HPM1 += 28 + MainWindow.r1.Next(0, 19)
+            End Select
+            UpgradePoint -= 1
+        End With
+    End Sub
+    Private Sub UpgradeBut2_Click(sender As Object, e As EventArgs) Handles UpgradeBut2.Click
+        With PlayerData
+            Select Case .Level1
+                Case 0 To 20
+                    .ATK1 += 3 + MainWindow.r1.Next(0, 3)
+                Case 21 To 40
+                    .ATK1 += 5 + MainWindow.r1.Next(0, 8)
+                Case 41 To 50
+                    .ATK1 += 7 + MainWindow.r1.Next(0, 16)
+                Case 51 To 60
+                    .ATK1 += 4 + MainWindow.r1.Next(0, 12)
+                Case 61 To 70
+                    .ATK1 += 3 + MainWindow.r1.Next(0, 10)
+                Case 71 To 80
+                    .ATK1 += 2 + MainWindow.r1.Next(0, 8)
+                Case 81 To 99
+                    .ATK1 += 1 + MainWindow.r1.Next(0, 5)
+            End Select
+            UpgradePoint -= 1
+        End With
+    End Sub
+    Private Sub UpgradeBut3_Click(sender As Object, e As EventArgs) Handles UpgradeBut3.Click
+        With PlayerData
+            Select Case .Level1
+                Case 0 To 20
+                    .DEF1 += 3 + MainWindow.r1.Next(0, 3)
+                Case 21 To 40
+                    .DEF1 += 5 + MainWindow.r1.Next(0, 8)
+                Case 41 To 50
+                    .DEF1 += 7 + MainWindow.r1.Next(0, 16)
+                Case 51 To 60
+                    .DEF1 += 4 + MainWindow.r1.Next(0, 12)
+                Case 61 To 70
+                    .DEF1 += 3 + MainWindow.r1.Next(0, 10)
+                Case 71 To 80
+                    .DEF1 += 2 + MainWindow.r1.Next(0, 8)
+                Case 81 To 99
+                    .DEF1 += 1 + MainWindow.r1.Next(0, 5)
+            End Select
+            UpgradePoint -= 1
+        End With
+    End Sub
+    Private Sub UpgradeBut4_Click(sender As Object, e As EventArgs) Handles UpgradeBut4.Click
+        With PlayerData
+            .SE1 += 1 + MainWindow.r1.Next(0, 3)
+            UpgradePoint -= 2
+        End With
+    End Sub
+    Private Sub UpgradeBut5_Click(sender As Object, e As EventArgs) Handles UpgradeBut5.Click
+        With PlayerData
+            .CRate1 += MainWindow.r1.NextDouble() * 0.01
+            UpgradePoint -= 2
+        End With
+    End Sub
+    Private Sub UpgradeBut6_Click(sender As Object, e As EventArgs) Handles UpgradeBut6.Click
+        With PlayerData
+            .CDMG1 += 0.01 + MainWindow.r1.NextDouble() * 0.01
+            UpgradePoint -= 1
+        End With
+    End Sub
+
+    Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox3.SelectedIndexChanged
+        ABP = ComboBox3.SelectedIndex
+    End Sub
+
+    Private Sub SaveAsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveAsToolStripMenuItem.Click
+        Dim b As New SaveFileDialog
+        CheckDirectory()
+        If WorkUserPath <> "" Then
+            b.InitialDirectory = WorkDefaultPath
+        Else
+            b.InitialDirectory = WorkUserPath
+        End If
+        b.Filter = Strings.s_string(106, Language) & "|*.yts"
+        If b.ShowDialog = Windows.Forms.DialogResult.OK Then
+            SaveData(b.FileName)
+        End If
+    End Sub
 End Class

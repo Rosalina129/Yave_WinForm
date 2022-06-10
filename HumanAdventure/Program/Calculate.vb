@@ -6,7 +6,7 @@ Public Class Calculate
     '防御值物免率换算方法1：
 
     '防御值物免率=1-1/(1+防守者防御总值/10)
-    Public Shared Function ADCount(hp As Integer, a As Integer, ed As Integer, crate As Double, cdmg As Double, eleS As Integer, eleT As Integer)
+    Public Shared Function ADCount(hp As Integer, a As Integer, ed As Integer, crate As Double, cdmg As Double)
         Dim r1 As New Random
         Thread.Sleep(1)             'Force pausing the program process for 1 ms to refresh random seed values.
         Dim c As Double

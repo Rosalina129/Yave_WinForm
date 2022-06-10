@@ -30,12 +30,8 @@ Partial Class MainWindow
         Me.LoadDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TextFormatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.JSONFormatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ItemListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShowDebugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HealHPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CPPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -50,6 +46,12 @@ Partial Class MainWindow
         Me.ProBasic = New System.Windows.Forms.TabPage()
         Me.SkillBasic = New System.Windows.Forms.TabPage()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.UpgradeBut6 = New System.Windows.Forms.Button()
+        Me.UpgradeBut5 = New System.Windows.Forms.Button()
+        Me.UpgradeBut4 = New System.Windows.Forms.Button()
+        Me.UpgradeBut3 = New System.Windows.Forms.Button()
+        Me.UpgradeBut2 = New System.Windows.Forms.Button()
+        Me.UpgradeBut1 = New System.Windows.Forms.Button()
         Me.CDLabel = New System.Windows.Forms.Label()
         Me.CRLabel = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -64,8 +66,8 @@ Partial Class MainWindow
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label37 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.UpgradeLabel = New System.Windows.Forms.Label()
         Me.XPLabel = New System.Windows.Forms.Label()
         Me.LabelLevel = New System.Windows.Forms.Label()
         Me.Level = New System.Windows.Forms.Label()
@@ -108,12 +110,26 @@ Partial Class MainWindow
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Inventory = New System.Windows.Forms.TabPage()
         Me.Equipment = New System.Windows.Forms.TabPage()
+        Me.Options = New System.Windows.Forms.TabPage()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.EasterEgg = New System.Windows.Forms.Button()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label32 = New System.Windows.Forms.Label()
         Me.Experimental = New System.Windows.Forms.TabPage()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.DamageCountBox = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -154,6 +170,7 @@ Partial Class MainWindow
         Me.AutoBattleTimer = New System.Windows.Forms.Timer(Me.components)
         Me.BattleTime = New System.Windows.Forms.Timer(Me.components)
         Me.BattleCooldown = New System.Windows.Forms.Timer(Me.components)
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -169,6 +186,9 @@ Partial Class MainWindow
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.Panel11.SuspendLayout()
+        Me.Options.SuspendLayout()
+        Me.Panel12.SuspendLayout()
+        Me.Panel13.SuspendLayout()
         Me.Experimental.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -222,32 +242,13 @@ Partial Class MainWindow
         '
         'SaveAsToolStripMenuItem
         '
-        Me.SaveAsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TextFormatToolStripMenuItem, Me.ToolStripSeparator1, Me.JSONFormatToolStripMenuItem})
         Me.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
         Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.SaveAsToolStripMenuItem.Text = "Save As..."
         '
-        'TextFormatToolStripMenuItem
-        '
-        Me.TextFormatToolStripMenuItem.Name = "TextFormatToolStripMenuItem"
-        Me.TextFormatToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
-        Me.TextFormatToolStripMenuItem.Text = "Text Format"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(140, 6)
-        '
-        'JSONFormatToolStripMenuItem
-        '
-        Me.JSONFormatToolStripMenuItem.Enabled = False
-        Me.JSONFormatToolStripMenuItem.Name = "JSONFormatToolStripMenuItem"
-        Me.JSONFormatToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
-        Me.JSONFormatToolStripMenuItem.Text = "JSON Format"
-        '
         'ViewToolStripMenuItem
         '
-        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItemListToolStripMenuItem, Me.SettingsToolStripMenuItem})
+        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItemListToolStripMenuItem})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
         Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.ViewToolStripMenuItem.Text = "Options"
@@ -255,14 +256,8 @@ Partial Class MainWindow
         'ItemListToolStripMenuItem
         '
         Me.ItemListToolStripMenuItem.Name = "ItemListToolStripMenuItem"
-        Me.ItemListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ItemListToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
         Me.ItemListToolStripMenuItem.Text = "Item List"
-        '
-        'SettingsToolStripMenuItem
-        '
-        Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
-        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.SettingsToolStripMenuItem.Text = "Settings"
         '
         'ShowDebugToolStripMenuItem
         '
@@ -293,13 +288,13 @@ Partial Class MainWindow
         'AboutsToolStripMenuItem
         '
         Me.AboutsToolStripMenuItem.Name = "AboutsToolStripMenuItem"
-        Me.AboutsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutsToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.AboutsToolStripMenuItem.Text = "About Software"
         '
         'FeedbackToolStripMenuItem
         '
         Me.FeedbackToolStripMenuItem.Name = "FeedbackToolStripMenuItem"
-        Me.FeedbackToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FeedbackToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.FeedbackToolStripMenuItem.Text = "Feedback"
         '
         'CoinsToolStripMenuItem
@@ -343,10 +338,10 @@ Partial Class MainWindow
         Me.TabControl1.Controls.Add(Me.ProBasic)
         Me.TabControl1.Controls.Add(Me.SkillBasic)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TabControl1.Location = New System.Drawing.Point(0, 282)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 275)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(239, 245)
+        Me.TabControl1.Size = New System.Drawing.Size(239, 252)
         Me.TabControl1.TabIndex = 8
         '
         'ProBasic
@@ -354,7 +349,7 @@ Partial Class MainWindow
         Me.ProBasic.Location = New System.Drawing.Point(4, 24)
         Me.ProBasic.Name = "ProBasic"
         Me.ProBasic.Padding = New System.Windows.Forms.Padding(3)
-        Me.ProBasic.Size = New System.Drawing.Size(231, 217)
+        Me.ProBasic.Size = New System.Drawing.Size(231, 224)
         Me.ProBasic.TabIndex = 0
         Me.ProBasic.Text = "Basic"
         Me.ProBasic.UseVisualStyleBackColor = True
@@ -364,7 +359,7 @@ Partial Class MainWindow
         Me.SkillBasic.Location = New System.Drawing.Point(4, 24)
         Me.SkillBasic.Name = "SkillBasic"
         Me.SkillBasic.Padding = New System.Windows.Forms.Padding(3)
-        Me.SkillBasic.Size = New System.Drawing.Size(231, 217)
+        Me.SkillBasic.Size = New System.Drawing.Size(231, 224)
         Me.SkillBasic.TabIndex = 1
         Me.SkillBasic.Text = "Skill"
         Me.SkillBasic.UseVisualStyleBackColor = True
@@ -372,6 +367,12 @@ Partial Class MainWindow
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.UpgradeBut6)
+        Me.Panel3.Controls.Add(Me.UpgradeBut5)
+        Me.Panel3.Controls.Add(Me.UpgradeBut4)
+        Me.Panel3.Controls.Add(Me.UpgradeBut3)
+        Me.Panel3.Controls.Add(Me.UpgradeBut2)
+        Me.Panel3.Controls.Add(Me.UpgradeBut1)
         Me.Panel3.Controls.Add(Me.CDLabel)
         Me.Panel3.Controls.Add(Me.CRLabel)
         Me.Panel3.Controls.Add(Me.Label6)
@@ -389,6 +390,72 @@ Partial Class MainWindow
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(231, 160)
         Me.Panel3.TabIndex = 7
+        '
+        'UpgradeBut6
+        '
+        Me.UpgradeBut6.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.UpgradeBut6.Location = New System.Drawing.Point(208, 138)
+        Me.UpgradeBut6.Name = "UpgradeBut6"
+        Me.UpgradeBut6.Size = New System.Drawing.Size(18, 18)
+        Me.UpgradeBut6.TabIndex = 24
+        Me.UpgradeBut6.Tag = "upgradebutton"
+        Me.UpgradeBut6.Text = "+"
+        Me.UpgradeBut6.UseVisualStyleBackColor = True
+        '
+        'UpgradeBut5
+        '
+        Me.UpgradeBut5.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.UpgradeBut5.Location = New System.Drawing.Point(208, 118)
+        Me.UpgradeBut5.Name = "UpgradeBut5"
+        Me.UpgradeBut5.Size = New System.Drawing.Size(18, 18)
+        Me.UpgradeBut5.TabIndex = 23
+        Me.UpgradeBut5.Tag = "upgradebutton"
+        Me.UpgradeBut5.Text = "+"
+        Me.UpgradeBut5.UseVisualStyleBackColor = True
+        '
+        'UpgradeBut4
+        '
+        Me.UpgradeBut4.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.UpgradeBut4.Location = New System.Drawing.Point(208, 98)
+        Me.UpgradeBut4.Name = "UpgradeBut4"
+        Me.UpgradeBut4.Size = New System.Drawing.Size(18, 18)
+        Me.UpgradeBut4.TabIndex = 22
+        Me.UpgradeBut4.Tag = "upgradebutton"
+        Me.UpgradeBut4.Text = "+"
+        Me.UpgradeBut4.UseVisualStyleBackColor = True
+        '
+        'UpgradeBut3
+        '
+        Me.UpgradeBut3.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.UpgradeBut3.Location = New System.Drawing.Point(208, 78)
+        Me.UpgradeBut3.Name = "UpgradeBut3"
+        Me.UpgradeBut3.Size = New System.Drawing.Size(18, 18)
+        Me.UpgradeBut3.TabIndex = 21
+        Me.UpgradeBut3.Tag = "upgradebutton"
+        Me.UpgradeBut3.Text = "+"
+        Me.UpgradeBut3.UseVisualStyleBackColor = True
+        '
+        'UpgradeBut2
+        '
+        Me.UpgradeBut2.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.UpgradeBut2.Location = New System.Drawing.Point(208, 58)
+        Me.UpgradeBut2.Name = "UpgradeBut2"
+        Me.UpgradeBut2.Size = New System.Drawing.Size(18, 18)
+        Me.UpgradeBut2.TabIndex = 20
+        Me.UpgradeBut2.Tag = "upgradebutton"
+        Me.UpgradeBut2.Text = "+"
+        Me.UpgradeBut2.UseVisualStyleBackColor = True
+        '
+        'UpgradeBut1
+        '
+        Me.UpgradeBut1.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.UpgradeBut1.Location = New System.Drawing.Point(208, 38)
+        Me.UpgradeBut1.Name = "UpgradeBut1"
+        Me.UpgradeBut1.Size = New System.Drawing.Size(18, 18)
+        Me.UpgradeBut1.TabIndex = 19
+        Me.UpgradeBut1.Tag = "upgradebutton"
+        Me.UpgradeBut1.Text = "+"
+        Me.UpgradeBut1.UseVisualStyleBackColor = True
         '
         'CDLabel
         '
@@ -536,8 +603,8 @@ Partial Class MainWindow
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Label37)
         Me.Panel2.Controls.Add(Me.Label31)
-        Me.Panel2.Controls.Add(Me.UpgradeLabel)
         Me.Panel2.Controls.Add(Me.XPLabel)
         Me.Panel2.Controls.Add(Me.LabelLevel)
         Me.Panel2.Controls.Add(Me.Level)
@@ -548,6 +615,16 @@ Partial Class MainWindow
         Me.Panel2.Size = New System.Drawing.Size(200, 103)
         Me.Panel2.TabIndex = 6
         '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(141, 9)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(41, 15)
+        Me.Label37.TabIndex = 10
+        Me.Label37.Text = "Saved!"
+        Me.Label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'Label31
         '
         Me.Label31.AutoSize = True
@@ -557,18 +634,6 @@ Partial Class MainWindow
         Me.Label31.TabIndex = 9
         Me.Label31.Text = "Upgrade Points"
         Me.Label31.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'UpgradeLabel
-        '
-        Me.UpgradeLabel.AutoSize = True
-        Me.UpgradeLabel.Cursor = System.Windows.Forms.Cursors.UpArrow
-        Me.UpgradeLabel.ForeColor = System.Drawing.Color.DarkOliveGreen
-        Me.UpgradeLabel.Location = New System.Drawing.Point(143, 64)
-        Me.UpgradeLabel.Name = "UpgradeLabel"
-        Me.UpgradeLabel.Size = New System.Drawing.Size(52, 15)
-        Me.UpgradeLabel.TabIndex = 7
-        Me.UpgradeLabel.Text = "Upgrade"
-        Me.UpgradeLabel.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'XPLabel
         '
@@ -696,6 +761,7 @@ Partial Class MainWindow
         Me.TabControl2.Controls.Add(Me.Tour)
         Me.TabControl2.Controls.Add(Me.Inventory)
         Me.TabControl2.Controls.Add(Me.Equipment)
+        Me.TabControl2.Controls.Add(Me.Options)
         Me.TabControl2.Controls.Add(Me.Experimental)
         Me.TabControl2.Location = New System.Drawing.Point(6, 20)
         Me.TabControl2.Name = "TabControl2"
@@ -972,6 +1038,161 @@ Partial Class MainWindow
         Me.Equipment.Text = "Equipment"
         Me.Equipment.UseVisualStyleBackColor = True
         '
+        'Options
+        '
+        Me.Options.Controls.Add(Me.Panel12)
+        Me.Options.Location = New System.Drawing.Point(4, 24)
+        Me.Options.Name = "Options"
+        Me.Options.Size = New System.Drawing.Size(423, 280)
+        Me.Options.TabIndex = 4
+        Me.Options.Text = "Options"
+        Me.Options.UseVisualStyleBackColor = True
+        '
+        'Panel12
+        '
+        Me.Panel12.AutoScroll = True
+        Me.Panel12.Controls.Add(Me.TextBox3)
+        Me.Panel12.Controls.Add(Me.ComboBox3)
+        Me.Panel12.Controls.Add(Me.Label36)
+        Me.Panel12.Controls.Add(Me.EasterEgg)
+        Me.Panel12.Controls.Add(Me.Panel13)
+        Me.Panel12.Controls.Add(Me.Label35)
+        Me.Panel12.Controls.Add(Me.CheckBox2)
+        Me.Panel12.Controls.Add(Me.Label34)
+        Me.Panel12.Controls.Add(Me.ComboBox2)
+        Me.Panel12.Controls.Add(Me.Label33)
+        Me.Panel12.Controls.Add(Me.ComboBox1)
+        Me.Panel12.Controls.Add(Me.Label32)
+        Me.Panel12.Location = New System.Drawing.Point(3, 3)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(417, 274)
+        Me.Panel12.TabIndex = 0
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Items.AddRange(New Object() {"Use normal damage first", "Use elemental damage first"})
+        Me.ComboBox3.Location = New System.Drawing.Point(7, 87)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(121, 23)
+        Me.ComboBox3.TabIndex = 10
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(4, 69)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(148, 15)
+        Me.Label36.TabIndex = 9
+        Me.Label36.Text = "Automatic combat priority"
+        '
+        'EasterEgg
+        '
+        Me.EasterEgg.Location = New System.Drawing.Point(7, 282)
+        Me.EasterEgg.Name = "EasterEgg"
+        Me.EasterEgg.Size = New System.Drawing.Size(75, 23)
+        Me.EasterEgg.TabIndex = 8
+        Me.EasterEgg.Text = "Easter Egg"
+        Me.EasterEgg.UseVisualStyleBackColor = True
+        '
+        'Panel13
+        '
+        Me.Panel13.Controls.Add(Me.RadioButton6)
+        Me.Panel13.Controls.Add(Me.RadioButton5)
+        Me.Panel13.Location = New System.Drawing.Point(7, 181)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(171, 54)
+        Me.Panel13.TabIndex = 7
+        '
+        'RadioButton6
+        '
+        Me.RadioButton6.AutoSize = True
+        Me.RadioButton6.Location = New System.Drawing.Point(5, 28)
+        Me.RadioButton6.Name = "RadioButton6"
+        Me.RadioButton6.Size = New System.Drawing.Size(156, 19)
+        Me.RadioButton6.TabIndex = 1
+        Me.RadioButton6.TabStop = True
+        Me.RadioButton6.Text = "Chinese Simplified (PRC)"
+        Me.RadioButton6.UseVisualStyleBackColor = True
+        '
+        'RadioButton5
+        '
+        Me.RadioButton5.AutoSize = True
+        Me.RadioButton5.Location = New System.Drawing.Point(5, 3)
+        Me.RadioButton5.Name = "RadioButton5"
+        Me.RadioButton5.Size = New System.Drawing.Size(88, 19)
+        Me.RadioButton5.TabIndex = 0
+        Me.RadioButton5.TabStop = True
+        Me.RadioButton5.Text = "English (US)"
+        Me.RadioButton5.UseVisualStyleBackColor = True
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.Label35.Location = New System.Drawing.Point(4, 158)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(74, 20)
+        Me.Label35.TabIndex = 6
+        Me.Label35.Text = "Language"
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(8, 136)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(117, 19)
+        Me.CheckBox2.TabIndex = 5
+        Me.CheckBox2.Text = "Enable Auto Save"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.Label34.Location = New System.Drawing.Point(3, 113)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(76, 20)
+        Me.Label34.TabIndex = 4
+        Me.Label34.Text = "Auto Save"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"Default", "item1", "item2", "item3", "item4", "item5", "item6"})
+        Me.ComboBox2.Location = New System.Drawing.Point(134, 43)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(121, 23)
+        Me.ComboBox2.TabIndex = 3
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(4, 27)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(169, 15)
+        Me.Label33.TabIndex = 2
+        Me.Label33.Text = "Coins shop purchasing priority"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"No any", "Player prop.", "Equipment"})
+        Me.ComboBox1.Location = New System.Drawing.Point(7, 43)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 23)
+        Me.ComboBox1.TabIndex = 1
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.Label32.Location = New System.Drawing.Point(3, 0)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(93, 20)
+        Me.Label32.TabIndex = 0
+        Me.Label32.Text = "Auto priority"
+        '
         'Experimental
         '
         Me.Experimental.Controls.Add(Me.Panel8)
@@ -1017,7 +1238,6 @@ Partial Class MainWindow
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.Button6)
         Me.GroupBox4.Controls.Add(Me.Label21)
         Me.GroupBox4.Controls.Add(Me.Button5)
         Me.GroupBox4.Controls.Add(Me.Label18)
@@ -1032,15 +1252,6 @@ Partial Class MainWindow
         Me.GroupBox4.TabIndex = 10
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Enemy Status"
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(105, 122)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(98, 23)
-        Me.Button6.TabIndex = 24
-        Me.Button6.Text = "Automation"
-        Me.Button6.UseVisualStyleBackColor = True
         '
         'Label21
         '
@@ -1422,6 +1633,20 @@ Partial Class MainWindow
         '
         Me.BattleCooldown.Interval = 1000
         '
+        'TextBox3
+        '
+        Me.TextBox3.BackColor = System.Drawing.SystemColors.Menu
+        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox3.CausesValidation = False
+        Me.TextBox3.Location = New System.Drawing.Point(7, 241)
+        Me.TextBox3.Multiline = True
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
+        Me.TextBox3.ShortcutsEnabled = False
+        Me.TextBox3.Size = New System.Drawing.Size(387, 35)
+        Me.TextBox3.TabIndex = 18
+        Me.TextBox3.Text = "qwq"
+        '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -1462,6 +1687,11 @@ Partial Class MainWindow
         Me.Panel10.PerformLayout()
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
+        Me.Options.ResumeLayout(False)
+        Me.Panel12.ResumeLayout(False)
+        Me.Panel12.PerformLayout()
+        Me.Panel13.ResumeLayout(False)
+        Me.Panel13.PerformLayout()
         Me.Experimental.ResumeLayout(False)
         Me.Experimental.PerformLayout()
         Me.Panel8.ResumeLayout(False)
@@ -1506,7 +1736,6 @@ Partial Class MainWindow
     Friend WithEvents Label1 As Label
     Friend WithEvents ChangeNameToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SaveAsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents JSONFormatToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HEALTHLabel As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents ATKLabel As Label
@@ -1523,8 +1752,6 @@ Partial Class MainWindow
     Friend WithEvents XPMenu As ContextMenuStrip
     Friend WithEvents XPMenuStrip1 As ToolStripMenuItem
     Friend WithEvents UpgradeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TextFormatToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents XPLabel As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel5 As Panel
@@ -1535,8 +1762,6 @@ Partial Class MainWindow
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents ProBasic As TabPage
     Friend WithEvents SkillBasic As TabPage
-    Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents UpgradeLabel As Label
     Friend WithEvents FeedbackToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HealHPToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CPPToolStripMenuItem As ToolStripMenuItem
@@ -1558,32 +1783,7 @@ Partial Class MainWindow
     Friend WithEvents TabControl2 As TabControl
     Friend WithEvents Inventory As TabPage
     Friend WithEvents Equipment As TabPage
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Experimental As TabPage
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents EnemyHealthBox As TextBox
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Button4 As Button
-    Friend WithEvents EnemyDefenseBox As TextBox
-    Friend WithEvents EnemyAttackBox As TextBox
-    Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label19 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label20 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label21 As Label
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Label22 As Label
     Friend WithEvents AttributeToolTip As ToolTip
-    Friend WithEvents DamageCountBox As Label
-    Friend WithEvents EnemyXPBox As TextBox
-    Friend WithEvents Label23 As Label
-    Friend WithEvents Panel8 As Panel
     Friend WithEvents Tour As TabPage
     Friend WithEvents Button7 As Button
     Friend WithEvents Panel9 As Panel
@@ -1614,4 +1814,51 @@ Partial Class MainWindow
     Friend WithEvents BattleCooldown As Timer
     Friend WithEvents BattleMessage As TextBox
     Friend WithEvents Label31 As Label
+    Friend WithEvents Experimental As TabPage
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents DamageCountBox As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents EnemyXPBox As TextBox
+    Friend WithEvents Label23 As Label
+    Friend WithEvents EnemyHealthBox As TextBox
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Label13 As Label
+    Friend WithEvents EnemyDefenseBox As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents EnemyAttackBox As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Options As TabPage
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Label33 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label32 As Label
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Label34 As Label
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents RadioButton5 As RadioButton
+    Friend WithEvents Label35 As Label
+    Friend WithEvents RadioButton6 As RadioButton
+    Friend WithEvents UpgradeBut6 As Button
+    Friend WithEvents UpgradeBut5 As Button
+    Friend WithEvents UpgradeBut4 As Button
+    Friend WithEvents UpgradeBut3 As Button
+    Friend WithEvents UpgradeBut2 As Button
+    Friend WithEvents UpgradeBut1 As Button
+    Friend WithEvents EasterEgg As Button
+    Friend WithEvents Label36 As Label
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents Label37 As Label
+    Friend WithEvents TextBox3 As TextBox
 End Class

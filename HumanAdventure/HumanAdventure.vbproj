@@ -109,6 +109,7 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Init\Enemies.vb" />
     <Compile Include="Program\Calculate.vb" />
+    <Compile Include="Program\ElementRates.vb" />
     <Compile Include="Program\IniFile.vb" />
     <Compile Include="Program\Lang.vb" />
     <Compile Include="Program\Strings.vb" />
@@ -131,6 +132,12 @@
     <Compile Include="Init\InitItem.vb" />
     <Compile Include="Init\InitPlayer.vb" />
     <Compile Include="Init\InitSkill.vb" />
+    <Compile Include="Window\CPP.Designer.vb">
+      <DependentUpon>CPP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Window\CPP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Window\EasterEgg.Designer.vb">
       <DependentUpon>EasterEgg.vb</DependentUpon>
     </Compile>
@@ -183,6 +190,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Window\About.resx">
       <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\CPP.resx">
+      <DependentUpon>CPP.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\EasterEgg.resx">
       <DependentUpon>EasterEgg.vb</DependentUpon>
