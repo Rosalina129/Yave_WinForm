@@ -42,7 +42,9 @@ Public Class MainWindow
     Public Shared r1 As New Random
     Public Shared r1r As Double
     'Init PlayerData Class
-    Public ReadOnly DefaultFolderPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\WinFormGame\Yave's Tours"
+    'Public ReadOnly OldPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\WinFormGame"
+    '这就是来自傻逼开发者的自信 :) That's confidence from a stupid developer :)
+    Public ReadOnly DefaultFolderPath As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\WinFormGame\Yave's Tours"
     Public ReadOnly DefaultINIPath As String = DefaultFolderPath & "\Config.ini"
     Public PlayerData As InitPlayer
     Public ItemData As InitItem
@@ -392,6 +394,11 @@ Public Class MainWindow
 
     ''Program Start!!!
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\WinFormGame") Then
+            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\WinFormGame\Yave's Tours\Config.ini")
+            Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\WinFormGame\Yave's Tours")
+            Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\WinFormGame")
+        End If
         If Not Directory.Exists(DefaultFolderPath) Then
             Directory.CreateDirectory(DefaultFolderPath)
         End If
