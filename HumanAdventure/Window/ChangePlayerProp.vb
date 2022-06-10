@@ -1,16 +1,16 @@
-﻿Public Class CPP
+﻿Public Class ChangePlayerProp
     Private Sub CPP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Text = Strings.s_string(110, MainWindow.Language)
-        Label1.Text = Strings.s_string(110, MainWindow.Language)
-        Label2.Text = Strings.s_string(27, MainWindow.Language)
-        Label3.Text = Strings.s_string(28, MainWindow.Language)
-        Label4.Text = Strings.s_string(29, MainWindow.Language)
-        Label5.Text = Strings.s_string(30, MainWindow.Language)
-        Label6.Text = Strings.s_string(31, MainWindow.Language)
-        Label7.Text = Strings.s_string(32, MainWindow.Language)
-        Label8.Text = Strings.s_string(33, MainWindow.Language)
-        Button1.Text = Strings.s_string(111, MainWindow.Language)
-        With MainWindow
+        Text = LangStr.s_string(110, MainForm.langID)
+        Label1.Text = LangStr.s_string(110, MainForm.langID)
+        Label2.Text = LangStr.s_string(27, MainForm.langID)
+        Label3.Text = LangStr.s_string(28, MainForm.langID)
+        Label4.Text = LangStr.s_string(29, MainForm.langID)
+        Label5.Text = LangStr.s_string(30, MainForm.langID)
+        Label6.Text = LangStr.s_string(31, MainForm.langID)
+        Label7.Text = LangStr.s_string(32, MainForm.langID)
+        Label8.Text = LangStr.s_string(33, MainForm.langID)
+        Button1.Text = LangStr.s_string(111, MainForm.langID)
+        With MainForm
             TextBox1.Text = .PlayerData.HPM1
             TextBox2.Text = .PlayerData.ATK1
             TextBox3.Text = .PlayerData.DEF1
@@ -23,7 +23,7 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If TextBox1.Text <> "" And TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox6.Text <> "" And TextBox5.Text <> "" Then
-            With MainWindow.PlayerData
+            With MainForm.PlayerData
                 .HPM1 = TextBox1.Text
                 .ATK1 = TextBox2.Text
                 .DEF1 = TextBox3.Text

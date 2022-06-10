@@ -134,7 +134,7 @@
         {"Damage Count", "伤害计数"},
         {"Start Simulation", "开始模拟"},
         {"Damage Once", "伤害一次"},
-        {"", ""},
+        {"This save file needs to be converted. continue load?", "此存档文件需要进行转换，是否继续读取？"},
         {"", ""},
         {"", ""},
         {"", ""},

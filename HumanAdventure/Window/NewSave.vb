@@ -25,7 +25,7 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        MsgBox("In Progress...", vbYes, MainWindow.Text)
+        MsgBox("In Progress...", vbYes, MainForm.Text)
     End Sub
 
     Public Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -46,10 +46,10 @@
             CDMG = 0.5
             Coins = 0
             PlaceID = 0
-            MainWindow.NewSaveWindowProgress = True
+            MainForm.NewSaveWindowProgress = True
             Close()
         Else
-            MainWindow.DebugShow(Strings.s_string(41, MainWindow.Language))
+            MainForm.DebugShow(Strings.s_string(41, MainForm.langID))
         End If
     End Sub
     Private Sub NewSave_Load(sender As Object, e As EventArgs) Handles MyBase.Load

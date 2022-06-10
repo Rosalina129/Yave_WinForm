@@ -21,10 +21,10 @@
     End Sub
 
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If MainWindow.WorkUserPath = "" Then
-            TextBox1.Text = MainWindow.WorkDefaultPath
+        If MainForm.WorkUserPath = "" Then
+            TextBox1.Text = MainForm.WorkDefaultPath
         Else
-            TextBox1.Text = MainWindow.WorkUserPath
+            TextBox1.Text = MainForm.WorkUserPath
         End If
     End Sub
 
@@ -34,11 +34,11 @@
         LoadPath.ShowDialog()
         If LoadPath.SelectedPath = "" Then
         Else
-            MsgBox("You selected: " & LoadPath.SelectedPath & Chr(13) & "Are you sure to set this location?", vbYesNo, MainWindow.Text)
+            MsgBox("You selected: " & LoadPath.SelectedPath & Chr(13) & "Are you sure to set this location?", vbYesNo, MainForm.Text)
         End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        TextBox1.Text = MainWindow.WorkDefaultPath
+        TextBox1.Text = MainForm.WorkDefaultPath
     End Sub
 End Class
