@@ -1,4 +1,4 @@
-﻿Public Class Strings
+﻿Public Class LangStr
     Public Shared s_string As String(,) = {
         {"Menu", "菜单"},
         {"Options", "选项"},
@@ -114,7 +114,7 @@
         {"Set", "设定"},'111
         {"Automatic priority", "自动化优先级"},
         {"Set coins shop purchasing priority", "设置金币商店购买优先级"},
-        {"No any", "无任何"},
+        {"Don't Buy", "不购买"},
         {"Player prop.", "玩家属性"},
         {"Prioritize the least consumption", "优先最少的消耗"},
         {"Auto Save", "自动保存"},

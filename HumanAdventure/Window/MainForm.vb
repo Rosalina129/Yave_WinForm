@@ -15,22 +15,25 @@ Public Class MainForm
 
     Public Shared ReadOnly SaveDefaultPath As String = Environment.CurrentDirectory & "\Save"
     Public Shared SaveUserPath As String
-    Dim TourDist() As UInt64            '100 = 1 Meters
+    Dim CacheSaveFileName As String
+
+    Dim TourDist(2) As UInt64            '100 = 1 Meters
     Dim Touring As Boolean                  'Detect is in Tour mode.
+
     Dim AutoBattle As Boolean               'Detect Auto battle is enabled.
     Dim isBattle As Boolean                 'Detect is in Battle mode.
     Dim isBattleDisplay As Boolean
     Dim BattleComplete As Boolean
     Dim DAB As Boolean                      'Disable Action Buttons
     Dim DES As Integer                      'Disable Enemy Spawn
-    Dim DeathCount As Integer
     Dim ABP As Byte
-    Dim CacheSaveFileName As String
     Dim AutoSaving As Boolean
     Dim AutoSavingCooldown As Integer
     Dim SavedLabelShowTime As Integer
 
     Public Shared UpgradePoint As Integer
+
+    Dim DeathCount As Integer
 
     Public Shared r1 As New Random
     Public Shared r1r As Double
@@ -91,9 +94,9 @@ Public Class MainForm
             XPMenuStrip1.Text = .XP1 & "/" & .XPNeed1
             RegionLabel.Text = LangStr.s_string(42, langID) & " " & LangStr.s_string(48 + RegionID, langID)
             If TourDist(RegionID) >= 100000 Then
-                Label24.Text = LangStr.s_string(63, langID) & " " & Math.Round(TourDist(RegionID) / 10 ^ 5, 2) & "km"
+                Label24.Text = LangStr.s_string(63, langID) & " " & Math.Round(TourDist(RegionID) / 10 ^ 5, 2) & "km" '& "  " & DES
             Else
-                Label24.Text = LangStr.s_string(63, langID) & " " & Math.Round(TourDist(RegionID) / 10 ^ 2, 2) & "m"
+                Label24.Text = LangStr.s_string(63, langID) & " " & Math.Round(TourDist(RegionID) / 10 ^ 2, 2) & "m" '& "  " & DES
             End If
             CheckXP()
             XPBar.Maximum = .XPNeed1
@@ -254,6 +257,7 @@ Public Class MainForm
         End If
         If PlayerData.HP1 <= 0 Then
             PlayerData.HP1 = PlayerData.HPM1
+            DeathCount += 1
             BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(102, langID)
         End If
         If CurrentEnemy.HP1 <= 0 Then
@@ -274,7 +278,9 @@ Public Class MainForm
         CacheSaveFileName = SaveFileName
         Dim fs As New FileStream(SaveFileName, FileMode.Create)
         Dim bw As New BinaryWriter(fs)
+        Dim b_redunant As Byte = 0
         bw.Write(SaveVersion)
+        bw.Write(b_redunant)
         bw.Write(PlayerData.Sk)
         bw.Write(PlayerData.element1)
         bw.Write(PlayerData.Level1)
@@ -291,8 +297,9 @@ Public Class MainForm
         bw.Write(PlayerData.Coins1)
         bw.Write(UpgradePoint)
         bw.Write(RegionID)
-        For RegionID = 0 To TourDist.Length - 1 Step 1
-            bw.Write(TourDist(RegionID))
+        Dim a As Integer
+        For a = 0 To TourDist.Length - 1 Step 1
+            bw.Write(TourDist(a))
         Next
         bw.Close()
         fs.Close()
@@ -310,11 +317,12 @@ Public Class MainForm
         CacheSaveFileName = LoadFileName
         PlayerData = New InitPlayer
         Dim SaveVer As Integer
-        'MsgBox(LoadFileName, vbYes, Me.Text)
         Dim fs As New FileStream(LoadFileName, FileMode.Open)
         Dim br As New BinaryReader(fs)
+        Dim c As Byte
         SaveVer = br.ReadInt32
         If SaveVer = 2 Then
+            c = br.ReadByte
             PlayerData.Sk = br.ReadInt32
             PlayerData.element1 = br.ReadInt32
             PlayerData.Level1 = br.ReadInt32
@@ -331,17 +339,20 @@ Public Class MainForm
             PlayerData.Coins1 = br.ReadInt32
             UpgradePoint = br.ReadInt32
             RegionID = br.ReadInt32
-            For RegionID = 0 To TourDist.Length - 1 Step 1
-                TourDist(RegionID) = br.ReadUInt64
+            Dim b As Integer
+            For b = 0 To TourDist.Length - 1 Step 1
+                TourDist(b) = br.ReadUInt64
             Next
+            CurrentEnemy = New InitEnemy()
             progress = True
         End If
         If SaveVer = 1 Then
-            Dim a As Integer
-            If MsgBox(LangStr.s_string(134, langID), vbYesNo, Me.Text) = Windows.Forms.DialogResult.OK Then
-
+            Dim a As Boolean
+            a = MsgBox(LangStr.s_string(134, langID), vbYesNo, Me.Text)
+            If a = vbYes Then
+                DebugShow("True")
             End If
-        Else
+        ElseIf Not SaveVer = 2 Then
             DebugShow(LangStr.s_string(73, langID) & vbCrLf &
                       LangStr.s_string(56, langID) & ":" & SaveVersion & vbCrLf &
                       LangStr.s_string(57, langID) & ":" & SaveVer & vbCrLf &
@@ -459,21 +470,22 @@ Public Class MainForm
         ChangeName.TextBox1.Text = InitData.CName
     End Sub
 
-    Private Sub NewSaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewSaveToolStripMenuItem.Click
-        If Not isBattle Then
-            NewSave.ShowDialog()
-        End If
+    Private Sub NewSaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewSaveToolStripMenuItem.Click, Button2.Click
+        progress = False
+        NewSave.ShowDialog()
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         r1r = r1.NextDouble
         If NewSaveWindowProgress = True Then
             NewSaveWindowProgress = False
+            DES = 7500 + r1.Next(0, 5001)
             With NewSave
                 PlayerData = New InitPlayer(.Skin, .Element, .CName, .Level, .XP, .XPNeed, .HPM, .HP, .ATK, .DEF, .SE, .CRate, .CDMG, .Coins)
             End With
             RegionID = NewSave.PlaceID
-            For RegionID = 0 To TourDist.Length - 1 Step 1
-                TourDist(RegionID) = 0
+            Dim a As Integer
+            For a = 0 To TourDist.Length - 1 Step 1
+                TourDist(a) = 0
             Next
             progress = True
         End If
@@ -591,31 +603,12 @@ Public Class MainForm
         Upgrade.Show()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        If Not isBattle Then
-            NewSave.ShowDialog()
-        End If
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If Not isBattle Then
-            OpenFileDialog()
-        End If
-    End Sub
     Private Sub UpgradeLabel_Click(sender As Object, e As EventArgs)
         Upgrade.Show()
     End Sub
-
-
     Private Sub FeedbackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FeedbackToolStripMenuItem.Click
         System.Diagnostics.Process.Start("https://github.com/Rosalina129/abattlegame/issues")
     End Sub
-
-    Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        Settings.ShowDialog()
-    End Sub
-
-
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
         RegionID = 0
     End Sub
@@ -715,7 +708,7 @@ Public Class MainForm
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         Battle_Damage()
     End Sub
-    Private Sub LoadDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadDataToolStripMenuItem.Click
+    Private Sub LoadDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadDataToolStripMenuItem.Click, Button1.Click
         OpenFileDialog()
     End Sub
     Private Sub CPPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CPPToolStripMenuItem.Click

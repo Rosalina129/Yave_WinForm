@@ -112,8 +112,7 @@
     <Compile Include="Program\ElementRates.vb" />
     <Compile Include="Program\IniFile.vb" />
     <Compile Include="Program\Lang.vb" />
-    <Compile Include="Program\Strings.vb" />
-    <Compile Include="Program\StringSave.vb" />
+    <Compile Include="Program\LangStr.vb" />
     <Compile Include="Program\Threading.vb" />
     <Compile Include="Window\ChangeName.Designer.vb">
       <DependentUpon>ChangeName.vb</DependentUpon>
@@ -132,10 +131,10 @@
     <Compile Include="Init\InitItem.vb" />
     <Compile Include="Init\InitPlayer.vb" />
     <Compile Include="Init\InitSkill.vb" />
-    <Compile Include="Window\CPP.Designer.vb">
-      <DependentUpon>CPP.vb</DependentUpon>
+    <Compile Include="Window\ChangePlayerProp.Designer.vb">
+      <DependentUpon>ChangePlayerProp.vb</DependentUpon>
     </Compile>
-    <Compile Include="Window\CPP.vb">
+    <Compile Include="Window\ChangePlayerProp.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Window\EasterEgg.Designer.vb">
@@ -151,11 +150,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Init\InitData.vb" />
-    <Compile Include="Window\MainWindow.vb">
+    <Compile Include="Window\MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Window\MainWindow.Designer.vb">
-      <DependentUpon>MainWindow.vb</DependentUpon>
+    <Compile Include="Window\MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -174,12 +173,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Window\Settings.Designer.vb">
-      <DependentUpon>Settings.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Window\Settings.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Window\Upgrade.Designer.vb">
       <DependentUpon>Upgrade.vb</DependentUpon>
     </Compile>
@@ -191,14 +184,14 @@
     <EmbeddedResource Include="Window\About.resx">
       <DependentUpon>About.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Window\CPP.resx">
-      <DependentUpon>CPP.vb</DependentUpon>
+    <EmbeddedResource Include="Window\ChangePlayerProp.resx">
+      <DependentUpon>ChangePlayerProp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\EasterEgg.resx">
       <DependentUpon>EasterEgg.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Window\MainWindow.resx">
-      <DependentUpon>MainWindow.vb</DependentUpon>
+    <EmbeddedResource Include="Window\MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\ChangeName.resx">
       <DependentUpon>ChangeName.vb</DependentUpon>
@@ -211,9 +204,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Window\Settings.resx">
-      <DependentUpon>Settings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\Upgrade.resx">
       <DependentUpon>Upgrade.vb</DependentUpon>

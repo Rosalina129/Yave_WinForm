@@ -5,7 +5,7 @@
         New InitEnemy(0, LangStr.s_enemy(1, MainForm.langID), 25, 25, 7, 3, 0.1, 0.45, 7, 7),
         New InitEnemy(0, LangStr.s_enemy(2, MainForm.langID), 4, 4, 9, 0, 0.75, 0.32, 4, 2),
         New InitEnemy(0, LangStr.s_enemy(3, MainForm.langID), 8, 8, 2, 2, 0.05, 0.5, 8, 3),
-        New InitEnemy(0, LangStr.s_enemy(4, MainForm.langID), 5, 5, 6, 1, 0.05, 0.5, 4, 2),
+        New InitEnemy(0, LangStr.s_enemy(4, MainForm.langID), 5, 5, 6, 1, 0.05, 0.5, 4, 2),'0~4
         New InitEnemy(1, LangStr.s_enemy(5, MainForm.langID), 49, 49, 21, 18, 0.45, 0.95, 28, 9),
         New InitEnemy(2, LangStr.s_enemy(6, MainForm.langID), 120, 120, 45, 10, 0.15, 0.9, 28, 9),
         New InitEnemy(3, LangStr.s_enemy(7, MainForm.langID), 80, 80, 13, 43, 0.1, 0.45, 28, 9),

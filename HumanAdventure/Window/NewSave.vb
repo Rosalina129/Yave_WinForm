@@ -49,7 +49,7 @@
             MainForm.NewSaveWindowProgress = True
             Close()
         Else
-            MainForm.DebugShow(Strings.s_string(41, MainForm.langID))
+            MainForm.DebugShow(LangStr.s_string(41, MainForm.langID))
         End If
     End Sub
     Private Sub NewSave_Load(sender As Object, e As EventArgs) Handles MyBase.Load
