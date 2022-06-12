@@ -1,11 +1,9 @@
 # Yave's Tours
 构建基于 ![GitHub](https://img.shields.io/github/license/Rosalina129/WinForm_GameCollection?style=flat-square) 协议
 
-目前版本：![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Rosalina129/WinForm_GameCollection?include_prereleases)
+目前版本：[0.0.2](https://github.com/Rosalina129/WinForm_GameCollection/releases/tag/0.0.2)
 
 让 歪四 来一次比较丰富的旅行吧！[源代码](https://github.com/Rosalina129/WinForm_GameCollection/tree/main/HumanAdventure)
-
-下载最新的版本：[0.0.2](https://github.com/Rosalina129/WinForm_GameCollection/releases/tag/0.0.2)
 ## 游戏规则
 这是一个窗体游戏，所以不需要比较繁琐的操作，一些功能可以在一个窗口上进行操作！
 
