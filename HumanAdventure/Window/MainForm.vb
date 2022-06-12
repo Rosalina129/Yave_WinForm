@@ -68,7 +68,7 @@ Public Class MainForm
                         a = r1.Next(5, 11)
                         CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
                     Case km(10) + 1 To km(100)
-                        a = r1.Next(11, 13)
+                        a = r1.Next(11, 20)
                         CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
                 End Select
         End Select
@@ -741,27 +741,27 @@ Public Class MainForm
                 Case 0
                     Thread.Sleep(5)
                     Select Case r1.NextDouble()
-                        Case 0 To 0.85
+                        Case 0 To 0.65
                             Battle_Damage(0)
-                        Case 0.85 To 1
+                        Case 0.65 To 1
                             Battle_Damage(1)
                     End Select
                 Case 1
                     Thread.Sleep(5)
                     Select Case r1.NextDouble()
-                        Case 0 To 0.85
+                        Case 0 To 0.65
                             If ElementRates.Multi(PlayerData.element1, CurrentEnemy.ID1) < 1 Then
                                 Thread.Sleep(5)
                                 Select Case r1.NextDouble()
-                                    Case 0 To 0.85
+                                    Case 0 To 0.66
                                         Battle_Damage(0)
-                                    Case 0.85 To 1
+                                    Case 0.66 To 1
                                         Battle_Damage(1)
                                 End Select
                             Else
                                 Battle_Damage(1)
                             End If
-                        Case 0.85 To 1
+                        Case 0.65 To 1
                             Battle_Damage(0)
                     End Select
             End Select
