@@ -19,4 +19,24 @@ Public Class Calculate
             Return hp - a * (1 - Defenseinv)
         End If
     End Function
+    Public Shared Function EleCount(hp As Integer, a As Integer, ed As Integer, crate As Double, cdmg As Double, eleA As Integer, eleB As Integer)
+        Dim r1 As New Random
+        Thread.Sleep(1)             'Force pausing the program process for 1 ms to refresh random seed values.
+        Dim c As Double
+        c = r1.NextDouble()         'Critical Rate Random Pools
+        Dim Defenseinv As Double
+        Defenseinv = 1 - 1 / (1 + ed / 10)
+        If c >= 1 - crate Then
+            Return hp - a * (1 - Defenseinv) * (1 + cdmg) * ElementRates.Multi(eleA, eleB)
+        Else
+            Return hp - a * (1 - Defenseinv) * ElementRates.Multi(eleA, eleB)
+        End If
+    End Function
+    Public Shared Function EleMessage(eleA As Integer, eleB As Integer, lang As Byte)
+        If ElementRates.Multi(eleA, eleB) > 1.3 Then
+            Return vbCrLf & LangStr.s_string(101, lang)
+        ElseIf ElementRates.Multi(eleA, eleB) < 0.6 Then
+            Return vbCrLf & LangStr.s_string(100, lang)
+        End If
+    End Function
 End Class

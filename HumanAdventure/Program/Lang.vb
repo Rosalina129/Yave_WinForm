@@ -3,7 +3,7 @@
         'MainWindow Strings
         With MainForm
             .MenuToolStripMenuItem.Text = LangStr.s_string(0, langid)
-            .ViewToolStripMenuItem.Text = LangStr.s_string(1, langid)
+            .HelpStripMenuItem.Text = LangStr.s_string(138, langid)
             .ShowDebugToolStripMenuItem.Text = LangStr.s_string(2, langid)
             .AboutToolStripMenuItem.Text = LangStr.s_string(3, langid)
             .NewSaveToolStripMenuItem.Text = LangStr.s_string(4, langid)
@@ -14,8 +14,8 @@
             .SaveAsToolStripMenuItem.Text = LangStr.s_string(7, langid)
             '.TextFormatToolStripMenuItem.Text = Strings.s_string(8, langid)
             '.JSONFormatToolStripMenuItem.Text = Strings.s_string(9, langid)
-            .ItemListToolStripMenuItem.Text = LangStr.s_string(10, langid)
-            '.SettingsToolStripMenuItem.Text = Strings.s_string(12, langid)
+            .Help1ToolStripMenuItem.Text = LangStr.s_string(10, langid)
+            .Help2ToolStripMenuItem.Text = LangStr.s_string(11, langid)
             .HealHPToolStripMenuItem.Text = LangStr.s_string(13, langid)
             .CPPToolStripMenuItem.Text = LangStr.s_string(14, langid)
             .AboutsToolStripMenuItem.Text = LangStr.s_string(15, langid)
@@ -91,6 +91,7 @@
             .Label36.Text = LangStr.s_string(122, langid)
             .ComboBox3.Items(0) = LangStr.s_string(123, langid)
             .ComboBox3.Items(1) = LangStr.s_string(124, langid)
+            .ComboBox3.Items(2) = LangStr.s_string(142, langid)
             .Label37.Text = LangStr.s_string(125, langid)
             .TextBox3.Text = LangStr.s_string(126, langid)
             .Label11.Text = LangStr.s_string(127, langid)
@@ -106,6 +107,7 @@
             .Label17.Text = LangStr.s_string(27, langid)
             .Label16.Text = LangStr.s_string(28, langid)
             .Label12.Text = LangStr.s_string(29, langid)
+            .Button6.Text = LangStr.s_string(138, langid)
         End With
         'NewSave Strings
         With NewSave

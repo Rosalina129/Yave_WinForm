@@ -10,8 +10,8 @@
         {"Save As...", "另存为"},
         {"Text Format", "文本格式"},
         {"JSON Format", "JSON 格式"},'MenuItem_1 4~9
-        {"Item List", "道具列表"},
-        {"Basic Talent List", "基础天赋列表"},
+        {"Gameplay manual", "游戏手册"},
+        {"Elements manual", "元素手册"},
         {"Settings", "设置"},'OptionsItem 10~12
         {"Heal HP", "瞬间回血"},
         {"Custom Player Propetries", "自定义玩家属性"},'Experimental 13~14
@@ -77,7 +77,7 @@
         {"Your Health.", "你的生命值。"},
         {"Your attack determines how much damage you can deal to enemies.", "你的攻击力决定了你能对敌人造成多少伤害。"},
         {"Your defense can block some of the damage done by the enemies.", "你的防御力可以阻挡敌人造成的一些伤害。"},
-        {"Star energy determines the multiple of elemental damage you deal to enemies.", "星星能量决定了你对敌方造成的元素伤害的倍数。"},
+        {"Star energy determines how many times you can use skill or elemental damage.", "星星能量决定了你能使用多少次技能或元素伤害。"},
         {"Crit rate determines chance you have to make a Critical hit if you take to damage for enemy.", "暴击率决定了你对敌人造成伤害时暴击的几率。"},
         {"Crit damage is the damage done based on the percentage of attacks.", "暴击伤害是基于攻击力的百分比造成的伤害。"},
         {"Common", "普通"},'80
@@ -96,10 +96,10 @@
         {"Oh no! A wild", "一个野生的"},
         {"appear out on the road!", "出现在了路上！"},
         {"No Mobs...", "无怪物骚扰..."},
-        {"Player takes ", "玩家受到了"},
-        {"Enemy takes ", "敌方受到了"},
-        {" damage", "伤害"},
-        {" Elemental damage", "元素伤害"},
+        {"Player takes ", "玩家受到了 "},
+        {"Enemy takes ", "敌方受到了 "},
+        {" damage", " 伤害"},
+        {" Elemental damage", " 元素伤害"},
         {"Elementals are restrained and deal less damage.", "元素被克制，造成的伤害减少。"},'100
         {"Restrained enemy elementals, dealing increased damage.", "克制了敌方元素，造成的伤害增加。"},
         {"You fall down and a god comes along and saves you and restores all your life!", "你倒下了，此时走过来一个神，拯救了你，恢复了全部生命！"},
@@ -135,9 +135,15 @@
         {"Start Simulation", "开始模拟"},
         {"Damage Once", "伤害一次"},
         {"This save file needs to be converted. continue load?", "此存档文件需要进行转换，是否继续读取？"},
-        {"", ""},
-        {"", ""},
-        {"", ""},
+        {"Player used ", "玩家使用了 "},
+        {"Enemy used ", "敌方使用了 "},
+        {"Normal Attack", "普通攻击"},'137
+        {"Help", "帮助"},
+        {"In auto battle mode, normal attacks are preferred, and elemental attacks are used with some probability, regardless of rejection.", "在自动战斗模式中，会优先使用普通攻击，有一定概率会使用元素攻击，不论排斥与否。"},
+        {"In auto battle mode, elemental attacks are preferred, this process takes into account elemental counterattacks, and if restrained, normal attacks are used, but with a probability of failure.", "在自动战斗模式中，会优先使用元素攻击，此过程会考虑元素相克，如果被克制，会使用普通攻击，但有概率会失败。"},
+        {"But your star energy has run out of power and elemental attacks have failed to cast.", "但你的星星能量已耗尽，元素攻击释放失败。"},'141
+        {"Smarter decisions", "更智能的决定"},
+        {"Elemental attacks are preferred when Star Energy is sufficient, normal attacks are used otherwise.", "当星星能量足够时，会优先使用元素攻击，否则使用普通攻击。"},
         {"", ""},
         {"", ""},
         {"", ""}
@@ -153,7 +159,7 @@
         {"Water Slime", "水史莱姆"},
         {"Earth Slime", "土史莱姆"},
         {"Zombie", "僵尸"},
-        {"Infected birds", "感染的鸟"},
+        {"Infected birds", "感染的鸟"},'10
         {"Hilichurl", "丘丘人"},
         {"Hilichurl Arms", "武装丘丘人"},
         {"Beast", "兽士"},
@@ -161,7 +167,16 @@
         {"Beast Swordman", "剑士兽士"},
         {"Beast Mage", "法师兽士"},
         {"Thief", "盗贼"},
-        {"Artifacts Thief", "法器盗贼"}
+        {"Artifacts Thief", "法器盗贼"},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""}
         }
     Public Shared s_basic As String(,) = {
         {"No Basic", "无基础"}，

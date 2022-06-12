@@ -30,8 +30,8 @@ Partial Class MainForm
         Me.LoadDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ItemListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Help1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShowDebugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HealHPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CPPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -112,6 +112,7 @@ Partial Class MainForm
         Me.Equipment = New System.Windows.Forms.TabPage()
         Me.Options = New System.Windows.Forms.TabPage()
         Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.EasterEgg = New System.Windows.Forms.Button()
@@ -170,7 +171,8 @@ Partial Class MainForm
         Me.AutoBattleTimer = New System.Windows.Forms.Timer(Me.components)
         Me.BattleTime = New System.Windows.Forms.Timer(Me.components)
         Me.BattleCooldown = New System.Windows.Forms.Timer(Me.components)
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Help2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -203,7 +205,7 @@ Partial Class MainForm
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ViewToolStripMenuItem, Me.ShowDebugToolStripMenuItem, Me.AboutToolStripMenuItem, Me.CoinsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.HelpStripMenuItem, Me.ShowDebugToolStripMenuItem, Me.AboutToolStripMenuItem, Me.CoinsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(7, 2, 0, 2)
@@ -246,18 +248,18 @@ Partial Class MainForm
         Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.SaveAsToolStripMenuItem.Text = "Save As..."
         '
-        'ViewToolStripMenuItem
+        'HelpStripMenuItem
         '
-        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItemListToolStripMenuItem})
-        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
-        Me.ViewToolStripMenuItem.Text = "Options"
+        Me.HelpStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Help1ToolStripMenuItem, Me.Help2ToolStripMenuItem})
+        Me.HelpStripMenuItem.Name = "HelpStripMenuItem"
+        Me.HelpStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.HelpStripMenuItem.Text = "Help"
         '
-        'ItemListToolStripMenuItem
+        'Help1ToolStripMenuItem
         '
-        Me.ItemListToolStripMenuItem.Name = "ItemListToolStripMenuItem"
-        Me.ItemListToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
-        Me.ItemListToolStripMenuItem.Text = "Item List"
+        Me.Help1ToolStripMenuItem.Name = "Help1ToolStripMenuItem"
+        Me.Help1ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.Help1ToolStripMenuItem.Text = "Gameplay"
         '
         'ShowDebugToolStripMenuItem
         '
@@ -1051,6 +1053,7 @@ Partial Class MainForm
         'Panel12
         '
         Me.Panel12.AutoScroll = True
+        Me.Panel12.Controls.Add(Me.Button6)
         Me.Panel12.Controls.Add(Me.TextBox3)
         Me.Panel12.Controls.Add(Me.ComboBox3)
         Me.Panel12.Controls.Add(Me.Label36)
@@ -1068,10 +1071,24 @@ Partial Class MainForm
         Me.Panel12.Size = New System.Drawing.Size(417, 274)
         Me.Panel12.TabIndex = 0
         '
+        'TextBox3
+        '
+        Me.TextBox3.BackColor = System.Drawing.SystemColors.Menu
+        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox3.CausesValidation = False
+        Me.TextBox3.Location = New System.Drawing.Point(7, 241)
+        Me.TextBox3.Multiline = True
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
+        Me.TextBox3.ShortcutsEnabled = False
+        Me.TextBox3.Size = New System.Drawing.Size(387, 35)
+        Me.TextBox3.TabIndex = 18
+        Me.TextBox3.Text = "qwq"
+        '
         'ComboBox3
         '
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"Use normal damage first", "Use elemental damage first"})
+        Me.ComboBox3.Items.AddRange(New Object() {"Use normal damage first", "Use elemental damage first", "Smarter decisions"})
         Me.ComboBox3.Location = New System.Drawing.Point(7, 87)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(121, 23)
@@ -1633,21 +1650,22 @@ Partial Class MainForm
         '
         Me.BattleCooldown.Interval = 1000
         '
-        'TextBox3
+        'Button6
         '
-        Me.TextBox3.BackColor = System.Drawing.SystemColors.Menu
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox3.CausesValidation = False
-        Me.TextBox3.Location = New System.Drawing.Point(7, 241)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.ShortcutsEnabled = False
-        Me.TextBox3.Size = New System.Drawing.Size(387, 35)
-        Me.TextBox3.TabIndex = 18
-        Me.TextBox3.Text = "qwq"
+        Me.Button6.Location = New System.Drawing.Point(134, 87)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 19
+        Me.Button6.Text = "help"
+        Me.Button6.UseVisualStyleBackColor = True
         '
-        'MainWindow
+        'Help2ToolStripMenuItem
+        '
+        Me.Help2ToolStripMenuItem.Name = "Help2ToolStripMenuItem"
+        Me.Help2ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.Help2ToolStripMenuItem.Text = "Elements"
+        '
+        'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
@@ -1662,7 +1680,7 @@ Partial Class MainForm
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
-        Me.Name = "MainWindow"
+        Me.Name = "MainForm"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "Yave's Tours"
         Me.MenuStrip1.ResumeLayout(False)
@@ -1719,8 +1737,8 @@ Partial Class MainForm
     Friend WithEvents NewSaveToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SaveDataToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoadDataToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ItemListToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HelpStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Help1ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents CharName As Label
@@ -1861,4 +1879,6 @@ Partial Class MainForm
     Friend WithEvents ComboBox3 As ComboBox
     Friend WithEvents Label37 As Label
     Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Help2ToolStripMenuItem As ToolStripMenuItem
 End Class

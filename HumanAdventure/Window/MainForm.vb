@@ -17,7 +17,7 @@ Public Class MainForm
     Public Shared SaveUserPath As String
     Dim CacheSaveFileName As String
 
-    Dim TourDist(2) As UInt64            '100 = 1 Meters
+    Dim TourDist(2) As UInt64                '100 = 1 Meters
     Dim Touring As Boolean                  'Detect is in Tour mode.
 
     Dim AutoBattle As Boolean               'Detect Auto battle is enabled.
@@ -28,7 +28,7 @@ Public Class MainForm
     Dim DES As Integer                      'Disable Enemy Spawn
     Dim ABP As Byte
     Dim AutoSaving As Boolean
-    Dim AutoSavingCooldown As Integer
+    Dim AutoSavingCD As Integer
     Dim SavedLabelShowTime As Integer
 
     Public Shared UpgradePoint As Integer
@@ -53,18 +53,21 @@ Public Class MainForm
         MsgBox("An unknown error occurred while attempting to perform this function.", vbYes, Me.Text)
         Application.Exit()
     End Sub
+    Private Function km(a As Double)
+        Return a * 100 * 1000
+    End Function
     Private Sub SelectEnemy()
         Dim a As Integer
         Select Case RegionID
             Case 0
-                Select Case PlayerData.Level1
-                    Case 0 To 5
+                Select Case TourDist(0)
+                    Case 0 To km(2)
                         a = r1.Next(0, 5)
                         CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
-                    Case 6 To 19
+                    Case km(2) + 1 To km(10)
                         a = r1.Next(5, 11)
                         CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
-                    Case 20 To 35
+                    Case km(10) + 1 To km(100)
                         a = r1.Next(11, 13)
                         CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
                 End Select
@@ -87,7 +90,7 @@ Public Class MainForm
             Level.Text = .Level1
             ATKLabel.Text = .ATK1
             DEFLabel.Text = .DEF1
-            SELabel.Text = .SE1
+            SELabel.Text = .SE1 & "/100"
             CRLabel.Text = Math.Round(.CRate1 * 100, 1) & "%"
             CDLabel.Text = Math.Round(.CDMG1 * 100, 1) & "%"
             XPLabel.Text = .XP1 & "/" & .XPNeed1
@@ -233,21 +236,43 @@ Public Class MainForm
         End If
     End Sub
 
-    Private Sub Battle_Damage()
+    Private Sub Battle_Damage(type As Byte)
         Dim health(2) As Integer
         health(0) = PlayerData.HP1
         health(1) = CurrentEnemy.HP1
-        CurrentEnemy.HP1 = Calculate.ADCount(CurrentEnemy.HP1, PlayerData.ATK1, CurrentEnemy.DEF1, PlayerData.CRate1, PlayerData.CDMG1)
-        BattleMessage.Text = LangStr.s_string(97, langID) & (health(1) - CurrentEnemy.HP1) & LangStr.s_string(98, langID)
+        Select Case type
+            Case 0
+                BattleMessage.Text = LangStr.s_string(135, langID) & LangStr.s_string(137, langID)
+                CurrentEnemy.HP1 = Calculate.ADCount(CurrentEnemy.HP1, PlayerData.ATK1, CurrentEnemy.DEF1, PlayerData.CRate1, PlayerData.CDMG1)
+                BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(97, langID) & (health(1) - CurrentEnemy.HP1) & LangStr.s_string(98, langID)
+            Case 1
+                BattleMessage.Text = LangStr.s_string(135, langID) & LangStr.s_string(107, langID)
+                If PlayerData.SE1 <> 0 Then
+                    Select Case r1.NextDouble()
+                        Case 0 To 0.8
+                            PlayerData.SE1 -= 1
+                    End Select
+                    CurrentEnemy.HP1 = Calculate.EleCount(CurrentEnemy.HP1, PlayerData.ATK1, CurrentEnemy.DEF1, PlayerData.CRate1, PlayerData.CDMG1, PlayerData.element1, CurrentEnemy.ID1)
+                    BattleMessage.Text = BattleMessage.Text & Calculate.EleMessage(PlayerData.element1, CurrentEnemy.ID1, langID)
+                    BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(97, langID) & (health(1) - CurrentEnemy.HP1) & LangStr.s_string(98, langID)
+                Else
+                    BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(141, langID)
+                End If
+        End Select
         Thread.Sleep(1)
         If (health(1) - CurrentEnemy.HP1) = 1 Then
             If langID = 0 Then
                 BattleMessage.Text = BattleMessage.Text & "s"
             End If
         End If
-        Thread.Sleep(1)
+        Thread.Sleep(5)
+        Select Case r1.NextDouble()
+            Case 0 To 0.18
+                PlayerData.SE1 += r1.Next(0, 4)
+        End Select
         If CurrentEnemy.HP1 > 0 Then
-            PlayerData.HP1 = Calculate.ADCount(PlayerData.HP1, CurrentEnemy.ATK1, PlayerData.DEF1, CurrentEnemy.CRate1, CurrentEnemy.CDMG1)
+            BattleMessage.Text = BattleMessage.Text & vbCrLf & vbCrLf & LangStr.s_string(136, langID) & LangStr.s_string(137, langID)
+            PlayerData.HP1 = Calculate.EleCount(PlayerData.HP1, CurrentEnemy.ATK1, PlayerData.DEF1, CurrentEnemy.CRate1, CurrentEnemy.CDMG1, CurrentEnemy.ID1, PlayerData.element1)
             BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(96, langID) & (health(0) - PlayerData.HP1) & LangStr.s_string(98, langID)
             If (health(0) - PlayerData.HP1) = 1 Then
                 If langID = 0 Then
@@ -261,6 +286,7 @@ Public Class MainForm
             BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(102, langID)
         End If
         If CurrentEnemy.HP1 <= 0 Then
+            PlayerData.SE1 += 10 + r1.Next(0, 7)
             DES = 5000 + r1.Next(50, 2501)
             PlayerData.XP1 += CurrentEnemy.EXP1
             PlayerData.Coins1 += CurrentEnemy.Coins1
@@ -296,6 +322,7 @@ Public Class MainForm
         bw.Write(PlayerData.CDMG1)
         bw.Write(PlayerData.Coins1)
         bw.Write(UpgradePoint)
+        bw.Write(DeathCount)
         bw.Write(RegionID)
         Dim a As Integer
         For a = 0 To TourDist.Length - 1 Step 1
@@ -338,12 +365,15 @@ Public Class MainForm
             PlayerData.CDMG1 = br.ReadDouble
             PlayerData.Coins1 = br.ReadInt32
             UpgradePoint = br.ReadInt32
+            DeathCount = br.ReadInt32
             RegionID = br.ReadInt32
             Dim b As Integer
             For b = 0 To TourDist.Length - 1 Step 1
                 TourDist(b) = br.ReadUInt64
             Next
             CurrentEnemy = New InitEnemy()
+            isBattle = False
+            Panel10.Visible = False
             progress = True
         End If
         If SaveVer = 1 Then
@@ -445,7 +475,7 @@ Public Class MainForm
         End Select
     End Sub
     Private Sub SaveDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveDataToolStripMenuItem.Click
-        Dim a As Integer
+        Dim a As Boolean
         If progress <> True Then
             a = MsgBox(LangStr.s_string(38, langID), vbYesNo, Me.Text)
             If a = vbYes Then
@@ -487,6 +517,8 @@ Public Class MainForm
             For a = 0 To TourDist.Length - 1 Step 1
                 TourDist(a) = 0
             Next
+            isBattle = False
+            Panel10.Visible = False
             progress = True
         End If
         If progress = True Then
@@ -496,6 +528,9 @@ Public Class MainForm
             Else
                 Button7.Text = LangStr.s_string(60, langID)
                 Timer2.Enabled = False
+            End If
+            If PlayerData.SE1 > 100 Then
+                PlayerData.SE1 = 100
             End If
             If PlayerData.Level1 >= 15 Then
                 Panel7.Visible = True
@@ -545,13 +580,13 @@ Public Class MainForm
             End If
             If AutoSaving Then
                 If Not isBattle Then
-                    AutoSavingCooldown += 1
-                    If AutoSavingCooldown = 100 * 60 Then
+                    AutoSavingCD += 1
+                    If AutoSavingCD = 100 * 60 Then
                         If Not CacheSaveFileName = "" Then
                             SaveData(CacheSaveFileName)
                             SavedLabelShowTime = 180
                         End If
-                        AutoSavingCooldown = 0
+                        AutoSavingCD = 0
                     End If
                 End If
             Else
@@ -702,11 +737,38 @@ Public Class MainForm
             BattleComplete = False
         End If
         If isBattle Then
-            Battle_Damage()
+            Select Case ABP
+                Case 0
+                    Thread.Sleep(5)
+                    Select Case r1.NextDouble()
+                        Case 0 To 0.85
+                            Battle_Damage(0)
+                        Case 0.85 To 1
+                            Battle_Damage(1)
+                    End Select
+                Case 1
+                    Thread.Sleep(5)
+                    Select Case r1.NextDouble()
+                        Case 0 To 0.85
+                            If ElementRates.Multi(PlayerData.element1, CurrentEnemy.ID1) < 1 Then
+                                Thread.Sleep(5)
+                                Select Case r1.NextDouble()
+                                    Case 0 To 0.85
+                                        Battle_Damage(0)
+                                    Case 0.85 To 1
+                                        Battle_Damage(1)
+                                End Select
+                            Else
+                                Battle_Damage(1)
+                            End If
+                        Case 0.85 To 1
+                            Battle_Damage(0)
+                    End Select
+            End Select
         End If
     End Sub
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        Battle_Damage()
+        Battle_Damage(0)
     End Sub
     Private Sub LoadDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadDataToolStripMenuItem.Click, Button1.Click
         OpenFileDialog()
@@ -836,5 +898,21 @@ Public Class MainForm
         If b.ShowDialog = Windows.Forms.DialogResult.OK Then
             SaveData(b.FileName)
         End If
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Battle_Damage(1)
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        MsgBox(
+            LangStr.s_string(123, langID) & ": " & vbCrLf &
+            LangStr.s_string(139, langID) & vbCrLf & vbCrLf &
+            LangStr.s_string(124, langID) & ": " & vbCrLf &
+            LangStr.s_string(140, langID) & vbCrLf & vbCrLf &
+            LangStr.s_string(142, langID) & ": " & vbCrLf &
+            LangStr.s_string(143, langID),
+            vbYes, Me.Text
+            )
     End Sub
 End Class
