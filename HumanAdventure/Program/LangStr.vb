@@ -144,6 +144,25 @@
         {"But your star energy has run out of power and elemental attacks have failed to cast.", "但你的星星能量已耗尽，元素攻击释放失败。"},'141
         {"Smarter decisions", "更智能的决定"},
         {"Elemental attacks are preferred when Star Energy is sufficient, normal attacks are used otherwise.", "当星星能量足够时，会优先使用元素攻击，否则使用普通攻击。"},
+<<<<<<< Updated upstream
+=======
+        {"You tried to make a run for it, but you failed.", "你尝试准备逃跑，但失败了。"},
+        {"You made your escape, but you lost", "你已经成功逃跑，但损失了"},
+        {"Block action is standard.", "格挡动作很标准。"},'146
+        {"You try to perpare to block, but you are too nervous and fail to block.", "你尝试准备摆好动作，但你太紧张了，格挡失败了。"},
+        {"Hello", "初次见面..."},
+        {"I'm Sucrose, a researcher of alchemy. I heard you've been to a lot of places, so I was wondering if you... Ah, what am I saying! It's only our first time meeting, I shouldn't trouble you. But... if you're willing, I'd love to hear any stories you have about your adventures. I'd... really like that.", "我是砂糖，炼金术的…研究员。听说你去过很多地方，一定也……不，没什么，第一次见面，不该这么麻烦你。但……如果你愿意，和我讲讲路上有意思的事，那个……我，会很开心的。"},
+        {"There are two cases", "分为三种情况"},'150
+        {"When the player is only 25% health, then use block.", "当玩家的生命值只剩 25%，就会进行格挡。"},
+        {"When the player is only 10% health, then use run.", "当玩家的生命值只剩 10%，就会进行逃跑。"},
+        {"OH NO! Here comes a Boss ", "不好！来了一只 Boss"},
+        {"Set tour Distance", "设置旅行距离"},
+        {"Current distance", "当前距离"},
+        {"Current region", "当前地区"},'156
+        {"You fall down and the Boss throws you into the far away, and you have to start again.", "你倒下了，Boss 把你向远处扔去，你不得不重新出发。"},
+        {"", ""},
+        {"", ""},
+>>>>>>> Stashed changes
         {"", ""},
         {"", ""},
         {"", ""}
@@ -174,6 +193,16 @@
         {"", ""},
         {"", ""},
         {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""}
+        }
+    Public Shared s_boss As String(,) = {
+        {"King Slime", "史莱姆王"},
+        {"King Spider", "蜘蛛精"},
+        {"King Ice Hilichurl", "冰丘丘王"},
+        {"Giant Beast", "巨人兽士"},
+        {"Mechanical Tank", "机械坦克"},
         {"", ""},
         {"", ""},
         {"", ""}

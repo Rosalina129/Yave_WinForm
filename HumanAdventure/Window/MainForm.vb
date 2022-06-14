@@ -7,7 +7,7 @@ Public Class MainForm
     Public langID As Byte = 0                     '0 = English (US), 1 = Chinese Simplified (PRC)
     Public NewSaveWindowProgress As Boolean
     'Place ID.
-    Dim RegionID As Integer
+    Public Shared RegionID As Integer
     'IMPORTANT!!! This save version determines which version you play the save on,
     'and whether it is compatible with the current version!
     Const SaveVersion As Integer = 2
@@ -17,13 +17,19 @@ Public Class MainForm
     Public Shared SaveUserPath As String
     Dim CacheSaveFileName As String
 
-    Dim TourDist(2) As UInt64                '100 = 1 Meters
+    Public Shared TourDist(2) As UInt64                '100 = 1 Meters
     Dim Touring As Boolean                  'Detect is in Tour mode.
 
+<<<<<<< Updated upstream
     Dim AutoBattle As Boolean               'Detect Auto battle is enabled.
+=======
+    'IO Variables
+    Dim isAutoBattle As Boolean               'Detect Auto battle is enabled.
+>>>>>>> Stashed changes
     Dim isBattle As Boolean                 'Detect is in Battle mode.
     Dim isBattleDisplay As Boolean
-    Dim BattleComplete As Boolean
+    Dim isBattleComplete As Boolean
+    Dim isBoss As Boolean
     Dim DAB As Boolean                      'Disable Action Buttons
     Dim DES As Integer                      'Disable Enemy Spawn
     Dim ABP As Byte
@@ -56,10 +62,11 @@ Public Class MainForm
     Private Function km(a As Double)
         Return a * 100 * 1000
     End Function
-    Private Sub SelectEnemy()
+    Private Sub SelectEnemy(type As Byte, enemyid As Integer)
         Dim a As Integer
-        Select Case RegionID
+        Select Case type
             Case 0
+<<<<<<< Updated upstream
                 Select Case TourDist(0)
                     Case 0 To km(2)
                         a = r1.Next(0, 5)
@@ -70,6 +77,39 @@ Public Class MainForm
                     Case km(10) + 1 To km(100)
                         a = r1.Next(11, 20)
                         CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+=======
+                Select Case RegionID
+                    Case 0
+                        Select Case TourDist(0)
+                            Case 0 To km(2)
+                                a = r1.Next(0, 5)
+                                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+                            Case km(2) + 1 To km(5)
+                                a = r1.Next(5, 11)
+                                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+                            Case km(5) + 1 To km(10)
+                                a = r1.Next(11, 22)
+                                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+                            Case km(10) + 1 To km(20)
+                                a = r1.Next(11, 22)
+                                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+                        End Select
+                End Select
+            Case 1
+                isBoss = True
+                Select Case RegionID
+                    Case 0
+                        CurrentEnemy = New InitEnemy(Enemies.Boss_R1(enemyid).ID1,
+                                                     Enemies.Boss_R1(enemyid).Name1,
+                                                     Enemies.Boss_R1(enemyid).HP1,
+                                                     Enemies.Boss_R1(enemyid).HPM1,
+                                                     Enemies.Boss_R1(enemyid).ATK1,
+                                                     Enemies.Boss_R1(enemyid).DEF1,
+                                                     Enemies.Boss_R1(enemyid).CRate1,
+                                                     Enemies.Boss_R1(enemyid).CDMG1,
+                                                     Enemies.Boss_R1(enemyid).EXP1,
+                                                     Enemies.Boss_R1(enemyid).Coins1)
+>>>>>>> Stashed changes
                 End Select
         End Select
     End Sub
@@ -219,12 +259,10 @@ Public Class MainForm
         health(1) = EnemyData.HP1
         EnemyData.HP1 = Calculate.ADCount(EnemyData.HP1, PlayerData.ATK1, EnemyData.DEF1, PlayerData.CRate1, PlayerData.CDMG1)
         DamageCountBox.Text = LangStr.s_string(96, langID) & (health(0) - PlayerData.HP1) & " Damages" & Chr(13) & "Enemy Taked " & (health(1) - EnemyData.HP1) & " Damages"
-        Thread.Sleep(1)
         If EnemyData.HP1 > 0 Then
             PlayerData.HP1 = Calculate.ADCount(PlayerData.HP1, EnemyData.ATK1, PlayerData.DEF1, EnemyData.CRate1, EnemyData.CDMG1)
             DamageCountBox.Text = DamageCountBox.Text & vbCrLf & LangStr.s_string(96, langID) & (health(0) - PlayerData.HP1) & LangStr.s_string(98, langID)
         End If
-        Thread.Sleep(1)
         If PlayerData.HP1 <= 0 Then
             PlayerData.HP1 = PlayerData.HPM1
             DamageCountBox.Text = DamageCountBox.Text & vbCrLf & LangStr.s_string(102, langID)
@@ -236,16 +274,16 @@ Public Class MainForm
         End If
     End Sub
 
-    Private Sub Battle_Damage(type As Byte)
+    Private Sub Battle_Damage(type As Byte) 'Start Battle Program
         Dim health(2) As Integer
         health(0) = PlayerData.HP1
         health(1) = CurrentEnemy.HP1
-        Select Case type
-            Case 0
+        Select Case type'Action Type
+            Case 0 'Attack
                 BattleMessage.Text = LangStr.s_string(135, langID) & LangStr.s_string(137, langID)
                 CurrentEnemy.HP1 = Calculate.ADCount(CurrentEnemy.HP1, PlayerData.ATK1, CurrentEnemy.DEF1, PlayerData.CRate1, PlayerData.CDMG1)
                 BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(97, langID) & (health(1) - CurrentEnemy.HP1) & LangStr.s_string(98, langID)
-            Case 1
+            Case 1 'Ele.Attack
                 BattleMessage.Text = LangStr.s_string(135, langID) & LangStr.s_string(107, langID)
                 If PlayerData.SE1 <> 0 Then
                     Select Case r1.NextDouble()
@@ -258,9 +296,41 @@ Public Class MainForm
                 Else
                     BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(141, langID)
                 End If
+<<<<<<< Updated upstream
         End Select
         Thread.Sleep(1)
         If (health(1) - CurrentEnemy.HP1) = 1 Then
+=======
+            Case 2 'Block
+                BattleMessage.Text = LangStr.s_string(135, langID) & LangStr.s_string(108, langID)
+                Thread.Sleep(2)
+                Select Case r1.NextDouble()
+                    Case 0 To 0.5
+                        Thread.Sleep(2)
+                        Blockadd = Math.Round(1 + (r1.NextDouble() * 0.5), 2)
+                        BlockCD = 3
+                        BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(146, langID) & " +" & Blockadd * 100 & "% " & LangStr.s_string(29, langID)
+                    Case 0.5 To 1
+                        BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(147, langID)
+                End Select
+            Case 3 'Run
+                BattleMessage.Text = LangStr.s_string(135, langID) & LangStr.s_string(109, langID)
+                Thread.Sleep(2)
+                Select Case r1.NextDouble()
+                    Case 0 To 0.5
+                        Thread.Sleep(2)
+                        BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(144, langID)
+                    Case 0.5 To 1
+                        BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(145, langID) & " " & lostCoins & " " & LangStr.s_string(104, langID) & ", " & lostTourDis \ 100 & "m " & LangStr.s_string(63, langID)
+                        CurrentEnemy.HP1 = 0
+                        TourDist(RegionID) -= lostTourDis
+                        PlayerData.Coins1 -= lostCoins
+                        isRun = True
+                End Select
+        End Select
+        Thread.Sleep(1)
+        If (health(1) - CurrentEnemy.HP1) = 1 Then 'English countable repair
+>>>>>>> Stashed changes
             If langID = 0 Then
                 BattleMessage.Text = BattleMessage.Text & "s"
             End If
@@ -274,12 +344,13 @@ Public Class MainForm
             BattleMessage.Text = BattleMessage.Text & vbCrLf & vbCrLf & LangStr.s_string(136, langID) & LangStr.s_string(137, langID)
             PlayerData.HP1 = Calculate.EleCount(PlayerData.HP1, CurrentEnemy.ATK1, PlayerData.DEF1, CurrentEnemy.CRate1, CurrentEnemy.CDMG1, CurrentEnemy.ID1, PlayerData.element1)
             BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(96, langID) & (health(0) - PlayerData.HP1) & LangStr.s_string(98, langID)
-            If (health(0) - PlayerData.HP1) = 1 Then
+            If (health(0) - PlayerData.HP1) = 1 Then 'English countable repair
                 If langID = 0 Then
                     BattleMessage.Text = BattleMessage.Text & "s"
                 End If
             End If
         End If
+<<<<<<< Updated upstream
         If PlayerData.HP1 <= 0 Then
             PlayerData.HP1 = PlayerData.HPM1
             DeathCount += 1
@@ -292,7 +363,39 @@ Public Class MainForm
             PlayerData.Coins1 += CurrentEnemy.Coins1
             BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(103, langID) & " " & CurrentEnemy.Coins1 & " " & LangStr.s_string(104, langID) & ", " & CurrentEnemy.EXP1 & " " & LangStr.s_string(105, langID)
             BattleComplete = True
+=======
+        If CurrentEnemy.HP1 <= 0 Then 'If Enemy defeat
+            DES = 5000 + r1.Next(50, 2501)
+            If Not isRun Then
+                PlayerData.SE1 += 10 + r1.Next(0, 7)
+                PlayerData.XP1 += CurrentEnemy.EXP1
+                PlayerData.Coins1 += CurrentEnemy.Coins1
+                BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(103, langID) & " " & CurrentEnemy.Coins1 & " " & LangStr.s_string(104, langID) & ", " & CurrentEnemy.EXP1 & " " & LangStr.s_string(105, langID)
+            End If
+            isRun = False
+            isBoss = False
+            isBattleComplete = True
+>>>>>>> Stashed changes
             CurrentEnemy = New InitEnemy()
+        End If
+        If PlayerData.HP1 <= 0 Then 'If Player dead
+            PlayerData.HP1 = PlayerData.HPM1
+            DeathCount += 1
+            If Not isBoss Then
+                BattleMessage.Text = BattleMessage.Text & vbCrLf & vbCrLf & LangStr.s_string(102, langID)
+                TourDist(RegionID) -= lostTourDis
+            Else
+                BattleMessage.Text = BattleMessage.Text & vbCrLf & vbCrLf & LangStr.s_string(157, langID)
+                TourDist(RegionID) \= 2
+                isBoss = False
+                isBattleComplete = True
+                CurrentEnemy = New InitEnemy()
+            End If
+        End If
+        BlockCD -= 1
+        If BlockCD < 0 Then
+            BlockCD = 0
+            Blockadd = 0
         End If
     End Sub
     Private Sub CheckDirectory()
@@ -423,6 +526,18 @@ Public Class MainForm
         End If
     End Function
 
+    Private Function start_battle(type As Byte)
+        isBattleDisplay = True
+        Panel10.Visible = True
+        Touring = False
+        isBattle = True
+        Select Case type
+            Case 0
+                BattleMessage.Text = LangStr.s_string(93, langID) & " " & CurrentEnemy.Name1 & " " & LangStr.s_string(94, langID)
+            Case 1
+                BattleMessage.Text = LangStr.s_string(153, langID) & " " & CurrentEnemy.Name1 & " !"
+        End Select
+    End Function
     ''Program Start!!!
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\WinFormGame") Then
@@ -542,14 +657,19 @@ Public Class MainForm
             Else
                 Button7.Enabled = True
             End If
+<<<<<<< Updated upstream
             If isBattle Or Touring Or AutoBattle Then
                 RadioButton1.Enabled = False
                 RadioButton2.Enabled = False
+=======
+            If isBattle Or Touring Or isAutoBattle Then
+                RegionButton1.Enabled = False
+>>>>>>> Stashed changes
             Else
                 RadioButton1.Enabled = True
                 RadioButton2.Enabled = True
             End If
-            If AutoBattle Then
+            If isAutoBattle Then
                 DAB = True
                 BattleTime.Enabled = True
             Else
@@ -564,10 +684,13 @@ Public Class MainForm
             Else
                 Button8.Enabled = True
                 Button9.Enabled = True
+<<<<<<< Updated upstream
                 Button10.Enabled = True
                 Button11.Enabled = True
+=======
+>>>>>>> Stashed changes
             End If
-            If BattleComplete Then
+            If isBattleComplete Then
                 Panel10.Enabled = False
                 DAB = True
                 isBattle = False
@@ -598,6 +721,23 @@ Public Class MainForm
             Else
                 Label37.Visible = False
             End If
+<<<<<<< Updated upstream
+=======
+            With PlayerData
+                lostCoins = .Coins1 \ 100
+                lostTourDis = TourDist(RegionID) \ 10
+            End With
+            If BlockCD > 0 Or isAutoBattle Then
+                Button10.Enabled = False
+            Else
+                Button10.Enabled = True
+            End If
+            If isBoss Or isAutoBattle Then
+                Button11.Enabled = False
+            Else
+                Button11.Enabled = True
+            End If
+>>>>>>> Stashed changes
             RefreshData()
             Panel5.Visible = False
         Else
@@ -606,8 +746,8 @@ Public Class MainForm
         End If
     End Sub
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        TourDist(RegionID) += 1 + r1.Next(0, 4)
-        DES -= (1 + r1.Next(0, 4))
+        TourDist(RegionID) += 2
+        DES -= (2)
         Dim b As Double
         b = r1.NextDouble()
         With PlayerData
@@ -618,15 +758,28 @@ Public Class MainForm
                     .HP1 += .HPM1 / 100
             End Select
         End With
+        Select Case TourDist(RegionID)
+            Case km(2) To km(2) + 1
+                SelectEnemy(1, 0)
+                start_battle(1)
+            Case km(10) To km(10) + 1
+                SelectEnemy(1, 1)
+                start_battle(1)
+            Case km(15) To km(15) + 1
+                SelectEnemy(1, 2)
+                start_battle(1)
+            Case km(20) To km(20) + 1
+                SelectEnemy(1, 3)
+                start_battle(1)
+            Case km(25) To km(25) + 1
+                SelectEnemy(1, 4)
+                start_battle(1)
+        End Select
         If DES <= 0 Then
             Select Case b
                 Case 0 To 0.005
-                    SelectEnemy()
-                    isBattleDisplay = True
-                    Panel10.Visible = True
-                    Touring = False
-                    isBattle = True
-                    BattleMessage.Text = LangStr.s_string(93, langID) & " " & CurrentEnemy.Name1 & " " & LangStr.s_string(94, langID)
+                    SelectEnemy(0, 0)
+                    start_battle(0)
             End Select
         End If
     End Sub
@@ -713,28 +866,28 @@ Public Class MainForm
         Else
             Touring = True
         End If
-        If BattleComplete Then
+        If isBattleComplete Then
             Panel10.Visible = False
             isBattleDisplay = False
             Touring = True
-            BattleComplete = False
+            isBattleComplete = False
         End If
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked Then
-            AutoBattle = True
+            isAutoBattle = True
         Else
-            AutoBattle = False
+            isAutoBattle = False
         End If
     End Sub
 
     Private Sub BattleTime_Tick(sender As Object, e As EventArgs) Handles BattleTime.Tick
-        If BattleComplete Then
+        If isBattleComplete Then
             Panel10.Visible = False
             isBattleDisplay = False
             Touring = True
-            BattleComplete = False
+            isBattleComplete = False
         End If
         If isBattle Then
             Select Case ABP
@@ -915,4 +1068,32 @@ Public Class MainForm
             vbYes, Me.Text
             )
     End Sub
+<<<<<<< Updated upstream
+=======
+    Private Sub attack(sender As Object, e As EventArgs) Handles Button8.Click
+        Battle_Damage(0)
+    End Sub
+    Private Sub ele_attack(sender As Object, e As EventArgs) Handles Button9.Click
+        Battle_Damage(1)
+    End Sub
+    Private Sub block(sender As Object, e As EventArgs) Handles Button10.Click
+        Battle_Damage(2)
+    End Sub
+    Private Sub run(sender As Object, e As EventArgs) Handles Button11.Click
+        Battle_Damage(3)
+    End Sub
+    Private Sub EasterEgg_Click(sender As Object, e As EventArgs) Handles EasterEgg.Click
+        Dim a As Integer
+        a = MsgBox(LangStr.s_string(149, langID), vbYesNo, LangStr.s_string(148, langID))
+        If a = vbYes Then
+            a = MsgBox("Thanks!", vbYes, Me.Text)
+        End If
+    End Sub
+
+    Private Sub set_tour_distance(sender As Object, e As EventArgs) Handles SetTourDistanceToolStripMenuItem.Click
+        If Not Touring And progress Then
+            SetDistance.Show()
+        End If
+    End Sub
+>>>>>>> Stashed changes
 End Class

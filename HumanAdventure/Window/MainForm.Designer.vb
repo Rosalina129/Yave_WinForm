@@ -35,6 +35,7 @@ Partial Class MainForm
         Me.ShowDebugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HealHPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CPPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SetTourDistanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FeedbackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -263,7 +264,7 @@ Partial Class MainForm
         '
         'ShowDebugToolStripMenuItem
         '
-        Me.ShowDebugToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HealHPToolStripMenuItem, Me.CPPToolStripMenuItem})
+        Me.ShowDebugToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HealHPToolStripMenuItem, Me.CPPToolStripMenuItem, Me.SetTourDistanceToolStripMenuItem})
         Me.ShowDebugToolStripMenuItem.Name = "ShowDebugToolStripMenuItem"
         Me.ShowDebugToolStripMenuItem.Size = New System.Drawing.Size(88, 20)
         Me.ShowDebugToolStripMenuItem.Text = "Experimental"
@@ -279,6 +280,12 @@ Partial Class MainForm
         Me.CPPToolStripMenuItem.Name = "CPPToolStripMenuItem"
         Me.CPPToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.CPPToolStripMenuItem.Text = "Custom Player Properties"
+        '
+        'SetTourDistanceToolStripMenuItem
+        '
+        Me.SetTourDistanceToolStripMenuItem.Name = "SetTourDistanceToolStripMenuItem"
+        Me.SetTourDistanceToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.SetTourDistanceToolStripMenuItem.Text = "Set tour Distance"
         '
         'AboutToolStripMenuItem
         '
@@ -855,7 +862,7 @@ Partial Class MainForm
         '
         Me.GroupBox5.Location = New System.Drawing.Point(11, 132)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(191, 113)
+        Me.GroupBox5.Size = New System.Drawing.Size(176, 113)
         Me.GroupBox5.TabIndex = 10
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Skills"
@@ -868,14 +875,14 @@ Partial Class MainForm
         Me.Panel11.Controls.Add(Me.Button9)
         Me.Panel11.Controls.Add(Me.Button8)
         Me.Panel11.Controls.Add(Me.BattleMessage)
-        Me.Panel11.Location = New System.Drawing.Point(208, 4)
+        Me.Panel11.Location = New System.Drawing.Point(193, 4)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(206, 241)
+        Me.Panel11.Size = New System.Drawing.Size(221, 241)
         Me.Panel11.TabIndex = 9
         '
         'Button11
         '
-        Me.Button11.Location = New System.Drawing.Point(105, 214)
+        Me.Button11.Location = New System.Drawing.Point(118, 214)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(98, 23)
         Me.Button11.TabIndex = 17
@@ -893,7 +900,7 @@ Partial Class MainForm
         '
         'Button9
         '
-        Me.Button9.Location = New System.Drawing.Point(105, 185)
+        Me.Button9.Location = New System.Drawing.Point(118, 185)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(98, 23)
         Me.Button9.TabIndex = 15
@@ -917,7 +924,7 @@ Partial Class MainForm
         Me.BattleMessage.Multiline = True
         Me.BattleMessage.Name = "BattleMessage"
         Me.BattleMessage.ReadOnly = True
-        Me.BattleMessage.Size = New System.Drawing.Size(206, 181)
+        Me.BattleMessage.Size = New System.Drawing.Size(221, 181)
         Me.BattleMessage.TabIndex = 14
         Me.BattleMessage.Text = "battlemessage" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -1881,4 +1888,12 @@ Partial Class MainForm
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Button6 As Button
     Friend WithEvents Help2ToolStripMenuItem As ToolStripMenuItem
+<<<<<<< Updated upstream
+=======
+    Friend WithEvents RegionButton8 As RadioButton
+    Friend WithEvents RegionButton7 As RadioButton
+    Friend WithEvents RegionButton6 As RadioButton
+    Friend WithEvents RegionButton5 As RadioButton
+    Friend WithEvents SetTourDistanceToolStripMenuItem As ToolStripMenuItem
+>>>>>>> Stashed changes
 End Class

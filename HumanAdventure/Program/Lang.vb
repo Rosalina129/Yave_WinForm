@@ -20,6 +20,7 @@
             .CPPToolStripMenuItem.Text = LangStr.s_string(14, langid)
             .AboutsToolStripMenuItem.Text = LangStr.s_string(15, langid)
             .FeedbackToolStripMenuItem.Text = LangStr.s_string(16, langid)
+            .SetTourDistanceToolStripMenuItem.Text = LangStr.s_string(154, langid)
 
             .LabelLevel.Text = LangStr.s_string(33, langid)
             .TabControl1.TabPages(0).Text = LangStr.s_string(34, langid)
