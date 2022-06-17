@@ -32,10 +32,10 @@ Partial Class MainForm
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Help1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Help2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShowDebugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HealHPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CPPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SetTourDistanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FeedbackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -78,7 +78,6 @@ Partial Class MainForm
         Me.XPBar = New System.Windows.Forms.ProgressBar()
         Me.XPMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.XPMenuStrip1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UpgradeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -113,6 +112,12 @@ Partial Class MainForm
         Me.Equipment = New System.Windows.Forms.TabPage()
         Me.Options = New System.Windows.Forms.TabPage()
         Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.Label36 = New System.Windows.Forms.Label()
@@ -154,11 +159,15 @@ Partial Class MainForm
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.RegionButton8 = New System.Windows.Forms.RadioButton()
+        Me.RegionButton7 = New System.Windows.Forms.RadioButton()
+        Me.RegionButton6 = New System.Windows.Forms.RadioButton()
+        Me.RegionButton5 = New System.Windows.Forms.RadioButton()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RegionButton1 = New System.Windows.Forms.RadioButton()
+        Me.RegionButton4 = New System.Windows.Forms.RadioButton()
+        Me.RegionButton2 = New System.Windows.Forms.RadioButton()
+        Me.RegionButton3 = New System.Windows.Forms.RadioButton()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.RegionLabel = New System.Windows.Forms.Label()
@@ -172,8 +181,6 @@ Partial Class MainForm
         Me.AutoBattleTimer = New System.Windows.Forms.Timer(Me.components)
         Me.BattleTime = New System.Windows.Forms.Timer(Me.components)
         Me.BattleCooldown = New System.Windows.Forms.Timer(Me.components)
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Help2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -191,6 +198,7 @@ Partial Class MainForm
         Me.Panel11.SuspendLayout()
         Me.Options.SuspendLayout()
         Me.Panel12.SuspendLayout()
+        Me.Panel14.SuspendLayout()
         Me.Panel13.SuspendLayout()
         Me.Experimental.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -259,12 +267,18 @@ Partial Class MainForm
         'Help1ToolStripMenuItem
         '
         Me.Help1ToolStripMenuItem.Name = "Help1ToolStripMenuItem"
-        Me.Help1ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.Help1ToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
         Me.Help1ToolStripMenuItem.Text = "Gameplay"
+        '
+        'Help2ToolStripMenuItem
+        '
+        Me.Help2ToolStripMenuItem.Name = "Help2ToolStripMenuItem"
+        Me.Help2ToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.Help2ToolStripMenuItem.Text = "Elements"
         '
         'ShowDebugToolStripMenuItem
         '
-        Me.ShowDebugToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HealHPToolStripMenuItem, Me.CPPToolStripMenuItem, Me.SetTourDistanceToolStripMenuItem})
+        Me.ShowDebugToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HealHPToolStripMenuItem, Me.CPPToolStripMenuItem})
         Me.ShowDebugToolStripMenuItem.Name = "ShowDebugToolStripMenuItem"
         Me.ShowDebugToolStripMenuItem.Size = New System.Drawing.Size(88, 20)
         Me.ShowDebugToolStripMenuItem.Text = "Experimental"
@@ -280,12 +294,6 @@ Partial Class MainForm
         Me.CPPToolStripMenuItem.Name = "CPPToolStripMenuItem"
         Me.CPPToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.CPPToolStripMenuItem.Text = "Custom Player Properties"
-        '
-        'SetTourDistanceToolStripMenuItem
-        '
-        Me.SetTourDistanceToolStripMenuItem.Name = "SetTourDistanceToolStripMenuItem"
-        Me.SetTourDistanceToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
-        Me.SetTourDistanceToolStripMenuItem.Text = "Set tour Distance"
         '
         'AboutToolStripMenuItem
         '
@@ -718,17 +726,10 @@ Partial Class MainForm
         '
         'XPMenuStrip1
         '
-        Me.XPMenuStrip1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpgradeToolStripMenuItem})
         Me.XPMenuStrip1.Enabled = False
         Me.XPMenuStrip1.Name = "XPMenuStrip1"
         Me.XPMenuStrip1.Size = New System.Drawing.Size(87, 22)
         Me.XPMenuStrip1.Text = "xp"
-        '
-        'UpgradeToolStripMenuItem
-        '
-        Me.UpgradeToolStripMenuItem.Name = "UpgradeToolStripMenuItem"
-        Me.UpgradeToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
-        Me.UpgradeToolStripMenuItem.Text = "Upgrade"
         '
         'PictureBox1
         '
@@ -862,7 +863,7 @@ Partial Class MainForm
         '
         Me.GroupBox5.Location = New System.Drawing.Point(11, 132)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(176, 113)
+        Me.GroupBox5.Size = New System.Drawing.Size(191, 113)
         Me.GroupBox5.TabIndex = 10
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Skills"
@@ -875,14 +876,14 @@ Partial Class MainForm
         Me.Panel11.Controls.Add(Me.Button9)
         Me.Panel11.Controls.Add(Me.Button8)
         Me.Panel11.Controls.Add(Me.BattleMessage)
-        Me.Panel11.Location = New System.Drawing.Point(193, 4)
+        Me.Panel11.Location = New System.Drawing.Point(208, 4)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(221, 241)
+        Me.Panel11.Size = New System.Drawing.Size(206, 241)
         Me.Panel11.TabIndex = 9
         '
         'Button11
         '
-        Me.Button11.Location = New System.Drawing.Point(118, 214)
+        Me.Button11.Location = New System.Drawing.Point(105, 214)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(98, 23)
         Me.Button11.TabIndex = 17
@@ -900,7 +901,7 @@ Partial Class MainForm
         '
         'Button9
         '
-        Me.Button9.Location = New System.Drawing.Point(118, 185)
+        Me.Button9.Location = New System.Drawing.Point(105, 185)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(98, 23)
         Me.Button9.TabIndex = 15
@@ -924,7 +925,7 @@ Partial Class MainForm
         Me.BattleMessage.Multiline = True
         Me.BattleMessage.Name = "BattleMessage"
         Me.BattleMessage.ReadOnly = True
-        Me.BattleMessage.Size = New System.Drawing.Size(221, 181)
+        Me.BattleMessage.Size = New System.Drawing.Size(206, 181)
         Me.BattleMessage.TabIndex = 14
         Me.BattleMessage.Text = "battlemessage" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -1060,6 +1061,8 @@ Partial Class MainForm
         'Panel12
         '
         Me.Panel12.AutoScroll = True
+        Me.Panel12.Controls.Add(Me.Panel14)
+        Me.Panel12.Controls.Add(Me.Label38)
         Me.Panel12.Controls.Add(Me.Button6)
         Me.Panel12.Controls.Add(Me.TextBox3)
         Me.Panel12.Controls.Add(Me.ComboBox3)
@@ -1077,6 +1080,63 @@ Partial Class MainForm
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(417, 274)
         Me.Panel12.TabIndex = 0
+        '
+        'Panel14
+        '
+        Me.Panel14.Controls.Add(Me.Label39)
+        Me.Panel14.Controls.Add(Me.Button12)
+        Me.Panel14.Controls.Add(Me.TextBox1)
+        Me.Panel14.Location = New System.Drawing.Point(0, 325)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(191, 45)
+        Me.Panel14.TabIndex = 23
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Location = New System.Drawing.Point(3, 0)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(71, 15)
+        Me.Label39.TabIndex = 21
+        Me.Label39.Text = "Set Distance"
+        '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(112, 17)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(75, 23)
+        Me.Button12.TabIndex = 22
+        Me.Button12.Text = "set"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.TextBox1.Location = New System.Drawing.Point(6, 18)
+        Me.TextBox1.MaxLength = 9
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 23)
+        Me.TextBox1.TabIndex = 10
+        Me.TextBox1.Tag = ""
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.Label38.Location = New System.Drawing.Point(3, 302)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(96, 20)
+        Me.Label38.TabIndex = 20
+        Me.Label38.Text = "Experimental"
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(134, 87)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 19
+        Me.Button6.Text = "help"
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'TextBox3
         '
@@ -1112,7 +1172,7 @@ Partial Class MainForm
         '
         'EasterEgg
         '
-        Me.EasterEgg.Location = New System.Drawing.Point(7, 282)
+        Me.EasterEgg.Location = New System.Drawing.Point(4, 276)
         Me.EasterEgg.Name = "EasterEgg"
         Me.EasterEgg.Size = New System.Drawing.Size(75, 23)
         Me.EasterEgg.TabIndex = 8
@@ -1495,68 +1555,118 @@ Partial Class MainForm
         '
         'Panel7
         '
+        Me.Panel7.AutoScroll = True
+        Me.Panel7.Controls.Add(Me.RegionButton8)
+        Me.Panel7.Controls.Add(Me.RegionButton7)
+        Me.Panel7.Controls.Add(Me.RegionButton6)
+        Me.Panel7.Controls.Add(Me.RegionButton5)
         Me.Panel7.Controls.Add(Me.Label10)
-        Me.Panel7.Controls.Add(Me.RadioButton1)
-        Me.Panel7.Controls.Add(Me.RadioButton4)
-        Me.Panel7.Controls.Add(Me.RadioButton2)
-        Me.Panel7.Controls.Add(Me.RadioButton3)
+        Me.Panel7.Controls.Add(Me.RegionButton1)
+        Me.Panel7.Controls.Add(Me.RegionButton4)
+        Me.Panel7.Controls.Add(Me.RegionButton2)
+        Me.Panel7.Controls.Add(Me.RegionButton3)
         Me.Panel7.Location = New System.Drawing.Point(9, 37)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(428, 131)
         Me.Panel7.TabIndex = 2
         '
+        'RegionButton8
+        '
+        Me.RegionButton8.AutoSize = True
+        Me.RegionButton8.Enabled = False
+        Me.RegionButton8.Location = New System.Drawing.Point(3, 163)
+        Me.RegionButton8.Name = "RegionButton8"
+        Me.RegionButton8.Size = New System.Drawing.Size(95, 19)
+        Me.RegionButton8.TabIndex = 8
+        Me.RegionButton8.Text = "regionname8"
+        Me.RegionButton8.UseVisualStyleBackColor = True
+        '
+        'RegionButton7
+        '
+        Me.RegionButton7.AutoSize = True
+        Me.RegionButton7.Enabled = False
+        Me.RegionButton7.Location = New System.Drawing.Point(3, 143)
+        Me.RegionButton7.Name = "RegionButton7"
+        Me.RegionButton7.Size = New System.Drawing.Size(95, 19)
+        Me.RegionButton7.TabIndex = 7
+        Me.RegionButton7.Text = "regionname7"
+        Me.RegionButton7.UseVisualStyleBackColor = True
+        '
+        'RegionButton6
+        '
+        Me.RegionButton6.AutoSize = True
+        Me.RegionButton6.Enabled = False
+        Me.RegionButton6.Location = New System.Drawing.Point(3, 123)
+        Me.RegionButton6.Name = "RegionButton6"
+        Me.RegionButton6.Size = New System.Drawing.Size(95, 19)
+        Me.RegionButton6.TabIndex = 6
+        Me.RegionButton6.Text = "regionname6"
+        Me.RegionButton6.UseVisualStyleBackColor = True
+        '
+        'RegionButton5
+        '
+        Me.RegionButton5.AutoSize = True
+        Me.RegionButton5.Enabled = False
+        Me.RegionButton5.Location = New System.Drawing.Point(3, 103)
+        Me.RegionButton5.Name = "RegionButton5"
+        Me.RegionButton5.Size = New System.Drawing.Size(95, 19)
+        Me.RegionButton5.TabIndex = 5
+        Me.RegionButton5.Text = "regionname5"
+        Me.RegionButton5.UseVisualStyleBackColor = True
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(3, 45)
+        Me.Label10.Location = New System.Drawing.Point(3, 26)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(159, 15)
         Me.Label10.TabIndex = 4
         Me.Label10.Text = "More Region Coming soon..."
         '
-        'RadioButton1
+        'RegionButton1
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Checked = True
-        Me.RadioButton1.Location = New System.Drawing.Point(3, 3)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(95, 19)
-        Me.RadioButton1.TabIndex = 0
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "regionname1"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.RegionButton1.AutoSize = True
+        Me.RegionButton1.Checked = True
+        Me.RegionButton1.Location = New System.Drawing.Point(3, 3)
+        Me.RegionButton1.Name = "RegionButton1"
+        Me.RegionButton1.Size = New System.Drawing.Size(95, 19)
+        Me.RegionButton1.TabIndex = 0
+        Me.RegionButton1.TabStop = True
+        Me.RegionButton1.Text = "regionname1"
+        Me.RegionButton1.UseVisualStyleBackColor = True
         '
-        'RadioButton4
+        'RegionButton4
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Enabled = False
-        Me.RadioButton4.Location = New System.Drawing.Point(3, 83)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(95, 19)
-        Me.RadioButton4.TabIndex = 3
-        Me.RadioButton4.Text = "regionname4"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.RegionButton4.AutoSize = True
+        Me.RegionButton4.Enabled = False
+        Me.RegionButton4.Location = New System.Drawing.Point(3, 83)
+        Me.RegionButton4.Name = "RegionButton4"
+        Me.RegionButton4.Size = New System.Drawing.Size(95, 19)
+        Me.RegionButton4.TabIndex = 3
+        Me.RegionButton4.Text = "regionname4"
+        Me.RegionButton4.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'RegionButton2
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(3, 23)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(95, 19)
-        Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.Text = "regionname2"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.RegionButton2.AutoSize = True
+        Me.RegionButton2.Enabled = False
+        Me.RegionButton2.Location = New System.Drawing.Point(3, 43)
+        Me.RegionButton2.Name = "RegionButton2"
+        Me.RegionButton2.Size = New System.Drawing.Size(95, 19)
+        Me.RegionButton2.TabIndex = 1
+        Me.RegionButton2.Text = "regionname2"
+        Me.RegionButton2.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'RegionButton3
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Enabled = False
-        Me.RadioButton3.Location = New System.Drawing.Point(3, 63)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(95, 19)
-        Me.RadioButton3.TabIndex = 2
-        Me.RadioButton3.Text = "regionname3"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.RegionButton3.AutoSize = True
+        Me.RegionButton3.Enabled = False
+        Me.RegionButton3.Location = New System.Drawing.Point(3, 63)
+        Me.RegionButton3.Name = "RegionButton3"
+        Me.RegionButton3.Size = New System.Drawing.Size(95, 19)
+        Me.RegionButton3.TabIndex = 2
+        Me.RegionButton3.Text = "regionname3"
+        Me.RegionButton3.UseVisualStyleBackColor = True
         '
         'Panel6
         '
@@ -1657,21 +1767,6 @@ Partial Class MainForm
         '
         Me.BattleCooldown.Interval = 1000
         '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(134, 87)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 23)
-        Me.Button6.TabIndex = 19
-        Me.Button6.Text = "help"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Help2ToolStripMenuItem
-        '
-        Me.Help2ToolStripMenuItem.Name = "Help2ToolStripMenuItem"
-        Me.Help2ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.Help2ToolStripMenuItem.Text = "Elements"
-        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -1715,6 +1810,8 @@ Partial Class MainForm
         Me.Options.ResumeLayout(False)
         Me.Panel12.ResumeLayout(False)
         Me.Panel12.PerformLayout()
+        Me.Panel14.ResumeLayout(False)
+        Me.Panel14.PerformLayout()
         Me.Panel13.ResumeLayout(False)
         Me.Panel13.PerformLayout()
         Me.Experimental.ResumeLayout(False)
@@ -1776,7 +1873,6 @@ Partial Class MainForm
     Friend WithEvents Timer1 As Timer
     Friend WithEvents XPMenu As ContextMenuStrip
     Friend WithEvents XPMenuStrip1 As ToolStripMenuItem
-    Friend WithEvents UpgradeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents XPLabel As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel5 As Panel
@@ -1795,14 +1891,14 @@ Partial Class MainForm
     Friend WithEvents UpgradeShopToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RegionButton1 As RadioButton
+    Friend WithEvents RegionButton2 As RadioButton
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Label9 As Label
     Friend WithEvents RegionLabel As Label
-    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RegionButton3 As RadioButton
     Friend WithEvents Button3 As Button
-    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents RegionButton4 As RadioButton
     Friend WithEvents Label10 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents TabControl2 As TabControl
@@ -1888,12 +1984,13 @@ Partial Class MainForm
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Button6 As Button
     Friend WithEvents Help2ToolStripMenuItem As ToolStripMenuItem
-<<<<<<< Updated upstream
-=======
     Friend WithEvents RegionButton8 As RadioButton
     Friend WithEvents RegionButton7 As RadioButton
     Friend WithEvents RegionButton6 As RadioButton
     Friend WithEvents RegionButton5 As RadioButton
-    Friend WithEvents SetTourDistanceToolStripMenuItem As ToolStripMenuItem
->>>>>>> Stashed changes
+    Friend WithEvents Label38 As Label
+    Friend WithEvents Button12 As Button
+    Friend WithEvents Label39 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Panel14 As Panel
 End Class

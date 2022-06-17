@@ -20,7 +20,6 @@
             .CPPToolStripMenuItem.Text = LangStr.s_string(14, langid)
             .AboutsToolStripMenuItem.Text = LangStr.s_string(15, langid)
             .FeedbackToolStripMenuItem.Text = LangStr.s_string(16, langid)
-            .SetTourDistanceToolStripMenuItem.Text = LangStr.s_string(154, langid)
 
             .LabelLevel.Text = LangStr.s_string(33, langid)
             .TabControl1.TabPages(0).Text = LangStr.s_string(34, langid)
@@ -48,10 +47,14 @@
             .GroupBox1.Text = LangStr.s_string(45, langid)
             .Button3.Text = LangStr.s_string(46, langid)
             .Label10.Text = LangStr.s_string(47, langid)
-            .RadioButton1.Text = LangStr.s_string(48, langid)
-            .RadioButton2.Text = LangStr.s_string(49, langid)
-            .RadioButton3.Text = LangStr.s_string(50, langid)
-            .RadioButton4.Text = LangStr.s_string(51, langid)
+            .RegionButton1.Text = LangStr.s_string(48, langid)
+            .RegionButton2.Text = LangStr.s_string(49, langid)
+            .RegionButton3.Text = LangStr.s_string(50, langid)
+            .RegionButton4.Text = LangStr.s_string(51, langid)
+            .RegionButton5.Text = LangStr.s_string(52, langid)
+            .RegionButton6.Text = LangStr.s_string(53, langid)
+            .RegionButton7.Text = LangStr.s_string(54, langid)
+            .RegionButton8.Text = LangStr.s_string(55, langid)
             .Label9.Text = LangStr.s_string(33, langid) & " 15 " & LangStr.s_string(72, langid)
 
             .AttributeToolTip.ToolTipTitle = LangStr.s_string(26, langid)
@@ -109,6 +112,9 @@
             .Label16.Text = LangStr.s_string(28, langid)
             .Label12.Text = LangStr.s_string(29, langid)
             .Button6.Text = LangStr.s_string(138, langid)
+
+            .Label38.Text = LangStr.s_string(2, langid)
+            .Label39.Text = LangStr.s_string(153, langid)
         End With
         'NewSave Strings
         With NewSave

@@ -144,8 +144,6 @@
         {"But your star energy has run out of power and elemental attacks have failed to cast.", "但你的星星能量已耗尽，元素攻击释放失败。"},'141
         {"Smarter decisions", "更智能的决定"},
         {"Elemental attacks are preferred when Star Energy is sufficient, normal attacks are used otherwise.", "当星星能量足够时，会优先使用元素攻击，否则使用普通攻击。"},
-<<<<<<< Updated upstream
-=======
         {"You tried to make a run for it, but you failed.", "你尝试准备逃跑，但失败了。"},
         {"You made your escape, but you lost", "你已经成功逃跑，但损失了"},
         {"Block action is standard.", "格挡动作很标准。"},'146
@@ -155,14 +153,12 @@
         {"There are two cases", "分为三种情况"},'150
         {"When the player is only 25% health, then use block.", "当玩家的生命值只剩 25%，就会进行格挡。"},
         {"When the player is only 10% health, then use run.", "当玩家的生命值只剩 10%，就会进行逃跑。"},
-        {"OH NO! Here comes a Boss ", "不好！来了一只 Boss"},
-        {"Set tour Distance", "设置旅行距离"},
-        {"Current distance", "当前距离"},
-        {"Current region", "当前地区"},'156
-        {"You fall down and the Boss throws you into the far away, and you have to start again.", "你倒下了，Boss 把你向远处扔去，你不得不重新出发。"},
+        {"Set distance", "设置距离"},
         {"", ""},
         {"", ""},
->>>>>>> Stashed changes
+        {"", ""},
+        {"", ""},
+        {"", ""},
         {"", ""},
         {"", ""},
         {"", ""}
@@ -193,16 +189,6 @@
         {"", ""},
         {"", ""},
         {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""}
-        }
-    Public Shared s_boss As String(,) = {
-        {"King Slime", "史莱姆王"},
-        {"King Spider", "蜘蛛精"},
-        {"King Ice Hilichurl", "冰丘丘王"},
-        {"Giant Beast", "巨人兽士"},
-        {"Mechanical Tank", "机械坦克"},
         {"", ""},
         {"", ""},
         {"", ""}
