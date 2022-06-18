@@ -221,7 +221,7 @@ Public Class MainForm
         MsgBox(pstring, vbYes, Me.Text)
         Return Nothing
     End Function
-    Private Sub Simulate_Damage()
+    Private Sub SimulateDamage()
         Dim health(2) As Integer
         health(0) = PlayerData.HP1
         health(1) = EnemyData.HP1
@@ -538,16 +538,16 @@ Public Class MainForm
         End If
     End Sub
 
-    Private Sub ChangeNameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChangeNameToolStripMenuItem.Click
+    Private Sub ChangeName_Open(sender As Object, e As EventArgs) Handles ChangeNameToolStripMenuItem.Click
         ChangeName.ShowDialog()
         ChangeName.TextBox1.Text = InitData.CName
     End Sub
 
-    Private Sub NewSaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewSaveToolStripMenuItem.Click, Button2.Click
+    Private Sub NewSave_Open(sender As Object, e As EventArgs) Handles NewSaveToolStripMenuItem.Click, Button2.Click
         progress = False
         NewSave.ShowDialog()
     End Sub
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub GameThread_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         r1r = r1.NextDouble
         If NewSaveWindowProgress = True Then
             NewSaveWindowProgress = False
@@ -716,7 +716,7 @@ Public Class MainForm
     End Sub
 
     Private Sub StartSimulationDamage(sender As Object, e As EventArgs) Handles Button5.Click
-        Simulate_Damage()
+        SimulateDamage()
     End Sub
 
     Private Sub Heal(sender As Object, e As EventArgs) Handles HealHPToolStripMenuItem.Click
