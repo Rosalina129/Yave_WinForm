@@ -115,6 +115,8 @@
 
             .Label38.Text = LangStr.s_string(2, langid)
             .Label39.Text = LangStr.s_string(153, langid)
+            .Button12.Text = LangStr.s_string(111, langid)
+            .Label40.Text = LangStr.s_string(156, langid) & ": x / 100 (m)"
         End With
         'NewSave Strings
         With NewSave

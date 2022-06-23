@@ -31,4 +31,14 @@
         New InitEnemy(7, LangStr.s_enemy(13, MainForm.langID), 2306, 2306, 165, 102, 0.485, 1.125, 563, 809),
         New InitEnemy(8, LangStr.s_enemy(13, MainForm.langID), 2306, 2306, 165, 102, 0.485, 1.125, 563, 809)
     }
+    Public Shared ReadOnly Boss_R1 As InitEnemy() = {'0 Common 1 Ice 2 Fire 3 Water 4 Grass 5 Star 6 Metal 7 Electric 8 Shadow
+        New InitEnemy(7, LangStr.s_boss(0, MainForm.langID), 6000, 6000, 62, 40, 0.5, 1.5, 3200, 4000),'2km
+        New InitEnemy(8, LangStr.s_boss(1, MainForm.langID), 36000, 36000, 168, 198, 0.5, 2.5, 9000, 16000),'10km
+        New InitEnemy(1, LangStr.s_boss(2, MainForm.langID), 80000, 80000, 290, 215, 0.1, 1.5, 14000, 56000),'20km
+        New InitEnemy(4, LangStr.s_boss(3, MainForm.langID), 95000, 95000, 320, 405, 0.05, 0.5, 42000, 70000),'40km
+        New InitEnemy(6, LangStr.s_boss(4, MainForm.langID), 176500, 176500, 1080, 480, 0.05, 0.5, 38000, 80000),'50km
+        New InitEnemy(7, LangStr.s_boss(4, MainForm.langID), 37125, 37125, 450, 80, 0.5, 1.35, 96000, 140000),'75km
+        New InitEnemy(0, LangStr.s_boss(4, MainForm.langID), 89600, 89600, 696, 124, 0.25, 0.95, 158000, 320000),'90km
+        New InitEnemy(4, LangStr.s_boss(4, MainForm.langID), 792617, 792617, 932, 0, 0.85, 1, 0, 0)'100km
+        }
 End Class

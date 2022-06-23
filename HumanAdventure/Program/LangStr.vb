@@ -47,7 +47,7 @@
         {"Talent", "天赋"},
         {"Region", "地区"},
         {"Introduction", "介绍"},'46
-        {"More Region Coming soon next update...", "更多地区敬请期待版本更新..."},
+        {"Coming soon next update...", "敬请期待版本更新..."},
         {"Emerald Plains", "绿宝石平原"},'48
         {"Drip Forest", "滴水森林"},
         {"Frostmelt Snow Mountain", "霜融雪山"},
@@ -154,9 +154,10 @@
         {"When the player is only 25% health, then use block.", "当玩家的生命值只剩 25%，就会进行格挡。"},
         {"When the player is only 10% health, then use run.", "当玩家的生命值只剩 10%，就会进行逃跑。"},
         {"Set distance", "设置距离"},
-        {"", ""},
-        {"", ""},
-        {"", ""},
+        {"OH NO! Here comes a Boss ", "不好！来了一只 Boss"},
+        {"You fall down and the Boss throws you into the far away, and you have to start again.", "你倒下了，Boss 把你向远处扔去，你不得不重新出发。"},
+        {"Distance Convert", "距离换算"},
+        {"Fall Counts", "已贡献的灵魂"},
         {"", ""},
         {"", ""},
         {"", ""},
@@ -192,6 +193,16 @@
         {"", ""},
         {"", ""},
         {"", ""}
+        }
+    Public Shared s_boss As String(,) = {
+        {"King Slime", "史莱姆王"},
+        {"King Spider", "蜘蛛精"},
+        {"King Ice Hilichurl", "冰丘丘王"},
+        {"Giant Beast", "巨人兽士"},
+        {"Mechanical Tank", "机械坦克"},
+        {"Farway Believers", "法外信徒"},
+        {"Elite Knight", "精英·侠客"},
+        {"Dryad", "树妖"}
         }
     Public Shared s_basic As String(,) = {
         {"No Basic", "无基础"}，

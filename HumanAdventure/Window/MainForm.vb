@@ -20,6 +20,8 @@ Public Class MainForm
     Dim TourDist(2) As UInt64                '100 = 1 Meters
     Dim Touring As Boolean                  'Detect is in Tour mode.
 
+    Dim Debug As Boolean = 0
+
     'IO Variables
     Dim isAutoBattle As Boolean               'Detect Auto battle is enabled.
     Dim isBattle As Boolean                 'Detect is in Battle mode.
@@ -64,20 +66,41 @@ Public Class MainForm
     Private Function km(a As Double)
         Return a * 100 * 1000
     End Function
-    Private Sub SelectEnemy()
+    Private Sub SelectEnemy(type As Byte, enemyid As Integer)
         Dim a As Integer
-        Select Case RegionID
+        Select Case type
             Case 0
-                Select Case TourDist(0)
-                    Case 0 To km(2)
-                        a = r1.Next(0, 5)
-                        CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
-                    Case km(2) + 1 To km(10)
-                        a = r1.Next(5, 11)
-                        CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
-                    Case km(10) + 1 To km(100)
-                        a = r1.Next(11, 13)
-                        CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+                Select Case RegionID
+                    Case 0
+                        Select Case TourDist(0)
+                            Case 0 To km(2)
+                                a = r1.Next(0, 5)
+                                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+                            Case km(2) + 1 To km(5)
+                                a = r1.Next(5, 11)
+                                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+                            Case km(5) + 1 To km(10)
+                                a = r1.Next(11, 22)
+                                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+                            Case km(10) + 1 To km(20)
+                                a = r1.Next(11, 22)
+                                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+                        End Select
+                End Select
+            Case 1
+                isBoss = True
+                Select Case RegionID
+                    Case 0
+                        CurrentEnemy = New InitEnemy(Enemies.Boss_R1(enemyid).ID1,
+                                                     Enemies.Boss_R1(enemyid).Name1,
+                                                     Enemies.Boss_R1(enemyid).HP1,
+                                                     Enemies.Boss_R1(enemyid).HPM1,
+                                                     Enemies.Boss_R1(enemyid).ATK1,
+                                                     Enemies.Boss_R1(enemyid).DEF1,
+                                                     Enemies.Boss_R1(enemyid).CRate1,
+                                                     Enemies.Boss_R1(enemyid).CDMG1,
+                                                     Enemies.Boss_R1(enemyid).EXP1,
+                                                     Enemies.Boss_R1(enemyid).Coins1)
                 End Select
         End Select
     End Sub
@@ -89,6 +112,18 @@ Public Class MainForm
         Next
         Return a
     End Function
+    Private Sub start_battle(type As Byte)
+        isBattleDisplay = True
+        Panel10.Visible = True
+        Touring = False
+        isBattle = True
+        Select Case type
+            Case 0
+                BattleMessage.Text = LangStr.s_string(93, langID) & " " & CurrentEnemy.Name1 & " " & LangStr.s_string(94, langID)
+            Case 1
+                BattleMessage.Text = LangStr.s_string(154, langID) & " " & CurrentEnemy.Name1 & " !"
+        End Select
+    End Sub
     Private Sub RefreshData()
         With PlayerData
             PictureBox1.Image = InitData.SkinGallery(.Sk)
@@ -106,9 +141,12 @@ Public Class MainForm
             RegionLabel.Text = LangStr.s_string(42, langID) & " " & LangStr.s_string(48 + RegionID, langID)
             If TourDist(RegionID) >= 100000 Then
                 Label24.Text = LangStr.s_string(63, langID) & " " & Math.Round(TourDist(RegionID) / 10 ^ 5, 2) & "km" '& "  " & DES
+                Label41.Text = LangStr.s_string(63, langID) & " " & Math.Round(TourDist(RegionID) / 10 ^ 5, 2) & "km"
             Else
                 Label24.Text = LangStr.s_string(63, langID) & " " & Math.Round(TourDist(RegionID) / 10 ^ 2, 2) & "m" '& "  " & DES
+                Label41.Text = LangStr.s_string(63, langID) & " " & Math.Round(TourDist(RegionID) / 10 ^ 2, 2) & "m"
             End If
+
             CheckXP()
             XPBar.Maximum = .XPNeed1
             XPBar.Value = .XP1
@@ -163,7 +201,17 @@ Public Class MainForm
             PlayerData.XP1 = 0
         End If
     End Sub
+    Private Sub debugswitch()
+        Label38.Visible = Debug
+        Panel15.Visible = Debug
+        Panel14.Visible = Debug
+        If Not Debug Then
+            TabControl2.TabPages.Remove(Experimental)
+        End If
+        ShowDebugToolStripMenuItem.Visible = Debug
+    End Sub
     Private Sub UpgradeProp()
+
         With PlayerData
             .Level1 += 1
             UpgradePoint += 1 + r1.Next(0, 5)
@@ -216,7 +264,6 @@ Public Class MainForm
             .HP1 = .HPM1
         End With
     End Sub
-
     Public Function DebugShow(pstring As String)
         MsgBox(pstring, vbYes, Me.Text)
         Return Nothing
@@ -314,12 +361,6 @@ Public Class MainForm
                 End If
             End If
         End If
-        If PlayerData.HP1 <= 0 Then
-            PlayerData.HP1 = PlayerData.HPM1
-            DeathCount += 1
-            BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(102, langID)
-            TourDist(RegionID) -= lostTourDis
-        End If
         BlockCD -= 1
         If BlockCD < 0 Then
             BlockCD = 0
@@ -334,8 +375,23 @@ Public Class MainForm
                 BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(103, langID) & " " & CurrentEnemy.Coins1 & " " & LangStr.s_string(104, langID) & ", " & CurrentEnemy.EXP1 & " " & LangStr.s_string(105, langID)
             End If
             isRun = False
+            isBoss = False
             isBattleComplete = True
             CurrentEnemy = New InitEnemy()
+        End If
+        If PlayerData.HP1 <= 0 Then
+            PlayerData.HP1 = PlayerData.HPM1
+            DeathCount += 1
+            If Not isBoss Then
+                BattleMessage.Text = BattleMessage.Text & vbCrLf & vbCrLf & LangStr.s_string(102, langID)
+                TourDist(RegionID) -= lostTourDis
+            Else
+                BattleMessage.Text = BattleMessage.Text & vbCrLf & vbCrLf & LangStr.s_string(155, langID)
+                TourDist(RegionID) \= 2
+                isBoss = False
+                isBattleComplete = True
+                CurrentEnemy = New InitEnemy()
+            End If
         End If
     End Sub
     Private Sub CheckDirectory()
@@ -434,29 +490,6 @@ Public Class MainForm
         End If
         br.Close()
         fs.Close()
-        'CalibrationData(PlayerData.Sk)
-        ' CalibrationData(PlayerData.element1)
-        ' CalibrationData(PlayerData.Level1)
-        'CalibrationData(PlayerData.CName1)
-        ' CalibrationData(PlayerData.XP1)
-        ' CalibrationData(PlayerData.XPNeed1)
-        ' CalibrationData(PlayerData.HP1)
-        'CalibrationData(PlayerData.HPM1)
-        'CalibrationData(PlayerData.ATK1)
-        ' CalibrationData(PlayerData.DEF1)
-        'CalibrationData(PlayerData.SE1)
-        'CalibrationData(PlayerData.CRate1)
-        'CalibrationData(PlayerData.CDMG1)
-        'CalibrationData(PlayerData.Coins1)
-        ' CalibrationData(TourDist(RegionID))
-        'CalibrationData(RegionID)
-        'If PlayerData.Sk = Nothing Or PlayerData.element1 = Nothing Or PlayerData.Level1 = Nothing Or PlayerData.CName1 = Nothing Or PlayerData.XP1 = Nothing Or PlayerData.XPNeed1 = Nothing Or PlayerData.HP1 = Nothing Or PlayerData.HPM1 = Nothing Or PlayerData.ATK1 = Nothing Or PlayerData.DEF1 = Nothing Or PlayerData.SE1 = Nothing Or PlayerData.CRate1 = Nothing Or PlayerData.CDMG1 = Nothing Or PlayerData.Coins1 = Nothing Or RegionID = Nothing Or TourDist(RegionID) = Nothing Then
-        'PlayerData = New InitPlayer
-        'TourDist(RegionID) = 0
-        'RegionID = 0
-        'MsgBox("This save data is corrupted.", vbYes, Me.Text)
-        'Else
-        'End If
     End Sub
     Private Function CalibrationData(a As Object)
         If a = Nothing Then
@@ -516,6 +549,8 @@ Public Class MainForm
             Case 1
                 RadioButton6.Checked = True
         End Select
+
+        debugswitch()
     End Sub
     Private Sub SaveDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveDataToolStripMenuItem.Click
         Dim a As Boolean
@@ -525,15 +560,17 @@ Public Class MainForm
                 OpenFileDialog()
             End If
         Else
-            If CacheSaveFileName = "" Then
-                Dim b As New SaveFileDialog
-                CheckDirectory()
-                b.Filter = LangStr.s_string(106, langID) & "|*.yts"
-                If b.ShowDialog = Windows.Forms.DialogResult.OK Then
-                    SaveData(b.FileName)
+            If Not isBoss Then
+                If CacheSaveFileName = "" Then
+                    Dim b As New SaveFileDialog
+                    CheckDirectory()
+                    b.Filter = LangStr.s_string(106, langID) & "|*.yts"
+                    If b.ShowDialog = Windows.Forms.DialogResult.OK Then
+                        SaveData(b.FileName)
+                    End If
+                Else
+                    SaveData(CacheSaveFileName)
                 End If
-            Else
-                SaveData(CacheSaveFileName)
             End If
         End If
     End Sub
@@ -605,7 +642,6 @@ Public Class MainForm
             Else
                 Button8.Enabled = True
                 Button9.Enabled = True
-                Button11.Enabled = True
             End If
             If isBattleComplete Then
                 Panel10.Enabled = False
@@ -619,7 +655,7 @@ Public Class MainForm
                 PlayerData.HP1 = PlayerData.HPM1
             End If
             If AutoSaving Then
-                If Not isBattle Then
+                If Not isBattle And Not isBoss Then
                     AutoSavingCD += 1
                     If AutoSavingCD = 100 * 60 Then
                         If Not CacheSaveFileName = "" Then
@@ -638,14 +674,24 @@ Public Class MainForm
             Else
                 Label37.Visible = False
             End If
+            If isBattle Or Touring Then
+                Panel14.Enabled = False
+            Else
+                Panel14.Enabled = True
+            End If
             With PlayerData
                 lostCoins = .Coins1 \ 100
                 lostTourDis = TourDist(RegionID) \ 10
             End With
-            If BlockCD > 0 Then
+            If BlockCD > 0 Or isAutoBattle Then
                 Button10.Enabled = False
             Else
                 Button10.Enabled = True
+            End If
+            If isBoss Or isAutoBattle Then
+                Button11.Enabled = False
+            Else
+                Button11.Enabled = True
             End If
             RefreshData()
             Panel5.Visible = False
@@ -655,8 +701,9 @@ Public Class MainForm
         End If
     End Sub
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        TourDist(RegionID) += 1 + r1.Next(0, 4)
-        DES -= (1 + r1.Next(0, 4))
+
+        TourDist(RegionID) += 2
+        DES -= (2)
         Dim b As Double
         b = r1.NextDouble()
         With PlayerData
@@ -667,15 +714,28 @@ Public Class MainForm
                     .HP1 += .HPM1 / 100
             End Select
         End With
+        Select Case TourDist(RegionID)
+            Case km(2) To km(2) + 1
+                SelectEnemy(1, 0)
+                start_battle(1)
+            Case km(10) To km(10) + 1
+                SelectEnemy(1, 1)
+                start_battle(1)
+            Case km(15) To km(15) + 1
+                SelectEnemy(1, 2)
+                start_battle(1)
+            Case km(20) To km(20) + 1
+                SelectEnemy(1, 3)
+                start_battle(1)
+            Case km(25) To km(25) + 1
+                SelectEnemy(1, 4)
+                start_battle(1)
+        End Select
         If DES <= 0 Then
             Select Case b
                 Case 0 To 0.005
-                    SelectEnemy()
-                    isBattleDisplay = True
-                    Panel10.Visible = True
-                    Touring = False
-                    isBattle = True
-                    BattleMessage.Text = LangStr.s_string(93, langID) & " " & CurrentEnemy.Name1 & " " & LangStr.s_string(94, langID)
+                    SelectEnemy(0, 0)
+                    start_battle(0)
             End Select
         End If
     End Sub
@@ -691,7 +751,7 @@ Public Class MainForm
     Private Sub DripForest_Changed(sender As Object, e As EventArgs) Handles RegionButton2.CheckedChanged
         RegionID = 1
     End Sub
-    Private Sub DigitOnly(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles EnemyHealthBox.KeyPress, EnemyAttackBox.KeyPress, EnemyDefenseBox.KeyPress, EnemyXPBox.KeyPress
+    Private Sub DigitOnly(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles EnemyHealthBox.KeyPress, EnemyAttackBox.KeyPress, EnemyDefenseBox.KeyPress, EnemyXPBox.KeyPress, TextBox1.KeyPress
         If Char.IsDigit(e.KeyChar) Or e.KeyChar = Chr(8) Then
             e.Handled = False
         Else
@@ -718,12 +778,9 @@ Public Class MainForm
     Private Sub StartSimulationDamage(sender As Object, e As EventArgs) Handles Button5.Click
         SimulateDamage()
     End Sub
-
     Private Sub Heal(sender As Object, e As EventArgs) Handles HealHPToolStripMenuItem.Click
         PlayerData.HP1 = PlayerData.HPM1
     End Sub
-
-
     Private Sub TourButton(sender As Object, e As EventArgs) Handles Button7.Click
         If Touring Then
             Touring = False
@@ -904,11 +961,13 @@ Public Class MainForm
         ABP = ComboBox3.SelectedIndex
     End Sub
     Private Sub SaveAsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveAsToolStripMenuItem.Click
-        Dim b As New SaveFileDialog
-        CheckDirectory()
-        b.Filter = LangStr.s_string(106, langID) & "|*.yts"
-        If b.ShowDialog = Windows.Forms.DialogResult.OK Then
-            SaveData(b.FileName)
+        If Not isBoss Then
+            Dim b As New SaveFileDialog
+            CheckDirectory()
+            b.Filter = LangStr.s_string(106, langID) & "|*.yts"
+            If b.ShowDialog = Windows.Forms.DialogResult.OK Then
+                SaveData(b.FileName)
+            End If
         End If
     End Sub
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -945,6 +1004,8 @@ Public Class MainForm
         End If
     End Sub
     Private Sub set_Distance(sender As Object, e As EventArgs) Handles Button12.Click
-
+        If TextBox1.Text <> "" Then
+            TourDist(RegionID) = TextBox1.Text
+        End If
     End Sub
 End Class

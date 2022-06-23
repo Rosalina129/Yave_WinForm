@@ -48,9 +48,9 @@ Partial Class About
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(14, 51)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(109, 15)
+        Me.Label2.Size = New System.Drawing.Size(75, 15)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Version: 0.0.1_alpha"
+        Me.Label2.Text = "Version: 0.0.3"
         '
         'Label3
         '

@@ -88,8 +88,15 @@ Partial Class MainForm
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Panel15 = New System.Windows.Forms.Panel()
         Me.CurEnemyData6 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
         Me.CurEnemyData5 = New System.Windows.Forms.Label()
+        Me.CurEnemyData3 = New System.Windows.Forms.Label()
+        Me.CurEnemyData4 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Button11 = New System.Windows.Forms.Button()
@@ -97,12 +104,6 @@ Partial Class MainForm
         Me.Button9 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.BattleMessage = New System.Windows.Forms.TextBox()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.CurEnemyData4 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.CurEnemyData3 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.CurEnemyData2 = New System.Windows.Forms.Label()
         Me.CurEnemyData1 = New System.Windows.Forms.Label()
@@ -113,6 +114,7 @@ Partial Class MainForm
         Me.Options = New System.Windows.Forms.TabPage()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Label41 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -181,6 +183,7 @@ Partial Class MainForm
         Me.AutoBattleTimer = New System.Windows.Forms.Timer(Me.components)
         Me.BattleTime = New System.Windows.Forms.Timer(Me.components)
         Me.BattleCooldown = New System.Windows.Forms.Timer(Me.components)
+        Me.Label40 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -195,6 +198,7 @@ Partial Class MainForm
         Me.Tour.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
+        Me.Panel15.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Options.SuspendLayout()
         Me.Panel12.SuspendLayout()
@@ -359,7 +363,7 @@ Partial Class MainForm
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(239, 252)
-        Me.TabControl1.TabIndex = 8
+        Me.TabControl1.TabIndex = 1
         '
         'ProBasic
         '
@@ -406,7 +410,7 @@ Partial Class MainForm
         Me.Panel3.Location = New System.Drawing.Point(5, 112)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(231, 160)
-        Me.Panel3.TabIndex = 7
+        Me.Panel3.TabIndex = 0
         '
         'UpgradeBut6
         '
@@ -798,7 +802,7 @@ Partial Class MainForm
         Me.CheckBox1.Location = New System.Drawing.Point(232, 257)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(85, 19)
-        Me.CheckBox1.TabIndex = 7
+        Me.CheckBox1.TabIndex = 1
         Me.CheckBox1.Text = "Auto Battle"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
@@ -823,16 +827,9 @@ Partial Class MainForm
         '
         'Panel10
         '
-        Me.Panel10.Controls.Add(Me.CurEnemyData6)
-        Me.Panel10.Controls.Add(Me.CurEnemyData5)
+        Me.Panel10.Controls.Add(Me.Panel15)
         Me.Panel10.Controls.Add(Me.GroupBox5)
         Me.Panel10.Controls.Add(Me.Panel11)
-        Me.Panel10.Controls.Add(Me.Label30)
-        Me.Panel10.Controls.Add(Me.Label28)
-        Me.Panel10.Controls.Add(Me.Label29)
-        Me.Panel10.Controls.Add(Me.CurEnemyData4)
-        Me.Panel10.Controls.Add(Me.Label27)
-        Me.Panel10.Controls.Add(Me.CurEnemyData3)
         Me.Panel10.Controls.Add(Me.Label26)
         Me.Panel10.Controls.Add(Me.CurEnemyData2)
         Me.Panel10.Controls.Add(Me.CurEnemyData1)
@@ -841,29 +838,99 @@ Partial Class MainForm
         Me.Panel10.Size = New System.Drawing.Size(417, 249)
         Me.Panel10.TabIndex = 1
         '
+        'Panel15
+        '
+        Me.Panel15.Controls.Add(Me.CurEnemyData6)
+        Me.Panel15.Controls.Add(Me.Label27)
+        Me.Panel15.Controls.Add(Me.CurEnemyData5)
+        Me.Panel15.Controls.Add(Me.CurEnemyData3)
+        Me.Panel15.Controls.Add(Me.CurEnemyData4)
+        Me.Panel15.Controls.Add(Me.Label29)
+        Me.Panel15.Controls.Add(Me.Label30)
+        Me.Panel15.Controls.Add(Me.Label28)
+        Me.Panel15.Location = New System.Drawing.Point(6, 54)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(175, 81)
+        Me.Panel15.TabIndex = 9
+        Me.Panel15.Visible = False
+        '
         'CurEnemyData6
         '
         Me.CurEnemyData6.AutoSize = True
-        Me.CurEnemyData6.Location = New System.Drawing.Point(97, 114)
+        Me.CurEnemyData6.Location = New System.Drawing.Point(91, 60)
         Me.CurEnemyData6.Name = "CurEnemyData6"
         Me.CurEnemyData6.Size = New System.Drawing.Size(38, 15)
         Me.CurEnemyData6.TabIndex = 12
         Me.CurEnemyData6.Text = "cdmg"
         '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(3, 0)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(41, 15)
+        Me.Label27.TabIndex = 4
+        Me.Label27.Text = "Attack"
+        '
         'CurEnemyData5
         '
         Me.CurEnemyData5.AutoSize = True
-        Me.CurEnemyData5.Location = New System.Drawing.Point(97, 94)
+        Me.CurEnemyData5.Location = New System.Drawing.Point(91, 40)
         Me.CurEnemyData5.Name = "CurEnemyData5"
         Me.CurEnemyData5.Size = New System.Drawing.Size(33, 15)
         Me.CurEnemyData5.TabIndex = 11
         Me.CurEnemyData5.Text = "crate"
         '
+        'CurEnemyData3
+        '
+        Me.CurEnemyData3.AutoSize = True
+        Me.CurEnemyData3.Location = New System.Drawing.Point(91, 0)
+        Me.CurEnemyData3.Name = "CurEnemyData3"
+        Me.CurEnemyData3.Size = New System.Drawing.Size(39, 15)
+        Me.CurEnemyData3.TabIndex = 3
+        Me.CurEnemyData3.Text = "attack"
+        '
+        'CurEnemyData4
+        '
+        Me.CurEnemyData4.AutoSize = True
+        Me.CurEnemyData4.Location = New System.Drawing.Point(91, 20)
+        Me.CurEnemyData4.Name = "CurEnemyData4"
+        Me.CurEnemyData4.Size = New System.Drawing.Size(48, 15)
+        Me.CurEnemyData4.TabIndex = 5
+        Me.CurEnemyData4.Text = "defense"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(3, 20)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(49, 15)
+        Me.Label29.TabIndex = 6
+        Me.Label29.Text = "Defense"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(3, 60)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(73, 15)
+        Me.Label30.TabIndex = 8
+        Me.Label30.Text = "Crit Damage"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(3, 40)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(52, 15)
+        Me.Label28.TabIndex = 7
+        Me.Label28.Text = "Crit Rate"
+        '
         'GroupBox5
         '
-        Me.GroupBox5.Location = New System.Drawing.Point(11, 132)
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 138)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(191, 113)
+        Me.GroupBox5.Size = New System.Drawing.Size(196, 107)
         Me.GroupBox5.TabIndex = 10
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Skills"
@@ -886,7 +953,7 @@ Partial Class MainForm
         Me.Button11.Location = New System.Drawing.Point(105, 214)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(98, 23)
-        Me.Button11.TabIndex = 17
+        Me.Button11.TabIndex = 3
         Me.Button11.Text = "Run"
         Me.Button11.UseVisualStyleBackColor = True
         '
@@ -895,7 +962,7 @@ Partial Class MainForm
         Me.Button10.Location = New System.Drawing.Point(3, 214)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(98, 23)
-        Me.Button10.TabIndex = 16
+        Me.Button10.TabIndex = 2
         Me.Button10.Text = "Block"
         Me.Button10.UseVisualStyleBackColor = True
         '
@@ -904,7 +971,7 @@ Partial Class MainForm
         Me.Button9.Location = New System.Drawing.Point(105, 185)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(98, 23)
-        Me.Button9.TabIndex = 15
+        Me.Button9.TabIndex = 1
         Me.Button9.Text = "Ele. Attack"
         Me.Button9.UseVisualStyleBackColor = True
         '
@@ -928,60 +995,6 @@ Partial Class MainForm
         Me.BattleMessage.Size = New System.Drawing.Size(206, 181)
         Me.BattleMessage.TabIndex = 14
         Me.BattleMessage.Text = "battlemessage" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(9, 114)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(73, 15)
-        Me.Label30.TabIndex = 8
-        Me.Label30.Text = "Crit Damage"
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(9, 94)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(52, 15)
-        Me.Label28.TabIndex = 7
-        Me.Label28.Text = "Crit Rate"
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(9, 74)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(49, 15)
-        Me.Label29.TabIndex = 6
-        Me.Label29.Text = "Defense"
-        '
-        'CurEnemyData4
-        '
-        Me.CurEnemyData4.AutoSize = True
-        Me.CurEnemyData4.Location = New System.Drawing.Point(97, 74)
-        Me.CurEnemyData4.Name = "CurEnemyData4"
-        Me.CurEnemyData4.Size = New System.Drawing.Size(48, 15)
-        Me.CurEnemyData4.TabIndex = 5
-        Me.CurEnemyData4.Text = "defense"
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(9, 54)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(41, 15)
-        Me.Label27.TabIndex = 4
-        Me.Label27.Text = "Attack"
-        '
-        'CurEnemyData3
-        '
-        Me.CurEnemyData3.AutoSize = True
-        Me.CurEnemyData3.Location = New System.Drawing.Point(97, 54)
-        Me.CurEnemyData3.Name = "CurEnemyData3"
-        Me.CurEnemyData3.Size = New System.Drawing.Size(39, 15)
-        Me.CurEnemyData3.TabIndex = 3
-        Me.CurEnemyData3.Text = "attack"
         '
         'Label26
         '
@@ -1024,7 +1037,7 @@ Partial Class MainForm
         Me.Button7.Location = New System.Drawing.Point(323, 254)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(98, 23)
-        Me.Button7.TabIndex = 4
+        Me.Button7.TabIndex = 2
         Me.Button7.Text = "Go Forward"
         Me.Button7.UseVisualStyleBackColor = True
         '
@@ -1083,13 +1096,24 @@ Partial Class MainForm
         '
         'Panel14
         '
+        Me.Panel14.Controls.Add(Me.Label40)
+        Me.Panel14.Controls.Add(Me.Label41)
         Me.Panel14.Controls.Add(Me.Label39)
         Me.Panel14.Controls.Add(Me.Button12)
         Me.Panel14.Controls.Add(Me.TextBox1)
         Me.Panel14.Location = New System.Drawing.Point(0, 325)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(191, 45)
-        Me.Panel14.TabIndex = 23
+        Me.Panel14.Size = New System.Drawing.Size(359, 69)
+        Me.Panel14.TabIndex = 9
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Location = New System.Drawing.Point(5, 44)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(51, 15)
+        Me.Label41.TabIndex = 24
+        Me.Label41.Text = "distance"
         '
         'Label39
         '
@@ -1102,10 +1126,10 @@ Partial Class MainForm
         '
         'Button12
         '
-        Me.Button12.Location = New System.Drawing.Point(112, 17)
+        Me.Button12.Location = New System.Drawing.Point(112, 18)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(75, 23)
-        Me.Button12.TabIndex = 22
+        Me.Button12.TabIndex = 1
         Me.Button12.Text = "set"
         Me.Button12.UseVisualStyleBackColor = True
         '
@@ -1116,7 +1140,7 @@ Partial Class MainForm
         Me.TextBox1.MaxLength = 9
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 23)
-        Me.TextBox1.TabIndex = 10
+        Me.TextBox1.TabIndex = 0
         Me.TextBox1.Tag = ""
         '
         'Label38
@@ -1134,7 +1158,7 @@ Partial Class MainForm
         Me.Button6.Location = New System.Drawing.Point(134, 87)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(75, 23)
-        Me.Button6.TabIndex = 19
+        Me.Button6.TabIndex = 4
         Me.Button6.Text = "help"
         Me.Button6.UseVisualStyleBackColor = True
         '
@@ -1149,7 +1173,7 @@ Partial Class MainForm
         Me.TextBox3.ReadOnly = True
         Me.TextBox3.ShortcutsEnabled = False
         Me.TextBox3.Size = New System.Drawing.Size(387, 35)
-        Me.TextBox3.TabIndex = 18
+        Me.TextBox3.TabIndex = 7
         Me.TextBox3.Text = "qwq"
         '
         'ComboBox3
@@ -1159,7 +1183,7 @@ Partial Class MainForm
         Me.ComboBox3.Location = New System.Drawing.Point(7, 87)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(121, 23)
-        Me.ComboBox3.TabIndex = 10
+        Me.ComboBox3.TabIndex = 3
         '
         'Label36
         '
@@ -1186,7 +1210,7 @@ Partial Class MainForm
         Me.Panel13.Location = New System.Drawing.Point(7, 181)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(171, 54)
-        Me.Panel13.TabIndex = 7
+        Me.Panel13.TabIndex = 6
         '
         'RadioButton6
         '
@@ -1247,7 +1271,7 @@ Partial Class MainForm
         Me.ComboBox2.Location = New System.Drawing.Point(134, 43)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 23)
-        Me.ComboBox2.TabIndex = 3
+        Me.ComboBox2.TabIndex = 2
         '
         'Label33
         '
@@ -1540,7 +1564,7 @@ Partial Class MainForm
         Me.GroupBox1.Location = New System.Drawing.Point(5, 4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(440, 180)
-        Me.GroupBox1.TabIndex = 1
+        Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Region"
         '
@@ -1549,7 +1573,7 @@ Partial Class MainForm
         Me.Button3.Location = New System.Drawing.Point(336, 15)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(98, 23)
-        Me.Button3.TabIndex = 3
+        Me.Button3.TabIndex = 0
         Me.Button3.Text = "Introduction"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -1577,7 +1601,7 @@ Partial Class MainForm
         Me.RegionButton8.Location = New System.Drawing.Point(3, 163)
         Me.RegionButton8.Name = "RegionButton8"
         Me.RegionButton8.Size = New System.Drawing.Size(95, 19)
-        Me.RegionButton8.TabIndex = 8
+        Me.RegionButton8.TabIndex = 7
         Me.RegionButton8.Text = "regionname8"
         Me.RegionButton8.UseVisualStyleBackColor = True
         '
@@ -1588,7 +1612,7 @@ Partial Class MainForm
         Me.RegionButton7.Location = New System.Drawing.Point(3, 143)
         Me.RegionButton7.Name = "RegionButton7"
         Me.RegionButton7.Size = New System.Drawing.Size(95, 19)
-        Me.RegionButton7.TabIndex = 7
+        Me.RegionButton7.TabIndex = 6
         Me.RegionButton7.Text = "regionname7"
         Me.RegionButton7.UseVisualStyleBackColor = True
         '
@@ -1599,7 +1623,7 @@ Partial Class MainForm
         Me.RegionButton6.Location = New System.Drawing.Point(3, 123)
         Me.RegionButton6.Name = "RegionButton6"
         Me.RegionButton6.Size = New System.Drawing.Size(95, 19)
-        Me.RegionButton6.TabIndex = 6
+        Me.RegionButton6.TabIndex = 5
         Me.RegionButton6.Text = "regionname6"
         Me.RegionButton6.UseVisualStyleBackColor = True
         '
@@ -1610,7 +1634,7 @@ Partial Class MainForm
         Me.RegionButton5.Location = New System.Drawing.Point(3, 103)
         Me.RegionButton5.Name = "RegionButton5"
         Me.RegionButton5.Size = New System.Drawing.Size(95, 19)
-        Me.RegionButton5.TabIndex = 5
+        Me.RegionButton5.TabIndex = 4
         Me.RegionButton5.Text = "regionname5"
         Me.RegionButton5.UseVisualStyleBackColor = True
         '
@@ -1767,6 +1791,15 @@ Partial Class MainForm
         '
         Me.BattleCooldown.Interval = 1000
         '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Location = New System.Drawing.Point(193, 22)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(51, 15)
+        Me.Label40.TabIndex = 25
+        Me.Label40.Text = "distance"
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -1805,6 +1838,8 @@ Partial Class MainForm
         Me.Panel9.PerformLayout()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
+        Me.Panel15.ResumeLayout(False)
+        Me.Panel15.PerformLayout()
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
         Me.Options.ResumeLayout(False)
@@ -1993,4 +2028,7 @@ Partial Class MainForm
     Friend WithEvents Label39 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Panel14 As Panel
+    Friend WithEvents Panel15 As Panel
+    Friend WithEvents Label41 As Label
+    Friend WithEvents Label40 As Label
 End Class

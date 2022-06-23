@@ -129,6 +129,7 @@ Partial Class NewSave
         Me.TextBox3.ShortcutsEnabled = False
         Me.TextBox3.Size = New System.Drawing.Size(503, 50)
         Me.TextBox3.TabIndex = 17
+        Me.TextBox3.TabStop = False
         Me.TextBox3.Text = "The game framework is still in Alpha testing and some options will not be availab" &
     "le, please understand."
         '
