@@ -8,6 +8,7 @@
     End Sub
     Private Sub EleDescribe_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label1.Text = ""
+        Me.Text = LangStr.s_string(158, MainForm.langID)
         Label2.Text = LangStr.s_string(158, MainForm.langID)
         Dim a As Integer
         For a = 0 To 8 Step 1

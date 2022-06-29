@@ -134,7 +134,7 @@
         {"Damage Count", "伤害计数"},
         {"Start Simulation", "开始模拟"},
         {"Damage Once", "伤害一次"},
-        {"This save file needs to be converted. continue load?", "此存档文件需要进行转换，是否继续读取？"},
+        {"This save version is too old and some parameters may not be readable. continue load?", "此存档文件版本过旧，一些数据可能读取不了，是否继续读取？"},
         {"Player used ", "玩家使用了 "},
         {"Enemy used ", "敌方使用了 "},
         {"Normal Attack", "普通攻击"},'137
@@ -170,18 +170,20 @@
         {"Automatic Equipment System", "自动化装备系统"},'167
         {"Element Damage Rates", "伤害倍率"},
         {"To ", "对"},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
+        {"Material", "材料"},'170
+        {"Items", "道具"},
+        {"Use", "使用"},
+        {"Purchase", "购买"},
+        {"Resell", "倒卖"},
+        {"Name", "名字"},'175
+        {"Count", "数量"},
+        {"Action", "动作"},
+        {"Value", "价值"},
+        {"Buffs", "增益"},
+        {"Using", "用途"},
+        {"Material Distribution", "材料分布"},
+        {"Awaken Using", "觉醒专用"},
+        {"You get: ", "你获得了："},'183
         {"", ""},
         {"", ""},
         {"", ""},
@@ -215,8 +217,6 @@
         {"Beast Mage", "法师兽士"},
         {"Thief", "盗贼"},
         {"Artifacts Thief", "法器盗贼"},
-        {"", ""},
-        {"", ""},
         {"", ""},
         {"", ""},
         {"", ""},
@@ -271,15 +271,15 @@
         {"XP Reagent", "XP 试剂"}，'Common Start
         {"XP Flask", "XP 烧瓶"}，
         {"XP Potion", "XP 药剂"}，
+        {"Herbal", "草药"}，
         {"Health Reagent", "HP 试剂"}，
         {"Health Flask", "HP 烧杯"}，
         {"Health Potion", "HP 药剂"}，
-        {"Herbal", "草药"}，
         {"Medicbox", "医疗箱"}，
         {"Wind Emblem", "风之徽章"}，
         {"Fire Emblem", "火之徽章"}，
         {"Water Emblem", "水之徽章"}，
-        {"Grass Emblem", "草之徽章"}，'Common End
+        {"Grass Emblem", "草之徽章"}，'Common End 12
         {"Wool", "羊毛"}，'Emerald Plains Start
         {"Steak", "熟肉"}，
         {"Apple", "苹果"}，

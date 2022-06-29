@@ -33,7 +33,7 @@ Partial Class EleDescribe
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(153, 37)
+        Me.Panel1.Location = New System.Drawing.Point(148, 37)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(212, 139)
@@ -53,7 +53,7 @@ Partial Class EleDescribe
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 15
         Me.ListBox1.Items.AddRange(New Object() {"EleID1", "EleID2", "EleID3", "EleID4", "EleID5", "EleID6", "EleID7", "EleID8", "EleID9"})
-        Me.ListBox1.Location = New System.Drawing.Point(17, 37)
+        Me.ListBox1.Location = New System.Drawing.Point(12, 37)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(130, 139)
         Me.ListBox1.TabIndex = 1
@@ -72,7 +72,7 @@ Partial Class EleDescribe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(376, 186)
+        Me.ClientSize = New System.Drawing.Size(368, 186)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Panel1)

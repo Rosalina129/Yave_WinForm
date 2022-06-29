@@ -120,6 +120,47 @@
 
             .TabControl3.TabPages(0).Text = LangStr.s_string(159, langid)
             .TabControl3.TabPages(1).Text = LangStr.s_string(160, langid)
+            .TabControl3.TabPages(2).Text = LangStr.s_string(170, langid)
+            .TabControl3.TabPages(3).Text = LangStr.s_string(171, langid)
+
+            .useitem1.Text = LangStr.s_item(1, langid)
+            .useitem2.Text = LangStr.s_item(2, langid)
+            .useitem3.Text = LangStr.s_item(3, langid)
+            .useitem4.Text = LangStr.s_item(4, langid)
+            .useitem5.Text = LangStr.s_item(5, langid)
+            .useitem6.Text = LangStr.s_item(6, langid)
+            .useitem7.Text = LangStr.s_item(7, langid)
+            .useitem8.Text = LangStr.s_item(8, langid)
+
+            .Label42.Text = LangStr.s_string(175, langid)
+            .Label43.Text = LangStr.s_string(177, langid)
+            .Label44.Text = LangStr.s_string(178, langid)
+            .Label45.Text = LangStr.s_string(179, langid)
+
+            .Label51.Text = LangStr.s_string(175, langid)
+            .Label52.Text = LangStr.s_string(176, langid)
+            .Label53.Text = LangStr.s_string(177, langid)
+            .Label54.Text = LangStr.s_string(180, langid)
+
+            .Label55.Text = LangStr.s_string(181, langid)
+            .ListBox1.Items(0) = LangStr.s_string(182, langid)
+            .ListBox1.Items(1) = LangStr.s_string(48, langid)
+            .ListBox1.Items(2) = LangStr.s_string(49, langid)
+            .ListBox1.Items(3) = LangStr.s_string(50, langid)
+            .ListBox1.Items(4) = LangStr.s_string(51, langid)
+            .ListBox1.Items(5) = LangStr.s_string(52, langid)
+            .ListBox1.Items(6) = LangStr.s_string(53, langid)
+            .ListBox1.Items(7) = LangStr.s_string(54, langid)
+            .ListBox1.Items(8) = LangStr.s_string(55, langid)
+
+            .useitem1using.Text = "+100 XP"
+            .useitem2using.Text = "+2500 XP"
+            .useitem3using.Text = "+50000 XP"
+            .useitem4using.Text = "+1000 " & LangStr.s_string(27, langid)
+            .useitem5using.Text = "+10% Max" & LangStr.s_string(27, langid)
+            .useitem6using.Text = "+25% Max " & LangStr.s_string(27, langid)
+            .useitem7using.Text = "+50% Max " & LangStr.s_string(27, langid)
+            .useitem8using.Text = "+100% Max " & LangStr.s_string(27, langid)
         End With
         'NewSave Strings
         With NewSave

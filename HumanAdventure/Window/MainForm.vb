@@ -10,8 +10,8 @@ Public Class MainForm
     Dim RegionID As Integer
     'IMPORTANT!!! This save version determines which version you play the save on,
     'and whether it is compatible with the current version!
-    Const SaveVersion As Integer = 2
-    Const CompatibleVersion As Integer = 1
+    Const SaveVersion As Integer = 3
+    Const CompatibleVersion As Integer = 2
 
     Public Shared ReadOnly SaveDefaultPath As String = Environment.CurrentDirectory & "\Save"
     Public Shared SaveUserPath As String
@@ -29,6 +29,9 @@ Public Class MainForm
     Dim isBattleComplete As Boolean
     Dim isBoss As Boolean
     Dim isRun As Integer
+    Dim isautoEquip As Boolean
+
+    Dim AutoPurchase As Integer
     Dim DAB As Boolean                      'Disable Action Buttons
     Dim DES As Integer                      'Disable Enemy Spawn
     Dim ABP As Byte
@@ -58,6 +61,8 @@ Public Class MainForm
     Public CurrentEnemy As InitEnemy
     Public Skill As InitSkill
     Public Basic As InitBasic
+
+    Public UseItem(8) As Int16
     '726, 601
     Private Sub ErrorOccurred()
         MsgBox("An unknown error occurred while attempting to perform this function.", vbYes, Me.Text)
@@ -146,9 +151,11 @@ Public Class MainForm
                 Label24.Text = LangStr.s_string(63, langID) & " " & Math.Round(TourDist(RegionID) / 10 ^ 2, 2) & "m" '& "  " & DES
                 Label41.Text = LangStr.s_string(63, langID) & " " & Math.Round(TourDist(RegionID) / 10 ^ 2, 2) & "m"
             End If
-            CheckXP()
             XPBar.Maximum = .XPNeed1
-            XPBar.Value = .XP1
+            If .XP1 >= XPBar.Maximum Then
+                XPBar.Value = XPBar.Maximum
+            End If
+            CheckXP()
             Label31.Text = LangStr.s_string(37, langID) & " " & UpgradePoint
             CoinsToolStripMenuItem.Text = .Coins1
             If isBattleDisplay Then
@@ -192,12 +199,163 @@ Public Class MainForm
                 UpgradeBut4.Visible = False
                 UpgradeBut5.Visible = False
             End If
+            useitem1count.Text = UseItem(0)
+            useitem2count.Text = UseItem(1)
+            useitem3count.Text = UseItem(2)
+            useitem4count.Text = UseItem(3)
+            useitem5count.Text = UseItem(4)
+            useitem6count.Text = UseItem(5)
+            useitem7count.Text = UseItem(6)
+            useitem8count.Text = UseItem(7)
+            If UseItem(0) = 0 Then
+                useitemaction1.Enabled = False
+                useitemaction2.Enabled = False
+                useitemaction3.Enabled = False
+            Else
+                useitemaction1.Enabled = True
+                useitemaction2.Enabled = True
+                useitemaction3.Enabled = True
+            End If
+            If UseItem(1) = 0 Then
+                useitemaction4.Enabled = False
+                useitemaction5.Enabled = False
+                useitemaction6.Enabled = False
+            Else
+                useitemaction4.Enabled = True
+                useitemaction5.Enabled = True
+                useitemaction6.Enabled = True
+            End If
+            If UseItem(2) = 0 Then
+                useitemaction7.Enabled = False
+                useitemaction8.Enabled = False
+                useitemaction9.Enabled = False
+            Else
+                useitemaction7.Enabled = True
+                useitemaction8.Enabled = True
+                useitemaction9.Enabled = True
+            End If
+            If UseItem(3) = 0 Then
+                useitemaction10.Enabled = False
+                useitemaction11.Enabled = False
+                useitemaction12.Enabled = False
+            Else
+                useitemaction10.Enabled = True
+                useitemaction11.Enabled = True
+                useitemaction12.Enabled = True
+            End If
+            If UseItem(4) = 0 Then
+                useitemaction13.Enabled = False
+                useitemaction14.Enabled = False
+                useitemaction15.Enabled = False
+            Else
+                useitemaction13.Enabled = True
+                useitemaction14.Enabled = True
+                useitemaction15.Enabled = True
+            End If
+            If UseItem(5) = 0 Then
+                useitemaction16.Enabled = False
+                useitemaction17.Enabled = False
+                useitemaction18.Enabled = False
+            Else
+                useitemaction16.Enabled = True
+                useitemaction17.Enabled = True
+                useitemaction18.Enabled = True
+            End If
+            If UseItem(6) = 0 Then
+                useitemaction19.Enabled = False
+                useitemaction20.Enabled = False
+                useitemaction21.Enabled = False
+            Else
+                useitemaction19.Enabled = True
+                useitemaction20.Enabled = True
+                useitemaction21.Enabled = True
+            End If
+            If UseItem(7) = 0 Then
+                useitemaction22.Enabled = False
+                useitemaction23.Enabled = False
+                useitemaction24.Enabled = False
+            Else
+                useitemaction22.Enabled = True
+                useitemaction23.Enabled = True
+                useitemaction24.Enabled = True
+            End If
         End With
+    End Sub
+    Private Function CheckUseItem(itemID As Integer)
+        If UseItem(itemID) > 0 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+    Private Sub Use_Item(acode As Integer)
+        Dim a As Integer 'Item Array
+        Dim b As Integer 'Item Count
+
+        Select Case acode
+            Case 0 To 2
+                a = 0
+            Case 3 To 5
+                a = 1
+            Case 6 To 8
+                a = 2
+            Case 9 To 11
+                a = 3
+            Case 12 To 14
+                a = 4
+            Case 15 To 17
+                a = 5
+            Case 18 To 20
+                a = 6
+            Case 21 To 23
+                a = 7
+        End Select
+
+        Select Case acode
+            Case 0, 3, 6, 9, 12, 15, 18, 21
+                b = 1
+            Case 1, 4, 7, 10, 13, 16, 19, 22
+                b = 10
+            Case 2, 5, 8, 11, 14, 17, 20, 23
+                b = UseItem(a)
+        End Select
+
+        If CheckUseItem(a) Then
+            Dim c As Integer 'Count
+            For c = 0 To b - 1 Step 1
+                If UseItem(a) <= 0 Then
+                    Exit For
+                End If
+                UseItem(a) -= 1
+                With PlayerData
+                    Select Case a
+                        Case 0
+                            .XP1 += 100
+                            CheckXP()
+                        Case 1
+                            .XP1 += 2500
+                            CheckXP()
+                        Case 2
+                            .XP1 += 50000
+                            CheckXP()
+                        Case 3
+                            .HP1 += 1000
+                        Case 4
+                            .HP1 += .HPM1 * 0.1
+                        Case 5
+                            .HP1 += .HPM1 * 0.25
+                        Case 6
+                            .HP1 += .HPM1 * 0.5
+                        Case 7
+                            .HP1 += .HPM1
+                    End Select
+                End With
+            Next
+        End If
     End Sub
     Private Sub CheckXP()
         If PlayerData.XP1 >= PlayerData.XPNeed1 Then
             UpgradeProp()
-            PlayerData.XP1 = 0
         End If
     End Sub
     Private Sub debugswitch()
@@ -258,8 +416,8 @@ Public Class MainForm
                     Thread.Sleep(1)
                     .DEF1 += 0 + MainForm.r1.Next(0, 4)
             End Select
+            .XP1 -= .XPNeed1
             .XPNeed1 += 65 + MainForm.r1.Next(20, 100)
-            .XP1 = 0
             .HP1 = .HPM1
         End With
     End Sub
@@ -372,6 +530,17 @@ Public Class MainForm
                 PlayerData.XP1 += CurrentEnemy.EXP1
                 PlayerData.Coins1 += CurrentEnemy.Coins1
                 BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(103, langID) & " " & CurrentEnemy.Coins1 & " " & LangStr.s_string(104, langID) & ", " & CurrentEnemy.EXP1 & " " & LangStr.s_string(105, langID)
+                Thread.Sleep(5)
+                Dim a As Integer = r1.NextDouble()
+                Select Case a
+                    Case 0 To 0.05
+                        Thread.Sleep(5)
+                        Dim itemID As Integer = r1.Next(0, 8)
+                        Thread.Sleep(5)
+                        Dim itemCount As Integer = r1.Next(1, 4)
+                        BattleMessage.Text = BattleMessage.Text & vbCrLf & LangStr.s_string(183, langID) & LangStr.s_item(1 + itemID, langID) & " x" & itemCount
+                        UseItem(itemID) += itemCount
+                End Select
             End If
             isRun = False
             isBoss = False
@@ -403,6 +572,7 @@ Public Class MainForm
         Dim fs As New FileStream(SaveFileName, FileMode.Create)
         Dim bw As New BinaryWriter(fs)
         Dim b_redunant As Byte = 0
+        Dim a As Integer
         bw.Write(SaveVersion)
         bw.Write(b_redunant)
         bw.Write(PlayerData.Sk)
@@ -419,10 +589,12 @@ Public Class MainForm
         bw.Write(PlayerData.CRate1)
         bw.Write(PlayerData.CDMG1)
         bw.Write(PlayerData.Coins1)
+        For a = 0 To UseItem.Length - 1 Step 1
+            bw.Write(UseItem(a))
+        Next
         bw.Write(UpgradePoint)
         bw.Write(DeathCount)
         bw.Write(RegionID)
-        Dim a As Integer
         For a = 0 To TourDist.Length - 1 Step 1
             bw.Write(TourDist(a))
         Next
@@ -446,47 +618,73 @@ Public Class MainForm
         Dim br As New BinaryReader(fs)
         Dim c As Byte
         SaveVer = br.ReadInt32
-        If SaveVer = 2 Then
-            c = br.ReadByte
-            PlayerData.Sk = br.ReadInt32
-            PlayerData.element1 = br.ReadInt32
-            PlayerData.Level1 = br.ReadInt32
-            PlayerData.CName1 = br.ReadString
-            PlayerData.XP1 = br.ReadUInt64
-            PlayerData.XPNeed1 = br.ReadUInt64
-            PlayerData.HP1 = br.ReadInt32
-            PlayerData.HPM1 = br.ReadInt32
-            PlayerData.ATK1 = br.ReadInt32
-            PlayerData.DEF1 = br.ReadInt32
-            PlayerData.SE1 = br.ReadUInt32
-            PlayerData.CRate1 = br.ReadDouble
-            PlayerData.CDMG1 = br.ReadDouble
-            PlayerData.Coins1 = br.ReadInt32
-            UpgradePoint = br.ReadInt32
-            DeathCount = br.ReadInt32
-            RegionID = br.ReadInt32
-            Dim b As Integer
-            For b = 0 To TourDist.Length - 1 Step 1
-                TourDist(b) = br.ReadUInt64
-            Next
-            CurrentEnemy = New InitEnemy()
-            isBattle = False
-            Panel10.Visible = False
-            progress = True
-        End If
-        If SaveVer = 1 Then
-            Dim a As Boolean
-            a = MsgBox(LangStr.s_string(134, langID), vbYesNo, Me.Text)
-            If a = vbYes Then
-                DebugShow("True")
-            End If
-        ElseIf Not SaveVer = 2 Then
-            DebugShow(LangStr.s_string(73, langID) & vbCrLf &
-                      LangStr.s_string(56, langID) & ":" & SaveVersion & vbCrLf &
-                      LangStr.s_string(57, langID) & ":" & SaveVer & vbCrLf &
-                      LangStr.s_string(58, langID) & ":" & CompatibleVersion
-                      )
-        End If
+        Select Case SaveVer
+            Case 3
+                Dim b As Integer
+                c = br.ReadByte
+                PlayerData.Sk = br.ReadInt32
+                PlayerData.element1 = br.ReadInt32
+                PlayerData.Level1 = br.ReadInt32
+                PlayerData.CName1 = br.ReadString
+                PlayerData.XP1 = br.ReadUInt64
+                PlayerData.XPNeed1 = br.ReadUInt64
+                PlayerData.HP1 = br.ReadInt32
+                PlayerData.HPM1 = br.ReadInt32
+                PlayerData.ATK1 = br.ReadInt32
+                PlayerData.DEF1 = br.ReadInt32
+                PlayerData.SE1 = br.ReadUInt32
+                PlayerData.CRate1 = br.ReadDouble
+                PlayerData.CDMG1 = br.ReadDouble
+                PlayerData.Coins1 = br.ReadInt32
+                For b = 0 To UseItem.Length - 1 Step 1
+                    UseItem(b) = br.ReadInt16
+                Next
+                UpgradePoint = br.ReadInt32
+                DeathCount = br.ReadInt32
+                RegionID = br.ReadInt32
+                For b = 0 To TourDist.Length - 1 Step 1
+                    TourDist(b) = br.ReadUInt64
+                Next
+                CurrentEnemy = New InitEnemy()
+                isBattle = False
+                Panel10.Visible = False
+                progress = True
+            Case 2
+                If MsgBox(LangStr.s_string(134, langID), vbYesNo, Me.Text) = vbYes Then
+                    Dim b As Integer
+                    c = br.ReadByte
+                    PlayerData.Sk = br.ReadInt32
+                    PlayerData.element1 = br.ReadInt32
+                    PlayerData.Level1 = br.ReadInt32
+                    PlayerData.CName1 = br.ReadString
+                    PlayerData.XP1 = br.ReadUInt64
+                    PlayerData.XPNeed1 = br.ReadUInt64
+                    PlayerData.HP1 = br.ReadInt32
+                    PlayerData.HPM1 = br.ReadInt32
+                    PlayerData.ATK1 = br.ReadInt32
+                    PlayerData.DEF1 = br.ReadInt32
+                    PlayerData.SE1 = br.ReadUInt32
+                    PlayerData.CRate1 = br.ReadDouble
+                    PlayerData.CDMG1 = br.ReadDouble
+                    PlayerData.Coins1 = br.ReadInt32
+                    UpgradePoint = br.ReadInt32
+                    DeathCount = br.ReadInt32
+                    RegionID = br.ReadInt32
+                    For b = 0 To TourDist.Length - 1 Step 1
+                        TourDist(b) = br.ReadUInt64
+                    Next
+                    CurrentEnemy = New InitEnemy()
+                    isBattle = False
+                    Panel10.Visible = False
+                    progress = True
+                End If
+            Case Else
+                DebugShow(LangStr.s_string(73, langID) & vbCrLf &
+                              LangStr.s_string(56, langID) & ":" & SaveVersion & vbCrLf &
+                              LangStr.s_string(57, langID) & ":" & SaveVer & vbCrLf &
+                              LangStr.s_string(58, langID) & ":" & CompatibleVersion
+                              )
+        End Select
         br.Close()
         fs.Close()
     End Sub
@@ -578,10 +776,15 @@ Public Class MainForm
         ChangeName.ShowDialog()
         ChangeName.TextBox1.Text = InitData.CName
     End Sub
-
+    Dim saveFilename As String
     Private Sub NewSave_Open(sender As Object, e As EventArgs) Handles NewSaveToolStripMenuItem.Click, Button2.Click
-        progress = False
-        NewSave.ShowDialog()
+        Dim a As New SaveFileDialog
+        a.Filter = LangStr.s_string(106, langID) & "|*.yts"
+        If a.ShowDialog = Windows.Forms.DialogResult.OK Then
+            progress = False
+            saveFilename = a.FileName
+            NewSave.ShowDialog()
+        End If
     End Sub
     Private Sub GameThread_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         r1r = r1.NextDouble
@@ -598,6 +801,7 @@ Public Class MainForm
             Next
             isBattle = False
             Panel10.Visible = False
+            SaveData(saveFilename)
             progress = True
         End If
         If progress = True Then
@@ -1010,5 +1214,8 @@ Public Class MainForm
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         EleDescribe.Show()
+    End Sub
+    Private Sub UseItem_Button(sender As Object, e As EventArgs) Handles useitemaction1.Click, useitemaction2.Click, useitemaction3.Click, useitemaction4.Click, useitemaction5.Click, useitemaction6.Click, useitemaction7.Click, useitemaction8.Click, useitemaction9.Click, useitemaction10.Click, useitemaction11.Click, useitemaction12.Click, useitemaction13.Click, useitemaction14.Click, useitemaction15.Click, useitemaction16.Click, useitemaction17.Click, useitemaction18.Click, useitemaction19.Click, useitemaction20.Click, useitemaction21.Click, useitemaction22.Click, useitemaction23.Click, useitemaction24.Click
+        Use_Item(sender.TabIndex - 59)
     End Sub
 End Class
