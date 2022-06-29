@@ -63,6 +63,66 @@ Namespace My.Resources
         '''<summary>
         '''  查找 System.Drawing.Bitmap 类型的本地化资源。
         '''</summary>
+        Public ReadOnly Property armorslot() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("armorslot", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
+        Public ReadOnly Property chestslot() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("chestslot", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
+        Public ReadOnly Property gloveslot() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("gloveslot", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
+        Public ReadOnly Property legslot() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("legslot", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
+        Public ReadOnly Property ringslot() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ringslot", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
+        Public ReadOnly Property shoeslot() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("shoeslot", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
         Public ReadOnly Property spr_coin_0() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("spr_coin_0", resourceCulture)

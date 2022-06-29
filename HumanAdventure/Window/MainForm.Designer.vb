@@ -39,9 +39,6 @@ Partial Class MainForm
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FeedbackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CoinsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ItemShopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UpgradeShopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.ProBasic = New System.Windows.Forms.TabPage()
@@ -78,7 +75,6 @@ Partial Class MainForm
         Me.XPBar = New System.Windows.Forms.ProgressBar()
         Me.XPMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.XPMenuStrip1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -113,7 +109,7 @@ Partial Class MainForm
         Me.TabControl3 = New System.Windows.Forms.TabControl()
         Me.Buffs = New System.Windows.Forms.TabPage()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Items = New System.Windows.Forms.TabPage()
+        Me.Artifact = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.Label44 = New System.Windows.Forms.Label()
@@ -196,7 +192,6 @@ Partial Class MainForm
         Me.Label9 = New System.Windows.Forms.Label()
         Me.RegionLabel = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -222,6 +217,24 @@ Partial Class MainForm
         Me.item6Buffs = New System.Windows.Forms.Label()
         Me.item7value = New System.Windows.Forms.Label()
         Me.item7Buffs = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.CoinsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ItemShopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UpgradeShopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.Equip1Label = New System.Windows.Forms.Label()
+        Me.Equip2Label = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -229,7 +242,6 @@ Partial Class MainForm
         Me.Panel2.SuspendLayout()
         Me.CharNameStrip.SuspendLayout()
         Me.XPMenu.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabControl2.SuspendLayout()
@@ -241,8 +253,9 @@ Partial Class MainForm
         Me.Inventory.SuspendLayout()
         Me.TabControl3.SuspendLayout()
         Me.Buffs.SuspendLayout()
-        Me.Items.SuspendLayout()
+        Me.Artifact.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
+        Me.Equipment.SuspendLayout()
         Me.Options.SuspendLayout()
         Me.Panel12.SuspendLayout()
         Me.Panel14.SuspendLayout()
@@ -256,6 +269,13 @@ Partial Class MainForm
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -360,28 +380,6 @@ Partial Class MainForm
         Me.FeedbackToolStripMenuItem.Name = "FeedbackToolStripMenuItem"
         Me.FeedbackToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.FeedbackToolStripMenuItem.Text = "Feedback"
-        '
-        'CoinsToolStripMenuItem
-        '
-        Me.CoinsToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.CoinsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItemShopToolStripMenuItem, Me.UpgradeShopToolStripMenuItem})
-        Me.CoinsToolStripMenuItem.Image = Global.HumanAdventure.My.Resources.Resources.spr_coin_0
-        Me.CoinsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.CoinsToolStripMenuItem.Name = "CoinsToolStripMenuItem"
-        Me.CoinsToolStripMenuItem.Size = New System.Drawing.Size(28, 20)
-        Me.CoinsToolStripMenuItem.ToolTipText = "Test"
-        '
-        'ItemShopToolStripMenuItem
-        '
-        Me.ItemShopToolStripMenuItem.Name = "ItemShopToolStripMenuItem"
-        Me.ItemShopToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
-        Me.ItemShopToolStripMenuItem.Text = "Item Shop"
-        '
-        'UpgradeShopToolStripMenuItem
-        '
-        Me.UpgradeShopToolStripMenuItem.Name = "UpgradeShopToolStripMenuItem"
-        Me.UpgradeShopToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
-        Me.UpgradeShopToolStripMenuItem.Text = "Upgrade Shop"
         '
         'Panel1
         '
@@ -778,16 +776,6 @@ Partial Class MainForm
         Me.XPMenuStrip1.Size = New System.Drawing.Size(87, 22)
         Me.XPMenuStrip1.Text = "xp"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.HumanAdventure.My.Resources.Resources.yave_1
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 19)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(28, 66)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
         'Timer1
         '
         Me.Timer1.Enabled = True
@@ -1098,7 +1086,7 @@ Partial Class MainForm
         'TabControl3
         '
         Me.TabControl3.Controls.Add(Me.Buffs)
-        Me.TabControl3.Controls.Add(Me.Items)
+        Me.TabControl3.Controls.Add(Me.Artifact)
         Me.TabControl3.Location = New System.Drawing.Point(0, 0)
         Me.TabControl3.Name = "TabControl3"
         Me.TabControl3.SelectedIndex = 0
@@ -1129,16 +1117,16 @@ Partial Class MainForm
         Me.TextBox2.TabIndex = 0
         Me.TextBox2.Text = "buffslist"
         '
-        'Items
+        'Artifact
         '
-        Me.Items.Controls.Add(Me.TableLayoutPanel1)
-        Me.Items.Location = New System.Drawing.Point(4, 24)
-        Me.Items.Name = "Items"
-        Me.Items.Padding = New System.Windows.Forms.Padding(3)
-        Me.Items.Size = New System.Drawing.Size(416, 256)
-        Me.Items.TabIndex = 1
-        Me.Items.Text = "Items"
-        Me.Items.UseVisualStyleBackColor = True
+        Me.Artifact.Controls.Add(Me.TableLayoutPanel1)
+        Me.Artifact.Location = New System.Drawing.Point(4, 24)
+        Me.Artifact.Name = "Artifact"
+        Me.Artifact.Padding = New System.Windows.Forms.Padding(3)
+        Me.Artifact.Size = New System.Drawing.Size(416, 256)
+        Me.Artifact.TabIndex = 1
+        Me.Artifact.Text = "Artifact"
+        Me.Artifact.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel1
         '
@@ -1146,7 +1134,7 @@ Partial Class MainForm
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.28708!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.71292!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.item7value, 2, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.item7Buffs, 3, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.item6value, 2, 6)
@@ -1200,7 +1188,7 @@ Partial Class MainForm
         '
         Me.Label45.AutoSize = True
         Me.Label45.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(324, 0)
+        Me.Label45.Location = New System.Drawing.Point(323, 0)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(37, 15)
         Me.Label45.TabIndex = 9
@@ -1210,7 +1198,7 @@ Partial Class MainForm
         '
         Me.Label44.AutoSize = True
         Me.Label44.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(212, 0)
+        Me.Label44.Location = New System.Drawing.Point(211, 0)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(37, 15)
         Me.Label44.TabIndex = 8
@@ -1352,6 +1340,19 @@ Partial Class MainForm
         '
         'Equipment
         '
+        Me.Equipment.Controls.Add(Me.CheckBox3)
+        Me.Equipment.Controls.Add(Me.Label49)
+        Me.Equipment.Controls.Add(Me.Label50)
+        Me.Equipment.Controls.Add(Me.PictureBox7)
+        Me.Equipment.Controls.Add(Me.PictureBox8)
+        Me.Equipment.Controls.Add(Me.Label46)
+        Me.Equipment.Controls.Add(Me.Label48)
+        Me.Equipment.Controls.Add(Me.Equip2Label)
+        Me.Equipment.Controls.Add(Me.Equip1Label)
+        Me.Equipment.Controls.Add(Me.PictureBox5)
+        Me.Equipment.Controls.Add(Me.PictureBox6)
+        Me.Equipment.Controls.Add(Me.PictureBox4)
+        Me.Equipment.Controls.Add(Me.PictureBox3)
         Me.Equipment.Location = New System.Drawing.Point(4, 24)
         Me.Equipment.Name = "Equipment"
         Me.Equipment.Padding = New System.Windows.Forms.Padding(3)
@@ -2038,18 +2039,6 @@ Partial Class MainForm
         Me.Panel5.TabIndex = 8
         Me.Panel5.Visible = False
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Image = Global.HumanAdventure.My.Resources.Resources.YaveYuFamily
-        Me.PictureBox2.Location = New System.Drawing.Point(247, 146)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(228, 217)
-        Me.PictureBox2.TabIndex = 3
-        Me.PictureBox2.TabStop = False
-        '
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(582, 484)
@@ -2129,7 +2118,7 @@ Partial Class MainForm
         'item1value
         '
         Me.item1value.AutoSize = True
-        Me.item1value.Location = New System.Drawing.Point(212, 30)
+        Me.item1value.Location = New System.Drawing.Point(211, 30)
         Me.item1value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item1value.Name = "item1value"
         Me.item1value.Size = New System.Drawing.Size(65, 15)
@@ -2139,7 +2128,7 @@ Partial Class MainForm
         'item1Buffs
         '
         Me.item1Buffs.AutoSize = True
-        Me.item1Buffs.Location = New System.Drawing.Point(324, 30)
+        Me.item1Buffs.Location = New System.Drawing.Point(323, 30)
         Me.item1Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item1Buffs.Name = "item1Buffs"
         Me.item1Buffs.Size = New System.Drawing.Size(64, 15)
@@ -2149,7 +2138,7 @@ Partial Class MainForm
         'item2value
         '
         Me.item2value.AutoSize = True
-        Me.item2value.Location = New System.Drawing.Point(212, 60)
+        Me.item2value.Location = New System.Drawing.Point(211, 60)
         Me.item2value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item2value.Name = "item2value"
         Me.item2value.Size = New System.Drawing.Size(65, 15)
@@ -2159,7 +2148,7 @@ Partial Class MainForm
         'item2Buffs
         '
         Me.item2Buffs.AutoSize = True
-        Me.item2Buffs.Location = New System.Drawing.Point(324, 60)
+        Me.item2Buffs.Location = New System.Drawing.Point(323, 60)
         Me.item2Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item2Buffs.Name = "item2Buffs"
         Me.item2Buffs.Size = New System.Drawing.Size(64, 15)
@@ -2169,7 +2158,7 @@ Partial Class MainForm
         'item3value
         '
         Me.item3value.AutoSize = True
-        Me.item3value.Location = New System.Drawing.Point(212, 90)
+        Me.item3value.Location = New System.Drawing.Point(211, 90)
         Me.item3value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item3value.Name = "item3value"
         Me.item3value.Size = New System.Drawing.Size(65, 15)
@@ -2179,7 +2168,7 @@ Partial Class MainForm
         'item3Buffs
         '
         Me.item3Buffs.AutoSize = True
-        Me.item3Buffs.Location = New System.Drawing.Point(324, 90)
+        Me.item3Buffs.Location = New System.Drawing.Point(323, 90)
         Me.item3Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item3Buffs.Name = "item3Buffs"
         Me.item3Buffs.Size = New System.Drawing.Size(64, 15)
@@ -2189,7 +2178,7 @@ Partial Class MainForm
         'item4value
         '
         Me.item4value.AutoSize = True
-        Me.item4value.Location = New System.Drawing.Point(212, 120)
+        Me.item4value.Location = New System.Drawing.Point(211, 120)
         Me.item4value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item4value.Name = "item4value"
         Me.item4value.Size = New System.Drawing.Size(65, 15)
@@ -2199,7 +2188,7 @@ Partial Class MainForm
         'item4Buffs
         '
         Me.item4Buffs.AutoSize = True
-        Me.item4Buffs.Location = New System.Drawing.Point(324, 120)
+        Me.item4Buffs.Location = New System.Drawing.Point(323, 120)
         Me.item4Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item4Buffs.Name = "item4Buffs"
         Me.item4Buffs.Size = New System.Drawing.Size(64, 15)
@@ -2209,7 +2198,7 @@ Partial Class MainForm
         'item5value
         '
         Me.item5value.AutoSize = True
-        Me.item5value.Location = New System.Drawing.Point(212, 150)
+        Me.item5value.Location = New System.Drawing.Point(211, 150)
         Me.item5value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item5value.Name = "item5value"
         Me.item5value.Size = New System.Drawing.Size(65, 15)
@@ -2219,7 +2208,7 @@ Partial Class MainForm
         'item5Buffs
         '
         Me.item5Buffs.AutoSize = True
-        Me.item5Buffs.Location = New System.Drawing.Point(324, 150)
+        Me.item5Buffs.Location = New System.Drawing.Point(323, 150)
         Me.item5Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item5Buffs.Name = "item5Buffs"
         Me.item5Buffs.Size = New System.Drawing.Size(64, 15)
@@ -2229,7 +2218,7 @@ Partial Class MainForm
         'item6value
         '
         Me.item6value.AutoSize = True
-        Me.item6value.Location = New System.Drawing.Point(212, 180)
+        Me.item6value.Location = New System.Drawing.Point(211, 180)
         Me.item6value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item6value.Name = "item6value"
         Me.item6value.Size = New System.Drawing.Size(65, 15)
@@ -2239,7 +2228,7 @@ Partial Class MainForm
         'item6Buffs
         '
         Me.item6Buffs.AutoSize = True
-        Me.item6Buffs.Location = New System.Drawing.Point(324, 180)
+        Me.item6Buffs.Location = New System.Drawing.Point(323, 180)
         Me.item6Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item6Buffs.Name = "item6Buffs"
         Me.item6Buffs.Size = New System.Drawing.Size(64, 15)
@@ -2249,7 +2238,7 @@ Partial Class MainForm
         'item7value
         '
         Me.item7value.AutoSize = True
-        Me.item7value.Location = New System.Drawing.Point(212, 210)
+        Me.item7value.Location = New System.Drawing.Point(211, 210)
         Me.item7value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item7value.Name = "item7value"
         Me.item7value.Size = New System.Drawing.Size(65, 15)
@@ -2259,12 +2248,180 @@ Partial Class MainForm
         'item7Buffs
         '
         Me.item7Buffs.AutoSize = True
-        Me.item7Buffs.Location = New System.Drawing.Point(324, 210)
+        Me.item7Buffs.Location = New System.Drawing.Point(323, 210)
         Me.item7Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item7Buffs.Name = "item7Buffs"
         Me.item7Buffs.Size = New System.Drawing.Size(64, 15)
         Me.item7Buffs.TabIndex = 51
         Me.item7Buffs.Text = "item7Buffs"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Image = Global.HumanAdventure.My.Resources.Resources.YaveYuFamily
+        Me.PictureBox2.Location = New System.Drawing.Point(247, 146)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(228, 217)
+        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.HumanAdventure.My.Resources.Resources.yave_1
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 19)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(28, 66)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'CoinsToolStripMenuItem
+        '
+        Me.CoinsToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.CoinsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItemShopToolStripMenuItem, Me.UpgradeShopToolStripMenuItem})
+        Me.CoinsToolStripMenuItem.Image = Global.HumanAdventure.My.Resources.Resources.spr_coin_0
+        Me.CoinsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.CoinsToolStripMenuItem.Name = "CoinsToolStripMenuItem"
+        Me.CoinsToolStripMenuItem.Size = New System.Drawing.Size(28, 20)
+        Me.CoinsToolStripMenuItem.ToolTipText = "Test"
+        '
+        'ItemShopToolStripMenuItem
+        '
+        Me.ItemShopToolStripMenuItem.Name = "ItemShopToolStripMenuItem"
+        Me.ItemShopToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.ItemShopToolStripMenuItem.Text = "Item Shop"
+        '
+        'UpgradeShopToolStripMenuItem
+        '
+        Me.UpgradeShopToolStripMenuItem.Name = "UpgradeShopToolStripMenuItem"
+        Me.UpgradeShopToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.UpgradeShopToolStripMenuItem.Text = "Upgrade Shop"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.HumanAdventure.My.Resources.Resources.armorslot
+        Me.PictureBox3.ImageLocation = ""
+        Me.PictureBox3.Location = New System.Drawing.Point(29, 22)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.HumanAdventure.My.Resources.Resources.chestslot
+        Me.PictureBox4.ImageLocation = ""
+        Me.PictureBox4.Location = New System.Drawing.Point(29, 62)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox4.TabIndex = 1
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = Global.HumanAdventure.My.Resources.Resources.shoeslot
+        Me.PictureBox5.ImageLocation = ""
+        Me.PictureBox5.Location = New System.Drawing.Point(29, 142)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox5.TabIndex = 3
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = Global.HumanAdventure.My.Resources.Resources.legslot
+        Me.PictureBox6.ImageLocation = ""
+        Me.PictureBox6.Location = New System.Drawing.Point(29, 102)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox6.TabIndex = 2
+        Me.PictureBox6.TabStop = False
+        '
+        'Equip1Label
+        '
+        Me.Equip1Label.AutoSize = True
+        Me.Equip1Label.Location = New System.Drawing.Point(50, 23)
+        Me.Equip1Label.Name = "Equip1Label"
+        Me.Equip1Label.Size = New System.Drawing.Size(26, 15)
+        Me.Equip1Label.TabIndex = 4
+        Me.Equip1Label.Text = "Hat"
+        '
+        'Equip2Label
+        '
+        Me.Equip2Label.AutoSize = True
+        Me.Equip2Label.Location = New System.Drawing.Point(51, 63)
+        Me.Equip2Label.Name = "Equip2Label"
+        Me.Equip2Label.Size = New System.Drawing.Size(37, 15)
+        Me.Equip2Label.TabIndex = 5
+        Me.Equip2Label.Text = "Chest"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Location = New System.Drawing.Point(50, 143)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(37, 15)
+        Me.Label46.TabIndex = 7
+        Me.Label46.Text = "Boots"
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Location = New System.Drawing.Point(50, 103)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(26, 15)
+        Me.Label48.TabIndex = 6
+        Me.Label48.Text = "Leg"
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Location = New System.Drawing.Point(50, 223)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(37, 15)
+        Me.Label49.TabIndex = 11
+        Me.Label49.Text = "Boots"
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.Location = New System.Drawing.Point(50, 183)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(26, 15)
+        Me.Label50.TabIndex = 10
+        Me.Label50.Text = "Leg"
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = Global.HumanAdventure.My.Resources.Resources.ringslot
+        Me.PictureBox7.ImageLocation = ""
+        Me.PictureBox7.Location = New System.Drawing.Point(29, 222)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox7.TabIndex = 9
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Image = Global.HumanAdventure.My.Resources.Resources.gloveslot
+        Me.PictureBox8.ImageLocation = ""
+        Me.PictureBox8.Location = New System.Drawing.Point(29, 182)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox8.TabIndex = 8
+        Me.PictureBox8.TabStop = False
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(6, 255)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(85, 19)
+        Me.CheckBox3.TabIndex = 12
+        Me.CheckBox3.Text = "Auto Equip"
+        Me.CheckBox3.UseVisualStyleBackColor = True
         '
         'MainForm
         '
@@ -2294,7 +2451,6 @@ Partial Class MainForm
         Me.Panel2.PerformLayout()
         Me.CharNameStrip.ResumeLayout(False)
         Me.XPMenu.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.TabControl2.ResumeLayout(False)
@@ -2312,9 +2468,11 @@ Partial Class MainForm
         Me.TabControl3.ResumeLayout(False)
         Me.Buffs.ResumeLayout(False)
         Me.Buffs.PerformLayout()
-        Me.Items.ResumeLayout(False)
+        Me.Artifact.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        Me.Equipment.ResumeLayout(False)
+        Me.Equipment.PerformLayout()
         Me.Options.ResumeLayout(False)
         Me.Panel12.ResumeLayout(False)
         Me.Panel12.PerformLayout()
@@ -2339,6 +2497,13 @@ Partial Class MainForm
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2506,7 +2671,7 @@ Partial Class MainForm
     Friend WithEvents Label40 As Label
     Friend WithEvents TabControl3 As TabControl
     Friend WithEvents Buffs As TabPage
-    Friend WithEvents Items As TabPage
+    Friend WithEvents Artifact As TabPage
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Item1Labels As Label
     Friend WithEvents ItemSell1 As Button
@@ -2542,4 +2707,17 @@ Partial Class MainForm
     Friend WithEvents item3Buffs As Label
     Friend WithEvents item2value As Label
     Friend WithEvents item2Buffs As Label
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Equip1Label As Label
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Equip2Label As Label
+    Friend WithEvents Label46 As Label
+    Friend WithEvents Label48 As Label
+    Friend WithEvents Label49 As Label
+    Friend WithEvents Label50 As Label
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents CheckBox3 As CheckBox
 End Class

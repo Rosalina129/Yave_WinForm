@@ -14,6 +14,7 @@
     End Sub
 
     Private Sub ChangeName_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Label1.Text = LangStr.s_string(40, MainForm.langID)
+        Button1.Text = LangStr.s_string(25, MainForm.langID)
     End Sub
 End Class

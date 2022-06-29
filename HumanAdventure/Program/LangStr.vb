@@ -167,6 +167,31 @@
         {"Boots", "靴子"},
         {"Ring", "戒指"},
         {"Glove", "手套"},
+        {"Automatic Equipment System", "自动化装备系统"},'167
+        {"Element Damage Rates", "伤害倍率"},
+        {"To ", "对"},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
         {"", ""},
         {"", ""}
     }
@@ -303,23 +328,38 @@
         {"Spruce Wood", "云杉木"}，
         {"Ash Wood", "镀灰木"}，
         {"Sapphire", "蓝宝石"}，'Frostmelt Snow Mountain End
-        {"", ""}，'Dolphin Shore Start
+        {"Heart-sea", "海洋之心"}，'Dolphin Shore Start
+        {"Gold Ingot", "金锭"}，
+        {"Gold Chunk", "金块"}，
+        {"Diamond", "金刚石"}，
+        {"Diamond Chunk", "金刚石块"}，
+        {"Shark Fin", "鲨鱼鳍"}，
+        {"Conch", "海螺"}，
+        {"Starfish", "海星"}，
+        {"Puffer", "河豚"}，
+        {"Seagrass", "海草"}，
+        {"Turtle Shell", "龟壳"}，
+        {"Palm Wood", "棕榈木"}，
+        {"Coconut", "椰子"}，
+        {"Dwarf Spear", "矮人矛"}，
+        {"Coal", "煤炭"}，
+        {"Sand", "沙子"}，'Dolphin Shore End
+        {"Mysical Wood", "神秘木"}，'Harmonic Dark Valley Start
+        {"Mysical Eye", "神秘之眼"}，
+        {"Sacred Star Fragment", "神圣之星碎片"}，
+        {"Andesite", "安山岩"}，
+        {"Violet", "紫罗兰"}，
+        {"Cobalt", "钴"}，
+        {"Cobalt Chunk", "钴大块"}，
+        {"Raven Feather", "乌鸦羽毛"}，
+        {"Glowdust", "萤石"}，
+        {"Mythicdust Bottle", "神秘粉尘瓶"}，
+        {"Relic Holywater", "遗洪圣水"}，
+        {"Harmonic Sensor Part", "谐音传感器零件"}，
+        {"Gunpowder", "火药"}，
         {"", ""}，
         {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，'Dolphin Shore End
-        {"Harmonic Dark Valley", "谐暗山谷"},
+        {"", ""}，'Harmonic Dark Valley End
         {"Shangri-La", "桃花源"},
         {"Deepevil Volcano", "幽恶火山"},
         {"Karst Cave Mine", "溶洞矿场"},

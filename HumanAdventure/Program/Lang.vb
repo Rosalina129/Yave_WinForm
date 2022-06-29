@@ -117,6 +117,9 @@
             .Label39.Text = LangStr.s_string(153, langid)
             .Button12.Text = LangStr.s_string(111, langid)
             .Label40.Text = LangStr.s_string(156, langid) & ": x / 100 (m)"
+
+            .TabControl3.TabPages(0).Text = LangStr.s_string(159, langid)
+            .TabControl3.TabPages(1).Text = LangStr.s_string(160, langid)
         End With
         'NewSave Strings
         With NewSave
@@ -139,8 +142,6 @@
         'ChangeName Strings
         With ChangeName
             .Text = LangStr.s_string(39, langid)
-            .Label1.Text = LangStr.s_string(40, langid)
-            .Button1.Text = LangStr.s_string(25, langid)
         End With
         'a
         With EleDescribe

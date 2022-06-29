@@ -270,6 +270,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\shoeslot.png" />
+    <None Include="Resources\ringslot.png" />
+    <None Include="Resources\legslot.png" />
+    <None Include="Resources\gloveslot.png" />
+    <None Include="Resources\chestslot.png" />
+    <None Include="Resources\armorslot.png" />
     <None Include="Resources\spr_coin_0.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
