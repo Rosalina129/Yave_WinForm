@@ -46,7 +46,7 @@
         {"Shop", "商店"},
         {"Talent", "天赋"},
         {"Region", "地区"},
-        {"Introduction", "介绍"},'46
+        {"Ele. DMG Rate", "元素倍率伤害"},'46
         {"Coming soon next update...", "敬请期待版本更新..."},
         {"Emerald Plains", "绿宝石平原"},'48
         {"Drip Forest", "滴水森林"},
@@ -158,9 +158,15 @@
         {"You fall down and the Boss throws you into the far away, and you have to start again.", "你倒下了，Boss 把你向远处扔去，你不得不重新出发。"},
         {"Distance Convert", "距离换算"},
         {"Fall Counts", "已贡献的灵魂"},
-        {"", ""},
-        {"", ""},
-        {"", ""},
+        {"Element Damage Rate Panel", "元素伤害倍率面板"},'158
+        {"Buffs", "增益"},
+        {"Artifact", "神赐"},
+        {"Helmet", "头盔"},
+        {"Chest", "胸甲"},
+        {"Legging", "护腿"},
+        {"Boots", "靴子"},
+        {"Ring", "戒指"},
+        {"Glove", "手套"},
         {"", ""},
         {"", ""}
     }
@@ -234,5 +240,116 @@
         {"Deals spread-wet damage to enemies", "对敌方造成湿蔓伤害。"}，
         {"Entangling an enemy has a chance to make it unable to attack. (Except ele. atk)", "对敌方造成缠绕伤害，有一定几率令对方无法发起攻击。（元素攻击除外）"}，
         {"Deals double damage to enemies.", "对敌方造成二倍伤害。"}
+        }
+    Public Shared s_item As String(,) = {
+        {"None", "空"}，
+        {"XP Reagent", "XP 试剂"}，'Common Start
+        {"XP Flask", "XP 烧瓶"}，
+        {"XP Potion", "XP 药剂"}，
+        {"Health Reagent", "HP 试剂"}，
+        {"Health Flask", "HP 烧杯"}，
+        {"Health Potion", "HP 药剂"}，
+        {"Herbal", "草药"}，
+        {"Medicbox", "医疗箱"}，
+        {"Wind Emblem", "风之徽章"}，
+        {"Fire Emblem", "火之徽章"}，
+        {"Water Emblem", "水之徽章"}，
+        {"Grass Emblem", "草之徽章"}，'Common End
+        {"Wool", "羊毛"}，'Emerald Plains Start
+        {"Steak", "熟肉"}，
+        {"Apple", "苹果"}，
+        {"Glass", "玻璃"}，
+        {"Oak Wood", "橡木"}，
+        {"Birth Wood", "桦木"}，
+        {"Grass Chunk", "草块"}，
+        {"Copper Ingot", "铜锭"}，
+        {"Pumpkin", "南瓜"}，
+        {"Rose", "玫瑰"}，
+        {"Clover", "四叶草"}，
+        {"Egg", "鸡蛋"}，
+        {"Iron Apple", "铁苹果"}，
+        {"Copper Chunk", "铜块"}，
+        {"Sugar Cane", "甘蔗"}，
+        {"Gold Apple", "金苹果"}，'Emerald Plains End
+        {"Bat Wing", "蝙蝠翅膀"}，'Drip Forest Start
+        {"Fly Drip", "蝇液"}，
+        {"Dark Oak Wood", "暗色橡木"}，
+        {"Forest Wood", "森林木"}，
+        {"Pear", "梨"}，
+        {"Mud", "泥浆"}，
+        {"Iron Ingot", "铁锭"}，
+        {"Venom Reagent", "毒液剂"}，
+        {"Granite", "花岗岩"}，
+        {"Coin Shard", "金币碎片"}，
+        {"Coin", "金币"}，
+        {"Scorpion", "蝎子"}，
+        {"Scorpion Blood", "蝎子血瓶"}，
+        {"Poison Apple", "毒苹果"}，
+        {"Scorpion Sting", "蝎子刺身"}，
+        {"Iron Chunk", "铁块"}，'Drip Forest End
+        {"Snow Chunk", "雪块"}，'Frostmelt Snow Mountain Start
+        {"Snowball", "雪球"}，
+        {"Ice", "冰"}，
+        {"Ice Spike", "冰刺"}，
+        {"Frost Ingot", "霜锭"}，
+        {"Frost Chunk", "霜块"}，
+        {"Lava Block", "岩浆块"}，
+        {"Volcanic Ash", "火山灰"}，
+        {"Lava Cools", "岩浆冷却体"}，
+        {"Snow Geese", "雪雁"}，
+        {"Meteorite Ingot", "陨石锭"}，
+        {"Orange", "橙子"}，
+        {"Gold Orange", "金橙子"}，
+        {"Spruce Wood", "云杉木"}，
+        {"Ash Wood", "镀灰木"}，
+        {"Sapphire", "蓝宝石"}，'Frostmelt Snow Mountain End
+        {"", ""}，'Dolphin Shore Start
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，'Dolphin Shore End
+        {"Harmonic Dark Valley", "谐暗山谷"},
+        {"Shangri-La", "桃花源"},
+        {"Deepevil Volcano", "幽恶火山"},
+        {"Karst Cave Mine", "溶洞矿场"},
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}
+        }
+    Public Shared s_itemsmith As String(,) = {
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，
+        {"", ""}
         }
 End Class

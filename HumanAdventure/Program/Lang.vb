@@ -142,5 +142,9 @@
             .Label1.Text = LangStr.s_string(40, langid)
             .Button1.Text = LangStr.s_string(25, langid)
         End With
+        'a
+        With EleDescribe
+            .Text = LangStr.s_string(158, langid)
+        End With
     End Sub
 End Class

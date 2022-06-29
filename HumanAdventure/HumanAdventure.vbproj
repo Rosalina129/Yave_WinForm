@@ -148,6 +148,12 @@
     <Compile Include="Window\EasterEgg.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Window\EleDescribe.Designer.vb">
+      <DependentUpon>EleDescribe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Window\EleDescribe.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Window\NewSave.Designer.vb">
       <DependentUpon>NewSave.vb</DependentUpon>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Window\EasterEgg.resx">
       <DependentUpon>EasterEgg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\EleDescribe.resx">
+      <DependentUpon>EleDescribe.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>

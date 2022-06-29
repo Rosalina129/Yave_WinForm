@@ -12,7 +12,18 @@
     Dim SE As UInteger                  'Star Energy
     Dim CRate As Double                 'Crit Rate
     Dim CDMG As Double                  'Crit Damage
-    Dim Coins As UInt32                'Coins
+    Dim Coins As UInt32                 'Coins
+    Dim Itema As Integer
+    Dim Itemb As Integer
+    Dim Itemc As Integer
+    Dim Itemd As Integer
+    Dim Iteme As Integer
+    Dim Itemf As Integer
+    Dim Itemg As Integer
+    Dim EquipH As Integer
+    Dim EquipC As Integer
+    Dim EquipL As Integer
+    Dim EquipB As Integer
     Public Sub New()
 
     End Sub

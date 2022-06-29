@@ -146,7 +146,6 @@ Public Class MainForm
                 Label24.Text = LangStr.s_string(63, langID) & " " & Math.Round(TourDist(RegionID) / 10 ^ 2, 2) & "m" '& "  " & DES
                 Label41.Text = LangStr.s_string(63, langID) & " " & Math.Round(TourDist(RegionID) / 10 ^ 2, 2) & "m"
             End If
-
             CheckXP()
             XPBar.Maximum = .XPNeed1
             XPBar.Value = .XP1
@@ -1007,5 +1006,9 @@ Public Class MainForm
         If TextBox1.Text <> "" Then
             TourDist(RegionID) = TextBox1.Text
         End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        EleDescribe.Show()
     End Sub
 End Class

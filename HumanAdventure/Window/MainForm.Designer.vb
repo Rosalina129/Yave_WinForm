@@ -110,10 +110,32 @@ Partial Class MainForm
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Inventory = New System.Windows.Forms.TabPage()
+        Me.TabControl3 = New System.Windows.Forms.TabControl()
+        Me.Buffs = New System.Windows.Forms.TabPage()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Items = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Item1Labels = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Item2Labels = New System.Windows.Forms.Label()
+        Me.Item3Labels = New System.Windows.Forms.Label()
+        Me.Item4Labels = New System.Windows.Forms.Label()
+        Me.Item5Labels = New System.Windows.Forms.Label()
+        Me.Item6Labels = New System.Windows.Forms.Label()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.ItemSell1 = New System.Windows.Forms.Button()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
         Me.Equipment = New System.Windows.Forms.TabPage()
         Me.Options = New System.Windows.Forms.TabPage()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Label40 = New System.Windows.Forms.Label()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Button12 = New System.Windows.Forms.Button()
@@ -183,7 +205,23 @@ Partial Class MainForm
         Me.AutoBattleTimer = New System.Windows.Forms.Timer(Me.components)
         Me.BattleTime = New System.Windows.Forms.Timer(Me.components)
         Me.BattleCooldown = New System.Windows.Forms.Timer(Me.components)
-        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Item7Labels = New System.Windows.Forms.Label()
+        Me.Button18 = New System.Windows.Forms.Button()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.item1value = New System.Windows.Forms.Label()
+        Me.item1Buffs = New System.Windows.Forms.Label()
+        Me.item2value = New System.Windows.Forms.Label()
+        Me.item2Buffs = New System.Windows.Forms.Label()
+        Me.item3value = New System.Windows.Forms.Label()
+        Me.item3Buffs = New System.Windows.Forms.Label()
+        Me.item4value = New System.Windows.Forms.Label()
+        Me.item4Buffs = New System.Windows.Forms.Label()
+        Me.item5value = New System.Windows.Forms.Label()
+        Me.item5Buffs = New System.Windows.Forms.Label()
+        Me.item6value = New System.Windows.Forms.Label()
+        Me.item6Buffs = New System.Windows.Forms.Label()
+        Me.item7value = New System.Windows.Forms.Label()
+        Me.item7Buffs = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -200,6 +238,11 @@ Partial Class MainForm
         Me.Panel10.SuspendLayout()
         Me.Panel15.SuspendLayout()
         Me.Panel11.SuspendLayout()
+        Me.Inventory.SuspendLayout()
+        Me.TabControl3.SuspendLayout()
+        Me.Buffs.SuspendLayout()
+        Me.Items.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.Options.SuspendLayout()
         Me.Panel12.SuspendLayout()
         Me.Panel14.SuspendLayout()
@@ -1043,6 +1086,7 @@ Partial Class MainForm
         '
         'Inventory
         '
+        Me.Inventory.Controls.Add(Me.TabControl3)
         Me.Inventory.Location = New System.Drawing.Point(4, 24)
         Me.Inventory.Name = "Inventory"
         Me.Inventory.Padding = New System.Windows.Forms.Padding(3)
@@ -1050,6 +1094,261 @@ Partial Class MainForm
         Me.Inventory.TabIndex = 0
         Me.Inventory.Text = "Inventory"
         Me.Inventory.UseVisualStyleBackColor = True
+        '
+        'TabControl3
+        '
+        Me.TabControl3.Controls.Add(Me.Buffs)
+        Me.TabControl3.Controls.Add(Me.Items)
+        Me.TabControl3.Location = New System.Drawing.Point(0, 0)
+        Me.TabControl3.Name = "TabControl3"
+        Me.TabControl3.SelectedIndex = 0
+        Me.TabControl3.Size = New System.Drawing.Size(424, 284)
+        Me.TabControl3.TabIndex = 0
+        '
+        'Buffs
+        '
+        Me.Buffs.Controls.Add(Me.TextBox2)
+        Me.Buffs.Location = New System.Drawing.Point(4, 24)
+        Me.Buffs.Name = "Buffs"
+        Me.Buffs.Padding = New System.Windows.Forms.Padding(3)
+        Me.Buffs.Size = New System.Drawing.Size(416, 256)
+        Me.Buffs.TabIndex = 0
+        Me.Buffs.Text = "Buffs"
+        Me.Buffs.UseVisualStyleBackColor = True
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TextBox2.Location = New System.Drawing.Point(3, 3)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(410, 256)
+        Me.TextBox2.TabIndex = 0
+        Me.TextBox2.Text = "buffslist"
+        '
+        'Items
+        '
+        Me.Items.Controls.Add(Me.TableLayoutPanel1)
+        Me.Items.Location = New System.Drawing.Point(4, 24)
+        Me.Items.Name = "Items"
+        Me.Items.Padding = New System.Windows.Forms.Padding(3)
+        Me.Items.Size = New System.Drawing.Size(416, 256)
+        Me.Items.TabIndex = 1
+        Me.Items.Text = "Items"
+        Me.Items.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 4
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.28708!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.71292!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.item7value, 2, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.item7Buffs, 3, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.item6value, 2, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.item6Buffs, 3, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.item5value, 2, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.item5Buffs, 3, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.item4value, 2, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.item4Buffs, 3, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.item3value, 2, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.item3Buffs, 3, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.item2value, 2, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.item2Buffs, 3, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.item1Buffs, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.item1value, 2, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label45, 3, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label44, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label43, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item1Labels, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label42, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item2Labels, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item3Labels, 0, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item4Labels, 0, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item5Labels, 0, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item6Labels, 0, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.Button15, 1, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.Button16, 1, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.Button17, 1, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.ItemSell1, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Button13, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.Button14, 1, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item7Labels, 0, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.Button18, 1, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label47, 0, 8)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 9
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28566!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(410, 250)
+        Me.TableLayoutPanel1.TabIndex = 6
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.Location = New System.Drawing.Point(324, 0)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(37, 15)
+        Me.Label45.TabIndex = 9
+        Me.Label45.Text = "Buffs"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Location = New System.Drawing.Point(212, 0)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(37, 15)
+        Me.Label44.TabIndex = 8
+        Me.Label44.Text = "Value"
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.Location = New System.Drawing.Point(129, 0)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(43, 15)
+        Me.Label43.TabIndex = 7
+        Me.Label43.Text = "Action"
+        '
+        'Item1Labels
+        '
+        Me.Item1Labels.AutoSize = True
+        Me.Item1Labels.Location = New System.Drawing.Point(3, 30)
+        Me.Item1Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item1Labels.Name = "Item1Labels"
+        Me.Item1Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item1Labels.TabIndex = 3
+        Me.Item1Labels.Text = "item1database"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.Location = New System.Drawing.Point(3, 0)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(40, 15)
+        Me.Label42.TabIndex = 6
+        Me.Label42.Text = "Name"
+        '
+        'Item2Labels
+        '
+        Me.Item2Labels.AutoSize = True
+        Me.Item2Labels.Location = New System.Drawing.Point(3, 60)
+        Me.Item2Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item2Labels.Name = "Item2Labels"
+        Me.Item2Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item2Labels.TabIndex = 10
+        Me.Item2Labels.Text = "item1database"
+        '
+        'Item3Labels
+        '
+        Me.Item3Labels.AutoSize = True
+        Me.Item3Labels.Location = New System.Drawing.Point(3, 90)
+        Me.Item3Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item3Labels.Name = "Item3Labels"
+        Me.Item3Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item3Labels.TabIndex = 11
+        Me.Item3Labels.Text = "item1database"
+        '
+        'Item4Labels
+        '
+        Me.Item4Labels.AutoSize = True
+        Me.Item4Labels.Location = New System.Drawing.Point(3, 120)
+        Me.Item4Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item4Labels.Name = "Item4Labels"
+        Me.Item4Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item4Labels.TabIndex = 12
+        Me.Item4Labels.Text = "item1database"
+        '
+        'Item5Labels
+        '
+        Me.Item5Labels.AutoSize = True
+        Me.Item5Labels.Location = New System.Drawing.Point(3, 150)
+        Me.Item5Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item5Labels.Name = "Item5Labels"
+        Me.Item5Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item5Labels.TabIndex = 13
+        Me.Item5Labels.Text = "item1database"
+        '
+        'Item6Labels
+        '
+        Me.Item6Labels.AutoSize = True
+        Me.Item6Labels.Location = New System.Drawing.Point(3, 180)
+        Me.Item6Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item6Labels.Name = "Item6Labels"
+        Me.Item6Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item6Labels.TabIndex = 14
+        Me.Item6Labels.Text = "item1database"
+        '
+        'Button15
+        '
+        Me.Button15.Location = New System.Drawing.Point(129, 116)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(75, 22)
+        Me.Button15.TabIndex = 17
+        Me.Button15.Text = "Button13"
+        Me.Button15.UseVisualStyleBackColor = True
+        '
+        'Button16
+        '
+        Me.Button16.Location = New System.Drawing.Point(129, 146)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(75, 22)
+        Me.Button16.TabIndex = 18
+        Me.Button16.Text = "Button13"
+        Me.Button16.UseVisualStyleBackColor = True
+        '
+        'Button17
+        '
+        Me.Button17.Location = New System.Drawing.Point(129, 176)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(75, 22)
+        Me.Button17.TabIndex = 19
+        Me.Button17.Text = "Button13"
+        Me.Button17.UseVisualStyleBackColor = True
+        '
+        'ItemSell1
+        '
+        Me.ItemSell1.Location = New System.Drawing.Point(129, 26)
+        Me.ItemSell1.Name = "ItemSell1"
+        Me.ItemSell1.Size = New System.Drawing.Size(75, 22)
+        Me.ItemSell1.TabIndex = 5
+        Me.ItemSell1.Text = "Button13"
+        Me.ItemSell1.UseVisualStyleBackColor = True
+        '
+        'Button13
+        '
+        Me.Button13.Location = New System.Drawing.Point(129, 56)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(75, 22)
+        Me.Button13.TabIndex = 15
+        Me.Button13.Text = "Button13"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'Button14
+        '
+        Me.Button14.Location = New System.Drawing.Point(129, 86)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(75, 22)
+        Me.Button14.TabIndex = 16
+        Me.Button14.Text = "Button13"
+        Me.Button14.UseVisualStyleBackColor = True
         '
         'Equipment
         '
@@ -1105,6 +1404,15 @@ Partial Class MainForm
         Me.Panel14.Name = "Panel14"
         Me.Panel14.Size = New System.Drawing.Size(359, 69)
         Me.Panel14.TabIndex = 9
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Location = New System.Drawing.Point(193, 22)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(51, 15)
+        Me.Label40.TabIndex = 25
+        Me.Label40.Text = "distance"
         '
         'Label41
         '
@@ -1791,14 +2099,172 @@ Partial Class MainForm
         '
         Me.BattleCooldown.Interval = 1000
         '
-        'Label40
+        'Item7Labels
         '
-        Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(193, 22)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(51, 15)
-        Me.Label40.TabIndex = 25
-        Me.Label40.Text = "distance"
+        Me.Item7Labels.AutoSize = True
+        Me.Item7Labels.Location = New System.Drawing.Point(3, 210)
+        Me.Item7Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item7Labels.Name = "Item7Labels"
+        Me.Item7Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item7Labels.TabIndex = 20
+        Me.Item7Labels.Text = "item1database"
+        '
+        'Button18
+        '
+        Me.Button18.Location = New System.Drawing.Point(129, 206)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(75, 22)
+        Me.Button18.TabIndex = 21
+        Me.Button18.Text = "Button13"
+        Me.Button18.UseVisualStyleBackColor = True
+        '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.Location = New System.Drawing.Point(3, 233)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(0, 15)
+        Me.Label47.TabIndex = 38
+        '
+        'item1value
+        '
+        Me.item1value.AutoSize = True
+        Me.item1value.Location = New System.Drawing.Point(212, 30)
+        Me.item1value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item1value.Name = "item1value"
+        Me.item1value.Size = New System.Drawing.Size(65, 15)
+        Me.item1value.TabIndex = 39
+        Me.item1value.Text = "item1value"
+        '
+        'item1Buffs
+        '
+        Me.item1Buffs.AutoSize = True
+        Me.item1Buffs.Location = New System.Drawing.Point(324, 30)
+        Me.item1Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item1Buffs.Name = "item1Buffs"
+        Me.item1Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item1Buffs.TabIndex = 40
+        Me.item1Buffs.Text = "item1Buffs"
+        '
+        'item2value
+        '
+        Me.item2value.AutoSize = True
+        Me.item2value.Location = New System.Drawing.Point(212, 60)
+        Me.item2value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item2value.Name = "item2value"
+        Me.item2value.Size = New System.Drawing.Size(65, 15)
+        Me.item2value.TabIndex = 42
+        Me.item2value.Text = "item2value"
+        '
+        'item2Buffs
+        '
+        Me.item2Buffs.AutoSize = True
+        Me.item2Buffs.Location = New System.Drawing.Point(324, 60)
+        Me.item2Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item2Buffs.Name = "item2Buffs"
+        Me.item2Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item2Buffs.TabIndex = 41
+        Me.item2Buffs.Text = "item2Buffs"
+        '
+        'item3value
+        '
+        Me.item3value.AutoSize = True
+        Me.item3value.Location = New System.Drawing.Point(212, 90)
+        Me.item3value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item3value.Name = "item3value"
+        Me.item3value.Size = New System.Drawing.Size(65, 15)
+        Me.item3value.TabIndex = 44
+        Me.item3value.Text = "item3value"
+        '
+        'item3Buffs
+        '
+        Me.item3Buffs.AutoSize = True
+        Me.item3Buffs.Location = New System.Drawing.Point(324, 90)
+        Me.item3Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item3Buffs.Name = "item3Buffs"
+        Me.item3Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item3Buffs.TabIndex = 43
+        Me.item3Buffs.Text = "item3Buffs"
+        '
+        'item4value
+        '
+        Me.item4value.AutoSize = True
+        Me.item4value.Location = New System.Drawing.Point(212, 120)
+        Me.item4value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item4value.Name = "item4value"
+        Me.item4value.Size = New System.Drawing.Size(65, 15)
+        Me.item4value.TabIndex = 46
+        Me.item4value.Text = "item4value"
+        '
+        'item4Buffs
+        '
+        Me.item4Buffs.AutoSize = True
+        Me.item4Buffs.Location = New System.Drawing.Point(324, 120)
+        Me.item4Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item4Buffs.Name = "item4Buffs"
+        Me.item4Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item4Buffs.TabIndex = 45
+        Me.item4Buffs.Text = "item4Buffs"
+        '
+        'item5value
+        '
+        Me.item5value.AutoSize = True
+        Me.item5value.Location = New System.Drawing.Point(212, 150)
+        Me.item5value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item5value.Name = "item5value"
+        Me.item5value.Size = New System.Drawing.Size(65, 15)
+        Me.item5value.TabIndex = 48
+        Me.item5value.Text = "item5value"
+        '
+        'item5Buffs
+        '
+        Me.item5Buffs.AutoSize = True
+        Me.item5Buffs.Location = New System.Drawing.Point(324, 150)
+        Me.item5Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item5Buffs.Name = "item5Buffs"
+        Me.item5Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item5Buffs.TabIndex = 47
+        Me.item5Buffs.Text = "item5Buffs"
+        '
+        'item6value
+        '
+        Me.item6value.AutoSize = True
+        Me.item6value.Location = New System.Drawing.Point(212, 180)
+        Me.item6value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item6value.Name = "item6value"
+        Me.item6value.Size = New System.Drawing.Size(65, 15)
+        Me.item6value.TabIndex = 50
+        Me.item6value.Text = "item6value"
+        '
+        'item6Buffs
+        '
+        Me.item6Buffs.AutoSize = True
+        Me.item6Buffs.Location = New System.Drawing.Point(324, 180)
+        Me.item6Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item6Buffs.Name = "item6Buffs"
+        Me.item6Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item6Buffs.TabIndex = 49
+        Me.item6Buffs.Text = "item6Buffs"
+        '
+        'item7value
+        '
+        Me.item7value.AutoSize = True
+        Me.item7value.Location = New System.Drawing.Point(212, 210)
+        Me.item7value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item7value.Name = "item7value"
+        Me.item7value.Size = New System.Drawing.Size(65, 15)
+        Me.item7value.TabIndex = 52
+        Me.item7value.Text = "item7value"
+        '
+        'item7Buffs
+        '
+        Me.item7Buffs.AutoSize = True
+        Me.item7Buffs.Location = New System.Drawing.Point(324, 210)
+        Me.item7Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item7Buffs.Name = "item7Buffs"
+        Me.item7Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item7Buffs.TabIndex = 51
+        Me.item7Buffs.Text = "item7Buffs"
         '
         'MainForm
         '
@@ -1842,6 +2308,13 @@ Partial Class MainForm
         Me.Panel15.PerformLayout()
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
+        Me.Inventory.ResumeLayout(False)
+        Me.TabControl3.ResumeLayout(False)
+        Me.Buffs.ResumeLayout(False)
+        Me.Buffs.PerformLayout()
+        Me.Items.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.PerformLayout()
         Me.Options.ResumeLayout(False)
         Me.Panel12.ResumeLayout(False)
         Me.Panel12.PerformLayout()
@@ -2031,4 +2504,42 @@ Partial Class MainForm
     Friend WithEvents Panel15 As Panel
     Friend WithEvents Label41 As Label
     Friend WithEvents Label40 As Label
+    Friend WithEvents TabControl3 As TabControl
+    Friend WithEvents Buffs As TabPage
+    Friend WithEvents Items As TabPage
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Item1Labels As Label
+    Friend WithEvents ItemSell1 As Button
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents Label43 As Label
+    Friend WithEvents Label42 As Label
+    Friend WithEvents Label45 As Label
+    Friend WithEvents Label44 As Label
+    Friend WithEvents Item2Labels As Label
+    Friend WithEvents Item3Labels As Label
+    Friend WithEvents Item4Labels As Label
+    Friend WithEvents Item5Labels As Label
+    Friend WithEvents Item6Labels As Label
+    Friend WithEvents Button13 As Button
+    Friend WithEvents Button14 As Button
+    Friend WithEvents Button15 As Button
+    Friend WithEvents Button16 As Button
+    Friend WithEvents Button17 As Button
+    Friend WithEvents Item7Labels As Label
+    Friend WithEvents Button18 As Button
+    Friend WithEvents Label47 As Label
+    Friend WithEvents item1value As Label
+    Friend WithEvents item1Buffs As Label
+    Friend WithEvents item7value As Label
+    Friend WithEvents item7Buffs As Label
+    Friend WithEvents item6value As Label
+    Friend WithEvents item6Buffs As Label
+    Friend WithEvents item5value As Label
+    Friend WithEvents item5Buffs As Label
+    Friend WithEvents item4value As Label
+    Friend WithEvents item4Buffs As Label
+    Friend WithEvents item3value As Label
+    Friend WithEvents item3Buffs As Label
+    Friend WithEvents item2value As Label
+    Friend WithEvents item2Buffs As Label
 End Class
