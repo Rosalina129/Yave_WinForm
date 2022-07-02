@@ -318,7 +318,7 @@
         {"Ice Spike", "冰刺"}，
         {"Frost Ingot", "霜锭"}，
         {"Frost Chunk", "霜块"}，
-        {"Lava Block", "岩浆块"}，
+        {"Asphalt Rock", "沥青岩"},
         {"Volcanic Ash", "火山灰"}，
         {"Lava Cools", "岩浆冷却体"}，
         {"Snow Geese", "雪雁"}，
@@ -357,11 +357,42 @@
         {"Relic Holywater", "遗洪圣水"}，
         {"Harmonic Sensor Part", "谐音传感器零件"}，
         {"Gunpowder", "火药"}，
+        {"Witch Hat Bit", "女巫帽子碎屑"}，
+        {"Harmonic Note", "谐音音符"},
+        {"Star Fallen", "落星"}，'Harmonic Dark Valley End
+        {"Peach Blossom", "桃花"}，'Shangri-La Start
+        {"Peach", "桃子"}，
+        {"Jade", "翡翠"}，
+        {"Jade Chunk", "翡翠块"}，
+        {"Brick", "砖块"}，
+        {"Mahogany", "桃木"}，
+        {"Clay", "黏土"}，
+        {"Lizard Leather", "蜥蜴皮"}，
+        {"Frog", "青蛙"}，
+        {"Tadpole", "蝌蚪"}，
+        {"", ""},
+        {"", ""},
+        {"Walnut Wood", "胡桃"}，
+        {"Walnut", "核桃"}，
+        {"Lettuce", "生菜"}，
+        {"Carrot", "胡萝卜"},'Shangri-La End
+        {"Volcanlc Rock", "火山岩"}，'Deepevil Volcano Start
+        {"Basait", "玄武岩"}，
+        {"Lava Block", "岩浆块"}，
+        {"Asphalt", "沥青"}，
+        {"Heart-lava", "岩浆之心"}，
+        {"Quartz", "石英"}，
+        {"Quartz Chunk", "石英块"}，
+        {"Crystal", "水晶"}，
+        {"Volcanlc Crystal", "火山水晶"}，
+        {"Hell Ingot", "狱锭"}，
+        {"Hell Chunk", "狱块"}，
+        {"Coal Solution", "煤溶液"}，
         {"", ""}，
         {"", ""}，
-        {"", ""}，'Harmonic Dark Valley End
-        {"Shangri-La", "桃花源"},
-        {"Deepevil Volcano", "幽恶火山"},
+        {"", ""}，
+        {"", ""}，
+        {"", ""}，'Deepevil Volcano End
         {"Karst Cave Mine", "溶洞矿场"},
         {"", ""}，
         {"", ""}，

@@ -178,9 +178,6 @@ Public Class MainForm
                 CurEnemyData6.Text = "cdmg"
                 BattleMessage.Text = "battlemessage"
             End If
-            Label20.Text = EnemyData.HP1 & "/" & EnemyData.HPM1
-            Label19.Text = EnemyData.ATK1
-            Label18.Text = EnemyData.DEF1
             If UpgradePoint >= 1 Then
                 UpgradeBut1.Visible = True
                 UpgradeBut2.Visible = True
@@ -362,9 +359,6 @@ Public Class MainForm
         Label38.Visible = Debug
         Panel15.Visible = Debug
         Panel14.Visible = Debug
-        If Not Debug Then
-            TabControl2.TabPages.Remove(Experimental)
-        End If
         ShowDebugToolStripMenuItem.Visible = Debug
     End Sub
     Private Sub UpgradeProp()
@@ -425,29 +419,6 @@ Public Class MainForm
         MsgBox(pstring, vbYes, Me.Text)
         Return Nothing
     End Function
-    Private Sub SimulateDamage()
-        Dim health(2) As Integer
-        health(0) = PlayerData.HP1
-        health(1) = EnemyData.HP1
-        EnemyData.HP1 = Calculate.ADCount(EnemyData.HP1, PlayerData.ATK1, EnemyData.DEF1, PlayerData.CRate1, PlayerData.CDMG1)
-        DamageCountBox.Text = LangStr.s_string(96, langID) & (health(0) - PlayerData.HP1) & " Damages" & Chr(13) & "Enemy Taked " & (health(1) - EnemyData.HP1) & " Damages"
-        Thread.Sleep(1)
-        If EnemyData.HP1 > 0 Then
-            PlayerData.HP1 = Calculate.ADCount(PlayerData.HP1, EnemyData.ATK1, PlayerData.DEF1, EnemyData.CRate1, EnemyData.CDMG1)
-            DamageCountBox.Text = DamageCountBox.Text & vbCrLf & LangStr.s_string(96, langID) & (health(0) - PlayerData.HP1) & LangStr.s_string(98, langID)
-        End If
-        Thread.Sleep(1)
-        If PlayerData.HP1 <= 0 Then
-            PlayerData.HP1 = PlayerData.HPM1
-            DamageCountBox.Text = DamageCountBox.Text & vbCrLf & LangStr.s_string(102, langID)
-        End If
-        If EnemyData.HP1 <= 0 Then
-            PlayerData.XP1 += EnemyData.EXP1
-            DamageCountBox.Text = DamageCountBox.Text & vbCrLf & LangStr.s_string(103, langID) & " " & CurrentEnemy.Coins1 & LangStr.s_string(104, langID) & CurrentEnemy.EXP1 & " " & LangStr.s_string(105, langID)
-            EnemyData = New InitEnemy()
-        End If
-    End Sub
-
     Private Sub Battle_Damage(type As Byte)
         Dim health(2) As Integer
         health(0) = PlayerData.HP1
@@ -954,32 +925,12 @@ Public Class MainForm
     Private Sub DripForest_Changed(sender As Object, e As EventArgs) Handles RegionButton2.CheckedChanged
         RegionID = 1
     End Sub
-    Private Sub DigitOnly(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles EnemyHealthBox.KeyPress, EnemyAttackBox.KeyPress, EnemyDefenseBox.KeyPress, EnemyXPBox.KeyPress, TextBox1.KeyPress
+    Private Sub DigitOnly(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
         If Char.IsDigit(e.KeyChar) Or e.KeyChar = Chr(8) Then
             e.Handled = False
         Else
             e.Handled = True
         End If
-    End Sub
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        If EnemyHealthBox.Text <> "" And EnemyAttackBox.Text <> "" And EnemyDefenseBox.Text <> "" And EnemyXPBox.Text <> "" Then
-            With EnemyData
-                .HPM1 = EnemyHealthBox.Text
-                .HP1 = .HPM1
-                .ATK1 = EnemyAttackBox.Text
-                .DEF1 = EnemyDefenseBox.Text
-                .EXP1 = EnemyXPBox.Text
-                .CRate1 = 0.05
-                .CDMG1 = 0.5
-                .Coins1 = .EXP1 \ 10 + r1.Next(0, 10)
-            End With
-        Else
-            ' DebugShow()
-        End If
-    End Sub
-
-    Private Sub StartSimulationDamage(sender As Object, e As EventArgs) Handles Button5.Click
-        SimulateDamage()
     End Sub
     Private Sub Heal(sender As Object, e As EventArgs) Handles HealHPToolStripMenuItem.Click
         PlayerData.HP1 = PlayerData.HPM1
@@ -1217,5 +1168,6 @@ Public Class MainForm
     End Sub
     Private Sub UseItem_Button(sender As Object, e As EventArgs) Handles useitemaction1.Click, useitemaction2.Click, useitemaction3.Click, useitemaction4.Click, useitemaction5.Click, useitemaction6.Click, useitemaction7.Click, useitemaction8.Click, useitemaction9.Click, useitemaction10.Click, useitemaction11.Click, useitemaction12.Click, useitemaction13.Click, useitemaction14.Click, useitemaction15.Click, useitemaction16.Click, useitemaction17.Click, useitemaction18.Click, useitemaction19.Click, useitemaction20.Click, useitemaction21.Click, useitemaction22.Click, useitemaction23.Click, useitemaction24.Click
         Use_Item(sender.TabIndex - 59)
+        Tag = "UseItem"
     End Sub
 End Class

@@ -142,6 +142,12 @@
     <Compile Include="Window\ChangePlayerProp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Window\ChangeSkin.Designer.vb">
+      <DependentUpon>ChangeSkin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Window\ChangeSkin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Window\EasterEgg.Designer.vb">
       <DependentUpon>EasterEgg.vb</DependentUpon>
     </Compile>
