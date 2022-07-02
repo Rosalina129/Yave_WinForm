@@ -82,6 +82,173 @@ Partial Class MainForm
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TabControl2 = New System.Windows.Forms.TabControl()
+        Me.Tour = New System.Windows.Forms.TabPage()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.CurEnemyData6 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.CurEnemyData5 = New System.Windows.Forms.Label()
+        Me.CurEnemyData3 = New System.Windows.Forms.Label()
+        Me.CurEnemyData4 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.BattleMessage = New System.Windows.Forms.TextBox()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.CurEnemyData2 = New System.Windows.Forms.Label()
+        Me.CurEnemyData1 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Inventory = New System.Windows.Forms.TabPage()
+        Me.TabControl3 = New System.Windows.Forms.TabControl()
+        Me.BuffsTab = New System.Windows.Forms.TabPage()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.ArtifactTab = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.item7value = New System.Windows.Forms.Label()
+        Me.item7Buffs = New System.Windows.Forms.Label()
+        Me.item6value = New System.Windows.Forms.Label()
+        Me.item6Buffs = New System.Windows.Forms.Label()
+        Me.item5value = New System.Windows.Forms.Label()
+        Me.item5Buffs = New System.Windows.Forms.Label()
+        Me.item4value = New System.Windows.Forms.Label()
+        Me.item4Buffs = New System.Windows.Forms.Label()
+        Me.item3value = New System.Windows.Forms.Label()
+        Me.item3Buffs = New System.Windows.Forms.Label()
+        Me.item2value = New System.Windows.Forms.Label()
+        Me.item2Buffs = New System.Windows.Forms.Label()
+        Me.item1Buffs = New System.Windows.Forms.Label()
+        Me.item1value = New System.Windows.Forms.Label()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Item1Labels = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Item2Labels = New System.Windows.Forms.Label()
+        Me.Item3Labels = New System.Windows.Forms.Label()
+        Me.Item4Labels = New System.Windows.Forms.Label()
+        Me.Item5Labels = New System.Windows.Forms.Label()
+        Me.Item6Labels = New System.Windows.Forms.Label()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.ItemSell1 = New System.Windows.Forms.Button()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Item7Labels = New System.Windows.Forms.Label()
+        Me.Button18 = New System.Windows.Forms.Button()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.MaterialTab = New System.Windows.Forms.TabPage()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.MaterialTable = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.materialLabel = New System.Windows.Forms.Label()
+        Me.MaterialCountLabel = New System.Windows.Forms.Label()
+        Me.Label55 = New System.Windows.Forms.Label()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.ItemsTab = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.Label53 = New System.Windows.Forms.Label()
+        Me.useitemaction1 = New System.Windows.Forms.Button()
+        Me.useitem2 = New System.Windows.Forms.Label()
+        Me.useitem1count = New System.Windows.Forms.Label()
+        Me.useitem1 = New System.Windows.Forms.Label()
+        Me.useitem3 = New System.Windows.Forms.Label()
+        Me.useitem4 = New System.Windows.Forms.Label()
+        Me.useitem5 = New System.Windows.Forms.Label()
+        Me.useitem6 = New System.Windows.Forms.Label()
+        Me.useitem7 = New System.Windows.Forms.Label()
+        Me.useitem2count = New System.Windows.Forms.Label()
+        Me.useitem3count = New System.Windows.Forms.Label()
+        Me.useitem4count = New System.Windows.Forms.Label()
+        Me.useitem5count = New System.Windows.Forms.Label()
+        Me.useitem6count = New System.Windows.Forms.Label()
+        Me.useitem7count = New System.Windows.Forms.Label()
+        Me.useitemaction2 = New System.Windows.Forms.Button()
+        Me.Label54 = New System.Windows.Forms.Label()
+        Me.useitem1using = New System.Windows.Forms.Label()
+        Me.useitemaction3 = New System.Windows.Forms.Button()
+        Me.useitem2using = New System.Windows.Forms.Label()
+        Me.useitemaction4 = New System.Windows.Forms.Button()
+        Me.useitemaction6 = New System.Windows.Forms.Button()
+        Me.useitemaction5 = New System.Windows.Forms.Button()
+        Me.useitemaction7 = New System.Windows.Forms.Button()
+        Me.useitemaction8 = New System.Windows.Forms.Button()
+        Me.useitemaction9 = New System.Windows.Forms.Button()
+        Me.useitemaction10 = New System.Windows.Forms.Button()
+        Me.useitemaction11 = New System.Windows.Forms.Button()
+        Me.useitemaction12 = New System.Windows.Forms.Button()
+        Me.useitemaction13 = New System.Windows.Forms.Button()
+        Me.useitemaction14 = New System.Windows.Forms.Button()
+        Me.useitemaction15 = New System.Windows.Forms.Button()
+        Me.useitemaction16 = New System.Windows.Forms.Button()
+        Me.useitemaction18 = New System.Windows.Forms.Button()
+        Me.useitemaction17 = New System.Windows.Forms.Button()
+        Me.useitemaction19 = New System.Windows.Forms.Button()
+        Me.useitemaction20 = New System.Windows.Forms.Button()
+        Me.useitemaction21 = New System.Windows.Forms.Button()
+        Me.useitem8count = New System.Windows.Forms.Label()
+        Me.useitemaction23 = New System.Windows.Forms.Button()
+        Me.useitemaction24 = New System.Windows.Forms.Button()
+        Me.useitemaction22 = New System.Windows.Forms.Button()
+        Me.useitem3using = New System.Windows.Forms.Label()
+        Me.useitem4using = New System.Windows.Forms.Label()
+        Me.useitem5using = New System.Windows.Forms.Label()
+        Me.useitem6using = New System.Windows.Forms.Label()
+        Me.useitem7using = New System.Windows.Forms.Label()
+        Me.useitem8 = New System.Windows.Forms.Label()
+        Me.useitem8using = New System.Windows.Forms.Label()
+        Me.Equipment = New System.Windows.Forms.TabPage()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Equip2Label = New System.Windows.Forms.Label()
+        Me.Equip1Label = New System.Windows.Forms.Label()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Options = New System.Windows.Forms.TabPage()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.EasterEgg = New System.Windows.Forms.Button()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label32 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -107,173 +274,6 @@ Partial Class MainForm
         Me.AutoBattleTimer = New System.Windows.Forms.Timer(Me.components)
         Me.BattleTime = New System.Windows.Forms.Timer(Me.components)
         Me.BattleCooldown = New System.Windows.Forms.Timer(Me.components)
-        Me.Options = New System.Windows.Forms.TabPage()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
-        Me.EasterEgg = New System.Windows.Forms.Button()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Label40 = New System.Windows.Forms.Label()
-        Me.Equipment = New System.Windows.Forms.TabPage()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.Equip1Label = New System.Windows.Forms.Label()
-        Me.Equip2Label = New System.Windows.Forms.Label()
-        Me.Label48 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
-        Me.Label50 = New System.Windows.Forms.Label()
-        Me.Label49 = New System.Windows.Forms.Label()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.Inventory = New System.Windows.Forms.TabPage()
-        Me.TabControl3 = New System.Windows.Forms.TabControl()
-        Me.Items = New System.Windows.Forms.TabPage()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.useitem8using = New System.Windows.Forms.Label()
-        Me.useitem8 = New System.Windows.Forms.Label()
-        Me.useitem7using = New System.Windows.Forms.Label()
-        Me.useitem6using = New System.Windows.Forms.Label()
-        Me.useitem5using = New System.Windows.Forms.Label()
-        Me.useitem4using = New System.Windows.Forms.Label()
-        Me.useitem3using = New System.Windows.Forms.Label()
-        Me.useitemaction22 = New System.Windows.Forms.Button()
-        Me.useitemaction24 = New System.Windows.Forms.Button()
-        Me.useitemaction23 = New System.Windows.Forms.Button()
-        Me.useitem8count = New System.Windows.Forms.Label()
-        Me.useitemaction21 = New System.Windows.Forms.Button()
-        Me.useitemaction20 = New System.Windows.Forms.Button()
-        Me.useitemaction19 = New System.Windows.Forms.Button()
-        Me.useitemaction17 = New System.Windows.Forms.Button()
-        Me.useitemaction18 = New System.Windows.Forms.Button()
-        Me.useitemaction16 = New System.Windows.Forms.Button()
-        Me.useitemaction15 = New System.Windows.Forms.Button()
-        Me.useitemaction14 = New System.Windows.Forms.Button()
-        Me.useitemaction13 = New System.Windows.Forms.Button()
-        Me.useitemaction12 = New System.Windows.Forms.Button()
-        Me.useitemaction11 = New System.Windows.Forms.Button()
-        Me.useitemaction10 = New System.Windows.Forms.Button()
-        Me.useitemaction9 = New System.Windows.Forms.Button()
-        Me.useitemaction8 = New System.Windows.Forms.Button()
-        Me.useitemaction7 = New System.Windows.Forms.Button()
-        Me.useitemaction5 = New System.Windows.Forms.Button()
-        Me.useitemaction6 = New System.Windows.Forms.Button()
-        Me.useitemaction4 = New System.Windows.Forms.Button()
-        Me.useitem2using = New System.Windows.Forms.Label()
-        Me.useitemaction3 = New System.Windows.Forms.Button()
-        Me.useitem1using = New System.Windows.Forms.Label()
-        Me.Label54 = New System.Windows.Forms.Label()
-        Me.useitemaction2 = New System.Windows.Forms.Button()
-        Me.useitem7count = New System.Windows.Forms.Label()
-        Me.useitem6count = New System.Windows.Forms.Label()
-        Me.useitem5count = New System.Windows.Forms.Label()
-        Me.useitem4count = New System.Windows.Forms.Label()
-        Me.useitem3count = New System.Windows.Forms.Label()
-        Me.useitem2count = New System.Windows.Forms.Label()
-        Me.useitem7 = New System.Windows.Forms.Label()
-        Me.useitem6 = New System.Windows.Forms.Label()
-        Me.useitem5 = New System.Windows.Forms.Label()
-        Me.useitem4 = New System.Windows.Forms.Label()
-        Me.useitem3 = New System.Windows.Forms.Label()
-        Me.useitem1 = New System.Windows.Forms.Label()
-        Me.useitem1count = New System.Windows.Forms.Label()
-        Me.useitem2 = New System.Windows.Forms.Label()
-        Me.useitemaction1 = New System.Windows.Forms.Button()
-        Me.Label53 = New System.Windows.Forms.Label()
-        Me.Label52 = New System.Windows.Forms.Label()
-        Me.Label51 = New System.Windows.Forms.Label()
-        Me.Material = New System.Windows.Forms.TabPage()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.Label55 = New System.Windows.Forms.Label()
-        Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.MaterialCountLabel = New System.Windows.Forms.Label()
-        Me.materialLabel = New System.Windows.Forms.Label()
-        Me.Label57 = New System.Windows.Forms.Label()
-        Me.Label56 = New System.Windows.Forms.Label()
-        Me.Artifact = New System.Windows.Forms.TabPage()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label47 = New System.Windows.Forms.Label()
-        Me.Button18 = New System.Windows.Forms.Button()
-        Me.Item7Labels = New System.Windows.Forms.Label()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.ItemSell1 = New System.Windows.Forms.Button()
-        Me.Button17 = New System.Windows.Forms.Button()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.Button15 = New System.Windows.Forms.Button()
-        Me.Item6Labels = New System.Windows.Forms.Label()
-        Me.Item5Labels = New System.Windows.Forms.Label()
-        Me.Item4Labels = New System.Windows.Forms.Label()
-        Me.Item3Labels = New System.Windows.Forms.Label()
-        Me.Item2Labels = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Item1Labels = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.item1value = New System.Windows.Forms.Label()
-        Me.item1Buffs = New System.Windows.Forms.Label()
-        Me.item2Buffs = New System.Windows.Forms.Label()
-        Me.item2value = New System.Windows.Forms.Label()
-        Me.item3Buffs = New System.Windows.Forms.Label()
-        Me.item3value = New System.Windows.Forms.Label()
-        Me.item4Buffs = New System.Windows.Forms.Label()
-        Me.item4value = New System.Windows.Forms.Label()
-        Me.item5Buffs = New System.Windows.Forms.Label()
-        Me.item5value = New System.Windows.Forms.Label()
-        Me.item6Buffs = New System.Windows.Forms.Label()
-        Me.item6value = New System.Windows.Forms.Label()
-        Me.item7Buffs = New System.Windows.Forms.Label()
-        Me.item7value = New System.Windows.Forms.Label()
-        Me.Buffs = New System.Windows.Forms.TabPage()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Tour = New System.Windows.Forms.TabPage()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.CurEnemyData1 = New System.Windows.Forms.Label()
-        Me.CurEnemyData2 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.BattleMessage = New System.Windows.Forms.TextBox()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Panel15 = New System.Windows.Forms.Panel()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.CurEnemyData4 = New System.Windows.Forms.Label()
-        Me.CurEnemyData3 = New System.Windows.Forms.Label()
-        Me.CurEnemyData5 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.CurEnemyData6 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -284,38 +284,38 @@ Partial Class MainForm
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.TabControl2.SuspendLayout()
+        Me.Tour.SuspendLayout()
+        Me.Panel9.SuspendLayout()
+        Me.Panel10.SuspendLayout()
+        Me.Panel15.SuspendLayout()
+        Me.Panel11.SuspendLayout()
+        Me.Inventory.SuspendLayout()
+        Me.TabControl3.SuspendLayout()
+        Me.BuffsTab.SuspendLayout()
+        Me.ArtifactTab.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.MaterialTab.SuspendLayout()
+        Me.Panel16.SuspendLayout()
+        Me.MaterialTable.SuspendLayout()
+        Me.ItemsTab.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
+        Me.Equipment.SuspendLayout()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Options.SuspendLayout()
+        Me.Panel12.SuspendLayout()
+        Me.Panel14.SuspendLayout()
+        Me.Panel13.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Options.SuspendLayout()
-        Me.Panel12.SuspendLayout()
-        Me.Panel13.SuspendLayout()
-        Me.Panel14.SuspendLayout()
-        Me.Equipment.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Inventory.SuspendLayout()
-        Me.TabControl3.SuspendLayout()
-        Me.Items.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
-        Me.Material.SuspendLayout()
-        Me.Panel16.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
-        Me.Artifact.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.Buffs.SuspendLayout()
-        Me.Tour.SuspendLayout()
-        Me.Panel9.SuspendLayout()
-        Me.Panel10.SuspendLayout()
-        Me.Panel11.SuspendLayout()
-        Me.Panel15.SuspendLayout()
-        Me.TabControl2.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -873,6 +873,1787 @@ Partial Class MainForm
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Workspace"
         '
+        'TabControl2
+        '
+        Me.TabControl2.Controls.Add(Me.Tour)
+        Me.TabControl2.Controls.Add(Me.Inventory)
+        Me.TabControl2.Controls.Add(Me.Equipment)
+        Me.TabControl2.Controls.Add(Me.Options)
+        Me.TabControl2.Location = New System.Drawing.Point(6, 20)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedIndex = 0
+        Me.TabControl2.Size = New System.Drawing.Size(431, 308)
+        Me.TabControl2.TabIndex = 1
+        '
+        'Tour
+        '
+        Me.Tour.Controls.Add(Me.CheckBox1)
+        Me.Tour.Controls.Add(Me.Label24)
+        Me.Tour.Controls.Add(Me.Panel9)
+        Me.Tour.Controls.Add(Me.Button7)
+        Me.Tour.Location = New System.Drawing.Point(4, 24)
+        Me.Tour.Name = "Tour"
+        Me.Tour.Size = New System.Drawing.Size(423, 280)
+        Me.Tour.TabIndex = 3
+        Me.Tour.Text = "Tour"
+        Me.Tour.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(232, 257)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(85, 19)
+        Me.CheckBox1.TabIndex = 1
+        Me.CheckBox1.Text = "Auto Battle"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(3, 258)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(84, 15)
+        Me.Label24.TabIndex = 4
+        Me.Label24.Text = "Tour Distance: "
+        '
+        'Panel9
+        '
+        Me.Panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel9.Controls.Add(Me.Panel10)
+        Me.Panel9.Controls.Add(Me.Label25)
+        Me.Panel9.Location = New System.Drawing.Point(3, 3)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(417, 249)
+        Me.Panel9.TabIndex = 5
+        '
+        'Panel10
+        '
+        Me.Panel10.Controls.Add(Me.Panel15)
+        Me.Panel10.Controls.Add(Me.GroupBox5)
+        Me.Panel10.Controls.Add(Me.Panel11)
+        Me.Panel10.Controls.Add(Me.Label26)
+        Me.Panel10.Controls.Add(Me.CurEnemyData2)
+        Me.Panel10.Controls.Add(Me.CurEnemyData1)
+        Me.Panel10.Location = New System.Drawing.Point(-1, -1)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(417, 249)
+        Me.Panel10.TabIndex = 1
+        '
+        'Panel15
+        '
+        Me.Panel15.Controls.Add(Me.CurEnemyData6)
+        Me.Panel15.Controls.Add(Me.Label27)
+        Me.Panel15.Controls.Add(Me.CurEnemyData5)
+        Me.Panel15.Controls.Add(Me.CurEnemyData3)
+        Me.Panel15.Controls.Add(Me.CurEnemyData4)
+        Me.Panel15.Controls.Add(Me.Label29)
+        Me.Panel15.Controls.Add(Me.Label30)
+        Me.Panel15.Controls.Add(Me.Label28)
+        Me.Panel15.Location = New System.Drawing.Point(6, 54)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(175, 81)
+        Me.Panel15.TabIndex = 9
+        Me.Panel15.Visible = False
+        '
+        'CurEnemyData6
+        '
+        Me.CurEnemyData6.AutoSize = True
+        Me.CurEnemyData6.Location = New System.Drawing.Point(91, 60)
+        Me.CurEnemyData6.Name = "CurEnemyData6"
+        Me.CurEnemyData6.Size = New System.Drawing.Size(38, 15)
+        Me.CurEnemyData6.TabIndex = 12
+        Me.CurEnemyData6.Text = "cdmg"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(3, 0)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(41, 15)
+        Me.Label27.TabIndex = 4
+        Me.Label27.Text = "Attack"
+        '
+        'CurEnemyData5
+        '
+        Me.CurEnemyData5.AutoSize = True
+        Me.CurEnemyData5.Location = New System.Drawing.Point(91, 40)
+        Me.CurEnemyData5.Name = "CurEnemyData5"
+        Me.CurEnemyData5.Size = New System.Drawing.Size(33, 15)
+        Me.CurEnemyData5.TabIndex = 11
+        Me.CurEnemyData5.Text = "crate"
+        '
+        'CurEnemyData3
+        '
+        Me.CurEnemyData3.AutoSize = True
+        Me.CurEnemyData3.Location = New System.Drawing.Point(91, 0)
+        Me.CurEnemyData3.Name = "CurEnemyData3"
+        Me.CurEnemyData3.Size = New System.Drawing.Size(39, 15)
+        Me.CurEnemyData3.TabIndex = 3
+        Me.CurEnemyData3.Text = "attack"
+        '
+        'CurEnemyData4
+        '
+        Me.CurEnemyData4.AutoSize = True
+        Me.CurEnemyData4.Location = New System.Drawing.Point(91, 20)
+        Me.CurEnemyData4.Name = "CurEnemyData4"
+        Me.CurEnemyData4.Size = New System.Drawing.Size(48, 15)
+        Me.CurEnemyData4.TabIndex = 5
+        Me.CurEnemyData4.Text = "defense"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(3, 20)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(49, 15)
+        Me.Label29.TabIndex = 6
+        Me.Label29.Text = "Defense"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(3, 60)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(73, 15)
+        Me.Label30.TabIndex = 8
+        Me.Label30.Text = "Crit Damage"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(3, 40)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(52, 15)
+        Me.Label28.TabIndex = 7
+        Me.Label28.Text = "Crit Rate"
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 138)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(196, 107)
+        Me.GroupBox5.TabIndex = 10
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Skills"
+        '
+        'Panel11
+        '
+        Me.Panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel11.Controls.Add(Me.Button11)
+        Me.Panel11.Controls.Add(Me.Button10)
+        Me.Panel11.Controls.Add(Me.Button9)
+        Me.Panel11.Controls.Add(Me.Button8)
+        Me.Panel11.Controls.Add(Me.BattleMessage)
+        Me.Panel11.Location = New System.Drawing.Point(208, 4)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(206, 241)
+        Me.Panel11.TabIndex = 9
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(105, 214)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(98, 23)
+        Me.Button11.TabIndex = 3
+        Me.Button11.Text = "Run"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(3, 214)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(98, 23)
+        Me.Button10.TabIndex = 2
+        Me.Button10.Text = "Block"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Button9
+        '
+        Me.Button9.Location = New System.Drawing.Point(105, 185)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(98, 23)
+        Me.Button9.TabIndex = 1
+        Me.Button9.Text = "Ele. Attack"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(3, 185)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(98, 23)
+        Me.Button8.TabIndex = 0
+        Me.Button8.Text = "Attack"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'BattleMessage
+        '
+        Me.BattleMessage.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BattleMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.BattleMessage.Location = New System.Drawing.Point(-1, -2)
+        Me.BattleMessage.Multiline = True
+        Me.BattleMessage.Name = "BattleMessage"
+        Me.BattleMessage.ReadOnly = True
+        Me.BattleMessage.Size = New System.Drawing.Size(206, 181)
+        Me.BattleMessage.TabIndex = 14
+        Me.BattleMessage.Text = "battlemessage" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(9, 34)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(42, 15)
+        Me.Label26.TabIndex = 2
+        Me.Label26.Text = "Health"
+        '
+        'CurEnemyData2
+        '
+        Me.CurEnemyData2.AutoSize = True
+        Me.CurEnemyData2.Location = New System.Drawing.Point(97, 34)
+        Me.CurEnemyData2.Name = "CurEnemyData2"
+        Me.CurEnemyData2.Size = New System.Drawing.Size(40, 15)
+        Me.CurEnemyData2.TabIndex = 1
+        Me.CurEnemyData2.Text = "health"
+        '
+        'CurEnemyData1
+        '
+        Me.CurEnemyData1.AutoSize = True
+        Me.CurEnemyData1.Location = New System.Drawing.Point(8, 10)
+        Me.CurEnemyData1.Name = "CurEnemyData1"
+        Me.CurEnemyData1.Size = New System.Drawing.Size(73, 15)
+        Me.CurEnemyData1.TabIndex = 0
+        Me.CurEnemyData1.Text = "enemyname"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(173, 119)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(65, 15)
+        Me.Label25.TabIndex = 0
+        Me.Label25.Text = "No Mobs..."
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(323, 254)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(98, 23)
+        Me.Button7.TabIndex = 2
+        Me.Button7.Text = "Go Forward"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Inventory
+        '
+        Me.Inventory.Controls.Add(Me.TabControl3)
+        Me.Inventory.Location = New System.Drawing.Point(4, 24)
+        Me.Inventory.Name = "Inventory"
+        Me.Inventory.Padding = New System.Windows.Forms.Padding(3)
+        Me.Inventory.Size = New System.Drawing.Size(423, 280)
+        Me.Inventory.TabIndex = 0
+        Me.Inventory.Text = "Inventory"
+        Me.Inventory.UseVisualStyleBackColor = True
+        '
+        'TabControl3
+        '
+        Me.TabControl3.Controls.Add(Me.BuffsTab)
+        Me.TabControl3.Controls.Add(Me.ArtifactTab)
+        Me.TabControl3.Controls.Add(Me.MaterialTab)
+        Me.TabControl3.Controls.Add(Me.ItemsTab)
+        Me.TabControl3.Location = New System.Drawing.Point(0, 0)
+        Me.TabControl3.Name = "TabControl3"
+        Me.TabControl3.SelectedIndex = 0
+        Me.TabControl3.Size = New System.Drawing.Size(424, 284)
+        Me.TabControl3.TabIndex = 0
+        '
+        'BuffsTab
+        '
+        Me.BuffsTab.Controls.Add(Me.TextBox2)
+        Me.BuffsTab.Location = New System.Drawing.Point(4, 24)
+        Me.BuffsTab.Name = "BuffsTab"
+        Me.BuffsTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.BuffsTab.Size = New System.Drawing.Size(416, 256)
+        Me.BuffsTab.TabIndex = 0
+        Me.BuffsTab.Text = "Buffs"
+        Me.BuffsTab.UseVisualStyleBackColor = True
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TextBox2.Location = New System.Drawing.Point(3, 3)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(410, 256)
+        Me.TextBox2.TabIndex = 0
+        Me.TextBox2.Text = "buffslist"
+        '
+        'ArtifactTab
+        '
+        Me.ArtifactTab.Controls.Add(Me.TableLayoutPanel1)
+        Me.ArtifactTab.Location = New System.Drawing.Point(4, 24)
+        Me.ArtifactTab.Name = "ArtifactTab"
+        Me.ArtifactTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.ArtifactTab.Size = New System.Drawing.Size(416, 256)
+        Me.ArtifactTab.TabIndex = 1
+        Me.ArtifactTab.Text = "Artifact"
+        Me.ArtifactTab.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 4
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.28708!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.71292!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.item7value, 2, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.item7Buffs, 3, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.item6value, 2, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.item6Buffs, 3, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.item5value, 2, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.item5Buffs, 3, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.item4value, 2, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.item4Buffs, 3, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.item3value, 2, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.item3Buffs, 3, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.item2value, 2, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.item2Buffs, 3, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.item1Buffs, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.item1value, 2, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label45, 3, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label44, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label43, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item1Labels, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label42, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item2Labels, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item3Labels, 0, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item4Labels, 0, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item5Labels, 0, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item6Labels, 0, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.Button15, 1, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.Button16, 1, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.Button17, 1, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.ItemSell1, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Button13, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.Button14, 1, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.Item7Labels, 0, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.Button18, 1, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label47, 0, 8)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 9
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28566!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(410, 250)
+        Me.TableLayoutPanel1.TabIndex = 6
+        '
+        'item7value
+        '
+        Me.item7value.AutoSize = True
+        Me.item7value.Location = New System.Drawing.Point(197, 210)
+        Me.item7value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item7value.Name = "item7value"
+        Me.item7value.Size = New System.Drawing.Size(65, 15)
+        Me.item7value.TabIndex = 52
+        Me.item7value.Text = "item7value"
+        '
+        'item7Buffs
+        '
+        Me.item7Buffs.AutoSize = True
+        Me.item7Buffs.Location = New System.Drawing.Point(309, 210)
+        Me.item7Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item7Buffs.Name = "item7Buffs"
+        Me.item7Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item7Buffs.TabIndex = 51
+        Me.item7Buffs.Text = "item7Buffs"
+        '
+        'item6value
+        '
+        Me.item6value.AutoSize = True
+        Me.item6value.Location = New System.Drawing.Point(197, 180)
+        Me.item6value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item6value.Name = "item6value"
+        Me.item6value.Size = New System.Drawing.Size(65, 15)
+        Me.item6value.TabIndex = 50
+        Me.item6value.Text = "item6value"
+        '
+        'item6Buffs
+        '
+        Me.item6Buffs.AutoSize = True
+        Me.item6Buffs.Location = New System.Drawing.Point(309, 180)
+        Me.item6Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item6Buffs.Name = "item6Buffs"
+        Me.item6Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item6Buffs.TabIndex = 49
+        Me.item6Buffs.Text = "item6Buffs"
+        '
+        'item5value
+        '
+        Me.item5value.AutoSize = True
+        Me.item5value.Location = New System.Drawing.Point(197, 150)
+        Me.item5value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item5value.Name = "item5value"
+        Me.item5value.Size = New System.Drawing.Size(65, 15)
+        Me.item5value.TabIndex = 48
+        Me.item5value.Text = "item5value"
+        '
+        'item5Buffs
+        '
+        Me.item5Buffs.AutoSize = True
+        Me.item5Buffs.Location = New System.Drawing.Point(309, 150)
+        Me.item5Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item5Buffs.Name = "item5Buffs"
+        Me.item5Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item5Buffs.TabIndex = 47
+        Me.item5Buffs.Text = "item5Buffs"
+        '
+        'item4value
+        '
+        Me.item4value.AutoSize = True
+        Me.item4value.Location = New System.Drawing.Point(197, 120)
+        Me.item4value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item4value.Name = "item4value"
+        Me.item4value.Size = New System.Drawing.Size(65, 15)
+        Me.item4value.TabIndex = 46
+        Me.item4value.Text = "item4value"
+        '
+        'item4Buffs
+        '
+        Me.item4Buffs.AutoSize = True
+        Me.item4Buffs.Location = New System.Drawing.Point(309, 120)
+        Me.item4Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item4Buffs.Name = "item4Buffs"
+        Me.item4Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item4Buffs.TabIndex = 45
+        Me.item4Buffs.Text = "item4Buffs"
+        '
+        'item3value
+        '
+        Me.item3value.AutoSize = True
+        Me.item3value.Location = New System.Drawing.Point(197, 90)
+        Me.item3value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item3value.Name = "item3value"
+        Me.item3value.Size = New System.Drawing.Size(65, 15)
+        Me.item3value.TabIndex = 44
+        Me.item3value.Text = "item3value"
+        '
+        'item3Buffs
+        '
+        Me.item3Buffs.AutoSize = True
+        Me.item3Buffs.Location = New System.Drawing.Point(309, 90)
+        Me.item3Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item3Buffs.Name = "item3Buffs"
+        Me.item3Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item3Buffs.TabIndex = 43
+        Me.item3Buffs.Text = "item3Buffs"
+        '
+        'item2value
+        '
+        Me.item2value.AutoSize = True
+        Me.item2value.Location = New System.Drawing.Point(197, 60)
+        Me.item2value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item2value.Name = "item2value"
+        Me.item2value.Size = New System.Drawing.Size(65, 15)
+        Me.item2value.TabIndex = 42
+        Me.item2value.Text = "item2value"
+        '
+        'item2Buffs
+        '
+        Me.item2Buffs.AutoSize = True
+        Me.item2Buffs.Location = New System.Drawing.Point(309, 60)
+        Me.item2Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item2Buffs.Name = "item2Buffs"
+        Me.item2Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item2Buffs.TabIndex = 41
+        Me.item2Buffs.Text = "item2Buffs"
+        '
+        'item1Buffs
+        '
+        Me.item1Buffs.AutoSize = True
+        Me.item1Buffs.Location = New System.Drawing.Point(309, 30)
+        Me.item1Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item1Buffs.Name = "item1Buffs"
+        Me.item1Buffs.Size = New System.Drawing.Size(64, 15)
+        Me.item1Buffs.TabIndex = 40
+        Me.item1Buffs.Text = "item1Buffs"
+        '
+        'item1value
+        '
+        Me.item1value.AutoSize = True
+        Me.item1value.Location = New System.Drawing.Point(197, 30)
+        Me.item1value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.item1value.Name = "item1value"
+        Me.item1value.Size = New System.Drawing.Size(65, 15)
+        Me.item1value.TabIndex = 39
+        Me.item1value.Text = "item1value"
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.Location = New System.Drawing.Point(309, 0)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(37, 15)
+        Me.Label45.TabIndex = 9
+        Me.Label45.Text = "Buffs"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Location = New System.Drawing.Point(197, 0)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(37, 15)
+        Me.Label44.TabIndex = 8
+        Me.Label44.Text = "Value"
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.Location = New System.Drawing.Point(120, 0)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(43, 15)
+        Me.Label43.TabIndex = 7
+        Me.Label43.Text = "Action"
+        '
+        'Item1Labels
+        '
+        Me.Item1Labels.AutoSize = True
+        Me.Item1Labels.Location = New System.Drawing.Point(3, 30)
+        Me.Item1Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item1Labels.Name = "Item1Labels"
+        Me.Item1Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item1Labels.TabIndex = 3
+        Me.Item1Labels.Text = "item1database"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.Location = New System.Drawing.Point(3, 0)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(40, 15)
+        Me.Label42.TabIndex = 6
+        Me.Label42.Text = "Name"
+        '
+        'Item2Labels
+        '
+        Me.Item2Labels.AutoSize = True
+        Me.Item2Labels.Location = New System.Drawing.Point(3, 60)
+        Me.Item2Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item2Labels.Name = "Item2Labels"
+        Me.Item2Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item2Labels.TabIndex = 10
+        Me.Item2Labels.Text = "item1database"
+        '
+        'Item3Labels
+        '
+        Me.Item3Labels.AutoSize = True
+        Me.Item3Labels.Location = New System.Drawing.Point(3, 90)
+        Me.Item3Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item3Labels.Name = "Item3Labels"
+        Me.Item3Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item3Labels.TabIndex = 11
+        Me.Item3Labels.Text = "item1database"
+        '
+        'Item4Labels
+        '
+        Me.Item4Labels.AutoSize = True
+        Me.Item4Labels.Location = New System.Drawing.Point(3, 120)
+        Me.Item4Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item4Labels.Name = "Item4Labels"
+        Me.Item4Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item4Labels.TabIndex = 12
+        Me.Item4Labels.Text = "item1database"
+        '
+        'Item5Labels
+        '
+        Me.Item5Labels.AutoSize = True
+        Me.Item5Labels.Location = New System.Drawing.Point(3, 150)
+        Me.Item5Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item5Labels.Name = "Item5Labels"
+        Me.Item5Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item5Labels.TabIndex = 13
+        Me.Item5Labels.Text = "item1database"
+        '
+        'Item6Labels
+        '
+        Me.Item6Labels.AutoSize = True
+        Me.Item6Labels.Location = New System.Drawing.Point(3, 180)
+        Me.Item6Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item6Labels.Name = "Item6Labels"
+        Me.Item6Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item6Labels.TabIndex = 14
+        Me.Item6Labels.Text = "item1database"
+        '
+        'Button15
+        '
+        Me.Button15.Location = New System.Drawing.Point(120, 116)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(71, 22)
+        Me.Button15.TabIndex = 17
+        Me.Button15.Text = "Button13"
+        Me.Button15.UseVisualStyleBackColor = True
+        '
+        'Button16
+        '
+        Me.Button16.Location = New System.Drawing.Point(120, 146)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(71, 22)
+        Me.Button16.TabIndex = 18
+        Me.Button16.Text = "Button13"
+        Me.Button16.UseVisualStyleBackColor = True
+        '
+        'Button17
+        '
+        Me.Button17.Location = New System.Drawing.Point(120, 176)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(71, 22)
+        Me.Button17.TabIndex = 19
+        Me.Button17.Text = "Button13"
+        Me.Button17.UseVisualStyleBackColor = True
+        '
+        'ItemSell1
+        '
+        Me.ItemSell1.Location = New System.Drawing.Point(120, 26)
+        Me.ItemSell1.Name = "ItemSell1"
+        Me.ItemSell1.Size = New System.Drawing.Size(71, 22)
+        Me.ItemSell1.TabIndex = 5
+        Me.ItemSell1.Text = "Button13"
+        Me.ItemSell1.UseVisualStyleBackColor = True
+        '
+        'Button13
+        '
+        Me.Button13.Location = New System.Drawing.Point(120, 56)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(71, 22)
+        Me.Button13.TabIndex = 15
+        Me.Button13.Text = "Button13"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'Button14
+        '
+        Me.Button14.Location = New System.Drawing.Point(120, 86)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(71, 22)
+        Me.Button14.TabIndex = 16
+        Me.Button14.Text = "Button13"
+        Me.Button14.UseVisualStyleBackColor = True
+        '
+        'Item7Labels
+        '
+        Me.Item7Labels.AutoSize = True
+        Me.Item7Labels.Location = New System.Drawing.Point(3, 210)
+        Me.Item7Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.Item7Labels.Name = "Item7Labels"
+        Me.Item7Labels.Size = New System.Drawing.Size(84, 15)
+        Me.Item7Labels.TabIndex = 20
+        Me.Item7Labels.Text = "item1database"
+        '
+        'Button18
+        '
+        Me.Button18.Location = New System.Drawing.Point(120, 206)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(71, 22)
+        Me.Button18.TabIndex = 21
+        Me.Button18.Text = "Button13"
+        Me.Button18.UseVisualStyleBackColor = True
+        '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.Location = New System.Drawing.Point(3, 233)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(0, 15)
+        Me.Label47.TabIndex = 38
+        '
+        'MaterialTab
+        '
+        Me.MaterialTab.Controls.Add(Me.Panel16)
+        Me.MaterialTab.Controls.Add(Me.Label55)
+        Me.MaterialTab.Controls.Add(Me.ListBox1)
+        Me.MaterialTab.Location = New System.Drawing.Point(4, 24)
+        Me.MaterialTab.Name = "MaterialTab"
+        Me.MaterialTab.Size = New System.Drawing.Size(416, 256)
+        Me.MaterialTab.TabIndex = 2
+        Me.MaterialTab.Text = "Material"
+        Me.MaterialTab.UseVisualStyleBackColor = True
+        '
+        'Panel16
+        '
+        Me.Panel16.Controls.Add(Me.MaterialTable)
+        Me.Panel16.Location = New System.Drawing.Point(149, 27)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(264, 223)
+        Me.Panel16.TabIndex = 2
+        '
+        'MaterialTable
+        '
+        Me.MaterialTable.ColumnCount = 2
+        Me.MaterialTable.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.92424!))
+        Me.MaterialTable.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.07576!))
+        Me.MaterialTable.Controls.Add(Me.Label56, 0, 0)
+        Me.MaterialTable.Controls.Add(Me.Label57, 1, 0)
+        Me.MaterialTable.Controls.Add(Me.materialLabel, 0, 1)
+        Me.MaterialTable.Controls.Add(Me.MaterialCountLabel, 1, 1)
+        Me.MaterialTable.Location = New System.Drawing.Point(0, 0)
+        Me.MaterialTable.Name = "MaterialTable"
+        Me.MaterialTable.RowCount = 2
+        Me.MaterialTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.MaterialTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 208.0!))
+        Me.MaterialTable.Size = New System.Drawing.Size(264, 226)
+        Me.MaterialTable.TabIndex = 0
+        '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label56.Location = New System.Drawing.Point(3, 0)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(53, 15)
+        Me.Label56.TabIndex = 0
+        Me.Label56.Text = "Material"
+        '
+        'Label57
+        '
+        Me.Label57.AutoSize = True
+        Me.Label57.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label57.Location = New System.Drawing.Point(213, 0)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(40, 15)
+        Me.Label57.TabIndex = 1
+        Me.Label57.Text = "Count"
+        '
+        'materialLabel
+        '
+        Me.materialLabel.AutoSize = True
+        Me.materialLabel.Location = New System.Drawing.Point(3, 18)
+        Me.materialLabel.Name = "materialLabel"
+        Me.materialLabel.Size = New System.Drawing.Size(50, 15)
+        Me.materialLabel.TabIndex = 2
+        Me.materialLabel.Text = "material"
+        '
+        'MaterialCountLabel
+        '
+        Me.MaterialCountLabel.AutoSize = True
+        Me.MaterialCountLabel.Location = New System.Drawing.Point(213, 18)
+        Me.MaterialCountLabel.Name = "MaterialCountLabel"
+        Me.MaterialCountLabel.Size = New System.Drawing.Size(38, 15)
+        Me.MaterialCountLabel.TabIndex = 3
+        Me.MaterialCountLabel.Text = "count"
+        '
+        'Label55
+        '
+        Me.Label55.AutoSize = True
+        Me.Label55.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.Label55.Location = New System.Drawing.Point(3, 3)
+        Me.Label55.Name = "Label55"
+        Me.Label55.Size = New System.Drawing.Size(153, 21)
+        Me.Label55.TabIndex = 1
+        Me.Label55.Text = "Material Distribution"
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 15
+        Me.ListBox1.Items.AddRange(New Object() {"Awaken Using", "RegionID1", "RegionID2", "RegionID3", "RegionID4", "RegionID5", "RegionID6", "RegionID7", "RegionID8"})
+        Me.ListBox1.Location = New System.Drawing.Point(7, 27)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(140, 139)
+        Me.ListBox1.TabIndex = 0
+        '
+        'ItemsTab
+        '
+        Me.ItemsTab.AutoScroll = True
+        Me.ItemsTab.Controls.Add(Me.TableLayoutPanel2)
+        Me.ItemsTab.Location = New System.Drawing.Point(4, 24)
+        Me.ItemsTab.Name = "ItemsTab"
+        Me.ItemsTab.Size = New System.Drawing.Size(416, 256)
+        Me.ItemsTab.TabIndex = 3
+        Me.ItemsTab.Text = "Items"
+        Me.ItemsTab.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 6
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.01307!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.98693!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.Label51, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label52, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label53, 2, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction1, 2, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem2, 0, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem1count, 1, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem1, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem3, 0, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem4, 0, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem5, 0, 5)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem6, 0, 6)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem7, 0, 7)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem2count, 1, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem3count, 1, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem4count, 1, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem5count, 1, 5)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem6count, 1, 6)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem7count, 1, 7)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction2, 3, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label54, 5, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem1using, 5, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction3, 4, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem2using, 5, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction4, 2, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction6, 4, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction5, 3, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction7, 2, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction8, 3, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction9, 4, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction10, 2, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction11, 3, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction12, 4, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction13, 2, 5)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction14, 3, 5)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction15, 4, 5)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction16, 2, 6)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction18, 4, 6)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction17, 3, 6)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction19, 2, 7)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction20, 3, 7)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction21, 4, 7)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem8count, 1, 8)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction23, 3, 8)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction24, 4, 8)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction22, 2, 8)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem3using, 5, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem4using, 5, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem5using, 5, 5)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem6using, 5, 6)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem7using, 5, 7)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem8, 0, 8)
+        Me.TableLayoutPanel2.Controls.Add(Me.useitem8using, 5, 8)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(2, 3)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 9
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(411, 247)
+        Me.TableLayoutPanel2.TabIndex = 0
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label51.Location = New System.Drawing.Point(3, 0)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(40, 15)
+        Me.Label51.TabIndex = 7
+        Me.Label51.Text = "Name"
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label52.Location = New System.Drawing.Point(95, 0)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(40, 15)
+        Me.Label52.TabIndex = 8
+        Me.Label52.Text = "Count"
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.TableLayoutPanel2.SetColumnSpan(Me.Label53, 3)
+        Me.Label53.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label53.Location = New System.Drawing.Point(142, 0)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(43, 15)
+        Me.Label53.TabIndex = 9
+        Me.Label53.Text = "Action"
+        '
+        'useitemaction1
+        '
+        Me.useitemaction1.Location = New System.Drawing.Point(142, 23)
+        Me.useitemaction1.Name = "useitemaction1"
+        Me.useitemaction1.Size = New System.Drawing.Size(20, 22)
+        Me.useitemaction1.TabIndex = 59
+        Me.useitemaction1.Text = "1"
+        Me.useitemaction1.UseVisualStyleBackColor = True
+        '
+        'useitem2
+        '
+        Me.useitem2.AutoSize = True
+        Me.useitem2.Location = New System.Drawing.Point(3, 55)
+        Me.useitem2.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem2.Name = "useitem2"
+        Me.useitem2.Size = New System.Drawing.Size(47, 15)
+        Me.useitem2.TabIndex = 45
+        Me.useitem2.Text = "Label55"
+        '
+        'useitem1count
+        '
+        Me.useitem1count.AutoSize = True
+        Me.useitem1count.Location = New System.Drawing.Point(95, 27)
+        Me.useitem1count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem1count.Name = "useitem1count"
+        Me.useitem1count.Size = New System.Drawing.Size(13, 15)
+        Me.useitem1count.TabIndex = 44
+        Me.useitem1count.Text = "0"
+        '
+        'useitem1
+        '
+        Me.useitem1.AutoSize = True
+        Me.useitem1.Location = New System.Drawing.Point(3, 27)
+        Me.useitem1.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem1.Name = "useitem1"
+        Me.useitem1.Size = New System.Drawing.Size(55, 15)
+        Me.useitem1.TabIndex = 43
+        Me.useitem1.Text = "useitem1"
+        '
+        'useitem3
+        '
+        Me.useitem3.AutoSize = True
+        Me.useitem3.Location = New System.Drawing.Point(3, 83)
+        Me.useitem3.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem3.Name = "useitem3"
+        Me.useitem3.Size = New System.Drawing.Size(47, 15)
+        Me.useitem3.TabIndex = 46
+        Me.useitem3.Text = "Label56"
+        '
+        'useitem4
+        '
+        Me.useitem4.AutoSize = True
+        Me.useitem4.Location = New System.Drawing.Point(3, 111)
+        Me.useitem4.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem4.Name = "useitem4"
+        Me.useitem4.Size = New System.Drawing.Size(47, 15)
+        Me.useitem4.TabIndex = 47
+        Me.useitem4.Text = "Label57"
+        '
+        'useitem5
+        '
+        Me.useitem5.AutoSize = True
+        Me.useitem5.Location = New System.Drawing.Point(3, 139)
+        Me.useitem5.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem5.Name = "useitem5"
+        Me.useitem5.Size = New System.Drawing.Size(47, 15)
+        Me.useitem5.TabIndex = 48
+        Me.useitem5.Text = "Label57"
+        '
+        'useitem6
+        '
+        Me.useitem6.AutoSize = True
+        Me.useitem6.Location = New System.Drawing.Point(3, 167)
+        Me.useitem6.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem6.Name = "useitem6"
+        Me.useitem6.Size = New System.Drawing.Size(47, 15)
+        Me.useitem6.TabIndex = 49
+        Me.useitem6.Text = "Label57"
+        '
+        'useitem7
+        '
+        Me.useitem7.AutoSize = True
+        Me.useitem7.Location = New System.Drawing.Point(3, 195)
+        Me.useitem7.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem7.Name = "useitem7"
+        Me.useitem7.Size = New System.Drawing.Size(47, 15)
+        Me.useitem7.TabIndex = 50
+        Me.useitem7.Text = "Label57"
+        '
+        'useitem2count
+        '
+        Me.useitem2count.AutoSize = True
+        Me.useitem2count.Location = New System.Drawing.Point(95, 55)
+        Me.useitem2count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem2count.Name = "useitem2count"
+        Me.useitem2count.Size = New System.Drawing.Size(13, 15)
+        Me.useitem2count.TabIndex = 52
+        Me.useitem2count.Text = "0"
+        '
+        'useitem3count
+        '
+        Me.useitem3count.AutoSize = True
+        Me.useitem3count.Location = New System.Drawing.Point(95, 83)
+        Me.useitem3count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem3count.Name = "useitem3count"
+        Me.useitem3count.Size = New System.Drawing.Size(13, 15)
+        Me.useitem3count.TabIndex = 53
+        Me.useitem3count.Text = "0"
+        '
+        'useitem4count
+        '
+        Me.useitem4count.AutoSize = True
+        Me.useitem4count.Location = New System.Drawing.Point(95, 111)
+        Me.useitem4count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem4count.Name = "useitem4count"
+        Me.useitem4count.Size = New System.Drawing.Size(13, 15)
+        Me.useitem4count.TabIndex = 54
+        Me.useitem4count.Text = "0"
+        '
+        'useitem5count
+        '
+        Me.useitem5count.AutoSize = True
+        Me.useitem5count.Location = New System.Drawing.Point(95, 139)
+        Me.useitem5count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem5count.Name = "useitem5count"
+        Me.useitem5count.Size = New System.Drawing.Size(13, 15)
+        Me.useitem5count.TabIndex = 55
+        Me.useitem5count.Text = "0"
+        '
+        'useitem6count
+        '
+        Me.useitem6count.AutoSize = True
+        Me.useitem6count.Location = New System.Drawing.Point(95, 167)
+        Me.useitem6count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem6count.Name = "useitem6count"
+        Me.useitem6count.Size = New System.Drawing.Size(13, 15)
+        Me.useitem6count.TabIndex = 56
+        Me.useitem6count.Text = "0"
+        '
+        'useitem7count
+        '
+        Me.useitem7count.AutoSize = True
+        Me.useitem7count.Location = New System.Drawing.Point(95, 195)
+        Me.useitem7count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem7count.Name = "useitem7count"
+        Me.useitem7count.Size = New System.Drawing.Size(13, 15)
+        Me.useitem7count.TabIndex = 57
+        Me.useitem7count.Text = "0"
+        '
+        'useitemaction2
+        '
+        Me.useitemaction2.Location = New System.Drawing.Point(168, 23)
+        Me.useitemaction2.Name = "useitemaction2"
+        Me.useitemaction2.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction2.TabIndex = 60
+        Me.useitemaction2.Text = "10"
+        Me.useitemaction2.UseVisualStyleBackColor = True
+        '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label54.Location = New System.Drawing.Point(248, 0)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(38, 15)
+        Me.Label54.TabIndex = 10
+        Me.Label54.Text = "Using"
+        '
+        'useitem1using
+        '
+        Me.useitem1using.AutoSize = True
+        Me.useitem1using.Location = New System.Drawing.Point(248, 27)
+        Me.useitem1using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem1using.Name = "useitem1using"
+        Me.useitem1using.Size = New System.Drawing.Size(84, 15)
+        Me.useitem1using.TabIndex = 41
+        Me.useitem1using.Text = "useitem1using"
+        '
+        'useitemaction3
+        '
+        Me.useitemaction3.Location = New System.Drawing.Point(207, 23)
+        Me.useitemaction3.Name = "useitemaction3"
+        Me.useitemaction3.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction3.TabIndex = 61
+        Me.useitemaction3.Text = "All"
+        Me.useitemaction3.UseVisualStyleBackColor = True
+        '
+        'useitem2using
+        '
+        Me.useitem2using.AutoSize = True
+        Me.useitem2using.Location = New System.Drawing.Point(248, 55)
+        Me.useitem2using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem2using.Name = "useitem2using"
+        Me.useitem2using.Size = New System.Drawing.Size(47, 15)
+        Me.useitem2using.TabIndex = 61
+        Me.useitem2using.Text = "Label55"
+        '
+        'useitemaction4
+        '
+        Me.useitemaction4.Location = New System.Drawing.Point(142, 51)
+        Me.useitemaction4.Name = "useitemaction4"
+        Me.useitemaction4.Size = New System.Drawing.Size(20, 22)
+        Me.useitemaction4.TabIndex = 62
+        Me.useitemaction4.Text = "1"
+        Me.useitemaction4.UseVisualStyleBackColor = True
+        '
+        'useitemaction6
+        '
+        Me.useitemaction6.Location = New System.Drawing.Point(207, 51)
+        Me.useitemaction6.Name = "useitemaction6"
+        Me.useitemaction6.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction6.TabIndex = 64
+        Me.useitemaction6.Text = "All"
+        Me.useitemaction6.UseVisualStyleBackColor = True
+        '
+        'useitemaction5
+        '
+        Me.useitemaction5.Location = New System.Drawing.Point(168, 51)
+        Me.useitemaction5.Name = "useitemaction5"
+        Me.useitemaction5.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction5.TabIndex = 63
+        Me.useitemaction5.Text = "10"
+        Me.useitemaction5.UseVisualStyleBackColor = True
+        '
+        'useitemaction7
+        '
+        Me.useitemaction7.Location = New System.Drawing.Point(142, 79)
+        Me.useitemaction7.Name = "useitemaction7"
+        Me.useitemaction7.Size = New System.Drawing.Size(20, 22)
+        Me.useitemaction7.TabIndex = 65
+        Me.useitemaction7.Text = "1"
+        Me.useitemaction7.UseVisualStyleBackColor = True
+        '
+        'useitemaction8
+        '
+        Me.useitemaction8.Location = New System.Drawing.Point(168, 79)
+        Me.useitemaction8.Name = "useitemaction8"
+        Me.useitemaction8.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction8.TabIndex = 66
+        Me.useitemaction8.Text = "10"
+        Me.useitemaction8.UseVisualStyleBackColor = True
+        '
+        'useitemaction9
+        '
+        Me.useitemaction9.Location = New System.Drawing.Point(207, 79)
+        Me.useitemaction9.Name = "useitemaction9"
+        Me.useitemaction9.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction9.TabIndex = 67
+        Me.useitemaction9.Text = "All"
+        Me.useitemaction9.UseVisualStyleBackColor = True
+        '
+        'useitemaction10
+        '
+        Me.useitemaction10.Location = New System.Drawing.Point(142, 107)
+        Me.useitemaction10.Name = "useitemaction10"
+        Me.useitemaction10.Size = New System.Drawing.Size(20, 22)
+        Me.useitemaction10.TabIndex = 68
+        Me.useitemaction10.Text = "1"
+        Me.useitemaction10.UseVisualStyleBackColor = True
+        '
+        'useitemaction11
+        '
+        Me.useitemaction11.Location = New System.Drawing.Point(168, 107)
+        Me.useitemaction11.Name = "useitemaction11"
+        Me.useitemaction11.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction11.TabIndex = 69
+        Me.useitemaction11.Text = "10"
+        Me.useitemaction11.UseVisualStyleBackColor = True
+        '
+        'useitemaction12
+        '
+        Me.useitemaction12.Location = New System.Drawing.Point(207, 107)
+        Me.useitemaction12.Name = "useitemaction12"
+        Me.useitemaction12.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction12.TabIndex = 70
+        Me.useitemaction12.Text = "All"
+        Me.useitemaction12.UseVisualStyleBackColor = True
+        '
+        'useitemaction13
+        '
+        Me.useitemaction13.Location = New System.Drawing.Point(142, 135)
+        Me.useitemaction13.Name = "useitemaction13"
+        Me.useitemaction13.Size = New System.Drawing.Size(20, 22)
+        Me.useitemaction13.TabIndex = 71
+        Me.useitemaction13.Text = "1"
+        Me.useitemaction13.UseVisualStyleBackColor = True
+        '
+        'useitemaction14
+        '
+        Me.useitemaction14.Location = New System.Drawing.Point(168, 135)
+        Me.useitemaction14.Name = "useitemaction14"
+        Me.useitemaction14.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction14.TabIndex = 72
+        Me.useitemaction14.Text = "10"
+        Me.useitemaction14.UseVisualStyleBackColor = True
+        '
+        'useitemaction15
+        '
+        Me.useitemaction15.Location = New System.Drawing.Point(207, 135)
+        Me.useitemaction15.Name = "useitemaction15"
+        Me.useitemaction15.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction15.TabIndex = 73
+        Me.useitemaction15.Text = "All"
+        Me.useitemaction15.UseVisualStyleBackColor = True
+        '
+        'useitemaction16
+        '
+        Me.useitemaction16.Location = New System.Drawing.Point(142, 163)
+        Me.useitemaction16.Name = "useitemaction16"
+        Me.useitemaction16.Size = New System.Drawing.Size(20, 22)
+        Me.useitemaction16.TabIndex = 74
+        Me.useitemaction16.Text = "1"
+        Me.useitemaction16.UseVisualStyleBackColor = True
+        '
+        'useitemaction18
+        '
+        Me.useitemaction18.Location = New System.Drawing.Point(207, 163)
+        Me.useitemaction18.Name = "useitemaction18"
+        Me.useitemaction18.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction18.TabIndex = 76
+        Me.useitemaction18.Text = "All"
+        Me.useitemaction18.UseVisualStyleBackColor = True
+        '
+        'useitemaction17
+        '
+        Me.useitemaction17.Location = New System.Drawing.Point(168, 163)
+        Me.useitemaction17.Name = "useitemaction17"
+        Me.useitemaction17.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction17.TabIndex = 75
+        Me.useitemaction17.Text = "10"
+        Me.useitemaction17.UseVisualStyleBackColor = True
+        '
+        'useitemaction19
+        '
+        Me.useitemaction19.Location = New System.Drawing.Point(142, 191)
+        Me.useitemaction19.Name = "useitemaction19"
+        Me.useitemaction19.Size = New System.Drawing.Size(20, 22)
+        Me.useitemaction19.TabIndex = 77
+        Me.useitemaction19.Text = "1"
+        Me.useitemaction19.UseVisualStyleBackColor = True
+        '
+        'useitemaction20
+        '
+        Me.useitemaction20.Location = New System.Drawing.Point(168, 191)
+        Me.useitemaction20.Name = "useitemaction20"
+        Me.useitemaction20.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction20.TabIndex = 78
+        Me.useitemaction20.Text = "10"
+        Me.useitemaction20.UseVisualStyleBackColor = True
+        '
+        'useitemaction21
+        '
+        Me.useitemaction21.Location = New System.Drawing.Point(207, 191)
+        Me.useitemaction21.Name = "useitemaction21"
+        Me.useitemaction21.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction21.TabIndex = 79
+        Me.useitemaction21.Text = "All"
+        Me.useitemaction21.UseVisualStyleBackColor = True
+        '
+        'useitem8count
+        '
+        Me.useitem8count.AutoSize = True
+        Me.useitem8count.Location = New System.Drawing.Point(95, 223)
+        Me.useitem8count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem8count.Name = "useitem8count"
+        Me.useitem8count.Size = New System.Drawing.Size(13, 15)
+        Me.useitem8count.TabIndex = 58
+        Me.useitem8count.Text = "0"
+        '
+        'useitemaction23
+        '
+        Me.useitemaction23.Location = New System.Drawing.Point(168, 219)
+        Me.useitemaction23.Name = "useitemaction23"
+        Me.useitemaction23.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction23.TabIndex = 81
+        Me.useitemaction23.Text = "10"
+        Me.useitemaction23.UseVisualStyleBackColor = True
+        '
+        'useitemaction24
+        '
+        Me.useitemaction24.Location = New System.Drawing.Point(207, 219)
+        Me.useitemaction24.Name = "useitemaction24"
+        Me.useitemaction24.Size = New System.Drawing.Size(33, 22)
+        Me.useitemaction24.TabIndex = 82
+        Me.useitemaction24.Text = "All"
+        Me.useitemaction24.UseVisualStyleBackColor = True
+        '
+        'useitemaction22
+        '
+        Me.useitemaction22.Location = New System.Drawing.Point(142, 219)
+        Me.useitemaction22.Name = "useitemaction22"
+        Me.useitemaction22.Size = New System.Drawing.Size(20, 22)
+        Me.useitemaction22.TabIndex = 80
+        Me.useitemaction22.Text = "1"
+        Me.useitemaction22.UseVisualStyleBackColor = True
+        '
+        'useitem3using
+        '
+        Me.useitem3using.AutoSize = True
+        Me.useitem3using.Location = New System.Drawing.Point(248, 83)
+        Me.useitem3using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem3using.Name = "useitem3using"
+        Me.useitem3using.Size = New System.Drawing.Size(47, 15)
+        Me.useitem3using.TabIndex = 83
+        Me.useitem3using.Text = "Label56"
+        '
+        'useitem4using
+        '
+        Me.useitem4using.AutoSize = True
+        Me.useitem4using.Location = New System.Drawing.Point(248, 111)
+        Me.useitem4using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem4using.Name = "useitem4using"
+        Me.useitem4using.Size = New System.Drawing.Size(47, 15)
+        Me.useitem4using.TabIndex = 51
+        Me.useitem4using.Text = "Label57"
+        '
+        'useitem5using
+        '
+        Me.useitem5using.AutoSize = True
+        Me.useitem5using.Location = New System.Drawing.Point(248, 139)
+        Me.useitem5using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem5using.Name = "useitem5using"
+        Me.useitem5using.Size = New System.Drawing.Size(47, 15)
+        Me.useitem5using.TabIndex = 85
+        Me.useitem5using.Text = "Label58"
+        '
+        'useitem6using
+        '
+        Me.useitem6using.AutoSize = True
+        Me.useitem6using.Location = New System.Drawing.Point(248, 167)
+        Me.useitem6using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem6using.Name = "useitem6using"
+        Me.useitem6using.Size = New System.Drawing.Size(47, 15)
+        Me.useitem6using.TabIndex = 86
+        Me.useitem6using.Text = "Label59"
+        '
+        'useitem7using
+        '
+        Me.useitem7using.AutoSize = True
+        Me.useitem7using.Location = New System.Drawing.Point(248, 195)
+        Me.useitem7using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem7using.Name = "useitem7using"
+        Me.useitem7using.Size = New System.Drawing.Size(47, 15)
+        Me.useitem7using.TabIndex = 87
+        Me.useitem7using.Text = "Label60"
+        '
+        'useitem8
+        '
+        Me.useitem8.AutoSize = True
+        Me.useitem8.Location = New System.Drawing.Point(3, 223)
+        Me.useitem8.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem8.Name = "useitem8"
+        Me.useitem8.Size = New System.Drawing.Size(47, 15)
+        Me.useitem8.TabIndex = 84
+        Me.useitem8.Text = "Label57"
+        '
+        'useitem8using
+        '
+        Me.useitem8using.AutoSize = True
+        Me.useitem8using.Location = New System.Drawing.Point(248, 223)
+        Me.useitem8using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
+        Me.useitem8using.Name = "useitem8using"
+        Me.useitem8using.Size = New System.Drawing.Size(47, 15)
+        Me.useitem8using.TabIndex = 88
+        Me.useitem8using.Text = "Label61"
+        '
+        'Equipment
+        '
+        Me.Equipment.Controls.Add(Me.CheckBox3)
+        Me.Equipment.Controls.Add(Me.Label49)
+        Me.Equipment.Controls.Add(Me.Label50)
+        Me.Equipment.Controls.Add(Me.Label46)
+        Me.Equipment.Controls.Add(Me.Label48)
+        Me.Equipment.Controls.Add(Me.Equip2Label)
+        Me.Equipment.Controls.Add(Me.Equip1Label)
+        Me.Equipment.Controls.Add(Me.PictureBox7)
+        Me.Equipment.Controls.Add(Me.PictureBox8)
+        Me.Equipment.Controls.Add(Me.PictureBox5)
+        Me.Equipment.Controls.Add(Me.PictureBox6)
+        Me.Equipment.Controls.Add(Me.PictureBox4)
+        Me.Equipment.Controls.Add(Me.PictureBox3)
+        Me.Equipment.Location = New System.Drawing.Point(4, 24)
+        Me.Equipment.Name = "Equipment"
+        Me.Equipment.Padding = New System.Windows.Forms.Padding(3)
+        Me.Equipment.Size = New System.Drawing.Size(423, 280)
+        Me.Equipment.TabIndex = 1
+        Me.Equipment.Text = "Equipment"
+        Me.Equipment.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(6, 255)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(85, 19)
+        Me.CheckBox3.TabIndex = 12
+        Me.CheckBox3.Text = "Auto Equip"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Location = New System.Drawing.Point(50, 223)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(37, 15)
+        Me.Label49.TabIndex = 11
+        Me.Label49.Text = "Boots"
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.Location = New System.Drawing.Point(50, 183)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(26, 15)
+        Me.Label50.TabIndex = 10
+        Me.Label50.Text = "Leg"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Location = New System.Drawing.Point(50, 143)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(37, 15)
+        Me.Label46.TabIndex = 7
+        Me.Label46.Text = "Boots"
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Location = New System.Drawing.Point(50, 103)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(26, 15)
+        Me.Label48.TabIndex = 6
+        Me.Label48.Text = "Leg"
+        '
+        'Equip2Label
+        '
+        Me.Equip2Label.AutoSize = True
+        Me.Equip2Label.Location = New System.Drawing.Point(51, 63)
+        Me.Equip2Label.Name = "Equip2Label"
+        Me.Equip2Label.Size = New System.Drawing.Size(37, 15)
+        Me.Equip2Label.TabIndex = 5
+        Me.Equip2Label.Text = "Chest"
+        '
+        'Equip1Label
+        '
+        Me.Equip1Label.AutoSize = True
+        Me.Equip1Label.Location = New System.Drawing.Point(50, 23)
+        Me.Equip1Label.Name = "Equip1Label"
+        Me.Equip1Label.Size = New System.Drawing.Size(26, 15)
+        Me.Equip1Label.TabIndex = 4
+        Me.Equip1Label.Text = "Hat"
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = Global.HumanAdventure.My.Resources.Resources.ringslot
+        Me.PictureBox7.ImageLocation = ""
+        Me.PictureBox7.Location = New System.Drawing.Point(29, 222)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox7.TabIndex = 9
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Image = Global.HumanAdventure.My.Resources.Resources.gloveslot
+        Me.PictureBox8.ImageLocation = ""
+        Me.PictureBox8.Location = New System.Drawing.Point(29, 182)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox8.TabIndex = 8
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = Global.HumanAdventure.My.Resources.Resources.shoeslot
+        Me.PictureBox5.ImageLocation = ""
+        Me.PictureBox5.Location = New System.Drawing.Point(29, 142)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox5.TabIndex = 3
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = Global.HumanAdventure.My.Resources.Resources.legslot
+        Me.PictureBox6.ImageLocation = ""
+        Me.PictureBox6.Location = New System.Drawing.Point(29, 102)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox6.TabIndex = 2
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.HumanAdventure.My.Resources.Resources.chestslot
+        Me.PictureBox4.ImageLocation = ""
+        Me.PictureBox4.Location = New System.Drawing.Point(29, 62)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox4.TabIndex = 1
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.HumanAdventure.My.Resources.Resources.armorslot
+        Me.PictureBox3.ImageLocation = ""
+        Me.PictureBox3.Location = New System.Drawing.Point(29, 22)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = False
+        '
+        'Options
+        '
+        Me.Options.Controls.Add(Me.Panel12)
+        Me.Options.Location = New System.Drawing.Point(4, 24)
+        Me.Options.Name = "Options"
+        Me.Options.Size = New System.Drawing.Size(423, 280)
+        Me.Options.TabIndex = 4
+        Me.Options.Text = "Options"
+        Me.Options.UseVisualStyleBackColor = True
+        '
+        'Panel12
+        '
+        Me.Panel12.AutoScroll = True
+        Me.Panel12.Controls.Add(Me.Panel14)
+        Me.Panel12.Controls.Add(Me.Label38)
+        Me.Panel12.Controls.Add(Me.Button6)
+        Me.Panel12.Controls.Add(Me.TextBox3)
+        Me.Panel12.Controls.Add(Me.ComboBox3)
+        Me.Panel12.Controls.Add(Me.Label36)
+        Me.Panel12.Controls.Add(Me.EasterEgg)
+        Me.Panel12.Controls.Add(Me.Panel13)
+        Me.Panel12.Controls.Add(Me.Label35)
+        Me.Panel12.Controls.Add(Me.CheckBox2)
+        Me.Panel12.Controls.Add(Me.Label34)
+        Me.Panel12.Controls.Add(Me.ComboBox2)
+        Me.Panel12.Controls.Add(Me.Label33)
+        Me.Panel12.Controls.Add(Me.ComboBox1)
+        Me.Panel12.Controls.Add(Me.Label32)
+        Me.Panel12.Location = New System.Drawing.Point(3, 3)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(417, 274)
+        Me.Panel12.TabIndex = 0
+        '
+        'Panel14
+        '
+        Me.Panel14.Controls.Add(Me.Label40)
+        Me.Panel14.Controls.Add(Me.Label41)
+        Me.Panel14.Controls.Add(Me.Label39)
+        Me.Panel14.Controls.Add(Me.Button12)
+        Me.Panel14.Controls.Add(Me.TextBox1)
+        Me.Panel14.Location = New System.Drawing.Point(0, 325)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(359, 69)
+        Me.Panel14.TabIndex = 9
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Location = New System.Drawing.Point(193, 22)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(51, 15)
+        Me.Label40.TabIndex = 25
+        Me.Label40.Text = "distance"
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Location = New System.Drawing.Point(5, 44)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(51, 15)
+        Me.Label41.TabIndex = 24
+        Me.Label41.Text = "distance"
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Location = New System.Drawing.Point(3, 0)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(71, 15)
+        Me.Label39.TabIndex = 21
+        Me.Label39.Text = "Set Distance"
+        '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(112, 18)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(75, 23)
+        Me.Button12.TabIndex = 1
+        Me.Button12.Text = "set"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.TextBox1.Location = New System.Drawing.Point(6, 18)
+        Me.TextBox1.MaxLength = 9
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 23)
+        Me.TextBox1.TabIndex = 0
+        Me.TextBox1.Tag = ""
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.Label38.Location = New System.Drawing.Point(3, 302)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(96, 20)
+        Me.Label38.TabIndex = 20
+        Me.Label38.Text = "Experimental"
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(134, 87)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 4
+        Me.Button6.Text = "help"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'TextBox3
+        '
+        Me.TextBox3.BackColor = System.Drawing.SystemColors.Menu
+        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox3.CausesValidation = False
+        Me.TextBox3.Location = New System.Drawing.Point(7, 241)
+        Me.TextBox3.Multiline = True
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
+        Me.TextBox3.ShortcutsEnabled = False
+        Me.TextBox3.Size = New System.Drawing.Size(387, 35)
+        Me.TextBox3.TabIndex = 7
+        Me.TextBox3.Text = "qwq"
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Items.AddRange(New Object() {"Use normal damage first", "Use elemental damage first", "Smarter decisions"})
+        Me.ComboBox3.Location = New System.Drawing.Point(7, 87)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(121, 23)
+        Me.ComboBox3.TabIndex = 3
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(4, 69)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(148, 15)
+        Me.Label36.TabIndex = 9
+        Me.Label36.Text = "Automatic combat priority"
+        '
+        'EasterEgg
+        '
+        Me.EasterEgg.Location = New System.Drawing.Point(4, 276)
+        Me.EasterEgg.Name = "EasterEgg"
+        Me.EasterEgg.Size = New System.Drawing.Size(75, 23)
+        Me.EasterEgg.TabIndex = 8
+        Me.EasterEgg.Text = "Easter Egg"
+        Me.EasterEgg.UseVisualStyleBackColor = True
+        '
+        'Panel13
+        '
+        Me.Panel13.Controls.Add(Me.RadioButton6)
+        Me.Panel13.Controls.Add(Me.RadioButton5)
+        Me.Panel13.Location = New System.Drawing.Point(7, 181)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(171, 54)
+        Me.Panel13.TabIndex = 6
+        '
+        'RadioButton6
+        '
+        Me.RadioButton6.AutoSize = True
+        Me.RadioButton6.Location = New System.Drawing.Point(5, 28)
+        Me.RadioButton6.Name = "RadioButton6"
+        Me.RadioButton6.Size = New System.Drawing.Size(156, 19)
+        Me.RadioButton6.TabIndex = 1
+        Me.RadioButton6.TabStop = True
+        Me.RadioButton6.Text = "Chinese Simplified (PRC)"
+        Me.RadioButton6.UseVisualStyleBackColor = True
+        '
+        'RadioButton5
+        '
+        Me.RadioButton5.AutoSize = True
+        Me.RadioButton5.Location = New System.Drawing.Point(5, 3)
+        Me.RadioButton5.Name = "RadioButton5"
+        Me.RadioButton5.Size = New System.Drawing.Size(88, 19)
+        Me.RadioButton5.TabIndex = 0
+        Me.RadioButton5.TabStop = True
+        Me.RadioButton5.Text = "English (US)"
+        Me.RadioButton5.UseVisualStyleBackColor = True
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.Label35.Location = New System.Drawing.Point(4, 158)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(74, 20)
+        Me.Label35.TabIndex = 6
+        Me.Label35.Text = "Language"
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(8, 136)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(117, 19)
+        Me.CheckBox2.TabIndex = 5
+        Me.CheckBox2.Text = "Enable Auto Save"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.Label34.Location = New System.Drawing.Point(3, 113)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(76, 20)
+        Me.Label34.TabIndex = 4
+        Me.Label34.Text = "Auto Save"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"Default", "item1", "item2", "item3", "item4", "item5", "item6"})
+        Me.ComboBox2.Location = New System.Drawing.Point(134, 43)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(121, 23)
+        Me.ComboBox2.TabIndex = 2
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(4, 27)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(169, 15)
+        Me.Label33.TabIndex = 2
+        Me.Label33.Text = "Coins shop purchasing priority"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"No any", "Player prop.", "Equipment"})
+        Me.ComboBox1.Location = New System.Drawing.Point(7, 43)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 23)
+        Me.ComboBox1.TabIndex = 1
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.Label32.Location = New System.Drawing.Point(3, 0)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(93, 20)
+        Me.Label32.TabIndex = 0
+        Me.Label32.Text = "Auto priority"
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Button3)
@@ -1109,1787 +2890,6 @@ Partial Class MainForm
         '
         Me.BattleCooldown.Interval = 1000
         '
-        'Options
-        '
-        Me.Options.Controls.Add(Me.Panel12)
-        Me.Options.Location = New System.Drawing.Point(4, 24)
-        Me.Options.Name = "Options"
-        Me.Options.Size = New System.Drawing.Size(423, 280)
-        Me.Options.TabIndex = 4
-        Me.Options.Text = "Options"
-        Me.Options.UseVisualStyleBackColor = True
-        '
-        'Panel12
-        '
-        Me.Panel12.AutoScroll = True
-        Me.Panel12.Controls.Add(Me.Panel14)
-        Me.Panel12.Controls.Add(Me.Label38)
-        Me.Panel12.Controls.Add(Me.Button6)
-        Me.Panel12.Controls.Add(Me.TextBox3)
-        Me.Panel12.Controls.Add(Me.ComboBox3)
-        Me.Panel12.Controls.Add(Me.Label36)
-        Me.Panel12.Controls.Add(Me.EasterEgg)
-        Me.Panel12.Controls.Add(Me.Panel13)
-        Me.Panel12.Controls.Add(Me.Label35)
-        Me.Panel12.Controls.Add(Me.CheckBox2)
-        Me.Panel12.Controls.Add(Me.Label34)
-        Me.Panel12.Controls.Add(Me.ComboBox2)
-        Me.Panel12.Controls.Add(Me.Label33)
-        Me.Panel12.Controls.Add(Me.ComboBox1)
-        Me.Panel12.Controls.Add(Me.Label32)
-        Me.Panel12.Location = New System.Drawing.Point(3, 3)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(417, 274)
-        Me.Panel12.TabIndex = 0
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Font = New System.Drawing.Font("Segoe UI", 11.0!)
-        Me.Label32.Location = New System.Drawing.Point(3, 0)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(93, 20)
-        Me.Label32.TabIndex = 0
-        Me.Label32.Text = "Auto priority"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"No any", "Player prop.", "Equipment"})
-        Me.ComboBox1.Location = New System.Drawing.Point(7, 43)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 23)
-        Me.ComboBox1.TabIndex = 1
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(4, 27)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(169, 15)
-        Me.Label33.TabIndex = 2
-        Me.Label33.Text = "Coins shop purchasing priority"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Default", "item1", "item2", "item3", "item4", "item5", "item6"})
-        Me.ComboBox2.Location = New System.Drawing.Point(134, 43)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 23)
-        Me.ComboBox2.TabIndex = 2
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("Segoe UI", 11.0!)
-        Me.Label34.Location = New System.Drawing.Point(3, 113)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(76, 20)
-        Me.Label34.TabIndex = 4
-        Me.Label34.Text = "Auto Save"
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(8, 136)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(117, 19)
-        Me.CheckBox2.TabIndex = 5
-        Me.CheckBox2.Text = "Enable Auto Save"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Font = New System.Drawing.Font("Segoe UI", 11.0!)
-        Me.Label35.Location = New System.Drawing.Point(4, 158)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(74, 20)
-        Me.Label35.TabIndex = 6
-        Me.Label35.Text = "Language"
-        '
-        'Panel13
-        '
-        Me.Panel13.Controls.Add(Me.RadioButton6)
-        Me.Panel13.Controls.Add(Me.RadioButton5)
-        Me.Panel13.Location = New System.Drawing.Point(7, 181)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(171, 54)
-        Me.Panel13.TabIndex = 6
-        '
-        'RadioButton5
-        '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(5, 3)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(88, 19)
-        Me.RadioButton5.TabIndex = 0
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "English (US)"
-        Me.RadioButton5.UseVisualStyleBackColor = True
-        '
-        'RadioButton6
-        '
-        Me.RadioButton6.AutoSize = True
-        Me.RadioButton6.Location = New System.Drawing.Point(5, 28)
-        Me.RadioButton6.Name = "RadioButton6"
-        Me.RadioButton6.Size = New System.Drawing.Size(156, 19)
-        Me.RadioButton6.TabIndex = 1
-        Me.RadioButton6.TabStop = True
-        Me.RadioButton6.Text = "Chinese Simplified (PRC)"
-        Me.RadioButton6.UseVisualStyleBackColor = True
-        '
-        'EasterEgg
-        '
-        Me.EasterEgg.Location = New System.Drawing.Point(4, 276)
-        Me.EasterEgg.Name = "EasterEgg"
-        Me.EasterEgg.Size = New System.Drawing.Size(75, 23)
-        Me.EasterEgg.TabIndex = 8
-        Me.EasterEgg.Text = "Easter Egg"
-        Me.EasterEgg.UseVisualStyleBackColor = True
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(4, 69)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(148, 15)
-        Me.Label36.TabIndex = 9
-        Me.Label36.Text = "Automatic combat priority"
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"Use normal damage first", "Use elemental damage first", "Smarter decisions"})
-        Me.ComboBox3.Location = New System.Drawing.Point(7, 87)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(121, 23)
-        Me.ComboBox3.TabIndex = 3
-        '
-        'TextBox3
-        '
-        Me.TextBox3.BackColor = System.Drawing.SystemColors.Menu
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox3.CausesValidation = False
-        Me.TextBox3.Location = New System.Drawing.Point(7, 241)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.ShortcutsEnabled = False
-        Me.TextBox3.Size = New System.Drawing.Size(387, 35)
-        Me.TextBox3.TabIndex = 7
-        Me.TextBox3.Text = "qwq"
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(134, 87)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 23)
-        Me.Button6.TabIndex = 4
-        Me.Button6.Text = "help"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Font = New System.Drawing.Font("Segoe UI", 11.0!)
-        Me.Label38.Location = New System.Drawing.Point(3, 302)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(96, 20)
-        Me.Label38.TabIndex = 20
-        Me.Label38.Text = "Experimental"
-        '
-        'Panel14
-        '
-        Me.Panel14.Controls.Add(Me.Label40)
-        Me.Panel14.Controls.Add(Me.Label41)
-        Me.Panel14.Controls.Add(Me.Label39)
-        Me.Panel14.Controls.Add(Me.Button12)
-        Me.Panel14.Controls.Add(Me.TextBox1)
-        Me.Panel14.Location = New System.Drawing.Point(0, 325)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(359, 69)
-        Me.Panel14.TabIndex = 9
-        '
-        'TextBox1
-        '
-        Me.TextBox1.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.TextBox1.Location = New System.Drawing.Point(6, 18)
-        Me.TextBox1.MaxLength = 9
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 23)
-        Me.TextBox1.TabIndex = 0
-        Me.TextBox1.Tag = ""
-        '
-        'Button12
-        '
-        Me.Button12.Location = New System.Drawing.Point(112, 18)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(75, 23)
-        Me.Button12.TabIndex = 1
-        Me.Button12.Text = "set"
-        Me.Button12.UseVisualStyleBackColor = True
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(3, 0)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(71, 15)
-        Me.Label39.TabIndex = 21
-        Me.Label39.Text = "Set Distance"
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(5, 44)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(51, 15)
-        Me.Label41.TabIndex = 24
-        Me.Label41.Text = "distance"
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(193, 22)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(51, 15)
-        Me.Label40.TabIndex = 25
-        Me.Label40.Text = "distance"
-        '
-        'Equipment
-        '
-        Me.Equipment.Controls.Add(Me.CheckBox3)
-        Me.Equipment.Controls.Add(Me.Label49)
-        Me.Equipment.Controls.Add(Me.Label50)
-        Me.Equipment.Controls.Add(Me.Label46)
-        Me.Equipment.Controls.Add(Me.Label48)
-        Me.Equipment.Controls.Add(Me.Equip2Label)
-        Me.Equipment.Controls.Add(Me.Equip1Label)
-        Me.Equipment.Controls.Add(Me.PictureBox7)
-        Me.Equipment.Controls.Add(Me.PictureBox8)
-        Me.Equipment.Controls.Add(Me.PictureBox5)
-        Me.Equipment.Controls.Add(Me.PictureBox6)
-        Me.Equipment.Controls.Add(Me.PictureBox4)
-        Me.Equipment.Controls.Add(Me.PictureBox3)
-        Me.Equipment.Location = New System.Drawing.Point(4, 24)
-        Me.Equipment.Name = "Equipment"
-        Me.Equipment.Padding = New System.Windows.Forms.Padding(3)
-        Me.Equipment.Size = New System.Drawing.Size(423, 280)
-        Me.Equipment.TabIndex = 1
-        Me.Equipment.Text = "Equipment"
-        Me.Equipment.UseVisualStyleBackColor = True
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.HumanAdventure.My.Resources.Resources.armorslot
-        Me.PictureBox3.ImageLocation = ""
-        Me.PictureBox3.Location = New System.Drawing.Point(29, 22)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox3.TabIndex = 0
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.HumanAdventure.My.Resources.Resources.chestslot
-        Me.PictureBox4.ImageLocation = ""
-        Me.PictureBox4.Location = New System.Drawing.Point(29, 62)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox4.TabIndex = 1
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Image = Global.HumanAdventure.My.Resources.Resources.legslot
-        Me.PictureBox6.ImageLocation = ""
-        Me.PictureBox6.Location = New System.Drawing.Point(29, 102)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox6.TabIndex = 2
-        Me.PictureBox6.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = Global.HumanAdventure.My.Resources.Resources.shoeslot
-        Me.PictureBox5.ImageLocation = ""
-        Me.PictureBox5.Location = New System.Drawing.Point(29, 142)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox5.TabIndex = 3
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.Image = Global.HumanAdventure.My.Resources.Resources.gloveslot
-        Me.PictureBox8.ImageLocation = ""
-        Me.PictureBox8.Location = New System.Drawing.Point(29, 182)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox8.TabIndex = 8
-        Me.PictureBox8.TabStop = False
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = Global.HumanAdventure.My.Resources.Resources.ringslot
-        Me.PictureBox7.ImageLocation = ""
-        Me.PictureBox7.Location = New System.Drawing.Point(29, 222)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox7.TabIndex = 9
-        Me.PictureBox7.TabStop = False
-        '
-        'Equip1Label
-        '
-        Me.Equip1Label.AutoSize = True
-        Me.Equip1Label.Location = New System.Drawing.Point(50, 23)
-        Me.Equip1Label.Name = "Equip1Label"
-        Me.Equip1Label.Size = New System.Drawing.Size(26, 15)
-        Me.Equip1Label.TabIndex = 4
-        Me.Equip1Label.Text = "Hat"
-        '
-        'Equip2Label
-        '
-        Me.Equip2Label.AutoSize = True
-        Me.Equip2Label.Location = New System.Drawing.Point(51, 63)
-        Me.Equip2Label.Name = "Equip2Label"
-        Me.Equip2Label.Size = New System.Drawing.Size(37, 15)
-        Me.Equip2Label.TabIndex = 5
-        Me.Equip2Label.Text = "Chest"
-        '
-        'Label48
-        '
-        Me.Label48.AutoSize = True
-        Me.Label48.Location = New System.Drawing.Point(50, 103)
-        Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(26, 15)
-        Me.Label48.TabIndex = 6
-        Me.Label48.Text = "Leg"
-        '
-        'Label46
-        '
-        Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(50, 143)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(37, 15)
-        Me.Label46.TabIndex = 7
-        Me.Label46.Text = "Boots"
-        '
-        'Label50
-        '
-        Me.Label50.AutoSize = True
-        Me.Label50.Location = New System.Drawing.Point(50, 183)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(26, 15)
-        Me.Label50.TabIndex = 10
-        Me.Label50.Text = "Leg"
-        '
-        'Label49
-        '
-        Me.Label49.AutoSize = True
-        Me.Label49.Location = New System.Drawing.Point(50, 223)
-        Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(37, 15)
-        Me.Label49.TabIndex = 11
-        Me.Label49.Text = "Boots"
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(6, 255)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(85, 19)
-        Me.CheckBox3.TabIndex = 12
-        Me.CheckBox3.Text = "Auto Equip"
-        Me.CheckBox3.UseVisualStyleBackColor = True
-        '
-        'Inventory
-        '
-        Me.Inventory.Controls.Add(Me.TabControl3)
-        Me.Inventory.Location = New System.Drawing.Point(4, 24)
-        Me.Inventory.Name = "Inventory"
-        Me.Inventory.Padding = New System.Windows.Forms.Padding(3)
-        Me.Inventory.Size = New System.Drawing.Size(423, 280)
-        Me.Inventory.TabIndex = 0
-        Me.Inventory.Text = "Inventory"
-        Me.Inventory.UseVisualStyleBackColor = True
-        '
-        'TabControl3
-        '
-        Me.TabControl3.Controls.Add(Me.Buffs)
-        Me.TabControl3.Controls.Add(Me.Artifact)
-        Me.TabControl3.Controls.Add(Me.Material)
-        Me.TabControl3.Controls.Add(Me.Items)
-        Me.TabControl3.Location = New System.Drawing.Point(0, 0)
-        Me.TabControl3.Name = "TabControl3"
-        Me.TabControl3.SelectedIndex = 0
-        Me.TabControl3.Size = New System.Drawing.Size(424, 284)
-        Me.TabControl3.TabIndex = 0
-        '
-        'Items
-        '
-        Me.Items.AutoScroll = True
-        Me.Items.Controls.Add(Me.TableLayoutPanel2)
-        Me.Items.Location = New System.Drawing.Point(4, 24)
-        Me.Items.Name = "Items"
-        Me.Items.Size = New System.Drawing.Size(416, 256)
-        Me.Items.TabIndex = 3
-        Me.Items.Text = "Items"
-        Me.Items.UseVisualStyleBackColor = True
-        '
-        'TableLayoutPanel2
-        '
-        Me.TableLayoutPanel2.ColumnCount = 6
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.01307!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.98693!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Label51, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label52, 1, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label53, 2, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction1, 2, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem2, 0, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem1count, 1, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem1, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem3, 0, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem4, 0, 4)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem5, 0, 5)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem6, 0, 6)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem7, 0, 7)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem2count, 1, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem3count, 1, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem4count, 1, 4)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem5count, 1, 5)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem6count, 1, 6)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem7count, 1, 7)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction2, 3, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label54, 5, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem1using, 5, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction3, 4, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem2using, 5, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction4, 2, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction6, 4, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction5, 3, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction7, 2, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction8, 3, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction9, 4, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction10, 2, 4)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction11, 3, 4)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction12, 4, 4)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction13, 2, 5)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction14, 3, 5)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction15, 4, 5)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction16, 2, 6)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction18, 4, 6)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction17, 3, 6)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction19, 2, 7)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction20, 3, 7)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction21, 4, 7)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem8count, 1, 8)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction23, 3, 8)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction24, 4, 8)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitemaction22, 2, 8)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem3using, 5, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem4using, 5, 4)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem5using, 5, 5)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem6using, 5, 6)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem7using, 5, 7)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem8, 0, 8)
-        Me.TableLayoutPanel2.Controls.Add(Me.useitem8using, 5, 8)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(2, 3)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 9
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(411, 247)
-        Me.TableLayoutPanel2.TabIndex = 0
-        '
-        'useitem8using
-        '
-        Me.useitem8using.AutoSize = True
-        Me.useitem8using.Location = New System.Drawing.Point(249, 223)
-        Me.useitem8using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem8using.Name = "useitem8using"
-        Me.useitem8using.Size = New System.Drawing.Size(47, 15)
-        Me.useitem8using.TabIndex = 88
-        Me.useitem8using.Text = "Label61"
-        '
-        'useitem8
-        '
-        Me.useitem8.AutoSize = True
-        Me.useitem8.Location = New System.Drawing.Point(3, 223)
-        Me.useitem8.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem8.Name = "useitem8"
-        Me.useitem8.Size = New System.Drawing.Size(47, 15)
-        Me.useitem8.TabIndex = 84
-        Me.useitem8.Text = "Label57"
-        '
-        'useitem7using
-        '
-        Me.useitem7using.AutoSize = True
-        Me.useitem7using.Location = New System.Drawing.Point(249, 195)
-        Me.useitem7using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem7using.Name = "useitem7using"
-        Me.useitem7using.Size = New System.Drawing.Size(47, 15)
-        Me.useitem7using.TabIndex = 87
-        Me.useitem7using.Text = "Label60"
-        '
-        'useitem6using
-        '
-        Me.useitem6using.AutoSize = True
-        Me.useitem6using.Location = New System.Drawing.Point(249, 167)
-        Me.useitem6using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem6using.Name = "useitem6using"
-        Me.useitem6using.Size = New System.Drawing.Size(47, 15)
-        Me.useitem6using.TabIndex = 86
-        Me.useitem6using.Text = "Label59"
-        '
-        'useitem5using
-        '
-        Me.useitem5using.AutoSize = True
-        Me.useitem5using.Location = New System.Drawing.Point(249, 139)
-        Me.useitem5using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem5using.Name = "useitem5using"
-        Me.useitem5using.Size = New System.Drawing.Size(47, 15)
-        Me.useitem5using.TabIndex = 85
-        Me.useitem5using.Text = "Label58"
-        '
-        'useitem4using
-        '
-        Me.useitem4using.AutoSize = True
-        Me.useitem4using.Location = New System.Drawing.Point(249, 111)
-        Me.useitem4using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem4using.Name = "useitem4using"
-        Me.useitem4using.Size = New System.Drawing.Size(47, 15)
-        Me.useitem4using.TabIndex = 51
-        Me.useitem4using.Text = "Label57"
-        '
-        'useitem3using
-        '
-        Me.useitem3using.AutoSize = True
-        Me.useitem3using.Location = New System.Drawing.Point(249, 83)
-        Me.useitem3using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem3using.Name = "useitem3using"
-        Me.useitem3using.Size = New System.Drawing.Size(47, 15)
-        Me.useitem3using.TabIndex = 83
-        Me.useitem3using.Text = "Label56"
-        '
-        'useitemaction22
-        '
-        Me.useitemaction22.Location = New System.Drawing.Point(143, 219)
-        Me.useitemaction22.Name = "useitemaction22"
-        Me.useitemaction22.Size = New System.Drawing.Size(20, 22)
-        Me.useitemaction22.TabIndex = 80
-        Me.useitemaction22.Text = "1"
-        Me.useitemaction22.UseVisualStyleBackColor = True
-        '
-        'useitemaction24
-        '
-        Me.useitemaction24.Location = New System.Drawing.Point(208, 219)
-        Me.useitemaction24.Name = "useitemaction24"
-        Me.useitemaction24.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction24.TabIndex = 82
-        Me.useitemaction24.Text = "All"
-        Me.useitemaction24.UseVisualStyleBackColor = True
-        '
-        'useitemaction23
-        '
-        Me.useitemaction23.Location = New System.Drawing.Point(169, 219)
-        Me.useitemaction23.Name = "useitemaction23"
-        Me.useitemaction23.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction23.TabIndex = 81
-        Me.useitemaction23.Text = "10"
-        Me.useitemaction23.UseVisualStyleBackColor = True
-        '
-        'useitem8count
-        '
-        Me.useitem8count.AutoSize = True
-        Me.useitem8count.Location = New System.Drawing.Point(96, 223)
-        Me.useitem8count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem8count.Name = "useitem8count"
-        Me.useitem8count.Size = New System.Drawing.Size(13, 15)
-        Me.useitem8count.TabIndex = 58
-        Me.useitem8count.Text = "0"
-        '
-        'useitemaction21
-        '
-        Me.useitemaction21.Location = New System.Drawing.Point(208, 191)
-        Me.useitemaction21.Name = "useitemaction21"
-        Me.useitemaction21.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction21.TabIndex = 79
-        Me.useitemaction21.Text = "All"
-        Me.useitemaction21.UseVisualStyleBackColor = True
-        '
-        'useitemaction20
-        '
-        Me.useitemaction20.Location = New System.Drawing.Point(169, 191)
-        Me.useitemaction20.Name = "useitemaction20"
-        Me.useitemaction20.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction20.TabIndex = 78
-        Me.useitemaction20.Text = "10"
-        Me.useitemaction20.UseVisualStyleBackColor = True
-        '
-        'useitemaction19
-        '
-        Me.useitemaction19.Location = New System.Drawing.Point(143, 191)
-        Me.useitemaction19.Name = "useitemaction19"
-        Me.useitemaction19.Size = New System.Drawing.Size(20, 22)
-        Me.useitemaction19.TabIndex = 77
-        Me.useitemaction19.Text = "1"
-        Me.useitemaction19.UseVisualStyleBackColor = True
-        '
-        'useitemaction17
-        '
-        Me.useitemaction17.Location = New System.Drawing.Point(169, 163)
-        Me.useitemaction17.Name = "useitemaction17"
-        Me.useitemaction17.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction17.TabIndex = 75
-        Me.useitemaction17.Text = "10"
-        Me.useitemaction17.UseVisualStyleBackColor = True
-        '
-        'useitemaction18
-        '
-        Me.useitemaction18.Location = New System.Drawing.Point(208, 163)
-        Me.useitemaction18.Name = "useitemaction18"
-        Me.useitemaction18.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction18.TabIndex = 76
-        Me.useitemaction18.Text = "All"
-        Me.useitemaction18.UseVisualStyleBackColor = True
-        '
-        'useitemaction16
-        '
-        Me.useitemaction16.Location = New System.Drawing.Point(143, 163)
-        Me.useitemaction16.Name = "useitemaction16"
-        Me.useitemaction16.Size = New System.Drawing.Size(20, 22)
-        Me.useitemaction16.TabIndex = 74
-        Me.useitemaction16.Text = "1"
-        Me.useitemaction16.UseVisualStyleBackColor = True
-        '
-        'useitemaction15
-        '
-        Me.useitemaction15.Location = New System.Drawing.Point(208, 135)
-        Me.useitemaction15.Name = "useitemaction15"
-        Me.useitemaction15.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction15.TabIndex = 73
-        Me.useitemaction15.Text = "All"
-        Me.useitemaction15.UseVisualStyleBackColor = True
-        '
-        'useitemaction14
-        '
-        Me.useitemaction14.Location = New System.Drawing.Point(169, 135)
-        Me.useitemaction14.Name = "useitemaction14"
-        Me.useitemaction14.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction14.TabIndex = 72
-        Me.useitemaction14.Text = "10"
-        Me.useitemaction14.UseVisualStyleBackColor = True
-        '
-        'useitemaction13
-        '
-        Me.useitemaction13.Location = New System.Drawing.Point(143, 135)
-        Me.useitemaction13.Name = "useitemaction13"
-        Me.useitemaction13.Size = New System.Drawing.Size(20, 22)
-        Me.useitemaction13.TabIndex = 71
-        Me.useitemaction13.Text = "1"
-        Me.useitemaction13.UseVisualStyleBackColor = True
-        '
-        'useitemaction12
-        '
-        Me.useitemaction12.Location = New System.Drawing.Point(208, 107)
-        Me.useitemaction12.Name = "useitemaction12"
-        Me.useitemaction12.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction12.TabIndex = 70
-        Me.useitemaction12.Text = "All"
-        Me.useitemaction12.UseVisualStyleBackColor = True
-        '
-        'useitemaction11
-        '
-        Me.useitemaction11.Location = New System.Drawing.Point(169, 107)
-        Me.useitemaction11.Name = "useitemaction11"
-        Me.useitemaction11.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction11.TabIndex = 69
-        Me.useitemaction11.Text = "10"
-        Me.useitemaction11.UseVisualStyleBackColor = True
-        '
-        'useitemaction10
-        '
-        Me.useitemaction10.Location = New System.Drawing.Point(143, 107)
-        Me.useitemaction10.Name = "useitemaction10"
-        Me.useitemaction10.Size = New System.Drawing.Size(20, 22)
-        Me.useitemaction10.TabIndex = 68
-        Me.useitemaction10.Text = "1"
-        Me.useitemaction10.UseVisualStyleBackColor = True
-        '
-        'useitemaction9
-        '
-        Me.useitemaction9.Location = New System.Drawing.Point(208, 79)
-        Me.useitemaction9.Name = "useitemaction9"
-        Me.useitemaction9.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction9.TabIndex = 67
-        Me.useitemaction9.Text = "All"
-        Me.useitemaction9.UseVisualStyleBackColor = True
-        '
-        'useitemaction8
-        '
-        Me.useitemaction8.Location = New System.Drawing.Point(169, 79)
-        Me.useitemaction8.Name = "useitemaction8"
-        Me.useitemaction8.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction8.TabIndex = 66
-        Me.useitemaction8.Text = "10"
-        Me.useitemaction8.UseVisualStyleBackColor = True
-        '
-        'useitemaction7
-        '
-        Me.useitemaction7.Location = New System.Drawing.Point(143, 79)
-        Me.useitemaction7.Name = "useitemaction7"
-        Me.useitemaction7.Size = New System.Drawing.Size(20, 22)
-        Me.useitemaction7.TabIndex = 65
-        Me.useitemaction7.Text = "1"
-        Me.useitemaction7.UseVisualStyleBackColor = True
-        '
-        'useitemaction5
-        '
-        Me.useitemaction5.Location = New System.Drawing.Point(169, 51)
-        Me.useitemaction5.Name = "useitemaction5"
-        Me.useitemaction5.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction5.TabIndex = 63
-        Me.useitemaction5.Text = "10"
-        Me.useitemaction5.UseVisualStyleBackColor = True
-        '
-        'useitemaction6
-        '
-        Me.useitemaction6.Location = New System.Drawing.Point(208, 51)
-        Me.useitemaction6.Name = "useitemaction6"
-        Me.useitemaction6.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction6.TabIndex = 64
-        Me.useitemaction6.Text = "All"
-        Me.useitemaction6.UseVisualStyleBackColor = True
-        '
-        'useitemaction4
-        '
-        Me.useitemaction4.Location = New System.Drawing.Point(143, 51)
-        Me.useitemaction4.Name = "useitemaction4"
-        Me.useitemaction4.Size = New System.Drawing.Size(20, 22)
-        Me.useitemaction4.TabIndex = 62
-        Me.useitemaction4.Text = "1"
-        Me.useitemaction4.UseVisualStyleBackColor = True
-        '
-        'useitem2using
-        '
-        Me.useitem2using.AutoSize = True
-        Me.useitem2using.Location = New System.Drawing.Point(249, 55)
-        Me.useitem2using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem2using.Name = "useitem2using"
-        Me.useitem2using.Size = New System.Drawing.Size(47, 15)
-        Me.useitem2using.TabIndex = 61
-        Me.useitem2using.Text = "Label55"
-        '
-        'useitemaction3
-        '
-        Me.useitemaction3.Location = New System.Drawing.Point(208, 23)
-        Me.useitemaction3.Name = "useitemaction3"
-        Me.useitemaction3.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction3.TabIndex = 61
-        Me.useitemaction3.Text = "All"
-        Me.useitemaction3.UseVisualStyleBackColor = True
-        '
-        'useitem1using
-        '
-        Me.useitem1using.AutoSize = True
-        Me.useitem1using.Location = New System.Drawing.Point(249, 27)
-        Me.useitem1using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem1using.Name = "useitem1using"
-        Me.useitem1using.Size = New System.Drawing.Size(84, 15)
-        Me.useitem1using.TabIndex = 41
-        Me.useitem1using.Text = "useitem1using"
-        '
-        'Label54
-        '
-        Me.Label54.AutoSize = True
-        Me.Label54.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label54.Location = New System.Drawing.Point(249, 0)
-        Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(38, 15)
-        Me.Label54.TabIndex = 10
-        Me.Label54.Text = "Using"
-        '
-        'useitemaction2
-        '
-        Me.useitemaction2.Location = New System.Drawing.Point(169, 23)
-        Me.useitemaction2.Name = "useitemaction2"
-        Me.useitemaction2.Size = New System.Drawing.Size(33, 22)
-        Me.useitemaction2.TabIndex = 60
-        Me.useitemaction2.Text = "10"
-        Me.useitemaction2.UseVisualStyleBackColor = True
-        '
-        'useitem7count
-        '
-        Me.useitem7count.AutoSize = True
-        Me.useitem7count.Location = New System.Drawing.Point(96, 195)
-        Me.useitem7count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem7count.Name = "useitem7count"
-        Me.useitem7count.Size = New System.Drawing.Size(13, 15)
-        Me.useitem7count.TabIndex = 57
-        Me.useitem7count.Text = "0"
-        '
-        'useitem6count
-        '
-        Me.useitem6count.AutoSize = True
-        Me.useitem6count.Location = New System.Drawing.Point(96, 167)
-        Me.useitem6count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem6count.Name = "useitem6count"
-        Me.useitem6count.Size = New System.Drawing.Size(13, 15)
-        Me.useitem6count.TabIndex = 56
-        Me.useitem6count.Text = "0"
-        '
-        'useitem5count
-        '
-        Me.useitem5count.AutoSize = True
-        Me.useitem5count.Location = New System.Drawing.Point(96, 139)
-        Me.useitem5count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem5count.Name = "useitem5count"
-        Me.useitem5count.Size = New System.Drawing.Size(13, 15)
-        Me.useitem5count.TabIndex = 55
-        Me.useitem5count.Text = "0"
-        '
-        'useitem4count
-        '
-        Me.useitem4count.AutoSize = True
-        Me.useitem4count.Location = New System.Drawing.Point(96, 111)
-        Me.useitem4count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem4count.Name = "useitem4count"
-        Me.useitem4count.Size = New System.Drawing.Size(13, 15)
-        Me.useitem4count.TabIndex = 54
-        Me.useitem4count.Text = "0"
-        '
-        'useitem3count
-        '
-        Me.useitem3count.AutoSize = True
-        Me.useitem3count.Location = New System.Drawing.Point(96, 83)
-        Me.useitem3count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem3count.Name = "useitem3count"
-        Me.useitem3count.Size = New System.Drawing.Size(13, 15)
-        Me.useitem3count.TabIndex = 53
-        Me.useitem3count.Text = "0"
-        '
-        'useitem2count
-        '
-        Me.useitem2count.AutoSize = True
-        Me.useitem2count.Location = New System.Drawing.Point(96, 55)
-        Me.useitem2count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem2count.Name = "useitem2count"
-        Me.useitem2count.Size = New System.Drawing.Size(13, 15)
-        Me.useitem2count.TabIndex = 52
-        Me.useitem2count.Text = "0"
-        '
-        'useitem7
-        '
-        Me.useitem7.AutoSize = True
-        Me.useitem7.Location = New System.Drawing.Point(3, 195)
-        Me.useitem7.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem7.Name = "useitem7"
-        Me.useitem7.Size = New System.Drawing.Size(47, 15)
-        Me.useitem7.TabIndex = 50
-        Me.useitem7.Text = "Label57"
-        '
-        'useitem6
-        '
-        Me.useitem6.AutoSize = True
-        Me.useitem6.Location = New System.Drawing.Point(3, 167)
-        Me.useitem6.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem6.Name = "useitem6"
-        Me.useitem6.Size = New System.Drawing.Size(47, 15)
-        Me.useitem6.TabIndex = 49
-        Me.useitem6.Text = "Label57"
-        '
-        'useitem5
-        '
-        Me.useitem5.AutoSize = True
-        Me.useitem5.Location = New System.Drawing.Point(3, 139)
-        Me.useitem5.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem5.Name = "useitem5"
-        Me.useitem5.Size = New System.Drawing.Size(47, 15)
-        Me.useitem5.TabIndex = 48
-        Me.useitem5.Text = "Label57"
-        '
-        'useitem4
-        '
-        Me.useitem4.AutoSize = True
-        Me.useitem4.Location = New System.Drawing.Point(3, 111)
-        Me.useitem4.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem4.Name = "useitem4"
-        Me.useitem4.Size = New System.Drawing.Size(47, 15)
-        Me.useitem4.TabIndex = 47
-        Me.useitem4.Text = "Label57"
-        '
-        'useitem3
-        '
-        Me.useitem3.AutoSize = True
-        Me.useitem3.Location = New System.Drawing.Point(3, 83)
-        Me.useitem3.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem3.Name = "useitem3"
-        Me.useitem3.Size = New System.Drawing.Size(47, 15)
-        Me.useitem3.TabIndex = 46
-        Me.useitem3.Text = "Label56"
-        '
-        'useitem1
-        '
-        Me.useitem1.AutoSize = True
-        Me.useitem1.Location = New System.Drawing.Point(3, 27)
-        Me.useitem1.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem1.Name = "useitem1"
-        Me.useitem1.Size = New System.Drawing.Size(55, 15)
-        Me.useitem1.TabIndex = 43
-        Me.useitem1.Text = "useitem1"
-        '
-        'useitem1count
-        '
-        Me.useitem1count.AutoSize = True
-        Me.useitem1count.Location = New System.Drawing.Point(96, 27)
-        Me.useitem1count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem1count.Name = "useitem1count"
-        Me.useitem1count.Size = New System.Drawing.Size(13, 15)
-        Me.useitem1count.TabIndex = 44
-        Me.useitem1count.Text = "0"
-        '
-        'useitem2
-        '
-        Me.useitem2.AutoSize = True
-        Me.useitem2.Location = New System.Drawing.Point(3, 55)
-        Me.useitem2.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.useitem2.Name = "useitem2"
-        Me.useitem2.Size = New System.Drawing.Size(47, 15)
-        Me.useitem2.TabIndex = 45
-        Me.useitem2.Text = "Label55"
-        '
-        'useitemaction1
-        '
-        Me.useitemaction1.Location = New System.Drawing.Point(143, 23)
-        Me.useitemaction1.Name = "useitemaction1"
-        Me.useitemaction1.Size = New System.Drawing.Size(20, 22)
-        Me.useitemaction1.TabIndex = 59
-        Me.useitemaction1.Text = "1"
-        Me.useitemaction1.UseVisualStyleBackColor = True
-        '
-        'Label53
-        '
-        Me.Label53.AutoSize = True
-        Me.TableLayoutPanel2.SetColumnSpan(Me.Label53, 3)
-        Me.Label53.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label53.Location = New System.Drawing.Point(143, 0)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(43, 15)
-        Me.Label53.TabIndex = 9
-        Me.Label53.Text = "Action"
-        '
-        'Label52
-        '
-        Me.Label52.AutoSize = True
-        Me.Label52.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(96, 0)
-        Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(40, 15)
-        Me.Label52.TabIndex = 8
-        Me.Label52.Text = "Count"
-        '
-        'Label51
-        '
-        Me.Label51.AutoSize = True
-        Me.Label51.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label51.Location = New System.Drawing.Point(3, 0)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(40, 15)
-        Me.Label51.TabIndex = 7
-        Me.Label51.Text = "Name"
-        '
-        'Material
-        '
-        Me.Material.Controls.Add(Me.Panel16)
-        Me.Material.Controls.Add(Me.Label55)
-        Me.Material.Controls.Add(Me.ListBox1)
-        Me.Material.Location = New System.Drawing.Point(4, 24)
-        Me.Material.Name = "Material"
-        Me.Material.Size = New System.Drawing.Size(416, 256)
-        Me.Material.TabIndex = 2
-        Me.Material.Text = "Material"
-        Me.Material.UseVisualStyleBackColor = True
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 15
-        Me.ListBox1.Items.AddRange(New Object() {"Awaken Using", "RegionID1", "RegionID2", "RegionID3", "RegionID4", "RegionID5", "RegionID6", "RegionID7", "RegionID8"})
-        Me.ListBox1.Location = New System.Drawing.Point(7, 27)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(140, 139)
-        Me.ListBox1.TabIndex = 0
-        '
-        'Label55
-        '
-        Me.Label55.AutoSize = True
-        Me.Label55.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.Label55.Location = New System.Drawing.Point(3, 3)
-        Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(153, 21)
-        Me.Label55.TabIndex = 1
-        Me.Label55.Text = "Material Distribution"
-        '
-        'Panel16
-        '
-        Me.Panel16.Controls.Add(Me.TableLayoutPanel3)
-        Me.Panel16.Location = New System.Drawing.Point(149, 27)
-        Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(264, 223)
-        Me.Panel16.TabIndex = 2
-        '
-        'TableLayoutPanel3
-        '
-        Me.TableLayoutPanel3.ColumnCount = 2
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.92424!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.07576!))
-        Me.TableLayoutPanel3.Controls.Add(Me.Label56, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Label57, 1, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.materialLabel, 0, 1)
-        Me.TableLayoutPanel3.Controls.Add(Me.MaterialCountLabel, 1, 1)
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 2
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 208.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(264, 226)
-        Me.TableLayoutPanel3.TabIndex = 0
-        '
-        'MaterialCountLabel
-        '
-        Me.MaterialCountLabel.AutoSize = True
-        Me.MaterialCountLabel.Location = New System.Drawing.Point(213, 18)
-        Me.MaterialCountLabel.Name = "MaterialCountLabel"
-        Me.MaterialCountLabel.Size = New System.Drawing.Size(38, 15)
-        Me.MaterialCountLabel.TabIndex = 3
-        Me.MaterialCountLabel.Text = "count"
-        '
-        'materialLabel
-        '
-        Me.materialLabel.AutoSize = True
-        Me.materialLabel.Location = New System.Drawing.Point(3, 18)
-        Me.materialLabel.Name = "materialLabel"
-        Me.materialLabel.Size = New System.Drawing.Size(50, 15)
-        Me.materialLabel.TabIndex = 2
-        Me.materialLabel.Text = "material"
-        '
-        'Label57
-        '
-        Me.Label57.AutoSize = True
-        Me.Label57.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label57.Location = New System.Drawing.Point(213, 0)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(40, 15)
-        Me.Label57.TabIndex = 1
-        Me.Label57.Text = "Count"
-        '
-        'Label56
-        '
-        Me.Label56.AutoSize = True
-        Me.Label56.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label56.Location = New System.Drawing.Point(3, 0)
-        Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(53, 15)
-        Me.Label56.TabIndex = 0
-        Me.Label56.Text = "Material"
-        '
-        'Artifact
-        '
-        Me.Artifact.Controls.Add(Me.TableLayoutPanel1)
-        Me.Artifact.Location = New System.Drawing.Point(4, 24)
-        Me.Artifact.Name = "Artifact"
-        Me.Artifact.Padding = New System.Windows.Forms.Padding(3)
-        Me.Artifact.Size = New System.Drawing.Size(416, 256)
-        Me.Artifact.TabIndex = 1
-        Me.Artifact.Text = "Artifact"
-        Me.Artifact.UseVisualStyleBackColor = True
-        '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.ColumnCount = 4
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.28708!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.71292!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.item7value, 2, 7)
-        Me.TableLayoutPanel1.Controls.Add(Me.item7Buffs, 3, 7)
-        Me.TableLayoutPanel1.Controls.Add(Me.item6value, 2, 6)
-        Me.TableLayoutPanel1.Controls.Add(Me.item6Buffs, 3, 6)
-        Me.TableLayoutPanel1.Controls.Add(Me.item5value, 2, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.item5Buffs, 3, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.item4value, 2, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.item4Buffs, 3, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.item3value, 2, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.item3Buffs, 3, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.item2value, 2, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.item2Buffs, 3, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.item1Buffs, 3, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.item1value, 2, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label45, 3, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label44, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label43, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Item1Labels, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label42, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Item2Labels, 0, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.Item3Labels, 0, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.Item4Labels, 0, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.Item5Labels, 0, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.Item6Labels, 0, 6)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button15, 1, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button16, 1, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button17, 1, 6)
-        Me.TableLayoutPanel1.Controls.Add(Me.ItemSell1, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button13, 1, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button14, 1, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.Item7Labels, 0, 7)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button18, 1, 7)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label47, 0, 8)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 9
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28566!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(410, 250)
-        Me.TableLayoutPanel1.TabIndex = 6
-        '
-        'Label47
-        '
-        Me.Label47.AutoSize = True
-        Me.Label47.Location = New System.Drawing.Point(3, 233)
-        Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(0, 15)
-        Me.Label47.TabIndex = 38
-        '
-        'Button18
-        '
-        Me.Button18.Location = New System.Drawing.Point(121, 206)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(71, 22)
-        Me.Button18.TabIndex = 21
-        Me.Button18.Text = "Button13"
-        Me.Button18.UseVisualStyleBackColor = True
-        '
-        'Item7Labels
-        '
-        Me.Item7Labels.AutoSize = True
-        Me.Item7Labels.Location = New System.Drawing.Point(3, 210)
-        Me.Item7Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.Item7Labels.Name = "Item7Labels"
-        Me.Item7Labels.Size = New System.Drawing.Size(84, 15)
-        Me.Item7Labels.TabIndex = 20
-        Me.Item7Labels.Text = "item1database"
-        '
-        'Button14
-        '
-        Me.Button14.Location = New System.Drawing.Point(121, 86)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(71, 22)
-        Me.Button14.TabIndex = 16
-        Me.Button14.Text = "Button13"
-        Me.Button14.UseVisualStyleBackColor = True
-        '
-        'Button13
-        '
-        Me.Button13.Location = New System.Drawing.Point(121, 56)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(71, 22)
-        Me.Button13.TabIndex = 15
-        Me.Button13.Text = "Button13"
-        Me.Button13.UseVisualStyleBackColor = True
-        '
-        'ItemSell1
-        '
-        Me.ItemSell1.Location = New System.Drawing.Point(121, 26)
-        Me.ItemSell1.Name = "ItemSell1"
-        Me.ItemSell1.Size = New System.Drawing.Size(71, 22)
-        Me.ItemSell1.TabIndex = 5
-        Me.ItemSell1.Text = "Button13"
-        Me.ItemSell1.UseVisualStyleBackColor = True
-        '
-        'Button17
-        '
-        Me.Button17.Location = New System.Drawing.Point(121, 176)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(71, 22)
-        Me.Button17.TabIndex = 19
-        Me.Button17.Text = "Button13"
-        Me.Button17.UseVisualStyleBackColor = True
-        '
-        'Button16
-        '
-        Me.Button16.Location = New System.Drawing.Point(121, 146)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(71, 22)
-        Me.Button16.TabIndex = 18
-        Me.Button16.Text = "Button13"
-        Me.Button16.UseVisualStyleBackColor = True
-        '
-        'Button15
-        '
-        Me.Button15.Location = New System.Drawing.Point(121, 116)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(71, 22)
-        Me.Button15.TabIndex = 17
-        Me.Button15.Text = "Button13"
-        Me.Button15.UseVisualStyleBackColor = True
-        '
-        'Item6Labels
-        '
-        Me.Item6Labels.AutoSize = True
-        Me.Item6Labels.Location = New System.Drawing.Point(3, 180)
-        Me.Item6Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.Item6Labels.Name = "Item6Labels"
-        Me.Item6Labels.Size = New System.Drawing.Size(84, 15)
-        Me.Item6Labels.TabIndex = 14
-        Me.Item6Labels.Text = "item1database"
-        '
-        'Item5Labels
-        '
-        Me.Item5Labels.AutoSize = True
-        Me.Item5Labels.Location = New System.Drawing.Point(3, 150)
-        Me.Item5Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.Item5Labels.Name = "Item5Labels"
-        Me.Item5Labels.Size = New System.Drawing.Size(84, 15)
-        Me.Item5Labels.TabIndex = 13
-        Me.Item5Labels.Text = "item1database"
-        '
-        'Item4Labels
-        '
-        Me.Item4Labels.AutoSize = True
-        Me.Item4Labels.Location = New System.Drawing.Point(3, 120)
-        Me.Item4Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.Item4Labels.Name = "Item4Labels"
-        Me.Item4Labels.Size = New System.Drawing.Size(84, 15)
-        Me.Item4Labels.TabIndex = 12
-        Me.Item4Labels.Text = "item1database"
-        '
-        'Item3Labels
-        '
-        Me.Item3Labels.AutoSize = True
-        Me.Item3Labels.Location = New System.Drawing.Point(3, 90)
-        Me.Item3Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.Item3Labels.Name = "Item3Labels"
-        Me.Item3Labels.Size = New System.Drawing.Size(84, 15)
-        Me.Item3Labels.TabIndex = 11
-        Me.Item3Labels.Text = "item1database"
-        '
-        'Item2Labels
-        '
-        Me.Item2Labels.AutoSize = True
-        Me.Item2Labels.Location = New System.Drawing.Point(3, 60)
-        Me.Item2Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.Item2Labels.Name = "Item2Labels"
-        Me.Item2Labels.Size = New System.Drawing.Size(84, 15)
-        Me.Item2Labels.TabIndex = 10
-        Me.Item2Labels.Text = "item1database"
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.Location = New System.Drawing.Point(3, 0)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(40, 15)
-        Me.Label42.TabIndex = 6
-        Me.Label42.Text = "Name"
-        '
-        'Item1Labels
-        '
-        Me.Item1Labels.AutoSize = True
-        Me.Item1Labels.Location = New System.Drawing.Point(3, 30)
-        Me.Item1Labels.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.Item1Labels.Name = "Item1Labels"
-        Me.Item1Labels.Size = New System.Drawing.Size(84, 15)
-        Me.Item1Labels.TabIndex = 3
-        Me.Item1Labels.Text = "item1database"
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.Location = New System.Drawing.Point(121, 0)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(43, 15)
-        Me.Label43.TabIndex = 7
-        Me.Label43.Text = "Action"
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(198, 0)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(37, 15)
-        Me.Label44.TabIndex = 8
-        Me.Label44.Text = "Value"
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(310, 0)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(37, 15)
-        Me.Label45.TabIndex = 9
-        Me.Label45.Text = "Buffs"
-        '
-        'item1value
-        '
-        Me.item1value.AutoSize = True
-        Me.item1value.Location = New System.Drawing.Point(198, 30)
-        Me.item1value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item1value.Name = "item1value"
-        Me.item1value.Size = New System.Drawing.Size(65, 15)
-        Me.item1value.TabIndex = 39
-        Me.item1value.Text = "item1value"
-        '
-        'item1Buffs
-        '
-        Me.item1Buffs.AutoSize = True
-        Me.item1Buffs.Location = New System.Drawing.Point(310, 30)
-        Me.item1Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item1Buffs.Name = "item1Buffs"
-        Me.item1Buffs.Size = New System.Drawing.Size(64, 15)
-        Me.item1Buffs.TabIndex = 40
-        Me.item1Buffs.Text = "item1Buffs"
-        '
-        'item2Buffs
-        '
-        Me.item2Buffs.AutoSize = True
-        Me.item2Buffs.Location = New System.Drawing.Point(310, 60)
-        Me.item2Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item2Buffs.Name = "item2Buffs"
-        Me.item2Buffs.Size = New System.Drawing.Size(64, 15)
-        Me.item2Buffs.TabIndex = 41
-        Me.item2Buffs.Text = "item2Buffs"
-        '
-        'item2value
-        '
-        Me.item2value.AutoSize = True
-        Me.item2value.Location = New System.Drawing.Point(198, 60)
-        Me.item2value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item2value.Name = "item2value"
-        Me.item2value.Size = New System.Drawing.Size(65, 15)
-        Me.item2value.TabIndex = 42
-        Me.item2value.Text = "item2value"
-        '
-        'item3Buffs
-        '
-        Me.item3Buffs.AutoSize = True
-        Me.item3Buffs.Location = New System.Drawing.Point(310, 90)
-        Me.item3Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item3Buffs.Name = "item3Buffs"
-        Me.item3Buffs.Size = New System.Drawing.Size(64, 15)
-        Me.item3Buffs.TabIndex = 43
-        Me.item3Buffs.Text = "item3Buffs"
-        '
-        'item3value
-        '
-        Me.item3value.AutoSize = True
-        Me.item3value.Location = New System.Drawing.Point(198, 90)
-        Me.item3value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item3value.Name = "item3value"
-        Me.item3value.Size = New System.Drawing.Size(65, 15)
-        Me.item3value.TabIndex = 44
-        Me.item3value.Text = "item3value"
-        '
-        'item4Buffs
-        '
-        Me.item4Buffs.AutoSize = True
-        Me.item4Buffs.Location = New System.Drawing.Point(310, 120)
-        Me.item4Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item4Buffs.Name = "item4Buffs"
-        Me.item4Buffs.Size = New System.Drawing.Size(64, 15)
-        Me.item4Buffs.TabIndex = 45
-        Me.item4Buffs.Text = "item4Buffs"
-        '
-        'item4value
-        '
-        Me.item4value.AutoSize = True
-        Me.item4value.Location = New System.Drawing.Point(198, 120)
-        Me.item4value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item4value.Name = "item4value"
-        Me.item4value.Size = New System.Drawing.Size(65, 15)
-        Me.item4value.TabIndex = 46
-        Me.item4value.Text = "item4value"
-        '
-        'item5Buffs
-        '
-        Me.item5Buffs.AutoSize = True
-        Me.item5Buffs.Location = New System.Drawing.Point(310, 150)
-        Me.item5Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item5Buffs.Name = "item5Buffs"
-        Me.item5Buffs.Size = New System.Drawing.Size(64, 15)
-        Me.item5Buffs.TabIndex = 47
-        Me.item5Buffs.Text = "item5Buffs"
-        '
-        'item5value
-        '
-        Me.item5value.AutoSize = True
-        Me.item5value.Location = New System.Drawing.Point(198, 150)
-        Me.item5value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item5value.Name = "item5value"
-        Me.item5value.Size = New System.Drawing.Size(65, 15)
-        Me.item5value.TabIndex = 48
-        Me.item5value.Text = "item5value"
-        '
-        'item6Buffs
-        '
-        Me.item6Buffs.AutoSize = True
-        Me.item6Buffs.Location = New System.Drawing.Point(310, 180)
-        Me.item6Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item6Buffs.Name = "item6Buffs"
-        Me.item6Buffs.Size = New System.Drawing.Size(64, 15)
-        Me.item6Buffs.TabIndex = 49
-        Me.item6Buffs.Text = "item6Buffs"
-        '
-        'item6value
-        '
-        Me.item6value.AutoSize = True
-        Me.item6value.Location = New System.Drawing.Point(198, 180)
-        Me.item6value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item6value.Name = "item6value"
-        Me.item6value.Size = New System.Drawing.Size(65, 15)
-        Me.item6value.TabIndex = 50
-        Me.item6value.Text = "item6value"
-        '
-        'item7Buffs
-        '
-        Me.item7Buffs.AutoSize = True
-        Me.item7Buffs.Location = New System.Drawing.Point(310, 210)
-        Me.item7Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item7Buffs.Name = "item7Buffs"
-        Me.item7Buffs.Size = New System.Drawing.Size(64, 15)
-        Me.item7Buffs.TabIndex = 51
-        Me.item7Buffs.Text = "item7Buffs"
-        '
-        'item7value
-        '
-        Me.item7value.AutoSize = True
-        Me.item7value.Location = New System.Drawing.Point(198, 210)
-        Me.item7value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
-        Me.item7value.Name = "item7value"
-        Me.item7value.Size = New System.Drawing.Size(65, 15)
-        Me.item7value.TabIndex = 52
-        Me.item7value.Text = "item7value"
-        '
-        'Buffs
-        '
-        Me.Buffs.Controls.Add(Me.TextBox2)
-        Me.Buffs.Location = New System.Drawing.Point(4, 24)
-        Me.Buffs.Name = "Buffs"
-        Me.Buffs.Padding = New System.Windows.Forms.Padding(3)
-        Me.Buffs.Size = New System.Drawing.Size(416, 256)
-        Me.Buffs.TabIndex = 0
-        Me.Buffs.Text = "Buffs"
-        Me.Buffs.UseVisualStyleBackColor = True
-        '
-        'TextBox2
-        '
-        Me.TextBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox2.Location = New System.Drawing.Point(3, 3)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(410, 256)
-        Me.TextBox2.TabIndex = 0
-        Me.TextBox2.Text = "buffslist"
-        '
-        'Tour
-        '
-        Me.Tour.Controls.Add(Me.CheckBox1)
-        Me.Tour.Controls.Add(Me.Label24)
-        Me.Tour.Controls.Add(Me.Panel9)
-        Me.Tour.Controls.Add(Me.Button7)
-        Me.Tour.Location = New System.Drawing.Point(4, 24)
-        Me.Tour.Name = "Tour"
-        Me.Tour.Size = New System.Drawing.Size(423, 280)
-        Me.Tour.TabIndex = 3
-        Me.Tour.Text = "Tour"
-        Me.Tour.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(323, 254)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(98, 23)
-        Me.Button7.TabIndex = 2
-        Me.Button7.Text = "Go Forward"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Panel9
-        '
-        Me.Panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel9.Controls.Add(Me.Panel10)
-        Me.Panel9.Controls.Add(Me.Label25)
-        Me.Panel9.Location = New System.Drawing.Point(3, 3)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(417, 249)
-        Me.Panel9.TabIndex = 5
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(173, 119)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(65, 15)
-        Me.Label25.TabIndex = 0
-        Me.Label25.Text = "No Mobs..."
-        '
-        'Panel10
-        '
-        Me.Panel10.Controls.Add(Me.Panel15)
-        Me.Panel10.Controls.Add(Me.GroupBox5)
-        Me.Panel10.Controls.Add(Me.Panel11)
-        Me.Panel10.Controls.Add(Me.Label26)
-        Me.Panel10.Controls.Add(Me.CurEnemyData2)
-        Me.Panel10.Controls.Add(Me.CurEnemyData1)
-        Me.Panel10.Location = New System.Drawing.Point(-1, -1)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(417, 249)
-        Me.Panel10.TabIndex = 1
-        '
-        'CurEnemyData1
-        '
-        Me.CurEnemyData1.AutoSize = True
-        Me.CurEnemyData1.Location = New System.Drawing.Point(8, 10)
-        Me.CurEnemyData1.Name = "CurEnemyData1"
-        Me.CurEnemyData1.Size = New System.Drawing.Size(73, 15)
-        Me.CurEnemyData1.TabIndex = 0
-        Me.CurEnemyData1.Text = "enemyname"
-        '
-        'CurEnemyData2
-        '
-        Me.CurEnemyData2.AutoSize = True
-        Me.CurEnemyData2.Location = New System.Drawing.Point(97, 34)
-        Me.CurEnemyData2.Name = "CurEnemyData2"
-        Me.CurEnemyData2.Size = New System.Drawing.Size(40, 15)
-        Me.CurEnemyData2.TabIndex = 1
-        Me.CurEnemyData2.Text = "health"
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(9, 34)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(42, 15)
-        Me.Label26.TabIndex = 2
-        Me.Label26.Text = "Health"
-        '
-        'Panel11
-        '
-        Me.Panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel11.Controls.Add(Me.Button11)
-        Me.Panel11.Controls.Add(Me.Button10)
-        Me.Panel11.Controls.Add(Me.Button9)
-        Me.Panel11.Controls.Add(Me.Button8)
-        Me.Panel11.Controls.Add(Me.BattleMessage)
-        Me.Panel11.Location = New System.Drawing.Point(208, 4)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(206, 241)
-        Me.Panel11.TabIndex = 9
-        '
-        'BattleMessage
-        '
-        Me.BattleMessage.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BattleMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.BattleMessage.Location = New System.Drawing.Point(-1, -2)
-        Me.BattleMessage.Multiline = True
-        Me.BattleMessage.Name = "BattleMessage"
-        Me.BattleMessage.ReadOnly = True
-        Me.BattleMessage.Size = New System.Drawing.Size(206, 181)
-        Me.BattleMessage.TabIndex = 14
-        Me.BattleMessage.Text = "battlemessage" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'Button8
-        '
-        Me.Button8.Location = New System.Drawing.Point(3, 185)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(98, 23)
-        Me.Button8.TabIndex = 0
-        Me.Button8.Text = "Attack"
-        Me.Button8.UseVisualStyleBackColor = True
-        '
-        'Button9
-        '
-        Me.Button9.Location = New System.Drawing.Point(105, 185)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(98, 23)
-        Me.Button9.TabIndex = 1
-        Me.Button9.Text = "Ele. Attack"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(3, 214)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(98, 23)
-        Me.Button10.TabIndex = 2
-        Me.Button10.Text = "Block"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
-        'Button11
-        '
-        Me.Button11.Location = New System.Drawing.Point(105, 214)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(98, 23)
-        Me.Button11.TabIndex = 3
-        Me.Button11.Text = "Run"
-        Me.Button11.UseVisualStyleBackColor = True
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Location = New System.Drawing.Point(6, 138)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(196, 107)
-        Me.GroupBox5.TabIndex = 10
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Skills"
-        '
-        'Panel15
-        '
-        Me.Panel15.Controls.Add(Me.CurEnemyData6)
-        Me.Panel15.Controls.Add(Me.Label27)
-        Me.Panel15.Controls.Add(Me.CurEnemyData5)
-        Me.Panel15.Controls.Add(Me.CurEnemyData3)
-        Me.Panel15.Controls.Add(Me.CurEnemyData4)
-        Me.Panel15.Controls.Add(Me.Label29)
-        Me.Panel15.Controls.Add(Me.Label30)
-        Me.Panel15.Controls.Add(Me.Label28)
-        Me.Panel15.Location = New System.Drawing.Point(6, 54)
-        Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(175, 81)
-        Me.Panel15.TabIndex = 9
-        Me.Panel15.Visible = False
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(3, 40)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(52, 15)
-        Me.Label28.TabIndex = 7
-        Me.Label28.Text = "Crit Rate"
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(3, 60)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(73, 15)
-        Me.Label30.TabIndex = 8
-        Me.Label30.Text = "Crit Damage"
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(3, 20)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(49, 15)
-        Me.Label29.TabIndex = 6
-        Me.Label29.Text = "Defense"
-        '
-        'CurEnemyData4
-        '
-        Me.CurEnemyData4.AutoSize = True
-        Me.CurEnemyData4.Location = New System.Drawing.Point(91, 20)
-        Me.CurEnemyData4.Name = "CurEnemyData4"
-        Me.CurEnemyData4.Size = New System.Drawing.Size(48, 15)
-        Me.CurEnemyData4.TabIndex = 5
-        Me.CurEnemyData4.Text = "defense"
-        '
-        'CurEnemyData3
-        '
-        Me.CurEnemyData3.AutoSize = True
-        Me.CurEnemyData3.Location = New System.Drawing.Point(91, 0)
-        Me.CurEnemyData3.Name = "CurEnemyData3"
-        Me.CurEnemyData3.Size = New System.Drawing.Size(39, 15)
-        Me.CurEnemyData3.TabIndex = 3
-        Me.CurEnemyData3.Text = "attack"
-        '
-        'CurEnemyData5
-        '
-        Me.CurEnemyData5.AutoSize = True
-        Me.CurEnemyData5.Location = New System.Drawing.Point(91, 40)
-        Me.CurEnemyData5.Name = "CurEnemyData5"
-        Me.CurEnemyData5.Size = New System.Drawing.Size(33, 15)
-        Me.CurEnemyData5.TabIndex = 11
-        Me.CurEnemyData5.Text = "crate"
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(3, 0)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(41, 15)
-        Me.Label27.TabIndex = 4
-        Me.Label27.Text = "Attack"
-        '
-        'CurEnemyData6
-        '
-        Me.CurEnemyData6.AutoSize = True
-        Me.CurEnemyData6.Location = New System.Drawing.Point(91, 60)
-        Me.CurEnemyData6.Name = "CurEnemyData6"
-        Me.CurEnemyData6.Size = New System.Drawing.Size(38, 15)
-        Me.CurEnemyData6.TabIndex = 12
-        Me.CurEnemyData6.Text = "cdmg"
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(3, 258)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(84, 15)
-        Me.Label24.TabIndex = 4
-        Me.Label24.Text = "Tour Distance: "
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(232, 257)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(85, 19)
-        Me.CheckBox1.TabIndex = 1
-        Me.CheckBox1.Text = "Auto Battle"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'TabControl2
-        '
-        Me.TabControl2.Controls.Add(Me.Tour)
-        Me.TabControl2.Controls.Add(Me.Inventory)
-        Me.TabControl2.Controls.Add(Me.Equipment)
-        Me.TabControl2.Controls.Add(Me.Options)
-        Me.TabControl2.Location = New System.Drawing.Point(6, 20)
-        Me.TabControl2.Name = "TabControl2"
-        Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(431, 308)
-        Me.TabControl2.TabIndex = 1
-        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -2921,6 +2921,47 @@ Partial Class MainForm
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
+        Me.TabControl2.ResumeLayout(False)
+        Me.Tour.ResumeLayout(False)
+        Me.Tour.PerformLayout()
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
+        Me.Panel15.ResumeLayout(False)
+        Me.Panel15.PerformLayout()
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel11.PerformLayout()
+        Me.Inventory.ResumeLayout(False)
+        Me.TabControl3.ResumeLayout(False)
+        Me.BuffsTab.ResumeLayout(False)
+        Me.BuffsTab.PerformLayout()
+        Me.ArtifactTab.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.PerformLayout()
+        Me.MaterialTab.ResumeLayout(False)
+        Me.MaterialTab.PerformLayout()
+        Me.Panel16.ResumeLayout(False)
+        Me.MaterialTable.ResumeLayout(False)
+        Me.MaterialTable.PerformLayout()
+        Me.ItemsTab.ResumeLayout(False)
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel2.PerformLayout()
+        Me.Equipment.ResumeLayout(False)
+        Me.Equipment.PerformLayout()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Options.ResumeLayout(False)
+        Me.Panel12.ResumeLayout(False)
+        Me.Panel12.PerformLayout()
+        Me.Panel14.ResumeLayout(False)
+        Me.Panel14.PerformLayout()
+        Me.Panel13.ResumeLayout(False)
+        Me.Panel13.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.Panel7.ResumeLayout(False)
@@ -2930,47 +2971,6 @@ Partial Class MainForm
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Options.ResumeLayout(False)
-        Me.Panel12.ResumeLayout(False)
-        Me.Panel12.PerformLayout()
-        Me.Panel13.ResumeLayout(False)
-        Me.Panel13.PerformLayout()
-        Me.Panel14.ResumeLayout(False)
-        Me.Panel14.PerformLayout()
-        Me.Equipment.ResumeLayout(False)
-        Me.Equipment.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Inventory.ResumeLayout(False)
-        Me.TabControl3.ResumeLayout(False)
-        Me.Items.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel2.PerformLayout()
-        Me.Material.ResumeLayout(False)
-        Me.Material.PerformLayout()
-        Me.Panel16.ResumeLayout(False)
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.TableLayoutPanel3.PerformLayout()
-        Me.Artifact.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
-        Me.Buffs.ResumeLayout(False)
-        Me.Buffs.PerformLayout()
-        Me.Tour.ResumeLayout(False)
-        Me.Tour.PerformLayout()
-        Me.Panel9.ResumeLayout(False)
-        Me.Panel9.PerformLayout()
-        Me.Panel10.ResumeLayout(False)
-        Me.Panel10.PerformLayout()
-        Me.Panel11.ResumeLayout(False)
-        Me.Panel11.PerformLayout()
-        Me.Panel15.ResumeLayout(False)
-        Me.Panel15.PerformLayout()
-        Me.TabControl2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3088,9 +3088,9 @@ Partial Class MainForm
     Friend WithEvents Button7 As Button
     Friend WithEvents Inventory As TabPage
     Friend WithEvents TabControl3 As TabControl
-    Friend WithEvents Buffs As TabPage
+    Friend WithEvents BuffsTab As TabPage
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Artifact As TabPage
+    Friend WithEvents ArtifactTab As TabPage
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents item7value As Label
     Friend WithEvents item7Buffs As Label
@@ -3125,16 +3125,16 @@ Partial Class MainForm
     Friend WithEvents Item7Labels As Label
     Friend WithEvents Button18 As Button
     Friend WithEvents Label47 As Label
-    Friend WithEvents Material As TabPage
+    Friend WithEvents MaterialTab As TabPage
     Friend WithEvents Panel16 As Panel
-    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents MaterialTable As TableLayoutPanel
     Friend WithEvents Label56 As Label
     Friend WithEvents Label57 As Label
     Friend WithEvents materialLabel As Label
     Friend WithEvents MaterialCountLabel As Label
     Friend WithEvents Label55 As Label
     Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents Items As TabPage
+    Friend WithEvents ItemsTab As TabPage
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Label51 As Label
     Friend WithEvents Label52 As Label

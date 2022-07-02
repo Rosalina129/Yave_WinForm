@@ -63,6 +63,7 @@ Public Class MainForm
     Public Basic As InitBasic
 
     Public UseItem(8) As Int16
+    Public Material(8) As Int16
     '726, 601
     Private Sub ErrorOccurred()
         MsgBox("An unknown error occurred while attempting to perform this function.", vbYes, Me.Text)

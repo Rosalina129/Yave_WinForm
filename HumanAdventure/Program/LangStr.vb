@@ -267,7 +267,7 @@
         {"Deals double damage to enemies.", "对敌方造成二倍伤害。"}
         }
     Public Shared s_item As String(,) = {
-        {"None", "空"}，
+        {"None", "空"}，'0
         {"XP Reagent", "XP 试剂"}，'Common Start
         {"XP Flask", "XP 烧瓶"}，
         {"XP Potion", "XP 药剂"}，
@@ -370,8 +370,8 @@
         {"Lizard Leather", "蜥蜴皮"}，
         {"Frog", "青蛙"}，
         {"Tadpole", "蝌蚪"}，
-        {"", ""},
-        {"", ""},
+        {"Mud Brick", "砖泥"},
+        {"Heart-Love", "爱心之心"},
         {"Walnut Wood", "胡桃"}，
         {"Walnut", "核桃"}，
         {"Lettuce", "生菜"}，
@@ -388,20 +388,32 @@
         {"Hell Ingot", "狱锭"}，
         {"Hell Chunk", "狱块"}，
         {"Coal Solution", "煤溶液"}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，'Deepevil Volcano End
-        {"Karst Cave Mine", "溶洞矿场"},
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
-        {"", ""}，
+        {"Platinum", "铂金锭"}，
+        {"Platinum Chunk", "铂金块"}，
+        {"Sulfur Dioxide", "二氧化硫"}，
+        {"Coal Dust", "碳粉"}，
+        {"Gold Dust", "金粉"}，'Deepevil Volcano End
+        {"Model Steel Ingot", "塑钢锭"}，'Karst Cave Mine Start
+        {"Limestone", "石灰岩"}，
+        {"Mineral Water", "矿泉水"}，
+        {"Model Steel Stick", "塑钢棍"}，
+        {"Emerald", "绿宝石"}，
+        {"Amethyst", "紫水晶"}，
+        {"Broken Pickaxe", "损坏的稿子"}，
+        {"Sandstone", "砂岩"}，
+        {"Firefly", "萤火虫"}，
+        {"Axolotl Saliva", "美西螈的唾液"}，
+        {"Magnet", "磁石"}，
+        {"Magnet", "磁锭"}，
+        {"Giant Clam", "砗磲"}，
+        {"Fossil", "化石"}，
+        {"Osmium Ingot", "锇锭"}，
+        {"Osmium Chunk", "锇块"}，'Karst Cave Mine End
+        {"Brozen Yave's Tours", "铜牌 Yave's Tours"},
+        {"Sliver Yave's Tours", "银牌 Yave's Tours"},
+        {"Gold Yave's Tours", "金牌 Yave's Tours"}
+        }
+    Public Shared s_itemsmith As String(,) = {
         {"", ""}，
         {"", ""}，
         {"", ""}，
@@ -412,7 +424,7 @@
         {"", ""}，
         {"", ""}
         }
-    Public Shared s_itemsmith As String(,) = {
+    Public Shared s_equip As String(,) = {
         {"", ""}，
         {"", ""}，
         {"", ""}，
