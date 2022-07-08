@@ -75,10 +75,9 @@ Partial Class MainForm
         Me.CharName = New System.Windows.Forms.Label()
         Me.CharNameStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ChangeNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.XPBar = New System.Windows.Forms.ProgressBar()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.XPMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.XPMenuStrip1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -150,11 +149,10 @@ Partial Class MainForm
         Me.Label47 = New System.Windows.Forms.Label()
         Me.MaterialTab = New System.Windows.Forms.TabPage()
         Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.MaterialTable = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label56 = New System.Windows.Forms.Label()
-        Me.Label57 = New System.Windows.Forms.Label()
-        Me.materialLabel = New System.Windows.Forms.Label()
         Me.MaterialCountLabel = New System.Windows.Forms.Label()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.materialLabel = New System.Windows.Forms.Label()
+        Me.Label57 = New System.Windows.Forms.Label()
         Me.Label55 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.ItemsTab = New System.Windows.Forms.TabPage()
@@ -274,14 +272,17 @@ Partial Class MainForm
         Me.AutoBattleTimer = New System.Windows.Forms.Timer(Me.components)
         Me.BattleTime = New System.Windows.Forms.Timer(Me.components)
         Me.BattleCooldown = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.CharNameStrip.SuspendLayout()
-        Me.XPMenu.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XPMenu.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabControl2.SuspendLayout()
@@ -297,7 +298,6 @@ Partial Class MainForm
         Me.TableLayoutPanel1.SuspendLayout()
         Me.MaterialTab.SuspendLayout()
         Me.Panel16.SuspendLayout()
-        Me.MaterialTable.SuspendLayout()
         Me.ItemsTab.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.Equipment.SuspendLayout()
@@ -316,6 +316,7 @@ Partial Class MainForm
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel8.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -434,13 +435,13 @@ Partial Class MainForm
         'ItemShopToolStripMenuItem
         '
         Me.ItemShopToolStripMenuItem.Name = "ItemShopToolStripMenuItem"
-        Me.ItemShopToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.ItemShopToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ItemShopToolStripMenuItem.Text = "Item Shop"
         '
         'UpgradeShopToolStripMenuItem
         '
         Me.UpgradeShopToolStripMenuItem.Name = "UpgradeShopToolStripMenuItem"
-        Me.UpgradeShopToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.UpgradeShopToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.UpgradeShopToolStripMenuItem.Text = "Upgrade Shop"
         '
         'Panel1
@@ -733,7 +734,6 @@ Partial Class MainForm
         Me.Panel2.Controls.Add(Me.LabelLevel)
         Me.Panel2.Controls.Add(Me.Level)
         Me.Panel2.Controls.Add(Me.CharName)
-        Me.Panel2.Controls.Add(Me.XPBar)
         Me.Panel2.Location = New System.Drawing.Point(36, 3)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(200, 103)
@@ -742,7 +742,7 @@ Partial Class MainForm
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(141, 9)
+        Me.Label37.Location = New System.Drawing.Point(139, 82)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(41, 15)
         Me.Label37.TabIndex = 10
@@ -752,7 +752,7 @@ Partial Class MainForm
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(3, 81)
+        Me.Label31.Location = New System.Drawing.Point(3, 63)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(88, 15)
         Me.Label31.TabIndex = 9
@@ -762,7 +762,7 @@ Partial Class MainForm
         'XPLabel
         '
         Me.XPLabel.AutoSize = True
-        Me.XPLabel.Location = New System.Drawing.Point(3, 61)
+        Me.XPLabel.Location = New System.Drawing.Point(3, 45)
         Me.XPLabel.Name = "XPLabel"
         Me.XPLabel.Size = New System.Drawing.Size(20, 15)
         Me.XPLabel.TabIndex = 6
@@ -812,17 +812,15 @@ Partial Class MainForm
         Me.ChangeNameToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.ChangeNameToolStripMenuItem.Text = "Change Name"
         '
-        'XPBar
+        'PictureBox1
         '
-        Me.XPBar.ContextMenuStrip = Me.XPMenu
-        Me.XPBar.Location = New System.Drawing.Point(6, 48)
-        Me.XPBar.MarqueeAnimationSpeed = 1
-        Me.XPBar.Maximum = 400
-        Me.XPBar.Name = "XPBar"
-        Me.XPBar.Size = New System.Drawing.Size(189, 10)
-        Me.XPBar.Step = 1
-        Me.XPBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous
-        Me.XPBar.TabIndex = 5
+        Me.PictureBox1.Image = Global.HumanAdventure.My.Resources.Resources.yave_1
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 19)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(28, 66)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
         '
         'XPMenu
         '
@@ -837,16 +835,6 @@ Partial Class MainForm
         Me.XPMenuStrip1.Name = "XPMenuStrip1"
         Me.XPMenuStrip1.Size = New System.Drawing.Size(87, 22)
         Me.XPMenuStrip1.Text = "xp"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.HumanAdventure.My.Resources.Resources.yave_1
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 19)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(28, 66)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
         '
         'Timer1
         '
@@ -1207,7 +1195,7 @@ Partial Class MainForm
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.28708!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.71292!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.item7value, 2, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.item7Buffs, 3, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.item6value, 2, 6)
@@ -1260,7 +1248,7 @@ Partial Class MainForm
         'item7value
         '
         Me.item7value.AutoSize = True
-        Me.item7value.Location = New System.Drawing.Point(197, 210)
+        Me.item7value.Location = New System.Drawing.Point(195, 210)
         Me.item7value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item7value.Name = "item7value"
         Me.item7value.Size = New System.Drawing.Size(65, 15)
@@ -1270,7 +1258,7 @@ Partial Class MainForm
         'item7Buffs
         '
         Me.item7Buffs.AutoSize = True
-        Me.item7Buffs.Location = New System.Drawing.Point(309, 210)
+        Me.item7Buffs.Location = New System.Drawing.Point(307, 210)
         Me.item7Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item7Buffs.Name = "item7Buffs"
         Me.item7Buffs.Size = New System.Drawing.Size(64, 15)
@@ -1280,7 +1268,7 @@ Partial Class MainForm
         'item6value
         '
         Me.item6value.AutoSize = True
-        Me.item6value.Location = New System.Drawing.Point(197, 180)
+        Me.item6value.Location = New System.Drawing.Point(195, 180)
         Me.item6value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item6value.Name = "item6value"
         Me.item6value.Size = New System.Drawing.Size(65, 15)
@@ -1290,7 +1278,7 @@ Partial Class MainForm
         'item6Buffs
         '
         Me.item6Buffs.AutoSize = True
-        Me.item6Buffs.Location = New System.Drawing.Point(309, 180)
+        Me.item6Buffs.Location = New System.Drawing.Point(307, 180)
         Me.item6Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item6Buffs.Name = "item6Buffs"
         Me.item6Buffs.Size = New System.Drawing.Size(64, 15)
@@ -1300,7 +1288,7 @@ Partial Class MainForm
         'item5value
         '
         Me.item5value.AutoSize = True
-        Me.item5value.Location = New System.Drawing.Point(197, 150)
+        Me.item5value.Location = New System.Drawing.Point(195, 150)
         Me.item5value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item5value.Name = "item5value"
         Me.item5value.Size = New System.Drawing.Size(65, 15)
@@ -1310,7 +1298,7 @@ Partial Class MainForm
         'item5Buffs
         '
         Me.item5Buffs.AutoSize = True
-        Me.item5Buffs.Location = New System.Drawing.Point(309, 150)
+        Me.item5Buffs.Location = New System.Drawing.Point(307, 150)
         Me.item5Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item5Buffs.Name = "item5Buffs"
         Me.item5Buffs.Size = New System.Drawing.Size(64, 15)
@@ -1320,7 +1308,7 @@ Partial Class MainForm
         'item4value
         '
         Me.item4value.AutoSize = True
-        Me.item4value.Location = New System.Drawing.Point(197, 120)
+        Me.item4value.Location = New System.Drawing.Point(195, 120)
         Me.item4value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item4value.Name = "item4value"
         Me.item4value.Size = New System.Drawing.Size(65, 15)
@@ -1330,7 +1318,7 @@ Partial Class MainForm
         'item4Buffs
         '
         Me.item4Buffs.AutoSize = True
-        Me.item4Buffs.Location = New System.Drawing.Point(309, 120)
+        Me.item4Buffs.Location = New System.Drawing.Point(307, 120)
         Me.item4Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item4Buffs.Name = "item4Buffs"
         Me.item4Buffs.Size = New System.Drawing.Size(64, 15)
@@ -1340,7 +1328,7 @@ Partial Class MainForm
         'item3value
         '
         Me.item3value.AutoSize = True
-        Me.item3value.Location = New System.Drawing.Point(197, 90)
+        Me.item3value.Location = New System.Drawing.Point(195, 90)
         Me.item3value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item3value.Name = "item3value"
         Me.item3value.Size = New System.Drawing.Size(65, 15)
@@ -1350,7 +1338,7 @@ Partial Class MainForm
         'item3Buffs
         '
         Me.item3Buffs.AutoSize = True
-        Me.item3Buffs.Location = New System.Drawing.Point(309, 90)
+        Me.item3Buffs.Location = New System.Drawing.Point(307, 90)
         Me.item3Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item3Buffs.Name = "item3Buffs"
         Me.item3Buffs.Size = New System.Drawing.Size(64, 15)
@@ -1360,7 +1348,7 @@ Partial Class MainForm
         'item2value
         '
         Me.item2value.AutoSize = True
-        Me.item2value.Location = New System.Drawing.Point(197, 60)
+        Me.item2value.Location = New System.Drawing.Point(195, 60)
         Me.item2value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item2value.Name = "item2value"
         Me.item2value.Size = New System.Drawing.Size(65, 15)
@@ -1370,7 +1358,7 @@ Partial Class MainForm
         'item2Buffs
         '
         Me.item2Buffs.AutoSize = True
-        Me.item2Buffs.Location = New System.Drawing.Point(309, 60)
+        Me.item2Buffs.Location = New System.Drawing.Point(307, 60)
         Me.item2Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item2Buffs.Name = "item2Buffs"
         Me.item2Buffs.Size = New System.Drawing.Size(64, 15)
@@ -1380,7 +1368,7 @@ Partial Class MainForm
         'item1Buffs
         '
         Me.item1Buffs.AutoSize = True
-        Me.item1Buffs.Location = New System.Drawing.Point(309, 30)
+        Me.item1Buffs.Location = New System.Drawing.Point(307, 30)
         Me.item1Buffs.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item1Buffs.Name = "item1Buffs"
         Me.item1Buffs.Size = New System.Drawing.Size(64, 15)
@@ -1390,7 +1378,7 @@ Partial Class MainForm
         'item1value
         '
         Me.item1value.AutoSize = True
-        Me.item1value.Location = New System.Drawing.Point(197, 30)
+        Me.item1value.Location = New System.Drawing.Point(195, 30)
         Me.item1value.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.item1value.Name = "item1value"
         Me.item1value.Size = New System.Drawing.Size(65, 15)
@@ -1401,7 +1389,7 @@ Partial Class MainForm
         '
         Me.Label45.AutoSize = True
         Me.Label45.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(309, 0)
+        Me.Label45.Location = New System.Drawing.Point(307, 0)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(37, 15)
         Me.Label45.TabIndex = 9
@@ -1411,7 +1399,7 @@ Partial Class MainForm
         '
         Me.Label44.AutoSize = True
         Me.Label44.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(197, 0)
+        Me.Label44.Location = New System.Drawing.Point(195, 0)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(37, 15)
         Me.Label44.TabIndex = 8
@@ -1421,7 +1409,7 @@ Partial Class MainForm
         '
         Me.Label43.AutoSize = True
         Me.Label43.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.Location = New System.Drawing.Point(120, 0)
+        Me.Label43.Location = New System.Drawing.Point(119, 0)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(43, 15)
         Me.Label43.TabIndex = 7
@@ -1499,54 +1487,54 @@ Partial Class MainForm
         '
         'Button15
         '
-        Me.Button15.Location = New System.Drawing.Point(120, 116)
+        Me.Button15.Location = New System.Drawing.Point(119, 116)
         Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(71, 22)
+        Me.Button15.Size = New System.Drawing.Size(70, 22)
         Me.Button15.TabIndex = 17
         Me.Button15.Text = "Button13"
         Me.Button15.UseVisualStyleBackColor = True
         '
         'Button16
         '
-        Me.Button16.Location = New System.Drawing.Point(120, 146)
+        Me.Button16.Location = New System.Drawing.Point(119, 146)
         Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(71, 22)
+        Me.Button16.Size = New System.Drawing.Size(70, 22)
         Me.Button16.TabIndex = 18
         Me.Button16.Text = "Button13"
         Me.Button16.UseVisualStyleBackColor = True
         '
         'Button17
         '
-        Me.Button17.Location = New System.Drawing.Point(120, 176)
+        Me.Button17.Location = New System.Drawing.Point(119, 176)
         Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(71, 22)
+        Me.Button17.Size = New System.Drawing.Size(70, 22)
         Me.Button17.TabIndex = 19
         Me.Button17.Text = "Button13"
         Me.Button17.UseVisualStyleBackColor = True
         '
         'ItemSell1
         '
-        Me.ItemSell1.Location = New System.Drawing.Point(120, 26)
+        Me.ItemSell1.Location = New System.Drawing.Point(119, 26)
         Me.ItemSell1.Name = "ItemSell1"
-        Me.ItemSell1.Size = New System.Drawing.Size(71, 22)
+        Me.ItemSell1.Size = New System.Drawing.Size(70, 22)
         Me.ItemSell1.TabIndex = 5
         Me.ItemSell1.Text = "Button13"
         Me.ItemSell1.UseVisualStyleBackColor = True
         '
         'Button13
         '
-        Me.Button13.Location = New System.Drawing.Point(120, 56)
+        Me.Button13.Location = New System.Drawing.Point(119, 56)
         Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(71, 22)
+        Me.Button13.Size = New System.Drawing.Size(70, 22)
         Me.Button13.TabIndex = 15
         Me.Button13.Text = "Button13"
         Me.Button13.UseVisualStyleBackColor = True
         '
         'Button14
         '
-        Me.Button14.Location = New System.Drawing.Point(120, 86)
+        Me.Button14.Location = New System.Drawing.Point(119, 86)
         Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(71, 22)
+        Me.Button14.Size = New System.Drawing.Size(70, 22)
         Me.Button14.TabIndex = 16
         Me.Button14.Text = "Button13"
         Me.Button14.UseVisualStyleBackColor = True
@@ -1563,9 +1551,9 @@ Partial Class MainForm
         '
         'Button18
         '
-        Me.Button18.Location = New System.Drawing.Point(120, 206)
+        Me.Button18.Location = New System.Drawing.Point(119, 206)
         Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(71, 22)
+        Me.Button18.Size = New System.Drawing.Size(70, 22)
         Me.Button18.TabIndex = 21
         Me.Button18.Text = "Button13"
         Me.Button18.UseVisualStyleBackColor = True
@@ -1592,28 +1580,24 @@ Partial Class MainForm
         '
         'Panel16
         '
-        Me.Panel16.Controls.Add(Me.MaterialTable)
+        Me.Panel16.AutoScroll = True
+        Me.Panel16.Controls.Add(Me.MaterialCountLabel)
+        Me.Panel16.Controls.Add(Me.Label56)
+        Me.Panel16.Controls.Add(Me.materialLabel)
+        Me.Panel16.Controls.Add(Me.Label57)
         Me.Panel16.Location = New System.Drawing.Point(149, 27)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(264, 223)
         Me.Panel16.TabIndex = 2
         '
-        'MaterialTable
+        'MaterialCountLabel
         '
-        Me.MaterialTable.ColumnCount = 2
-        Me.MaterialTable.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.92424!))
-        Me.MaterialTable.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.07576!))
-        Me.MaterialTable.Controls.Add(Me.Label56, 0, 0)
-        Me.MaterialTable.Controls.Add(Me.Label57, 1, 0)
-        Me.MaterialTable.Controls.Add(Me.materialLabel, 0, 1)
-        Me.MaterialTable.Controls.Add(Me.MaterialCountLabel, 1, 1)
-        Me.MaterialTable.Location = New System.Drawing.Point(0, 0)
-        Me.MaterialTable.Name = "MaterialTable"
-        Me.MaterialTable.RowCount = 2
-        Me.MaterialTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.MaterialTable.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 208.0!))
-        Me.MaterialTable.Size = New System.Drawing.Size(264, 226)
-        Me.MaterialTable.TabIndex = 0
+        Me.MaterialCountLabel.AutoSize = True
+        Me.MaterialCountLabel.Location = New System.Drawing.Point(202, 15)
+        Me.MaterialCountLabel.Name = "MaterialCountLabel"
+        Me.MaterialCountLabel.Size = New System.Drawing.Size(38, 15)
+        Me.MaterialCountLabel.TabIndex = 3
+        Me.MaterialCountLabel.Text = "count"
         '
         'Label56
         '
@@ -1625,33 +1609,24 @@ Partial Class MainForm
         Me.Label56.TabIndex = 0
         Me.Label56.Text = "Material"
         '
-        'Label57
-        '
-        Me.Label57.AutoSize = True
-        Me.Label57.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label57.Location = New System.Drawing.Point(213, 0)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(40, 15)
-        Me.Label57.TabIndex = 1
-        Me.Label57.Text = "Count"
-        '
         'materialLabel
         '
         Me.materialLabel.AutoSize = True
-        Me.materialLabel.Location = New System.Drawing.Point(3, 18)
+        Me.materialLabel.Location = New System.Drawing.Point(4, 15)
         Me.materialLabel.Name = "materialLabel"
         Me.materialLabel.Size = New System.Drawing.Size(50, 15)
         Me.materialLabel.TabIndex = 2
         Me.materialLabel.Text = "material"
         '
-        'MaterialCountLabel
+        'Label57
         '
-        Me.MaterialCountLabel.AutoSize = True
-        Me.MaterialCountLabel.Location = New System.Drawing.Point(213, 18)
-        Me.MaterialCountLabel.Name = "MaterialCountLabel"
-        Me.MaterialCountLabel.Size = New System.Drawing.Size(38, 15)
-        Me.MaterialCountLabel.TabIndex = 3
-        Me.MaterialCountLabel.Text = "count"
+        Me.Label57.AutoSize = True
+        Me.Label57.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label57.Location = New System.Drawing.Point(202, 0)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(40, 15)
+        Me.Label57.TabIndex = 1
+        Me.Label57.Text = "Count"
         '
         'Label55
         '
@@ -1692,7 +1667,7 @@ Partial Class MainForm
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.Label51, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label52, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label53, 2, 0)
@@ -1775,7 +1750,7 @@ Partial Class MainForm
         '
         Me.Label52.AutoSize = True
         Me.Label52.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(95, 0)
+        Me.Label52.Location = New System.Drawing.Point(94, 0)
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(40, 15)
         Me.Label52.TabIndex = 8
@@ -1786,7 +1761,7 @@ Partial Class MainForm
         Me.Label53.AutoSize = True
         Me.TableLayoutPanel2.SetColumnSpan(Me.Label53, 3)
         Me.Label53.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label53.Location = New System.Drawing.Point(142, 0)
+        Me.Label53.Location = New System.Drawing.Point(140, 0)
         Me.Label53.Name = "Label53"
         Me.Label53.Size = New System.Drawing.Size(43, 15)
         Me.Label53.TabIndex = 9
@@ -1794,7 +1769,7 @@ Partial Class MainForm
         '
         'useitemaction1
         '
-        Me.useitemaction1.Location = New System.Drawing.Point(142, 23)
+        Me.useitemaction1.Location = New System.Drawing.Point(140, 23)
         Me.useitemaction1.Name = "useitemaction1"
         Me.useitemaction1.Size = New System.Drawing.Size(20, 22)
         Me.useitemaction1.TabIndex = 59
@@ -1814,7 +1789,7 @@ Partial Class MainForm
         'useitem1count
         '
         Me.useitem1count.AutoSize = True
-        Me.useitem1count.Location = New System.Drawing.Point(95, 27)
+        Me.useitem1count.Location = New System.Drawing.Point(94, 27)
         Me.useitem1count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem1count.Name = "useitem1count"
         Me.useitem1count.Size = New System.Drawing.Size(13, 15)
@@ -1884,7 +1859,7 @@ Partial Class MainForm
         'useitem2count
         '
         Me.useitem2count.AutoSize = True
-        Me.useitem2count.Location = New System.Drawing.Point(95, 55)
+        Me.useitem2count.Location = New System.Drawing.Point(94, 55)
         Me.useitem2count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem2count.Name = "useitem2count"
         Me.useitem2count.Size = New System.Drawing.Size(13, 15)
@@ -1894,7 +1869,7 @@ Partial Class MainForm
         'useitem3count
         '
         Me.useitem3count.AutoSize = True
-        Me.useitem3count.Location = New System.Drawing.Point(95, 83)
+        Me.useitem3count.Location = New System.Drawing.Point(94, 83)
         Me.useitem3count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem3count.Name = "useitem3count"
         Me.useitem3count.Size = New System.Drawing.Size(13, 15)
@@ -1904,7 +1879,7 @@ Partial Class MainForm
         'useitem4count
         '
         Me.useitem4count.AutoSize = True
-        Me.useitem4count.Location = New System.Drawing.Point(95, 111)
+        Me.useitem4count.Location = New System.Drawing.Point(94, 111)
         Me.useitem4count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem4count.Name = "useitem4count"
         Me.useitem4count.Size = New System.Drawing.Size(13, 15)
@@ -1914,7 +1889,7 @@ Partial Class MainForm
         'useitem5count
         '
         Me.useitem5count.AutoSize = True
-        Me.useitem5count.Location = New System.Drawing.Point(95, 139)
+        Me.useitem5count.Location = New System.Drawing.Point(94, 139)
         Me.useitem5count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem5count.Name = "useitem5count"
         Me.useitem5count.Size = New System.Drawing.Size(13, 15)
@@ -1924,7 +1899,7 @@ Partial Class MainForm
         'useitem6count
         '
         Me.useitem6count.AutoSize = True
-        Me.useitem6count.Location = New System.Drawing.Point(95, 167)
+        Me.useitem6count.Location = New System.Drawing.Point(94, 167)
         Me.useitem6count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem6count.Name = "useitem6count"
         Me.useitem6count.Size = New System.Drawing.Size(13, 15)
@@ -1934,7 +1909,7 @@ Partial Class MainForm
         'useitem7count
         '
         Me.useitem7count.AutoSize = True
-        Me.useitem7count.Location = New System.Drawing.Point(95, 195)
+        Me.useitem7count.Location = New System.Drawing.Point(94, 195)
         Me.useitem7count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem7count.Name = "useitem7count"
         Me.useitem7count.Size = New System.Drawing.Size(13, 15)
@@ -1943,7 +1918,7 @@ Partial Class MainForm
         '
         'useitemaction2
         '
-        Me.useitemaction2.Location = New System.Drawing.Point(168, 23)
+        Me.useitemaction2.Location = New System.Drawing.Point(166, 23)
         Me.useitemaction2.Name = "useitemaction2"
         Me.useitemaction2.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction2.TabIndex = 60
@@ -1954,7 +1929,7 @@ Partial Class MainForm
         '
         Me.Label54.AutoSize = True
         Me.Label54.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label54.Location = New System.Drawing.Point(248, 0)
+        Me.Label54.Location = New System.Drawing.Point(246, 0)
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(38, 15)
         Me.Label54.TabIndex = 10
@@ -1963,7 +1938,7 @@ Partial Class MainForm
         'useitem1using
         '
         Me.useitem1using.AutoSize = True
-        Me.useitem1using.Location = New System.Drawing.Point(248, 27)
+        Me.useitem1using.Location = New System.Drawing.Point(246, 27)
         Me.useitem1using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem1using.Name = "useitem1using"
         Me.useitem1using.Size = New System.Drawing.Size(84, 15)
@@ -1972,7 +1947,7 @@ Partial Class MainForm
         '
         'useitemaction3
         '
-        Me.useitemaction3.Location = New System.Drawing.Point(207, 23)
+        Me.useitemaction3.Location = New System.Drawing.Point(205, 23)
         Me.useitemaction3.Name = "useitemaction3"
         Me.useitemaction3.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction3.TabIndex = 61
@@ -1982,7 +1957,7 @@ Partial Class MainForm
         'useitem2using
         '
         Me.useitem2using.AutoSize = True
-        Me.useitem2using.Location = New System.Drawing.Point(248, 55)
+        Me.useitem2using.Location = New System.Drawing.Point(246, 55)
         Me.useitem2using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem2using.Name = "useitem2using"
         Me.useitem2using.Size = New System.Drawing.Size(47, 15)
@@ -1991,7 +1966,7 @@ Partial Class MainForm
         '
         'useitemaction4
         '
-        Me.useitemaction4.Location = New System.Drawing.Point(142, 51)
+        Me.useitemaction4.Location = New System.Drawing.Point(140, 51)
         Me.useitemaction4.Name = "useitemaction4"
         Me.useitemaction4.Size = New System.Drawing.Size(20, 22)
         Me.useitemaction4.TabIndex = 62
@@ -2000,7 +1975,7 @@ Partial Class MainForm
         '
         'useitemaction6
         '
-        Me.useitemaction6.Location = New System.Drawing.Point(207, 51)
+        Me.useitemaction6.Location = New System.Drawing.Point(205, 51)
         Me.useitemaction6.Name = "useitemaction6"
         Me.useitemaction6.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction6.TabIndex = 64
@@ -2009,7 +1984,7 @@ Partial Class MainForm
         '
         'useitemaction5
         '
-        Me.useitemaction5.Location = New System.Drawing.Point(168, 51)
+        Me.useitemaction5.Location = New System.Drawing.Point(166, 51)
         Me.useitemaction5.Name = "useitemaction5"
         Me.useitemaction5.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction5.TabIndex = 63
@@ -2018,7 +1993,7 @@ Partial Class MainForm
         '
         'useitemaction7
         '
-        Me.useitemaction7.Location = New System.Drawing.Point(142, 79)
+        Me.useitemaction7.Location = New System.Drawing.Point(140, 79)
         Me.useitemaction7.Name = "useitemaction7"
         Me.useitemaction7.Size = New System.Drawing.Size(20, 22)
         Me.useitemaction7.TabIndex = 65
@@ -2027,7 +2002,7 @@ Partial Class MainForm
         '
         'useitemaction8
         '
-        Me.useitemaction8.Location = New System.Drawing.Point(168, 79)
+        Me.useitemaction8.Location = New System.Drawing.Point(166, 79)
         Me.useitemaction8.Name = "useitemaction8"
         Me.useitemaction8.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction8.TabIndex = 66
@@ -2036,7 +2011,7 @@ Partial Class MainForm
         '
         'useitemaction9
         '
-        Me.useitemaction9.Location = New System.Drawing.Point(207, 79)
+        Me.useitemaction9.Location = New System.Drawing.Point(205, 79)
         Me.useitemaction9.Name = "useitemaction9"
         Me.useitemaction9.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction9.TabIndex = 67
@@ -2045,7 +2020,7 @@ Partial Class MainForm
         '
         'useitemaction10
         '
-        Me.useitemaction10.Location = New System.Drawing.Point(142, 107)
+        Me.useitemaction10.Location = New System.Drawing.Point(140, 107)
         Me.useitemaction10.Name = "useitemaction10"
         Me.useitemaction10.Size = New System.Drawing.Size(20, 22)
         Me.useitemaction10.TabIndex = 68
@@ -2054,7 +2029,7 @@ Partial Class MainForm
         '
         'useitemaction11
         '
-        Me.useitemaction11.Location = New System.Drawing.Point(168, 107)
+        Me.useitemaction11.Location = New System.Drawing.Point(166, 107)
         Me.useitemaction11.Name = "useitemaction11"
         Me.useitemaction11.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction11.TabIndex = 69
@@ -2063,7 +2038,7 @@ Partial Class MainForm
         '
         'useitemaction12
         '
-        Me.useitemaction12.Location = New System.Drawing.Point(207, 107)
+        Me.useitemaction12.Location = New System.Drawing.Point(205, 107)
         Me.useitemaction12.Name = "useitemaction12"
         Me.useitemaction12.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction12.TabIndex = 70
@@ -2072,7 +2047,7 @@ Partial Class MainForm
         '
         'useitemaction13
         '
-        Me.useitemaction13.Location = New System.Drawing.Point(142, 135)
+        Me.useitemaction13.Location = New System.Drawing.Point(140, 135)
         Me.useitemaction13.Name = "useitemaction13"
         Me.useitemaction13.Size = New System.Drawing.Size(20, 22)
         Me.useitemaction13.TabIndex = 71
@@ -2081,7 +2056,7 @@ Partial Class MainForm
         '
         'useitemaction14
         '
-        Me.useitemaction14.Location = New System.Drawing.Point(168, 135)
+        Me.useitemaction14.Location = New System.Drawing.Point(166, 135)
         Me.useitemaction14.Name = "useitemaction14"
         Me.useitemaction14.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction14.TabIndex = 72
@@ -2090,7 +2065,7 @@ Partial Class MainForm
         '
         'useitemaction15
         '
-        Me.useitemaction15.Location = New System.Drawing.Point(207, 135)
+        Me.useitemaction15.Location = New System.Drawing.Point(205, 135)
         Me.useitemaction15.Name = "useitemaction15"
         Me.useitemaction15.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction15.TabIndex = 73
@@ -2099,7 +2074,7 @@ Partial Class MainForm
         '
         'useitemaction16
         '
-        Me.useitemaction16.Location = New System.Drawing.Point(142, 163)
+        Me.useitemaction16.Location = New System.Drawing.Point(140, 163)
         Me.useitemaction16.Name = "useitemaction16"
         Me.useitemaction16.Size = New System.Drawing.Size(20, 22)
         Me.useitemaction16.TabIndex = 74
@@ -2108,7 +2083,7 @@ Partial Class MainForm
         '
         'useitemaction18
         '
-        Me.useitemaction18.Location = New System.Drawing.Point(207, 163)
+        Me.useitemaction18.Location = New System.Drawing.Point(205, 163)
         Me.useitemaction18.Name = "useitemaction18"
         Me.useitemaction18.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction18.TabIndex = 76
@@ -2117,7 +2092,7 @@ Partial Class MainForm
         '
         'useitemaction17
         '
-        Me.useitemaction17.Location = New System.Drawing.Point(168, 163)
+        Me.useitemaction17.Location = New System.Drawing.Point(166, 163)
         Me.useitemaction17.Name = "useitemaction17"
         Me.useitemaction17.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction17.TabIndex = 75
@@ -2126,7 +2101,7 @@ Partial Class MainForm
         '
         'useitemaction19
         '
-        Me.useitemaction19.Location = New System.Drawing.Point(142, 191)
+        Me.useitemaction19.Location = New System.Drawing.Point(140, 191)
         Me.useitemaction19.Name = "useitemaction19"
         Me.useitemaction19.Size = New System.Drawing.Size(20, 22)
         Me.useitemaction19.TabIndex = 77
@@ -2135,7 +2110,7 @@ Partial Class MainForm
         '
         'useitemaction20
         '
-        Me.useitemaction20.Location = New System.Drawing.Point(168, 191)
+        Me.useitemaction20.Location = New System.Drawing.Point(166, 191)
         Me.useitemaction20.Name = "useitemaction20"
         Me.useitemaction20.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction20.TabIndex = 78
@@ -2144,7 +2119,7 @@ Partial Class MainForm
         '
         'useitemaction21
         '
-        Me.useitemaction21.Location = New System.Drawing.Point(207, 191)
+        Me.useitemaction21.Location = New System.Drawing.Point(205, 191)
         Me.useitemaction21.Name = "useitemaction21"
         Me.useitemaction21.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction21.TabIndex = 79
@@ -2154,7 +2129,7 @@ Partial Class MainForm
         'useitem8count
         '
         Me.useitem8count.AutoSize = True
-        Me.useitem8count.Location = New System.Drawing.Point(95, 223)
+        Me.useitem8count.Location = New System.Drawing.Point(94, 223)
         Me.useitem8count.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem8count.Name = "useitem8count"
         Me.useitem8count.Size = New System.Drawing.Size(13, 15)
@@ -2163,7 +2138,7 @@ Partial Class MainForm
         '
         'useitemaction23
         '
-        Me.useitemaction23.Location = New System.Drawing.Point(168, 219)
+        Me.useitemaction23.Location = New System.Drawing.Point(166, 219)
         Me.useitemaction23.Name = "useitemaction23"
         Me.useitemaction23.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction23.TabIndex = 81
@@ -2172,7 +2147,7 @@ Partial Class MainForm
         '
         'useitemaction24
         '
-        Me.useitemaction24.Location = New System.Drawing.Point(207, 219)
+        Me.useitemaction24.Location = New System.Drawing.Point(205, 219)
         Me.useitemaction24.Name = "useitemaction24"
         Me.useitemaction24.Size = New System.Drawing.Size(33, 22)
         Me.useitemaction24.TabIndex = 82
@@ -2181,7 +2156,7 @@ Partial Class MainForm
         '
         'useitemaction22
         '
-        Me.useitemaction22.Location = New System.Drawing.Point(142, 219)
+        Me.useitemaction22.Location = New System.Drawing.Point(140, 219)
         Me.useitemaction22.Name = "useitemaction22"
         Me.useitemaction22.Size = New System.Drawing.Size(20, 22)
         Me.useitemaction22.TabIndex = 80
@@ -2191,7 +2166,7 @@ Partial Class MainForm
         'useitem3using
         '
         Me.useitem3using.AutoSize = True
-        Me.useitem3using.Location = New System.Drawing.Point(248, 83)
+        Me.useitem3using.Location = New System.Drawing.Point(246, 83)
         Me.useitem3using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem3using.Name = "useitem3using"
         Me.useitem3using.Size = New System.Drawing.Size(47, 15)
@@ -2201,7 +2176,7 @@ Partial Class MainForm
         'useitem4using
         '
         Me.useitem4using.AutoSize = True
-        Me.useitem4using.Location = New System.Drawing.Point(248, 111)
+        Me.useitem4using.Location = New System.Drawing.Point(246, 111)
         Me.useitem4using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem4using.Name = "useitem4using"
         Me.useitem4using.Size = New System.Drawing.Size(47, 15)
@@ -2211,7 +2186,7 @@ Partial Class MainForm
         'useitem5using
         '
         Me.useitem5using.AutoSize = True
-        Me.useitem5using.Location = New System.Drawing.Point(248, 139)
+        Me.useitem5using.Location = New System.Drawing.Point(246, 139)
         Me.useitem5using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem5using.Name = "useitem5using"
         Me.useitem5using.Size = New System.Drawing.Size(47, 15)
@@ -2221,7 +2196,7 @@ Partial Class MainForm
         'useitem6using
         '
         Me.useitem6using.AutoSize = True
-        Me.useitem6using.Location = New System.Drawing.Point(248, 167)
+        Me.useitem6using.Location = New System.Drawing.Point(246, 167)
         Me.useitem6using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem6using.Name = "useitem6using"
         Me.useitem6using.Size = New System.Drawing.Size(47, 15)
@@ -2231,7 +2206,7 @@ Partial Class MainForm
         'useitem7using
         '
         Me.useitem7using.AutoSize = True
-        Me.useitem7using.Location = New System.Drawing.Point(248, 195)
+        Me.useitem7using.Location = New System.Drawing.Point(246, 195)
         Me.useitem7using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem7using.Name = "useitem7using"
         Me.useitem7using.Size = New System.Drawing.Size(47, 15)
@@ -2251,7 +2226,7 @@ Partial Class MainForm
         'useitem8using
         '
         Me.useitem8using.AutoSize = True
-        Me.useitem8using.Location = New System.Drawing.Point(248, 223)
+        Me.useitem8using.Location = New System.Drawing.Point(246, 223)
         Me.useitem8using.Margin = New System.Windows.Forms.Padding(3, 7, 3, 0)
         Me.useitem8using.Name = "useitem8using"
         Me.useitem8using.Size = New System.Drawing.Size(47, 15)
@@ -2890,11 +2865,35 @@ Partial Class MainForm
         '
         Me.BattleCooldown.Interval = 1000
         '
+        'Panel8
+        '
+        Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel8.Controls.Add(Me.Label11)
+        Me.Panel8.Location = New System.Drawing.Point(8, 564)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(699, 20)
+        Me.Panel8.TabIndex = 0
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(1, 1)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(47, 15)
+        Me.Label11.TabIndex = 0
+        Me.Label11.Text = "Label11"
+        '
+        'Timer3
+        '
+        Me.Timer3.Enabled = True
+        Me.Timer3.Interval = 10
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(713, 562)
+        Me.ClientSize = New System.Drawing.Size(713, 591)
+        Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel1)
@@ -2917,8 +2916,8 @@ Partial Class MainForm
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.CharNameStrip.ResumeLayout(False)
-        Me.XPMenu.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XPMenu.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.TabControl2.ResumeLayout(False)
@@ -2942,8 +2941,7 @@ Partial Class MainForm
         Me.MaterialTab.ResumeLayout(False)
         Me.MaterialTab.PerformLayout()
         Me.Panel16.ResumeLayout(False)
-        Me.MaterialTable.ResumeLayout(False)
-        Me.MaterialTable.PerformLayout()
+        Me.Panel16.PerformLayout()
         Me.ItemsTab.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
@@ -2971,6 +2969,8 @@ Partial Class MainForm
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2989,7 +2989,6 @@ Partial Class MainForm
     Friend WithEvents ShowDebugToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LabelLevel As Label
     Friend WithEvents Level As Label
-    Friend WithEvents XPBar As ProgressBar
     Friend WithEvents CharNameStrip As ContextMenuStrip
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutsToolStripMenuItem As ToolStripMenuItem
@@ -3127,7 +3126,6 @@ Partial Class MainForm
     Friend WithEvents Label47 As Label
     Friend WithEvents MaterialTab As TabPage
     Friend WithEvents Panel16 As Panel
-    Friend WithEvents MaterialTable As TableLayoutPanel
     Friend WithEvents Label56 As Label
     Friend WithEvents Label57 As Label
     Friend WithEvents materialLabel As Label
@@ -3226,4 +3224,7 @@ Partial Class MainForm
     Friend WithEvents Label33 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label32 As Label
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Timer3 As Timer
 End Class

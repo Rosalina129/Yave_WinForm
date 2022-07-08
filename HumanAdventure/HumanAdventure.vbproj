@@ -95,7 +95,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -119,6 +121,11 @@
     <Compile Include="Program\Lang.vb" />
     <Compile Include="Program\LangStr.vb" />
     <Compile Include="Program\Threading.vb" />
+    <Compile Include="Resources\Audio.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Audio.resx</DependentUpon>
+    </Compile>
     <Compile Include="Window\ChangeName.Designer.vb">
       <DependentUpon>ChangeName.vb</DependentUpon>
     </Compile>
@@ -160,6 +167,12 @@
     <Compile Include="Window\EleDescribe.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Window\ItemShop.Designer.vb">
+      <DependentUpon>ItemShop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Window\ItemShop.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Window\NewSave.Designer.vb">
       <DependentUpon>NewSave.vb</DependentUpon>
     </Compile>
@@ -198,6 +211,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Audio.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Audio.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Window\About.resx">
       <DependentUpon>About.vb</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Window\EleDescribe.resx">
       <DependentUpon>EleDescribe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\ItemShop.resx">
+      <DependentUpon>ItemShop.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
@@ -276,6 +297,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <Content Include="Resources\block.wav" />
+    <Content Include="Resources\element.wav" />
+    <None Include="Resources\attack.wav" />
+    <None Include="Resources\getitem.wav" />
     <None Include="Resources\shoeslot.png" />
     <None Include="Resources\ringslot.png" />
     <None Include="Resources\legslot.png" />

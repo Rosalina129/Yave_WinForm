@@ -147,6 +147,8 @@
             .useitem6using.Text = "+25% Max " & LangStr.s_string(27, langid)
             .useitem7using.Text = "+50% Max " & LangStr.s_string(27, langid)
             .useitem8using.Text = "+100% Max " & LangStr.s_string(27, langid)
+
+            .Label11.Text = LangStr.s_string(184, langid)
         End With
         'NewSave Strings
         With NewSave
