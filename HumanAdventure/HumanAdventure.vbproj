@@ -114,6 +114,8 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Init\Enemies.vb" />
+    <Compile Include="Init\InitArtifact.vb" />
+    <Compile Include="Init\InitEquip.vb" />
     <Compile Include="Program\Calculate.vb" />
     <Compile Include="Program\ElementRates.vb" />
     <Compile Include="Program\Functions.vb" />

@@ -160,7 +160,7 @@
         {"Fall Counts", "已贡献的灵魂"},
         {"Element Damage Rate Panel", "元素伤害倍率面板"},'158
         {"Buffs", "增益"},
-        {"Artifact", "神赐"},
+        {"Artifact", "神器"},
         {"Helmet", "头盔"},
         {"Chest", "胸甲"},
         {"Legging", "护腿"},
