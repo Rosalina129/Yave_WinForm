@@ -587,19 +587,29 @@ Public Class MainForm
         Dim SaveJsonCache As New SaveJSON
         With SaveJsonCache
             'Save Version
-            .saveVersion = {5, 0, 0} 'Primary"Main"|Secondary"Hotfix"|Third"Edited"
-            .regionID = RegionID
-            .characterName = PlayerData.CName1
+            .save_version = {5, 0, 0} 'Primary"Main"|Secondary"Hotfix"|Third"Edited"
+            .region_id = RegionID
+            .character_name = PlayerData.CName1
             .skin = PlayerData.Sk
-            ReDim .regionDistance(TourDist.Length)
+            ReDim .region_distance(TourDist.Length)
             Dim a As Integer
+            Dim b As Integer
             For a = 0 To TourDist.Length - 1 Step 1
-                .regionDistance(a) = TourDist(a)
+                .region_distance(a) = TourDist(a)
             Next
-            ReDim .materialCount(MaterialItem.Length)
+            a = 0
+            b = 0
+            ReDim .items(MaterialItem.Length)
             For a = 0 To MaterialItem.Length - 1 Step 1
-                .materialCount(a) = MaterialItem(a)
+                If MaterialItem(a) > 0 Then
+                    .items(b).id = a
+                    .items(b).count = MaterialItem(a)
+                    b += 1
+                End If
             Next
+            ReDim Preserve .items(b - 1)
+            a = 0
+            b = 0
             .player.element = PlayerData.element1
             .player.level = PlayerData.Level1
             .player.xp = PlayerData.XP1
@@ -801,11 +811,11 @@ Public Class MainForm
             CheckBox2.Checked = b
             AutoSaving = b
         End If
-        If isBetaProgress Then
-            Me.Size = New Point(720, 620)
-        Else
-            Me.Size = New Point(720, 596)
-        End If
+        'If isBetaProgress Then
+        'Me.Size = New Point(720, 620)
+        'Else
+        'Me.Size = New Point(720, 596)
+        'End If
         Lang.setstr(langID)
         Panel10.Visible = False
         NewSaveWindowProgress = False

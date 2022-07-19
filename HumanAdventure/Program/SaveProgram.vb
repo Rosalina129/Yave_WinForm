@@ -1,11 +1,11 @@
 ﻿Module SaveProgram
     Public Structure SaveJSON
-        Public saveVersion() As Integer
-        Public characterName As String
+        Public save_version() As Integer
+        Public character_name As String
         Public skin As Integer
-        Public regionID As Integer
-        Public regionDistance() As Double
-        Public materialCount() As Integer
+        Public region_id As Integer
+        Public region_distance() As Double
+        Public items() As items
         Public equips() As Double
         Dim player As player
 
@@ -30,11 +30,12 @@
     'Public Structure skill
 
     'End Structure
-    Public Structure equip
-    End Structure
-    'Public Structure af
-
+    'Public Structure equip
     'End Structure
+    Public Structure items
+        Public id As String
+        Public count As String
+    End Structure
     Public Structure materials
 
     End Structure
