@@ -584,6 +584,8 @@ Public Class MainForm
     End Sub
     Private Sub SaveJsonData(SaveFileName As String)
         CacheSaveFileName = SaveFileName
+        Dim fs As New FileStream(SaveFileName, FileMode.Create)
+        Dim sw As New StreamWriter(fs)
         Dim SaveJsonCache As New SaveJSON
         With SaveJsonCache
             'Save Version
@@ -610,7 +612,7 @@ Public Class MainForm
             ReDim Preserve .items(b - 1)
             a = 0
             b = 0
-            .player.element = PlayerData.element1
+            .player.element_id = PlayerData.element1
             .player.level = PlayerData.Level1
             .player.xp = PlayerData.XP1
             .player.xpneed = PlayerData.XPNeed1
@@ -624,10 +626,16 @@ Public Class MainForm
             .player.coins = PlayerData.Coins1
         End With
         Dim SaveJSONSab As String = JsonConvert.SerializeObject(SaveJsonCache)
-        If MsgBox("是否将下面数据复制到剪贴板？" & vbCrLf & SaveJSONSab, vbYesNo, Me.Text) = vbYes Then
-            Clipboard.SetText(SaveJSONSab)
-        End If
-        'SavedLabelShowTime = 180
+        'If MsgBox("是否将下面数据复制到剪贴板？" & vbCrLf & SaveJSONSab, vbYesNo, Me.Text) = vbYes Then
+        'Clipboard.SetText(SaveJSONSab)
+        'End If
+        sw.Write(SaveJSONSab)
+        sw.Close()
+        fs.Close()
+        SavedLabelShowTime = 180
+    End Sub
+    Private Sub LoadJsonData(LoadFileName)
+
     End Sub
     Private Sub SaveData(SaveFileName As String)
         CacheSaveFileName = SaveFileName
@@ -1330,6 +1338,28 @@ Public Class MainForm
     End Sub
 
     Private Sub UseJSONDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UseJSONDataToolStripMenuItem.Click
-        SaveJsonData("hep")
+        Dim a As Boolean
+        If progress <> True Then
+            a = MsgBox(LangStr.s_string(38, langID), vbYesNo, Me.Text)
+            If a = vbYes Then
+                OpenFileDialog()
+            End If
+        Else
+            If Not isBoss Then
+                If MsgBox(LangStr.s_string(189, langID) & vbCrLf & vbCrLf & LangStr.s_string(190, langID) & vbCrLf & LangStr.s_string(191, langID), vbYesNo, Me.Text) = vbYes Then
+                    If CacheSaveFileName = "" Then
+                        Dim b As New SaveFileDialog
+                        CheckDirectory()
+                        b.Filter = LangStr.s_string(106, langID) & "|*.yts"
+                        If b.ShowDialog = Windows.Forms.DialogResult.OK Then
+                            SaveJsonData(b.FileName)
+                        End If
+                    Else
+                        SaveJsonData(CacheSaveFileName)
+                    End If
+
+                End If
+            End If
+            End If
     End Sub
 End Class
