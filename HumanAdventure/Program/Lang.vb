@@ -142,7 +142,7 @@
             .useitem1using.Text = "+100 XP"
             .useitem2using.Text = "+2500 XP"
             .useitem3using.Text = "+50000 XP"
-            .useitem4using.Text = "+1000 " & LangStr.s_string(27, langid)
+            .useitem4using.Text = "+100 " & LangStr.s_string(27, langid)
             .useitem5using.Text = "+10% Max" & LangStr.s_string(27, langid)
             .useitem6using.Text = "+25% Max " & LangStr.s_string(27, langid)
             .useitem7using.Text = "+50% Max " & LangStr.s_string(27, langid)

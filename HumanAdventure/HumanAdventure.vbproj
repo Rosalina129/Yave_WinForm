@@ -83,6 +83,9 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -120,8 +123,10 @@
     <Compile Include="Program\ElementRates.vb" />
     <Compile Include="Program\Functions.vb" />
     <Compile Include="Program\IniFile.vb" />
+    <Compile Include="Program\JsonConfig.vb" />
     <Compile Include="Program\Lang.vb" />
     <Compile Include="Program\LangStr.vb" />
+    <Compile Include="Program\SaveProgram.vb" />
     <Compile Include="Program\Threading.vb" />
     <Compile Include="Resources\Audio.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -267,6 +272,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\YaveYuFamily.png" />
   </ItemGroup>
   <ItemGroup>
@@ -311,5 +317,6 @@
     <None Include="Resources\armorslot.png" />
     <None Include="Resources\spr_coin_0.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

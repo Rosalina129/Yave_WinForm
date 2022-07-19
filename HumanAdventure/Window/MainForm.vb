@@ -1,6 +1,9 @@
 ﻿
 Imports System.IO
 Imports System.Threading
+Imports Newtonsoft.Json
+Imports Newtonsoft.Json.Linq
+Imports My.Computer
 Public Class MainForm
 
     Public Shared progress As Boolean               'Make public share
@@ -57,12 +60,12 @@ Public Class MainForm
     'That's confidence from a stupid developer :)
     Public ReadOnly DefaultFolderPath As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\WinFormGame\Yave's Tours"
     Public ReadOnly DefaultINIPath As String = DefaultFolderPath & "\Config.ini"
-    Public PlayerData As InitPlayer
-    Public ItemData As InitItem
-    Public EnemyData As InitEnemy
-    Public CurrentEnemy As InitEnemy
-    Public Skill As InitSkill
-    Public Basic As InitBasic
+    Public Shared PlayerData As InitPlayer
+    Public Shared ItemData As InitItem
+    Public Shared EnemyData As InitEnemy
+    Public Shared CurrentEnemy As InitEnemy
+    Public Shared Skill As InitSkill
+    Public Shared Basic As InitBasic
 
     Public MaterialItem(LangStr.s_item.Length) As Int16
 
@@ -335,7 +338,7 @@ Public Class MainForm
                             .XP1 += 50000
                             CheckXP()
                         Case 3
-                            .HP1 += 1000
+                            .HP1 += 100
                         Case 4
                             .HP1 += .HPM1 * 0.1
                         Case 5
@@ -522,13 +525,36 @@ Public Class MainForm
                 Thread.Sleep(5)
                 Dim a As Integer = r1.NextDouble()
                 Select Case a
-                    Case 0 To 0.99
+                    Case 0 To 0.12
                         Thread.Sleep(5)
                         Dim itemID As Integer = 12 + 16 * RegionID + r1.Next(1, 17)
                         Thread.Sleep(5)
                         Dim itemCount As Integer = r1.Next(1, 4)
                         AddItem(itemID, itemCount)
-                    Case 0.05 To 0.3
+                End Select
+                Select Case a
+                    Case 0 To 0.03
+                        Thread.Sleep(5)
+                        Dim itemID As Integer
+                        Dim itemCount As Integer
+                        Select Case TourDist(RegionID)
+                            Case 0 To km(2)
+                                Thread.Sleep(5)
+                                Select Case r1.Next(0, 4)
+                                    Case 0
+                                        itemID = 1
+                                        itemCount = r1.Next(1, 2)
+                                        AddItem(itemID, itemCount)
+                                    Case 1
+                                        itemID = 4
+                                        itemCount = r1.Next(1, 4)
+                                        AddItem(itemID, itemCount)
+                                    Case 3
+                                        itemID = 5
+                                        itemCount = 1
+                                        AddItem(itemID, itemCount)
+                                End Select
+                        End Select
                 End Select
             End If
             isRun = False
@@ -555,6 +581,43 @@ Public Class MainForm
         If Directory.Exists(SaveDefaultPath) Then
             Directory.CreateDirectory(SaveDefaultPath)
         End If
+    End Sub
+    Private Sub SaveJsonData(SaveFileName As String)
+        CacheSaveFileName = SaveFileName
+        Dim SaveJsonCache As New SaveJSON
+        With SaveJsonCache
+            'Save Version
+            .saveVersion = {5, 0, 0} 'Primary"Main"|Secondary"Hotfix"|Third"Edited"
+            .regionID = RegionID
+            .characterName = PlayerData.CName1
+            .skin = PlayerData.Sk
+            ReDim .regionDistance(TourDist.Length)
+            Dim a As Integer
+            For a = 0 To TourDist.Length - 1 Step 1
+                .regionDistance(a) = TourDist(a)
+            Next
+            ReDim .materialCount(MaterialItem.Length)
+            For a = 0 To MaterialItem.Length - 1 Step 1
+                .materialCount(a) = MaterialItem(a)
+            Next
+            .player.element = PlayerData.element1
+            .player.level = PlayerData.Level1
+            .player.xp = PlayerData.XP1
+            .player.xpneed = PlayerData.XPNeed1
+            .player.hp = PlayerData.HP1
+            .player.maxhp = PlayerData.HPM1
+            .player.attack = PlayerData.ATK1
+            .player.defense = PlayerData.DEF1
+            .player.star_energy = PlayerData.SE1
+            .player.crit_rate = PlayerData.CRate1
+            .player.crit_damage = PlayerData.CDMG1
+            .player.coins = PlayerData.Coins1
+        End With
+        Dim SaveJSONSab As String = JsonConvert.SerializeObject(SaveJsonCache)
+        If MsgBox("是否将下面数据复制到剪贴板？" & vbCrLf & SaveJSONSab, vbYesNo, Me.Text) = vbYes Then
+            Clipboard.SetText(SaveJSONSab)
+        End If
+        'SavedLabelShowTime = 180
     End Sub
     Private Sub SaveData(SaveFileName As String)
         CacheSaveFileName = SaveFileName
@@ -594,7 +657,7 @@ Public Class MainForm
     Private Sub OpenFileDialog()
         Dim a As New OpenFileDialog
         CheckDirectory()
-        a.Filter = LangStr.s_string(106, langID) & "|*.yts" '|Yave's Tours Text File|*.txt|Yave's Tours Json File|*.json
+        a.Filter = LangStr.s_string(106, langID) & "|*.yts"
         If a.ShowDialog = Windows.Forms.DialogResult.OK Then
             LoadData(a.FileName)
         End If
@@ -714,11 +777,7 @@ Public Class MainForm
 
     ''Program Start!!!
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\WinFormGame") Then
-            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\WinFormGame\Yave's Tours\Config.ini")
-            Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\WinFormGame\Yave's Tours")
-            Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\WinFormGame")
-        End If
+        Dim fsy As Object = My.Computer.FileSystem
         If Not Directory.Exists(DefaultFolderPath) Then
             Directory.CreateDirectory(DefaultFolderPath)
         End If
@@ -1258,5 +1317,9 @@ Public Class MainForm
 
     Private Sub ItemShopToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItemShopToolStripMenuItem.Click
         ItemShop.Show()
+    End Sub
+
+    Private Sub UseJSONDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UseJSONDataToolStripMenuItem.Click
+        SaveJsonData("hep")
     End Sub
 End Class
