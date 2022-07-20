@@ -122,11 +122,12 @@
     <Compile Include="Program\Calculate.vb" />
     <Compile Include="Program\ElementRates.vb" />
     <Compile Include="Program\Functions.vb" />
-    <Compile Include="Program\IniFile.vb" />
-    <Compile Include="Program\JsonConfig.vb" />
+    <Compile Include="Program\Module\IniFile.vb" />
+    <Compile Include="Program\Module\InitEnemyStr.vb" />
+    <Compile Include="Program\Module\JsonConfig.vb" />
     <Compile Include="Program\Lang.vb" />
     <Compile Include="Program\LangStr.vb" />
-    <Compile Include="Program\SaveProgram.vb" />
+    <Compile Include="Program\Module\SaveProgram.vb" />
     <Compile Include="Program\Threading.vb" />
     <Compile Include="Resources\Audio.Designer.vb">
       <AutoGen>True</AutoGen>

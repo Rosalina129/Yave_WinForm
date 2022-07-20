@@ -614,10 +614,10 @@ Public Class MainForm
             b = 0
             .player.element_id = PlayerData.element1
             .player.level = PlayerData.Level1
-            .player.xp = PlayerData.XP1
-            .player.xpneed = PlayerData.XPNeed1
-            .player.hp = PlayerData.HP1
-            .player.maxhp = PlayerData.HPM1
+            .player.xp.current = PlayerData.XP1
+            .player.xp.need = PlayerData.XPNeed1
+            .player.health.current = PlayerData.HP1
+            .player.health.max = PlayerData.HPM1
             .player.attack = PlayerData.ATK1
             .player.defense = PlayerData.DEF1
             .player.star_energy = PlayerData.SE1
@@ -633,9 +633,6 @@ Public Class MainForm
         sw.Close()
         fs.Close()
         SavedLabelShowTime = 180
-    End Sub
-    Private Sub LoadJsonData(LoadFileName)
-
     End Sub
     Private Sub SaveData(SaveFileName As String)
         CacheSaveFileName = SaveFileName
@@ -677,8 +674,61 @@ Public Class MainForm
         CheckDirectory()
         a.Filter = LangStr.s_string(106, langID) & "|*.yts"
         If a.ShowDialog = Windows.Forms.DialogResult.OK Then
-            LoadData(a.FileName)
+            LoadJsonData(a.FileName)
         End If
+    End Sub
+    Private Sub LoadJsonData(LoadFileName)
+        CacheSaveFileName = LoadFileName
+        PlayerData = New InitPlayer
+        Dim SaveVersion() As Integer
+        Dim fs As New FileStream(LoadFileName, FileMode.Open)
+        Dim sr As New StreamReader(fs)
+        Dim LoadJsonStream As String = sr.ReadToEnd
+        sr.Close()
+        fs.Close()
+        DebugShow(LoadJsonStream)
+        Dim LoadJsonDESab As SaveJSON = JsonConvert.DeserializeObject(Of SaveJSON)(LoadJsonStream)
+        With LoadJsonDESab
+            Select Case .save_version(0)
+                Case 5
+                    PlayerData.Sk = .skin
+                    PlayerData.element1 = .player.element_id
+                    PlayerData.Level1 = .player.level
+                    PlayerData.CName1 = .character_name
+                    PlayerData.XP1 = .player.xp.current
+                    PlayerData.XPNeed1 = .player.xp.need
+                    PlayerData.HP1 = .player.health.current
+                    PlayerData.HPM1 = .player.health.max
+                    PlayerData.ATK1 = .player.attack
+                    PlayerData.DEF1 = .player.defense
+                    PlayerData.SE1 = .player.star_energy
+                    PlayerData.CRate1 = .player.crit_rate
+                    PlayerData.CDMG1 = .player.crit_damage
+                    PlayerData.Coins1 = .player.coins
+                    RegionID = .region_id
+                    Dim a As Integer
+                    Dim b As Integer
+                    For a = 0 To TourDist.Length - 1 Step 1
+                        TourDist(a) = .region_distance(a)
+                    Next
+                    a = 0
+                    UpgradePoint = .player.upgrade_point
+                    DeathCount = .death_count
+                    For b = 0 To .items.Length - 1 Step 1
+                        a = .items(b).id
+                        MaterialItem(a) = .items(b).count
+                        a = 0
+                    Next
+                    CurrentEnemy = New InitEnemy()
+                    isBattle = False
+                    Panel10.Visible = False
+                    progress = True
+                Case Else
+                    If MsgBox(LangStr.s_string(134, langID), vbYesNo, Me.Text) = vbYes Then
+
+                    End If
+            End Select
+        End With
     End Sub
     Private Sub LoadData(LoadFileName)
         Try
@@ -861,10 +911,10 @@ Public Class MainForm
                     CheckDirectory()
                     b.Filter = LangStr.s_string(106, langID) & "|*.yts"
                     If b.ShowDialog = Windows.Forms.DialogResult.OK Then
-                        SaveData(b.FileName)
+                        SaveJsonData(b.FileName)
                     End If
                 Else
-                    SaveData(CacheSaveFileName)
+                    SaveJsonData(CacheSaveFileName)
                 End If
             End If
         End If
@@ -1335,31 +1385,5 @@ Public Class MainForm
 
     Private Sub ItemShopToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItemShopToolStripMenuItem.Click
         ItemShop.Show()
-    End Sub
-
-    Private Sub UseJSONDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UseJSONDataToolStripMenuItem.Click
-        Dim a As Boolean
-        If progress <> True Then
-            a = MsgBox(LangStr.s_string(38, langID), vbYesNo, Me.Text)
-            If a = vbYes Then
-                OpenFileDialog()
-            End If
-        Else
-            If Not isBoss Then
-                If MsgBox(LangStr.s_string(189, langID) & vbCrLf & vbCrLf & LangStr.s_string(190, langID) & vbCrLf & LangStr.s_string(191, langID), vbYesNo, Me.Text) = vbYes Then
-                    If CacheSaveFileName = "" Then
-                        Dim b As New SaveFileDialog
-                        CheckDirectory()
-                        b.Filter = LangStr.s_string(106, langID) & "|*.yts"
-                        If b.ShowDialog = Windows.Forms.DialogResult.OK Then
-                            SaveJsonData(b.FileName)
-                        End If
-                    Else
-                        SaveJsonData(CacheSaveFileName)
-                    End If
-
-                End If
-            End If
-            End If
     End Sub
 End Class

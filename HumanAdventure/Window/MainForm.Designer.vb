@@ -275,7 +275,6 @@ Partial Class MainForm
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.UseJSONDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -354,7 +353,6 @@ Partial Class MainForm
         '
         'SaveDataToolStripMenuItem
         '
-        Me.SaveDataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UseJSONDataToolStripMenuItem})
         Me.SaveDataToolStripMenuItem.Name = "SaveDataToolStripMenuItem"
         Me.SaveDataToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
@@ -2890,12 +2888,6 @@ Partial Class MainForm
         Me.Timer3.Enabled = True
         Me.Timer3.Interval = 10
         '
-        'UseJSONDataToolStripMenuItem
-        '
-        Me.UseJSONDataToolStripMenuItem.Name = "UseJSONDataToolStripMenuItem"
-        Me.UseJSONDataToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.UseJSONDataToolStripMenuItem.Text = "Use JSON Data"
-        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -3235,5 +3227,4 @@ Partial Class MainForm
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Label11 As Label
     Friend WithEvents Timer3 As Timer
-    Friend WithEvents UseJSONDataToolStripMenuItem As ToolStripMenuItem
 End Class

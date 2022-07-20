@@ -2,6 +2,7 @@
     Public Structure SaveJSON
         Public save_version() As Integer
         Public character_name As String
+        Public death_count As Integer
         Public skin As Integer
         Public region_id As Integer
         Public region_distance() As Double
@@ -15,16 +16,15 @@
     Public Structure player
         Public element_id As Integer
         Public level As Integer
-        Public xp As Double
-        Public xpneed As Double
-        Public hp As Integer
-        Public maxhp As Integer
+        Public xp As xp
+        Public health As health
         Public attack As Integer
         Public defense As Integer
         Public star_energy As Integer
         Public crit_rate As Double
         Public crit_damage As Double
         Public coins As Integer
+        Public upgrade_point As Integer
     End Structure
     Public Structure basic
 
@@ -55,5 +55,9 @@
     Public Structure xp
         Public current As Double
         Public need As Double
+    End Structure
+    Public Structure health
+        Public current As Integer
+        Public max As Integer
     End Structure
 End Module

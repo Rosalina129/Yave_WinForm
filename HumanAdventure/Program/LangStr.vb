@@ -189,10 +189,7 @@
         {"The game executed an incompleted command, code:", "程序执行了一个未成功的命令，代码："},
         {"Reason may be:", "原因可能是："},
         {"The save saving an array of data that does not correspond to the current version, causing the Index of the array to be abnormal.", "该存档存储的某个数据数组与现在使用的版本所不对应，导致数组的 Index 出现异常。"},
-        {"You are strying to save your game data in Json format.", "你正在尝试使用 Json 格式储存你的游戏数据。"},'189
-        {"WARNING! It's still in technical testing. It is mainly saved with overwriting. It is suggested to save as other files.", "请注意！目前还处于技术性测试，目前主要以覆盖的方式存储，建议另存为其他文件。"},
-        {"An attempt to save the file will cause the original save to be unreadable. Do you want to continue?", "尝试保存会导致原存档无法读取，是否继续？"},
-        {"", ""},
+        {"Convert old saves...", "转换旧存档..."},
         {"", ""},
         {"", ""},
         {"", ""}
