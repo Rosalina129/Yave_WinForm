@@ -2,8 +2,6 @@
 Imports System.IO
 Imports System.Threading
 Imports Newtonsoft.Json
-Imports Newtonsoft.Json.Linq
-Imports My.Computer
 Public Class MainForm
 
     Public Shared progress As Boolean               'Make public share
@@ -13,9 +11,6 @@ Public Class MainForm
     Dim RegionID As Integer
     'IMPORTANT!!! This save version determines which version you play the save on,
     'and whether it is compatible with the current version!
-    Const SaveVersion As Integer = 3
-    Const CompatibleVersion As Integer = 2
-
     Public Shared ReadOnly SaveDefaultPath As String = Environment.CurrentDirectory & "\Save"
     Public Shared SaveUserPath As String
     Dim CacheSaveFileName As String
@@ -68,8 +63,6 @@ Public Class MainForm
     Public Shared Basic As InitBasic
 
     Public MaterialItem(LangStr.s_item.Length) As Int16
-
-    '726, 601
     Private Sub ErrorOccurred()
         MsgBox("An unknown error occurred while attempting to perform this function.", vbYes, Me.Text)
         Application.Exit()
@@ -634,41 +627,41 @@ Public Class MainForm
         fs.Close()
         SavedLabelShowTime = 180
     End Sub
-    Private Sub SaveData(SaveFileName As String)
-        CacheSaveFileName = SaveFileName
-        Dim fs As New FileStream(SaveFileName, FileMode.Create)
-        Dim bw As New BinaryWriter(fs)
-        Dim b_redunant As Byte = 0
-        Dim a As Integer
-        bw.Write(SaveVersion)
-        bw.Write(b_redunant)
-        bw.Write(PlayerData.Sk)
-        bw.Write(PlayerData.element1)
-        bw.Write(PlayerData.Level1)
-        bw.Write(PlayerData.CName1)
-        bw.Write(PlayerData.XP1)
-        bw.Write(PlayerData.XPNeed1)
-        bw.Write(PlayerData.HP1)
-        bw.Write(PlayerData.HPM1)
-        bw.Write(PlayerData.ATK1)
-        bw.Write(PlayerData.DEF1)
-        bw.Write(PlayerData.SE1)
-        bw.Write(PlayerData.CRate1)
-        bw.Write(PlayerData.CDMG1)
-        bw.Write(PlayerData.Coins1)
-        For a = 0 To MaterialItem.Length - 1 Step 1
-            bw.Write(MaterialItem(a))
-        Next
-        bw.Write(UpgradePoint)
-        bw.Write(DeathCount)
-        bw.Write(RegionID)
-        For a = 0 To TourDist.Length - 1 Step 1
-            bw.Write(TourDist(a))
-        Next
-        bw.Close()
-        fs.Close()
-        SavedLabelShowTime = 180
-    End Sub
+    'Private Sub SaveData(SaveFileName As String)
+    '   CacheSaveFileName = SaveFileName
+    'Dim fs As New FileStream(SaveFileName, FileMode.Create)
+    'Dim bw As New BinaryWriter(fs)
+    '    Dim b_redunant As Byte = 0
+    'dim a As Integer
+    '   bw.Write(SaveVersion)
+    '   bw.Write(b_redunant)
+    '   bw.Write(PlayerData.Sk)
+    '   bw.Write(PlayerData.element1)
+    '   bw.Write(PlayerData.Level1)
+    '   bw.Write(PlayerData.CName1)
+    '   bw.Write(PlayerData.XP1)
+    '   bw.Write(PlayerData.XPNeed1)
+    '   bw.Write(PlayerData.HP1)
+    '   bw.Write(PlayerData.HPM1)
+    '   bw.Write(PlayerData.ATK1)
+    '   bw.Write(PlayerData.DEF1)
+    '   bw.Write(PlayerData.SE1)
+    '   bw.Write(PlayerData.CRate1)
+    '   bw.Write(PlayerData.CDMG1)
+    '   bw.Write(PlayerData.Coins1)
+    'For a = 0 To MaterialItem.Length - 1 Step 1
+    '      bw.Write(MaterialItem(a))
+    'ext
+    '   bw.Write(UpgradePoint)
+    '   bw.Write(DeathCount)
+    '   bw.Write(RegionID)
+    'For a = 0 To TourDist.Length - 1 Step 1
+    '       bw.Write(TourDist(a))
+    'Next
+    '    bw.Close()
+    '    fs.Close()
+    '    SavedLabelShowTime = 180
+    'End Sub
     Private Sub OpenFileDialog()
         Dim a As New OpenFileDialog
         CheckDirectory()
@@ -677,60 +670,85 @@ Public Class MainForm
             LoadJsonData(a.FileName)
         End If
     End Sub
-    Private Sub LoadJsonData(LoadFileName)
-        CacheSaveFileName = LoadFileName
+    Private Sub InitReset()
         PlayerData = New InitPlayer
-        Dim SaveVersion() As Integer
-        Dim fs As New FileStream(LoadFileName, FileMode.Open)
-        Dim sr As New StreamReader(fs)
-        Dim LoadJsonStream As String = sr.ReadToEnd
-        sr.Close()
-        fs.Close()
-        DebugShow(LoadJsonStream)
-        Dim LoadJsonDESab As SaveJSON = JsonConvert.DeserializeObject(Of SaveJSON)(LoadJsonStream)
-        With LoadJsonDESab
-            Select Case .save_version(0)
-                Case 5
-                    PlayerData.Sk = .skin
-                    PlayerData.element1 = .player.element_id
-                    PlayerData.Level1 = .player.level
-                    PlayerData.CName1 = .character_name
-                    PlayerData.XP1 = .player.xp.current
-                    PlayerData.XPNeed1 = .player.xp.need
-                    PlayerData.HP1 = .player.health.current
-                    PlayerData.HPM1 = .player.health.max
-                    PlayerData.ATK1 = .player.attack
-                    PlayerData.DEF1 = .player.defense
-                    PlayerData.SE1 = .player.star_energy
-                    PlayerData.CRate1 = .player.crit_rate
-                    PlayerData.CDMG1 = .player.crit_damage
-                    PlayerData.Coins1 = .player.coins
-                    RegionID = .region_id
-                    Dim a As Integer
-                    Dim b As Integer
-                    For a = 0 To TourDist.Length - 1 Step 1
-                        TourDist(a) = .region_distance(a)
-                    Next
-                    a = 0
-                    UpgradePoint = .player.upgrade_point
-                    DeathCount = .death_count
-                    For b = 0 To .items.Length - 1 Step 1
-                        a = .items(b).id
-                        MaterialItem(a) = .items(b).count
-                        a = 0
-                    Next
-                    CurrentEnemy = New InitEnemy()
-                    isBattle = False
-                    Panel10.Visible = False
-                    progress = True
-                Case Else
-                    If MsgBox(LangStr.s_string(134, langID), vbYesNo, Me.Text) = vbYes Then
-
-                    End If
-            End Select
-        End With
+        UpgradePoint = 0
+        DeathCount = 0
+        RegionID = 0
+        Dim b As Integer
+        For b = 0 To TourDist.Length - 1 Step 1
+            TourDist(b) = 0
+        Next
+        For b = 0 To MaterialItem.Length - 1 Step 1
+            MaterialItem(b) = 0
+        Next
+        MaterialListsRefresh()
+        isBattle = True
+        Panel10.Visible = True
+        progress = False
     End Sub
-    Private Sub LoadData(LoadFileName)
+    Private Sub LoadJsonData(LoadFileName)
+        Try
+            CacheSaveFileName = LoadFileName
+            PlayerData = New InitPlayer
+            Dim fs As New FileStream(LoadFileName, FileMode.Open)
+            Dim sr As New StreamReader(fs)
+            Dim LoadJsonStream As String = sr.ReadToEnd
+            sr.Close()
+            fs.Close()
+            'DebugShow(LoadJsonStream)
+            Dim LoadJsonDESab As SaveJSON = JsonConvert.DeserializeObject(Of SaveJSON)(LoadJsonStream)
+            With LoadJsonDESab
+                Select Case .save_version(0)
+                    Case 5
+                        PlayerData.Sk = .skin
+                        PlayerData.element1 = .player.element_id
+                        PlayerData.Level1 = .player.level
+                        PlayerData.CName1 = .character_name
+                        PlayerData.XP1 = .player.xp.current
+                        PlayerData.XPNeed1 = .player.xp.need
+                        PlayerData.HP1 = .player.health.current
+                        PlayerData.HPM1 = .player.health.max
+                        PlayerData.ATK1 = .player.attack
+                        PlayerData.DEF1 = .player.defense
+                        PlayerData.SE1 = .player.star_energy
+                        PlayerData.CRate1 = .player.crit_rate
+                        PlayerData.CDMG1 = .player.crit_damage
+                        PlayerData.Coins1 = .player.coins
+                        RegionID = .region_id
+                        Dim a As Integer
+                        Dim b As Integer
+                        For a = 0 To TourDist.Length - 1 Step 1
+                            TourDist(a) = .region_distance(a)
+                        Next
+                        a = 0
+                        UpgradePoint = .player.upgrade_point
+                        DeathCount = .death_count
+                        For b = 0 To .items.Length - 1 Step 1
+                            a = .items(b).id
+                            MaterialItem(a) = .items(b).count
+                            a = 0
+                        Next
+                        CurrentEnemy = New InitEnemy()
+                        isBattle = False
+                        Panel10.Visible = False
+                        progress = True
+                    Case Else
+                        If MsgBox(LangStr.s_string(134, langID), vbYesNo, Me.Text) = vbYes Then
+
+                        End If
+                End Select
+            End With
+        Catch ex As Newtonsoft.Json.JsonReaderException
+            DebugShow(LangStr.s_string(185, langID) & vbCrLf & vbCrLf &
+                        LangStr.s_string(187, langID) & vbCrLf & LangStr.s_string(191, langID))
+        Catch ex As Newtonsoft.Json.JsonSerializationException
+            DebugShow(LangStr.s_string(185, langID) & vbCrLf & vbCrLf &
+                        LangStr.s_string(187, langID) & vbCrLf & LangStr.s_string(190, langID))
+            InitReset()
+        End Try
+    End Sub
+    Private Sub ConvertData(LoadFileName)
         Try
             CacheSaveFileName = LoadFileName
             PlayerData = New InitPlayer
@@ -772,44 +790,6 @@ Public Class MainForm
                     Panel10.Visible = False
                     progress = True
                 Case 2
-                    If MsgBox(LangStr.s_string(134, langID), vbYesNo, Me.Text) = vbYes Then
-                        Dim b As Integer
-                        c = br.ReadByte
-                        PlayerData.Sk = br.ReadInt32
-                        PlayerData.element1 = br.ReadInt32
-                        PlayerData.Level1 = br.ReadInt32
-                        PlayerData.CName1 = br.ReadString
-                        PlayerData.XP1 = br.ReadUInt64
-                        PlayerData.XPNeed1 = br.ReadUInt64
-                        PlayerData.HP1 = br.ReadInt32
-                        PlayerData.HPM1 = br.ReadInt32
-                        PlayerData.ATK1 = br.ReadInt32
-                        PlayerData.DEF1 = br.ReadInt32
-                        PlayerData.SE1 = br.ReadUInt32
-                        PlayerData.CRate1 = br.ReadDouble
-                        PlayerData.CDMG1 = br.ReadDouble
-                        PlayerData.Coins1 = br.ReadInt32
-                        UpgradePoint = br.ReadInt32
-                        DeathCount = br.ReadInt32
-                        RegionID = br.ReadInt32
-                        For b = 0 To TourDist.Length - 1 Step 1
-                            TourDist(b) = br.ReadUInt64
-                        Next
-                        CurrentEnemy = New InitEnemy()
-                        isBattle = False
-                        Panel10.Visible = False
-                        progress = True
-                    End If
-                    For b = 0 To MaterialItem.Length - 1 Step 1
-                        MaterialItem(b) = 0
-                    Next
-                    MaterialListsRefresh()
-                Case Else
-                    DebugShow(LangStr.s_string(73, langID) & vbCrLf &
-                                  LangStr.s_string(56, langID) & ":" & SaveVersion & vbCrLf &
-                                  LangStr.s_string(57, langID) & ":" & SaveVer & vbCrLf &
-                                  LangStr.s_string(58, langID) & ":" & CompatibleVersion
-                                  )
             End Select
 
             br.Close()
@@ -818,20 +798,7 @@ Public Class MainForm
             DebugShow(LangStr.s_string(186, langID) & "File.StreamError" & vbCrLf &
                       LangStr.s_string(187, langID) & LangStr.s_string(188, langID)
                       )
-            PlayerData = New InitPlayer
-            UpgradePoint = 0
-            DeathCount = 0
-            RegionID = 0
-            For b = 0 To TourDist.Length - 1 Step 1
-                TourDist(b) = 0
-            Next
-            For b = 0 To MaterialItem.Length - 1 Step 1
-                MaterialItem(b) = 0
-            Next
-            MaterialListsRefresh()
-            isBattle = True
-            Panel10.Visible = True
-            progress = False
+            InitReset()
         Catch ex As IndexOutOfRangeException
         End Try
     End Sub
@@ -949,7 +916,7 @@ Public Class MainForm
             Next
             isBattle = False
             Panel10.Visible = False
-            SaveData(saveFilename)
+            SaveJsonData(saveFilename)
             progress = True
         End If
         If progress = True Then
@@ -1010,7 +977,7 @@ Public Class MainForm
                     AutoSavingCD += 1
                     If AutoSavingCD = 100 * 60 Then
                         If Not CacheSaveFileName = "" Then
-                            SaveData(CacheSaveFileName)
+                            SaveJsonData(CacheSaveFileName)
                             SavedLabelShowTime = 180
                         End If
                         AutoSavingCD = 0
@@ -1299,7 +1266,7 @@ Public Class MainForm
             CheckDirectory()
             b.Filter = LangStr.s_string(106, langID) & "|*.yts"
             If b.ShowDialog = Windows.Forms.DialogResult.OK Then
-                SaveData(b.FileName)
+                SaveJsonData(b.FileName)
             End If
         End If
     End Sub
