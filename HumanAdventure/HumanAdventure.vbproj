@@ -85,7 +85,8 @@
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -120,21 +121,14 @@
     <Compile Include="Init\Enemies.vb" />
     <Compile Include="Init\InitArtifact.vb" />
     <Compile Include="Init\InitEquip.vb" />
-    <Compile Include="Program\Calculate.vb" />
+    <Compile Include="Program\Module\Calculate.vb" />
     <Compile Include="Program\ElementRates.vb" />
-    <Compile Include="Program\Functions.vb" />
     <Compile Include="Program\Module\IniFile.vb" />
     <Compile Include="Program\Module\InitEnemyStr.vb" />
     <Compile Include="Program\Module\JsonConfig.vb" />
     <Compile Include="Program\Lang.vb" />
-    <Compile Include="Program\LangStr.vb" />
+    <Compile Include="Program\Module\StringData.vb" />
     <Compile Include="Program\Module\SaveProgram.vb" />
-    <Compile Include="Program\Threading.vb" />
-    <Compile Include="Resources\Audio.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Audio.resx</DependentUpon>
-    </Compile>
     <Compile Include="Window\ChangeName.Designer.vb">
       <DependentUpon>ChangeName.vb</DependentUpon>
     </Compile>
@@ -220,11 +214,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Audio.resx">
-      <CustomToolNamespace>My.Resources</CustomToolNamespace>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Audio.Designer.vb</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Window\About.resx">
       <DependentUpon>About.vb</DependentUpon>
     </EmbeddedResource>

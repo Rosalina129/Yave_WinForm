@@ -49,7 +49,7 @@ Partial Class About
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(75, 15)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Version: 0.0.3"
+        Me.Label2.Text = "Version: 0.0.5"
         '
         'Label3
         '
@@ -85,7 +85,7 @@ Partial Class About
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(186, 15)
         Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Build Time: 2022/6/23 (China CST)"
+        Me.Label4.Text = "Build Time: 2022/7/21 (China CST)"
         '
         'Label5
         '

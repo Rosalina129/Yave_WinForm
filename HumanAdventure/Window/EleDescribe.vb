@@ -3,16 +3,16 @@
     Private Sub ElementCalc(ele As Integer)
         Dim a As Integer
         For a = 0 To 8 Step 1
-            Label1.Text = Label1.Text & LangStr.s_string(169, MainForm.langID) & LangStr.s_string(80 + a, MainForm.langID) & ": x" & ElementRates.Multi(ele, a) & vbCrLf
+            Label1.Text = Label1.Text & s_string(169, MainForm.langID) & s_string(80 + a, MainForm.langID) & ": x" & ElementRates.Multi(ele, a) & vbCrLf
         Next
     End Sub
     Private Sub EleDescribe_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label1.Text = ""
-        Me.Text = LangStr.s_string(158, MainForm.langID)
-        Label2.Text = LangStr.s_string(158, MainForm.langID)
+        Me.Text = s_string(158, MainForm.langID)
+        Label2.Text = s_string(158, MainForm.langID)
         Dim a As Integer
         For a = 0 To 8 Step 1
-            ListBox1.Items(a) = LangStr.s_string(80 + a, MainForm.langID)
+            ListBox1.Items(a) = s_string(80 + a, MainForm.langID)
         Next
     End Sub
 

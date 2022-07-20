@@ -1,15 +1,15 @@
 ﻿Public Class ChangePlayerProp
     Private Sub CPP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Text = LangStr.s_string(110, MainForm.langID)
-        Label1.Text = LangStr.s_string(110, MainForm.langID)
-        Label2.Text = LangStr.s_string(27, MainForm.langID)
-        Label3.Text = LangStr.s_string(28, MainForm.langID)
-        Label4.Text = LangStr.s_string(29, MainForm.langID)
-        Label5.Text = LangStr.s_string(30, MainForm.langID)
-        Label6.Text = LangStr.s_string(31, MainForm.langID)
-        Label7.Text = LangStr.s_string(32, MainForm.langID)
-        Label8.Text = LangStr.s_string(33, MainForm.langID)
-        Button1.Text = LangStr.s_string(111, MainForm.langID)
+        Text = s_string(110, MainForm.langID)
+        Label1.Text = s_string(110, MainForm.langID)
+        Label2.Text = s_string(27, MainForm.langID)
+        Label3.Text = s_string(28, MainForm.langID)
+        Label4.Text = s_string(29, MainForm.langID)
+        Label5.Text = s_string(30, MainForm.langID)
+        Label6.Text = s_string(31, MainForm.langID)
+        Label7.Text = s_string(32, MainForm.langID)
+        Label8.Text = s_string(33, MainForm.langID)
+        Button1.Text = s_string(111, MainForm.langID)
         With MainForm
             TextBox1.Text = .PlayerData.HPM1
             TextBox2.Text = .PlayerData.ATK1

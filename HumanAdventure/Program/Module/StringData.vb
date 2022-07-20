@@ -1,5 +1,5 @@
-﻿Public Class LangStr
-    Public Shared s_string As String(,) = {
+﻿Module StringData
+    Public s_string As String(,) = {
         {"Menu", "菜单"},
         {"Options", "选项"},
         {"Experimental", "实验性"},
@@ -185,16 +185,34 @@
         {"Awaken Using", "觉醒专用"},
         {"You get: ", "你获得了："},'183
         {"The current progress is in progress under development and does not represent final results.", "当前的进度为开发中，不代表最终成果。"},
-        {"The save data are be unreadable!", "此存档文件无法读取。"},
-        {"The game executed an incompleted command, code:", "程序执行了一个未成功的命令，代码："},
-        {"Reason:", "原因："},
-        {"The save saving an array of data that does not correspond to the current version, causing the Index of the array to be abnormal.", "该存档存储的某个数据数组与现在使用的版本所不对应，导致数组的 Index 出现异常。"},
-        {"Convert old saves...", "转换旧存档..."},'189
-        {"The save is empty!", "此存档为空！"},
-        {"There is an error somewhere in the Json statement of this save.", "此存档的Json语句某处有错误。"},
-        {"", ""}
+        {"An error occurred during function execution.", "函数执行的过程中出现错误。"},
+        {"Code:", "代码："},
+        {">[Reason analysis]<", ">[原因分析]<"},
+        {"Convert old saves...", "转换旧存档..."},'188
+        {"Important Files Check...", "重要文件检查..."},
+        {"Needs Files:", "需要的文件："},
+        {"[Found]", "[已找到]"},
+        {"[Missing]", "[缺失]"}
     }
-    Public Shared s_enemy As String(,) = {
+    Public s_errorcode As String(,) = {
+        {"No Error.", "无错误。"},
+        {"The save is empty!", "此存档为空！"},
+        {"", ""},
+        {"There is an error somewhere in the Json statement of this save.", "此存档的 Json 语句某处有错误。"},
+        {"The data used in this save is Json data that is not used by this program.", "此存档使用的数据为非本程序使用的 Json 数据。"},
+        {"This program is missing important files, please check the list and try again.", "本程序缺失重要文件，请检查清单后重试。"},
+        {"This program tried to save your data, but this program is missing important files, so the save program is invalid.", "程序尝试保存数据，但缺失重要文件，所以保存程序失效。"}
+        }
+    Public errorcodename As String() = {
+        "normally",
+        "save_data_not_extist",
+        "",
+        "save_json_statement_error",
+        "save_json_not_current_software",
+        "program_missing_important_files",
+        "program_save_error_with_missing_important_files"
+        }
+    Public s_enemy As String(,) = {
         {"Slime", "史莱姆"},
         {"Spider", "蜘蛛"},
         {"Bat", "蝙蝠"},
@@ -222,7 +240,7 @@
         {"", ""},
         {"", ""}
         }
-    Public Shared s_boss As String(,) = {
+    Public s_boss As String(,) = {
         {"King Slime", "史莱姆王"},
         {"King Spider", "蜘蛛精"},
         {"King Ice Hilichurl", "冰丘丘王"},
@@ -232,7 +250,7 @@
         {"Elite Knight", "精英·侠客"},
         {"Dryad", "树妖"}
         }
-    Public Shared s_basic As String(,) = {
+    Public s_basic As String(,) = {
         {"No Basic", "无基础"}，
         {"Ordinary", "平凡"}，
         {"Brave", "勇敢"}，
@@ -245,7 +263,7 @@
         {"Timidity", "胆怯"}，
         {"Genius", "天才"}
         }
-    Public Shared s_skill As String(,) = {
+    Public s_skill As String(,) = {
         {"No Skill", "无技能"}，
         {"Alchemy", "炼金术"}，
         {"Freeze", "冻结"}，
@@ -254,7 +272,7 @@
         {"Rampancy", "蔓生"}，
         {"Rage", "暴怒"}
         }
-    Public Shared s_skilldes As String(,) = {
+    Public s_skilldes As String(,) = {
         {"No Skill", "无技能"}，
         {"Felt the power of alchemy,", "感受到了炼金的力量，"}，
         {"Deals frostbite damage to enemies.", "对敌方造成冻伤伤害。"}，
@@ -263,7 +281,7 @@
         {"Entangling an enemy has a chance to make it unable to attack. (Except ele. atk)", "对敌方造成缠绕伤害，有一定几率令对方无法发起攻击。（元素攻击除外）"}，
         {"Deals double damage to enemies.", "对敌方造成二倍伤害。"}
         }
-    Public Shared s_item As String(,) = {
+    Public s_item As String(,) = {
         {"None", "空"}，'0
         {"XP Reagent", "XP 试剂"}，'Common Start
         {"XP Flask", "XP 烧瓶"}，
@@ -410,7 +428,7 @@
         {"Sliver Yave's Tours", "银牌 Yave's Tours"},
         {"Gold Yave's Tours", "金牌 Yave's Tours"}
         }
-    Public Shared s_itemsmith As String(,) = {
+    Public s_itemsmith As String(,) = {
         {"", ""}，
         {"", ""}，
         {"", ""}，
@@ -421,7 +439,7 @@
         {"", ""}，
         {"", ""}
         }
-    Public Shared s_equip As String(,) = {
+    Public s_equip As String(,) = {
         {"", ""}，
         {"", ""}，
         {"", ""}，
@@ -432,4 +450,4 @@
         {"", ""}，
         {"", ""}
         }
-End Class
+End Module

@@ -4,7 +4,7 @@
             MainForm.PlayerData.CName1 = TextBox1.Text
             Close()
         Else
-            MainForm.DebugShow(LangStr.s_string(41, MainForm.langID))
+            MainForm.DebugShow(s_string(41, MainForm.langID))
         End If
     End Sub
 
@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub ChangeName_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label1.Text = LangStr.s_string(40, MainForm.langID)
-        Button1.Text = LangStr.s_string(25, MainForm.langID)
+        Label1.Text = s_string(40, MainForm.langID)
+        Button1.Text = s_string(25, MainForm.langID)
     End Sub
 End Class
