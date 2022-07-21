@@ -3,7 +3,6 @@ Imports System.IO
 Imports System.Threading
 Imports Newtonsoft.Json
 Public Class MainForm
-
     Public Shared progress As Boolean               'Make public share
     Public langID As Byte = 0                     '0 = English (US), 1 = Chinese Simplified (PRC)
     Public NewSaveWindowProgress As Boolean
@@ -29,6 +28,8 @@ Public Class MainForm
     Dim isRun As Integer
     Dim isautoEquip As Boolean
     Dim isBetaProgress As Boolean = 1
+    '
+    '729, 630
 
     Dim AutoPurchase As Integer
     Dim DAB As Boolean                      'Disable Action Buttons
@@ -108,11 +109,12 @@ Public Class MainForm
                 End Select
         End Select
     End Sub
-    Private Function ExpectionShow(errorcode As Integer, ByVal type As Integer)
+    Private Sub ExpectionShow(errorcode As Integer, ByVal type As Integer)
+        InitReset()
         Dim a As String = s_errorcode(errorcode, langID)
         Select Case type
             Case 0 'File Load
-                Return MsgBox(s_string(185, langID) &
+                MsgBox(s_string(185, langID) &
                               vbCrLf &
                               vbCrLf &
                               s_string(187, langID) &
@@ -123,8 +125,7 @@ Public Class MainForm
                               )
             Case 1 'Function Error
         End Select
-        InitReset()
-    End Function
+    End Sub
     Private Function VB6String(count As Integer)
         Dim a As String = " "
         Dim b As Integer
@@ -630,6 +631,7 @@ Public Class MainForm
             .player.crit_rate = PlayerData.CRate1
             .player.crit_damage = PlayerData.CDMG1
             .player.coins = PlayerData.Coins1
+            .player.upgrade_point = UpgradePoint
         End With
         Dim SaveJSONSab As String = JsonConvert.SerializeObject(SaveJsonCache)
         'If MsgBox("是否将下面数据复制到剪贴板？" & vbCrLf & SaveJSONSab, vbYesNo, Me.Text) = vbYes Then
