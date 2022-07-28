@@ -17,19 +17,10 @@
         New InitEnemy(2, s_enemy(12, MainForm.langID), 497, 497, 198, 108, 0.25, 0.75, 139, 118),
         New InitEnemy(3, s_enemy(12, MainForm.langID), 1075, 1075, 135, 135, 0.25, 0.75, 139, 118),
         New InitEnemy(4, s_enemy(12, MainForm.langID), 934, 934, 98, 109, 0.25, 0.75, 139, 118),
-        New InitEnemy(1, s_enemy(5, MainForm.langID), 626, 626, 124, 142, 0.25, 0.75, 139, 118),
-        New InitEnemy(2, s_enemy(6, MainForm.langID), 497, 497, 198, 108, 0.25, 0.75, 139, 118),
-        New InitEnemy(3, s_enemy(7, MainForm.langID), 1075, 1075, 135, 135, 0.25, 0.75, 139, 118),
-        New InitEnemy(4, s_enemy(8, MainForm.langID), 934, 934, 98, 109, 0.25, 0.75, 139, 118),
-        New InitEnemy(7, s_enemy(12, MainForm.langID), 786, 786, 102, 45, 0.25, 0.75, 206, 135),
-        New InitEnemy(8, s_enemy(12, MainForm.langID), 945, 945, 112, 29, 0.25, 0.75, 212, 135),
-        New InitEnemy(0, s_enemy(13, MainForm.langID), 2306, 2306, 165, 102, 0.485, 1.125, 563, 809),
-        New InitEnemy(1, s_enemy(13, MainForm.langID), 2306, 2306, 165, 102, 0.485, 1.125, 563, 809),
-        New InitEnemy(2, s_enemy(13, MainForm.langID), 2306, 2306, 165, 102, 0.485, 1.125, 563, 809),
-        New InitEnemy(3, s_enemy(13, MainForm.langID), 2306, 2306, 165, 102, 0.485, 1.125, 563, 809),
-        New InitEnemy(4, s_enemy(13, MainForm.langID), 2306, 2306, 165, 102, 0.485, 1.125, 563, 809),
-        New InitEnemy(7, s_enemy(13, MainForm.langID), 2306, 2306, 165, 102, 0.485, 1.125, 563, 809),
-        New InitEnemy(8, s_enemy(13, MainForm.langID), 2306, 2306, 165, 102, 0.485, 1.125, 563, 809)
+        New InitEnemy(1, s_enemy(13, MainForm.langID), 626, 626, 124, 142, 0.05, 0.85, 176, 129),
+        New InitEnemy(2, s_enemy(13, MainForm.langID), 497, 497, 198, 108, 0.05, 0.85, 176, 129),
+        New InitEnemy(3, s_enemy(13, MainForm.langID), 1075, 1075, 135, 135, 0.05, 0.85, 176, 129),
+        New InitEnemy(4, s_enemy(13, MainForm.langID), 934, 934, 98, 109, 0.05, 0.85, 176, 129)
     }
     Public Shared ReadOnly Boss_R1 As InitEnemy() = {'0 Common 1 Ice 2 Fire 3 Water 4 Grass 5 Star 6 Metal 7 Electric 8 Shadow
         New InitEnemy(7, s_boss(0, MainForm.langID), 6000, 6000, 62, 40, 0.5, 1.5, 3200, 4000),'2km

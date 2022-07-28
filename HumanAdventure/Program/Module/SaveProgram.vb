@@ -1,17 +1,21 @@
 ﻿Module SaveProgram
     Public Structure SaveJSON
         Public save_version() As Integer
+        Public tour_time As Integer
         Public character_name As String
         Public death_count As Integer
         Public skin As Integer
         Public region_id As Integer
         Public region_distance() As Double
-        Public items() As items
         Public equips() As equip
         Public talent_basics() As basic
         Public talent_skills() As skill
         Public player As player
-
+    End Structure
+    Public Structure artifact
+        Public id As Integer
+        Public name As String
+        Public primary_buff As attribute_buff
     End Structure
     Public Structure player
         Public element_id As Integer
@@ -25,6 +29,8 @@
         Public crit_damage As Double
         Public coins As Integer
         Public upgrade_point As Integer
+        Public items() As items
+        Public artifact() As artifact
     End Structure
     Public Structure basic
 

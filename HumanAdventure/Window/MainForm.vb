@@ -14,12 +14,13 @@ Public Class MainForm
     Public Shared SaveUserPath As String
     Dim CacheSaveFileName As String
 
-    Dim TourDist(2) As UInt64                '100 = 1 Meters
+    Dim TourDist() As UInt64 = {0, 0, 0, 0, 0, 0, 0, 0}                '100 = 1 Meters
     Dim Touring As Boolean                  'Detect is in Tour mode.
 
-    Dim Debug As Boolean = 0
+    Dim Debug As Boolean = 1
 
     'IO Variables
+    Dim IOParameters As Integer
     Dim isAutoBattle As Boolean               'Detect Auto battle is enabled.
     Dim isBattle As Boolean                 'Detect is in Battle mode.
     Dim isBattleDisplay As Boolean
@@ -28,7 +29,7 @@ Public Class MainForm
     Dim isRun As Integer
     Dim isautoEquip As Boolean
     Dim isBetaProgress As Boolean = 1
-    '
+    Dim isTourComplete As Boolean
     '729, 630
 
     Dim AutoPurchase As Integer
@@ -39,6 +40,7 @@ Public Class MainForm
     Dim AutoSavingCD As Integer
     Dim SavedLabelShowTime As Integer
     Dim MTSIndex As Int16
+    Dim TourTime As Integer
 
     Public Shared UpgradePoint As Integer
     Dim Blockadd As Double
@@ -48,6 +50,8 @@ Public Class MainForm
     Dim lostTourDis As UInt64
 
     Dim DeathCount As Integer
+
+    Public Shared Buffs As List(Of Double())
 
     Public Shared r1 As New Random
     Public Shared r1r As Double
@@ -79,19 +83,18 @@ Public Class MainForm
                     Case 0
                         Select Case TourDist(0)
                             Case 0 To km(2)
-                                a = r1.Next(0, 5)
-                                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
-                            Case km(2) + 1 To km(5)
-                                a = r1.Next(5, 11)
-                                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
-                            Case km(5) + 1 To km(10)
-                                a = r1.Next(11, 22)
-                                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
-                            Case km(10) + 1 To km(20)
-                                a = r1.Next(11, 22)
-                                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+                                a = r1.Next(0 + RegionID * 25, 5 + RegionID * 25)
+                            Case km(2) + 1 To km(10)
+                                a = r1.Next(5 + RegionID * 25, 10 + RegionID * 25)
+                            Case km(10) + 1 To km(15)
+                                a = r1.Next(10 + RegionID * 25, 15 + RegionID * 25)
+                            Case km(15) + 1 To km(20)
+                                a = r1.Next(15 + RegionID * 25, 20 + RegionID * 25)
+                            Case km(15) + 1 To km(25)
+                                a = r1.Next(20 + RegionID * 25, 25 + RegionID * 25)
                         End Select
                 End Select
+                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
             Case 1
                 isBoss = True
                 Select Case RegionID
@@ -130,13 +133,13 @@ Public Class MainForm
         Dim a As String = " "
         Dim b As Integer
         For b = 1 To count Step 1
-            a = a & " "
+            a &= " "
         Next
         Return a
     End Function
     Private Sub start_battle(type As Byte)
         isBattleDisplay = True
-        Panel10.Visible = True
+        BattlePanel.Visible = True
         Touring = False
         isBattle = True
         Select Case type
@@ -189,7 +192,6 @@ Public Class MainForm
                 CurEnemyData4.Text = "defense"
                 CurEnemyData5.Text = "crate"
                 CurEnemyData6.Text = "cdmg"
-                BattleMessage.Text = "battlemessage"
             End If
             If UpgradePoint >= 1 Then
                 UpgradeBut1.Visible = True
@@ -340,24 +342,24 @@ Public Class MainForm
                 With PlayerData
                     Select Case a
                         Case 0
-                            .XP1 += 100
+                            .XP1 += 125
                             CheckXP()
                         Case 1
-                            .XP1 += 2500
+                            .XP1 += 400
                             CheckXP()
                         Case 2
-                            .XP1 += 50000
+                            .XP1 += 1500
                             CheckXP()
                         Case 3
-                            .HP1 += 100
+                            .HP1 += 50
                         Case 4
-                            .HP1 += .HPM1 * 0.1
+                            .HP1 += 400
                         Case 5
-                            .HP1 += .HPM1 * 0.25
+                            .HP1 += .HPM1 * 0.1
                         Case 6
-                            .HP1 += .HPM1 * 0.5
+                            .HP1 += .HPM1 * 0.19
                         Case 7
-                            .HP1 += .HPM1
+                            .HP1 += .HPM1 * 0.35
                     End Select
                 End With
             Next
@@ -375,57 +377,70 @@ Public Class MainForm
         ShowDebugToolStripMenuItem.Visible = Debug
     End Sub
     Private Sub UpgradeProp()
-
         With PlayerData
-            .Level1 += 1
-            UpgradePoint += 1 + r1.Next(0, 5)
-            Select Case .Level1
-                Case 0 To 20
-                    .HPM1 += 30 + MainForm.r1.Next(0, 10)
-                    Thread.Sleep(1)
-                    .ATK1 += 2 + MainForm.r1.Next(0, 4)
-                    Thread.Sleep(1)
-                    .DEF1 += 1 + MainForm.r1.Next(0, 3)
-                Case 21 To 40
-                    .HPM1 += 45 + MainForm.r1.Next(0, 29)
-                    Thread.Sleep(1)
-                    .ATK1 += 4 + MainForm.r1.Next(0, 8)
-                    Thread.Sleep(1)
-                    .DEF1 += 4 + MainForm.r1.Next(0, 7)
-                Case 41 To 50
-                    .HPM1 += 50 + MainForm.r1.Next(0, 48)
-                    Thread.Sleep(1)
-                    .ATK1 += 3 + MainForm.r1.Next(0, 16)
-                    Thread.Sleep(1)
-                    .DEF1 += 3 + MainForm.r1.Next(0, 9)
-                Case 51 To 60
-                    .HPM1 += 42 + MainForm.r1.Next(0, 36)
-                    Thread.Sleep(1)
-                    .ATK1 += 3 + MainForm.r1.Next(0, 12)
-                    Thread.Sleep(1)
-                    .DEF1 += 3 + MainForm.r1.Next(0, 7)
-                Case 61 To 70
-                    .HPM1 += 30 + MainForm.r1.Next(0, 29)
-                    Thread.Sleep(1)
-                    .ATK1 += 2 + MainForm.r1.Next(0, 7)
-                    Thread.Sleep(1)
-                    .DEF1 += 2 + MainForm.r1.Next(0, 6)
-                Case 71 To 80
-                    .HPM1 += 24 + MainForm.r1.Next(0, 16)
-                    Thread.Sleep(1)
-                    .ATK1 += 1 + MainForm.r1.Next(0, 9)
-                    Thread.Sleep(1)
-                    .DEF1 += 1 + MainForm.r1.Next(0, 8)
-                Case 81 To 99
-                    .HPM1 += 18 + MainForm.r1.Next(0, 10)
-                    Thread.Sleep(1)
-                    .ATK1 += 0 + MainForm.r1.Next(0, 6)
-                    Thread.Sleep(1)
-                    .DEF1 += 0 + MainForm.r1.Next(0, 4)
-            End Select
-            .XP1 -= .XPNeed1
-            .XPNeed1 += 65 + MainForm.r1.Next(20, 100)
-            .HP1 = .HPM1
+            If .Level1 <= MAX_LEVEL Then
+                .Level1 += 1
+                UpgradePoint += 1 + r1.Next(0, 5)
+                Select Case .Level1
+                    Case 0 To 20
+                        .HPM1 += 30 + MainForm.r1.Next(0, 10)
+                        Thread.Sleep(1)
+                        .ATK1 += 2 + MainForm.r1.Next(0, 4)
+                        Thread.Sleep(1)
+                        .DEF1 += 1 + MainForm.r1.Next(0, 3)
+                    Case 21 To 40
+                        .HPM1 += 45 + MainForm.r1.Next(0, 29)
+                        Thread.Sleep(1)
+                        .ATK1 += 4 + MainForm.r1.Next(0, 8)
+                        Thread.Sleep(1)
+                        .DEF1 += 4 + MainForm.r1.Next(0, 7)
+                    Case 41 To 50
+                        .HPM1 += 50 + MainForm.r1.Next(0, 48)
+                        Thread.Sleep(1)
+                        .ATK1 += 3 + MainForm.r1.Next(0, 16)
+                        Thread.Sleep(1)
+                        .DEF1 += 3 + MainForm.r1.Next(0, 9)
+                    Case 51 To 60
+                        .HPM1 += 42 + MainForm.r1.Next(0, 36)
+                        Thread.Sleep(1)
+                        .ATK1 += 3 + MainForm.r1.Next(0, 12)
+                        Thread.Sleep(1)
+                        .DEF1 += 3 + MainForm.r1.Next(0, 7)
+                    Case 61 To 70
+                        .HPM1 += 30 + MainForm.r1.Next(0, 29)
+                        Thread.Sleep(1)
+                        .ATK1 += 2 + MainForm.r1.Next(0, 7)
+                        Thread.Sleep(1)
+                        .DEF1 += 2 + MainForm.r1.Next(0, 6)
+                    Case 71 To 80
+                        .HPM1 += 24 + MainForm.r1.Next(0, 46)
+                        Thread.Sleep(1)
+                        .ATK1 += 1 + MainForm.r1.Next(0, 8)
+                        Thread.Sleep(1)
+                        .DEF1 += 1 + MainForm.r1.Next(0, 10)
+                    Case 81 To 90
+                        .HPM1 += 18 + MainForm.r1.Next(25, 86)
+                        Thread.Sleep(1)
+                        .ATK1 += 0 + MainForm.r1.Next(0, 10)
+                        Thread.Sleep(1)
+                        .DEF1 += 0 + MainForm.r1.Next(0, 12)
+                    Case 91 To 100
+                        .HPM1 += 18 + MainForm.r1.Next(50, 114)
+                        Thread.Sleep(1)
+                        .ATK1 += 0 + MainForm.r1.Next(5, 18)
+                        Thread.Sleep(1)
+                        .DEF1 += 0 + MainForm.r1.Next(5, 19)
+                    Case 101 To 120
+                        .HPM1 += 18 + MainForm.r1.Next(75, 162)
+                        Thread.Sleep(1)
+                        .ATK1 += 0 + MainForm.r1.Next(10, 24)
+                        Thread.Sleep(1)
+                        .DEF1 += 0 + MainForm.r1.Next(10, 23)
+                End Select
+                .XP1 -= .XPNeed1
+                .XPNeed1 += 65 + MainForm.r1.Next(20, 100)
+                .HP1 = .HPM1
+            End If
         End With
     End Sub
     Public Function DebugShow(pstring As String)
@@ -440,8 +455,8 @@ Public Class MainForm
     Private Sub ItemLimit()
         Dim a As Integer
         For a = 0 To MaterialItem.Length - 1 Step 1
-            If MaterialItem(a) > 99 Then
-                MaterialItem(a) = 99
+            If MaterialItem(a) > 999 Then
+                MaterialItem(a) = 999
             ElseIf MaterialItem(a) < 0 Then
                 MaterialItem(a) = 0
             End If
@@ -522,6 +537,7 @@ Public Class MainForm
             BlockCD = 0
             Blockadd = 0
         End If
+        'Enemy Died
         If CurrentEnemy.HP1 <= 0 Then
             DES = 5000 + r1.Next(50, 2501)
             If isRun <> True Then
@@ -533,10 +549,27 @@ Public Class MainForm
                 Dim a As Integer = r1.NextDouble()
                 Select Case a
                     Case 0 To 0.12
+                        Dim itemID As Integer
+                        Dim itemCount As Integer
+                        Select Case TourDist(RegionID)
+                            Case 0 To km(2)
+                                Thread.Sleep(5)
+                                itemID = 12 + 16 * RegionID + r1.Next(1, 4)
+                            Case km(2) To km(10)
+                                Thread.Sleep(5)
+                                itemID = 12 + 16 * RegionID + r1.Next(1, 7)
+                            Case km(10) To km(15)
+                                Thread.Sleep(5)
+                                itemID = 12 + 16 * RegionID + r1.Next(1, 10)
+                            Case km(15) To km(20)
+                                Thread.Sleep(5)
+                                itemID = 12 + 16 * RegionID + r1.Next(1, 13)
+                            Case km(20) To km(25)
+                                Thread.Sleep(5)
+                                itemID = 12 + 16 * RegionID + r1.Next(1, 17)
+                        End Select
                         Thread.Sleep(5)
-                        Dim itemID As Integer = 12 + 16 * RegionID + r1.Next(1, 17)
-                        Thread.Sleep(5)
-                        Dim itemCount As Integer = r1.Next(1, 4)
+                        itemCount = r1.Next(1, 4)
                         AddItem(itemID, itemCount)
                 End Select
                 Select Case a
@@ -549,7 +582,7 @@ Public Class MainForm
                                 Thread.Sleep(5)
                                 Select Case r1.Next(0, 4)
                                     Case 0
-                                        itemID = 1
+                                        itemID = 0
                                         itemCount = r1.Next(1, 2)
                                         AddItem(itemID, itemCount)
                                     Case 1
@@ -569,6 +602,7 @@ Public Class MainForm
             isBattleComplete = True
             CurrentEnemy = New InitEnemy()
         End If
+        'Player Died
         If PlayerData.HP1 <= 0 Then
             PlayerData.HP1 = PlayerData.HPM1
             DeathCount += 1
@@ -577,7 +611,7 @@ Public Class MainForm
                 TourDist(RegionID) -= lostTourDis
             Else
                 BattleMessage.Text = BattleMessage.Text & vbCrLf & vbCrLf & s_string(155, langID)
-                TourDist(RegionID) \= 2
+                TourDist(RegionID) -= km(1.9)
                 isBoss = False
                 isBattleComplete = True
                 CurrentEnemy = New InitEnemy()
@@ -597,28 +631,17 @@ Public Class MainForm
         With SaveJsonCache
             'Save Version
             .save_version = {5, 0, 0} 'Primary"Main"|Secondary"Hotfix"|Third"Edited"
-            .region_id = RegionID
+            .tour_time = TourTime
             .character_name = PlayerData.CName1
+            .death_count = DeathCount
             .skin = PlayerData.Sk
-            ReDim .region_distance(TourDist.Length)
+            .region_id = RegionID
+            ReDim .region_distance(TourDist.Length - 1)
             Dim a As Integer
             Dim b As Integer
             For a = 0 To TourDist.Length - 1 Step 1
                 .region_distance(a) = TourDist(a)
             Next
-            a = 0
-            b = 0
-            ReDim .items(MaterialItem.Length)
-            For a = 0 To MaterialItem.Length - 1 Step 1
-                If MaterialItem(a) > 0 Then
-                    .items(b).id = a
-                    .items(b).count = MaterialItem(a)
-                    b += 1
-                End If
-            Next
-            ReDim Preserve .items(b - 1)
-            a = 0
-            b = 0
             .player.element_id = PlayerData.element1
             .player.level = PlayerData.Level1
             .player.xp.current = PlayerData.XP1
@@ -632,51 +655,26 @@ Public Class MainForm
             .player.crit_damage = PlayerData.CDMG1
             .player.coins = PlayerData.Coins1
             .player.upgrade_point = UpgradePoint
+            a = 0
+            b = 0
+            ReDim .player.items(MaterialItem.Length)
+            For a = 0 To MaterialItem.Length - 1 Step 1
+                If MaterialItem(a) > 0 Then
+                    .player.items(b).id = a
+                    .player.items(b).count = MaterialItem(a)
+                    b += 1
+                End If
+            Next
+            ReDim Preserve .player.items(b - 1)
+            a = 0
+            b = 0
         End With
         Dim SaveJSONSab As String = JsonConvert.SerializeObject(SaveJsonCache)
-        'If MsgBox("是否将下面数据复制到剪贴板？" & vbCrLf & SaveJSONSab, vbYesNo, Me.Text) = vbYes Then
-        'Clipboard.SetText(SaveJSONSab)
-        'End If
         sw.Write(SaveJSONSab)
         sw.Close()
         fs.Close()
         SavedLabelShowTime = 180
     End Sub
-    'Private Sub SaveData(SaveFileName As String)
-    '   CacheSaveFileName = SaveFileName
-    'Dim fs As New FileStream(SaveFileName, FileMode.Create)
-    'Dim bw As New BinaryWriter(fs)
-    '    Dim b_redunant As Byte = 0
-    'dim a As Integer
-    '   bw.Write(SaveVersion)
-    '   bw.Write(b_redunant)
-    '   bw.Write(PlayerData.Sk)
-    '   bw.Write(PlayerData.element1)
-    '   bw.Write(PlayerData.Level1)
-    '   bw.Write(PlayerData.CName1)
-    '   bw.Write(PlayerData.XP1)
-    '   bw.Write(PlayerData.XPNeed1)
-    '   bw.Write(PlayerData.HP1)
-    '   bw.Write(PlayerData.HPM1)
-    '   bw.Write(PlayerData.ATK1)
-    '   bw.Write(PlayerData.DEF1)
-    '   bw.Write(PlayerData.SE1)
-    '   bw.Write(PlayerData.CRate1)
-    '   bw.Write(PlayerData.CDMG1)
-    '   bw.Write(PlayerData.Coins1)
-    'For a = 0 To MaterialItem.Length - 1 Step 1
-    '      bw.Write(MaterialItem(a))
-    'ext
-    '   bw.Write(UpgradePoint)
-    '   bw.Write(DeathCount)
-    '   bw.Write(RegionID)
-    'For a = 0 To TourDist.Length - 1 Step 1
-    '       bw.Write(TourDist(a))
-    'Next
-    '    bw.Close()
-    '    fs.Close()
-    '    SavedLabelShowTime = 180
-    'End Sub
     Private Sub OpenFileDialog()
         Dim a As New OpenFileDialog
         CheckDirectory()
@@ -695,16 +693,20 @@ Public Class MainForm
         DeathCount = 0
         RegionID = 0
         Dim b As Integer
-        For b = 0 To TourDist.Length - 1 Step 1
-            TourDist(b) = 0
-        Next
+        Try
+            For b = 0 To TourDist.Length - 1 Step 1
+                TourDist(b) = 0
+            Next
+        Catch ex As NullReferenceException
+            ExpectionShow(2, 0)
+        End Try
         For b = 0 To MaterialItem.Length - 1 Step 1
             MaterialItem(b) = 0
         Next
         MaterialListsRefresh()
         isBattle = True
         progress = False
-        Panel10.Visible = True
+        BattlePanel.Visible = True
     End Sub
     Private Sub LoadJsonData(LoadFileName)
         Try
@@ -743,14 +745,15 @@ Public Class MainForm
                         a = 0
                         UpgradePoint = .player.upgrade_point
                         DeathCount = .death_count
-                        For b = 0 To .items.Length - 1 Step 1
-                            a = .items(b).id
-                            MaterialItem(a) = .items(b).count
+                        TourTime = .tour_time
+                        For b = 0 To .player.items.Length - 1 Step 1
+                            a = .player.items(b).id
+                            MaterialItem(a) = .player.items(b).count
                             a = 0
                         Next
                         CurrentEnemy = New InitEnemy()
                         isBattle = False
-                        Panel10.Visible = False
+                        BattlePanel.Visible = False
                         progress = True
                     Case Else
                 End Select
@@ -804,7 +807,7 @@ Public Class MainForm
                     Next
                     CurrentEnemy = New InitEnemy()
                     isBattle = False
-                    Panel10.Visible = False
+                    BattlePanel.Visible = False
                     progress = True
                 Case 2
             End Select
@@ -859,7 +862,7 @@ Public Class MainForm
         'Me.Size = New Point(720, 596)
         'End If
         Lang.setstr(langID)
-        Panel10.Visible = False
+        BattlePanel.Visible = False
         NewSaveWindowProgress = False
 
         Dim InitDatas As New InitData
@@ -914,8 +917,9 @@ Public Class MainForm
     End Sub
     Dim saveFilename As String
     Private Sub NewSave_Open(sender As Object, e As EventArgs) Handles NewSaveToolStripMenuItem.Click, Button2.Click
-        Dim a As New SaveFileDialog
-        a.Filter = s_string(106, langID) & "|*.yts"
+        Dim a As New SaveFileDialog With {
+            .Filter = s_string(106, langID) & "|*.yts"
+        }
         If a.ShowDialog = Windows.Forms.DialogResult.OK Then
             progress = False
             saveFilename = a.FileName
@@ -936,7 +940,7 @@ Public Class MainForm
                 TourDist(a) = 0
             Next
             isBattle = False
-            Panel10.Visible = False
+            BattlePanel.Visible = False
             Try
                 SaveJsonData(saveFilename)
             Catch ex As FileNotFoundException
@@ -946,10 +950,10 @@ Public Class MainForm
         End If
         If progress = True Then
             If Touring Then
-                Button7.Text = s_string(61, langID)
+                TouringButton.Text = s_string(61, langID)
                 Timer2.Enabled = True
             Else
-                Button7.Text = s_string(60, langID)
+                TouringButton.Text = s_string(60, langID)
                 Timer2.Enabled = False
             End If
             If PlayerData.SE1 > 100 Then
@@ -961,9 +965,9 @@ Public Class MainForm
                 Panel7.Visible = False
             End If
             If isBattle Then
-                Button7.Enabled = False
+                TouringButton.Enabled = False
             Else
-                Button7.Enabled = True
+                TouringButton.Enabled = True
             End If
             If isBattle Or Touring Or isAutoBattle Then
                 RegionButton1.Enabled = False
@@ -978,21 +982,21 @@ Public Class MainForm
                 BattleTime.Enabled = False
             End If
             If DAB Then
-                Button8.Enabled = False
-                Button9.Enabled = False
-                Button10.Enabled = False
-                Button11.Enabled = False
+                BattleAttackButton.Enabled = False
+                BattleEleButton.Enabled = False
+                BattleBlockButton.Enabled = False
+                BattleRunButton.Enabled = False
             Else
-                Button8.Enabled = True
-                Button9.Enabled = True
+                BattleAttackButton.Enabled = True
+                BattleEleButton.Enabled = True
             End If
             If isBattleComplete Then
-                Panel10.Enabled = False
+                BattlePanel.Enabled = False
                 DAB = True
                 isBattle = False
-                Button7.Enabled = True
+                TouringButton.Enabled = True
             Else
-                Panel10.Enabled = True
+                BattlePanel.Enabled = True
             End If
             If PlayerData.HP1 > PlayerData.HPM1 Then
                 PlayerData.HP1 = PlayerData.HPM1
@@ -1027,14 +1031,14 @@ Public Class MainForm
                 lostTourDis = TourDist(RegionID) \ 10
             End With
             If BlockCD > 0 Or isAutoBattle Then
-                Button10.Enabled = False
+                BattleBlockButton.Enabled = False
             Else
-                Button10.Enabled = True
+                BattleBlockButton.Enabled = True
             End If
             If isBoss Or isAutoBattle Then
-                Button11.Enabled = False
+                BattleBlockButton.Enabled = False
             Else
-                Button11.Enabled = True
+                BattleBlockButton.Enabled = True
             End If
             RefreshData()
             Panel5.Visible = False
@@ -1043,10 +1047,21 @@ Public Class MainForm
             Panel5.Location = New Point(0, 23)
         End If
     End Sub
+    Private Sub TourComplete()
+        TourTime += 1
+        isTourComplete = True
+    End Sub
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-
-        TourDist(RegionID) += 2
-        DES -= (2)
+        If TourDist(RegionID) >= MAX_DISTANCE Then
+            TourComplete()
+        Else
+            TourDist(RegionID) += 2
+        End If
+        If TourDist(RegionID) >= MAX_DISTANCE - 200 Then
+            DES = 5000
+        Else
+            DES -= (2)
+        End If
         Dim b As Double
         b = r1.NextDouble()
         With PlayerData
@@ -1059,19 +1074,19 @@ Public Class MainForm
         End With
         Select Case TourDist(RegionID)
             Case km(2) To km(2) + 1
-                SelectEnemy(1, 0)
+                SelectEnemy(1, 0 + RegionID * 5)
                 start_battle(1)
             Case km(10) To km(10) + 1
-                SelectEnemy(1, 1)
+                SelectEnemy(1, 1 + RegionID * 5)
                 start_battle(1)
             Case km(15) To km(15) + 1
-                SelectEnemy(1, 2)
+                SelectEnemy(1, 2 + RegionID * 5)
                 start_battle(1)
             Case km(20) To km(20) + 1
-                SelectEnemy(1, 3)
+                SelectEnemy(1, 3 + RegionID * 5)
                 start_battle(1)
             Case km(25) To km(25) + 1
-                SelectEnemy(1, 4)
+                SelectEnemy(1, 4 + RegionID * 5)
                 start_battle(1)
         End Select
         If DES <= 0 Then
@@ -1104,22 +1119,22 @@ Public Class MainForm
     Private Sub Heal(sender As Object, e As EventArgs) Handles HealHPToolStripMenuItem.Click
         PlayerData.HP1 = PlayerData.HPM1
     End Sub
-    Private Sub TourButton(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub TourButton(sender As Object, e As EventArgs) Handles TouringButton.Click
         If Touring Then
             Touring = False
         Else
             Touring = True
         End If
         If isBattleComplete Then
-            Panel10.Visible = False
+            BattlePanel.Visible = False
             isBattleDisplay = False
             Touring = True
             isBattleComplete = False
         End If
     End Sub
 
-    Private Sub AutoBattle(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        If CheckBox1.Checked Then
+    Private Sub AutoBattle(sender As Object, e As EventArgs) Handles AutoSaveCheckBox.CheckedChanged
+        If AutoSaveCheckBox.Checked Then
             isAutoBattle = True
         Else
             isAutoBattle = False
@@ -1128,7 +1143,7 @@ Public Class MainForm
 
     Private Sub BattleTime_Tick(sender As Object, e As EventArgs) Handles BattleTime.Tick
         If isBattleComplete Then
-            Panel10.Visible = False
+            BattlePanel.Visible = False
             isBattleDisplay = False
             Touring = True
             isBattleComplete = False
@@ -1216,8 +1231,10 @@ Public Class MainForm
                     .HPM1 += 52 + MainForm.r1.Next(0, 56)
                 Case 71 To 80
                     .HPM1 += 34 + MainForm.r1.Next(0, 32)
-                Case 81 To 99
+                Case 81 To 100
                     .HPM1 += 28 + MainForm.r1.Next(0, 19)
+                Case 101 To 120
+                    .HPM1 += 28 + MainForm.r1.Next(0, 28)
             End Select
             UpgradePoint -= 1
         End With
@@ -1237,8 +1254,10 @@ Public Class MainForm
                     .ATK1 += 3 + MainForm.r1.Next(0, 10)
                 Case 71 To 80
                     .ATK1 += 2 + MainForm.r1.Next(0, 8)
-                Case 81 To 99
-                    .ATK1 += 1 + MainForm.r1.Next(0, 5)
+                Case 81 To 100
+                    .ATK1 += 1 + MainForm.r1.Next(0, 9)
+                Case 101 To 120
+                    .HPM1 += 28 + MainForm.r1.Next(0, 13)
             End Select
             UpgradePoint -= 1
         End With
@@ -1258,8 +1277,10 @@ Public Class MainForm
                     .DEF1 += 3 + MainForm.r1.Next(0, 10)
                 Case 71 To 80
                     .DEF1 += 2 + MainForm.r1.Next(0, 8)
-                Case 81 To 99
-                    .DEF1 += 1 + MainForm.r1.Next(0, 5)
+                Case 81 To 100
+                    .DEF1 += 1 + MainForm.r1.Next(0, 9)
+                Case 101 To 120
+                    .HPM1 += 28 + MainForm.r1.Next(0, 13)
             End Select
             UpgradePoint -= 1
         End With
@@ -1272,7 +1293,7 @@ Public Class MainForm
     End Sub
     Private Sub UpgradeBut5_Click(sender As Object, e As EventArgs) Handles UpgradeBut5.Click
         With PlayerData
-            .CRate1 += MainForm.r1.NextDouble() * 0.01 + 0.01
+            .CRate1 += MainForm.r1.NextDouble() * 0.01 + 0.1
             UpgradePoint -= 2
         End With
     End Sub
@@ -1313,23 +1334,23 @@ Public Class MainForm
             vbYes, Me.Text
             )
     End Sub
-    Private Sub attack(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub attack(sender As Object, e As EventArgs) Handles BattleAttackButton.Click
         Battle_Damage(0)
     End Sub
-    Private Sub ele_attack(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub ele_attack(sender As Object, e As EventArgs) Handles BattleEleButton.Click
         Battle_Damage(1)
     End Sub
-    Private Sub block(sender As Object, e As EventArgs) Handles Button10.Click
+    Private Sub block(sender As Object, e As EventArgs) Handles BattleBlockButton.Click
         Battle_Damage(2)
     End Sub
-    Private Sub run(sender As Object, e As EventArgs) Handles Button11.Click
+    Private Sub run(sender As Object, e As EventArgs) Handles BattleRunButton.Click
         Battle_Damage(3)
     End Sub
     Private Sub EasterEgg_Click(sender As Object, e As EventArgs) Handles EasterEgg.Click
         Dim a As Integer
         a = MsgBox(s_string(149, langID), vbYesNo, s_string(148, langID))
         If a = vbYes Then
-            a = MsgBox("Thanks!", vbYes, Me.Text)
+            MsgBox("Thanks!", vbYes, Me.Text)
         End If
     End Sub
     Private Sub set_Distance(sender As Object, e As EventArgs) Handles Button12.Click

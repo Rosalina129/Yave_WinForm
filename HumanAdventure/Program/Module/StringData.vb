@@ -192,12 +192,46 @@
         {"Important Files Check...", "重要文件检查..."},
         {"Needs Files:", "需要的文件："},
         {"[Found]", "[已找到]"},
-        {"[Missing]", "[缺失]"}
+        {"[Missing]", "[缺失]"},
+        {"Sell", "出售"},'193
+        {"Congratulations, your tour has come to an end, but it's not over yet. More interesting and dangerous travel experiences await you in the future. You can choose to keep this file as a souvenir, or click the " & Chr(34) & "Rebirth" & Chr(34) & " button to restart your trip.", "恭喜你旅行到了终点，但一切还没结束，未来还有更有趣，更危险的旅行经历在等着你，你可以选择保存该档案后留作纪念，或者点击" & Chr(34) & "重生" & Chr(34) & "按钮重新开始旅行。"},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""},
+        {"", ""}
     }
     Public s_errorcode As String(,) = {
         {"No Error.", "无错误。"},
         {"The save is empty!", "此存档为空！"},
-        {"", ""},
+        {"The data is corrupted.", "数据已损坏。"},
         {"There is an error somewhere in the Json statement of this save.", "此存档的 Json 语句某处有错误。"},
         {"The data used in this save is Json data that is not used by this program.", "此存档使用的数据为非本程序使用的 Json 数据。"},
         {"This program is missing important files, please check the list and try again.", "本程序缺失重要文件，请检查清单后重试。"},
@@ -213,25 +247,33 @@
         "program_save_error_with_missing_important_files"
         }
     Public s_enemy As String(,) = {
-        {"Slime", "史莱姆"},
+        {"Slime", "史莱姆"},'0 == Emerald Plains == 0 ~ 2km ==
         {"Spider", "蜘蛛"},
         {"Bat", "蝙蝠"},
         {"Cockroach", "蟑螂"},
         {"Mosquito", "蚊虫"},
-        {"Ice Slime", "冰史莱姆"},
+        {"Ice Slime", "冰史莱姆"},'5 == 2 ~ 10 km ==
         {"Fire Slime", "火史莱姆"},
         {"Water Slime", "水史莱姆"},
         {"Earth Slime", "土史莱姆"},
         {"Zombie", "僵尸"},
-        {"Infected birds", "感染的鸟"},'10
-        {"Hilichurl", "丘丘人"},
+        {"Hilichurl", "丘丘人"},'10 == 10 ~ 15 km ==
         {"Hilichurl Arms", "武装丘丘人"},
         {"Beast", "兽士"},
         {"Beast Arms", "武装兽士"},
         {"Beast Swordman", "剑士兽士"},
-        {"Beast Mage", "法师兽士"},
+        {"Beast Mage", "法师兽士"},'15 == 15 ~ 20 km ==
         {"Thief", "盗贼"},
         {"Artifacts Thief", "法器盗贼"},
+        {"Boar", "野猪"},
+        {"Spiked-Boar", "带刺的野猪"},
+        {"Slimeman", "史莱姆人"},'20 == 21 ~ 25km ==
+        {"Ice Slimeman", "冰史莱姆人"},
+        {"Fire Slimeman", "火史莱姆人"},
+        {"Earth Slimeman", "土史莱姆人"},
+        {"Water Slimeman", "水史莱姆人"},' == Emerald Plains End ==
+        {"", ""},'25 == Drip Forest == 0 ~ 2km ==
+        {"", ""},
         {"", ""},
         {"", ""},
         {"", ""},
@@ -241,14 +283,11 @@
         {"", ""}
         }
     Public s_boss As String(,) = {
+        {"King Spider", "蜘蛛精"},'Emerald Plains
         {"King Slime", "史莱姆王"},
-        {"King Spider", "蜘蛛精"},
         {"King Ice Hilichurl", "冰丘丘王"},
         {"Giant Beast", "巨人兽士"},
-        {"Mechanical Tank", "机械坦克"},
-        {"Farway Believers", "法外信徒"},
-        {"Elite Knight", "精英·侠客"},
-        {"Dryad", "树妖"}
+        {"King Titan Slime", "史莱姆巨人"}
         }
     Public s_basic As String(,) = {
         {"No Basic", "无基础"}，

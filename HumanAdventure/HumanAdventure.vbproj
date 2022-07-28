@@ -123,6 +123,7 @@
     <Compile Include="Init\InitEquip.vb" />
     <Compile Include="Program\Module\Calculate.vb" />
     <Compile Include="Program\ElementRates.vb" />
+    <Compile Include="Program\Module\ConstDefine.vb" />
     <Compile Include="Program\Module\IniFile.vb" />
     <Compile Include="Program\Module\InitEnemyStr.vb" />
     <Compile Include="Program\Module\JsonConfig.vb" />

@@ -13,19 +13,9 @@
     Dim CRate As Double                 'Crit Rate
     Dim CDMG As Double                  'Crit Damage
     Dim Coins As UInt32                 'Coins
-    Dim Itema As Integer
-    Dim Itemb As Integer
-    Dim Itemc As Integer
-    Dim Itemd As Integer
-    Dim Iteme As Integer
-    Dim Itemf As Integer
-    Dim Itemg As Integer
-    Dim EquipH As Integer
-    Dim EquipC As Integer
-    Dim EquipL As Integer
-    Dim EquipB As Integer
+    Dim Artifact() As InitArtifact
+    Dim Equip() As InitEquip
     Public Sub New()
-
     End Sub
     Public Sub New(S As Integer, e As Integer, cn As String, l As Integer, xp As UInt64, xpn As UInt64, hpm As Integer, hp As Integer, atk As Integer, def As Integer, se As UInteger, cr As Double, cd As Double, co As Integer)
         Me.Skin = S

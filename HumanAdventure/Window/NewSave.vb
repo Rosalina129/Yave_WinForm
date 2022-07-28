@@ -1,5 +1,4 @@
 ﻿Public Class NewSave
-    Dim e As Integer
     Public Skin As Integer
     Public Element As Integer
     Public CName As String

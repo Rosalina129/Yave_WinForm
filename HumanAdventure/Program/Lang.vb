@@ -33,10 +33,10 @@
             .Label4.Text = s_string(31, langid)
             .Label6.Text = s_string(32, langid)
 
-            .Button8.Text = s_string(28, langid)
-            .Button9.Text = s_string(107, langid)
-            .Button10.Text = s_string(108, langid)
-            .Button11.Text = s_string(109, langid)
+            .BattleAttackButton.Text = s_string(28, langid)
+            .BattleEleButton.Text = s_string(107, langid)
+            .BattleBlockButton.Text = s_string(108, langid)
+            .BattleRunButton.Text = s_string(109, langid)
 
             .Label26.Text = s_string(27, langid)
             .Label27.Text = s_string(28, langid)
@@ -46,7 +46,6 @@
 
             .GroupBox1.Text = s_string(45, langid)
             .Button3.Text = s_string(46, langid)
-            .Label10.Text = s_string(47, langid)
             .RegionButton1.Text = s_string(48, langid)
             .RegionButton2.Text = s_string(49, langid)
             .RegionButton3.Text = s_string(50, langid)
@@ -55,7 +54,6 @@
             .RegionButton6.Text = s_string(53, langid)
             .RegionButton7.Text = s_string(54, langid)
             .RegionButton8.Text = s_string(55, langid)
-            .Label9.Text = s_string(33, langid) & " 15 " & s_string(72, langid)
 
             .AttributeToolTip.ToolTipTitle = s_string(26, langid)
             .AttributeToolTip.SetToolTip(.HEALTHLabel, s_string(74, langid))
@@ -72,7 +70,7 @@
             .TabControl2.TabPages(3).Text = s_string(1, langid)
 
             .GroupBox5.Text = s_string(35, langid)
-            .CheckBox1.Text = s_string(62, langid)
+            .AutoSaveCheckBox.Text = s_string(62, langid)
             .Label25.Text = s_string(95, langid)
 
             .Label32.Text = s_string(112, langid)
@@ -140,15 +138,23 @@
             .ListBox1.Items(8) = s_string(55, langid)
 
             .useitem1using.Text = "+100 XP"
-            .useitem2using.Text = "+2500 XP"
-            .useitem3using.Text = "+50000 XP"
-            .useitem4using.Text = "+100 " & s_string(27, langid)
-            .useitem5using.Text = "+10% Max" & s_string(27, langid)
-            .useitem6using.Text = "+25% Max " & s_string(27, langid)
-            .useitem7using.Text = "+50% Max " & s_string(27, langid)
-            .useitem8using.Text = "+100% Max " & s_string(27, langid)
+            .useitem2using.Text = "+400 XP"
+            .useitem3using.Text = "+1,500 XP"
+            .useitem4using.Text = "+50 " & s_string(27, langid)
+            .useitem5using.Text = "+400" & s_string(27, langid)
+            .useitem6using.Text = "+10% Max " & s_string(27, langid)
+            .useitem7using.Text = "+19% Max " & s_string(27, langid)
+            .useitem8using.Text = "+35% Max " & s_string(27, langid)
 
             .Label11.Text = s_string(184, langid)
+
+            .Item1Sell.Text = s_string(193, langid)
+            .Item2Sell.Text = s_string(193, langid)
+            .Item3Sell.Text = s_string(193, langid)
+            .Item4Sell.Text = s_string(193, langid)
+            .Item5Sell.Text = s_string(193, langid)
+            .Item6Sell.Text = s_string(193, langid)
+            .Item7Sell.Text = s_string(193, langid)
         End With
         'NewSave Strings
         With NewSave
