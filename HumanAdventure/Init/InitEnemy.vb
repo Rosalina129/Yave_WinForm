@@ -10,12 +10,12 @@
     Dim CDMG As Double
     Dim EXP As UInt64
     Dim Coins As Integer
-    Dim Basics As ULong
-    Dim Skills As ULong
+    Dim Skills As Integer()
     Public Sub New()
 
     End Sub
-    Public Sub New(id As Integer, name As String, hp As Integer, hpm As Integer, atk As Integer, def As Integer, crate As Double, cdmg As Double, xp As UInt64, coins As Integer)
+
+    Public Sub New(id As Integer, name As String, hp As Integer, hpm As Integer, atk As Integer, def As Integer, crate As Double, cdmg As Double, xp As UInt64, coins As Integer, skillid() As Integer)
         Me.Elementid = id
         Me.name = name
         Me.HP = hp
@@ -26,6 +26,7 @@
         Me.CDMG = cdmg
         Me.EXP = xp
         Me.Coins = coins
+        Me.Skills = skillid
     End Sub
     Public Property ID1 As Integer
         Get
@@ -107,4 +108,15 @@
             Coins = value
         End Set
     End Property
+    Public Property Skills1 As Integer()
+        Get
+            Return Skills
+        End Get
+        Set(value As Integer())
+            Skills = value
+        End Set
+    End Property
+    Public Function GetSkillName(skillID As Integer, a As Integer)
+        Return s_skill(skillID, a)
+    End Function
 End Class

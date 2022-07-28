@@ -83,18 +83,28 @@ Public Class MainForm
                     Case 0
                         Select Case TourDist(0)
                             Case 0 To km(2)
-                                a = r1.Next(0 + RegionID * 25, 5 + RegionID * 25)
+                                a = r1.Next(0, 5)
                             Case km(2) + 1 To km(10)
-                                a = r1.Next(5 + RegionID * 25, 10 + RegionID * 25)
+                                a = r1.Next(5, 10)
                             Case km(10) + 1 To km(15)
-                                a = r1.Next(10 + RegionID * 25, 15 + RegionID * 25)
+                                a = r1.Next(10, 15)
                             Case km(15) + 1 To km(20)
-                                a = r1.Next(15 + RegionID * 25, 20 + RegionID * 25)
+                                a = r1.Next(15, 20)
                             Case km(15) + 1 To km(25)
-                                a = r1.Next(20 + RegionID * 25, 25 + RegionID * 25)
+                                a = r1.Next(20, 25)
                         End Select
                 End Select
-                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1, Enemies.Enemy(a).Name1, Enemies.Enemy(a).HP1, Enemies.Enemy(a).HPM1, Enemies.Enemy(a).ATK1, Enemies.Enemy(a).DEF1, Enemies.Enemy(a).CRate1, Enemies.Enemy(a).CDMG1, Enemies.Enemy(a).EXP1, Enemies.Enemy(a).Coins1)
+                CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1,
+                                             Enemies.Enemy(a).Name1,
+                                             Enemies.Enemy(a).HP1,
+                                             Enemies.Enemy(a).HPM1,
+                                             Enemies.Enemy(a).ATK1,
+                                             Enemies.Enemy(a).DEF1,
+                                             Enemies.Enemy(a).CRate1,
+                                             Enemies.Enemy(a).CDMG1,
+                                             Enemies.Enemy(a).EXP1,
+                                             Enemies.Enemy(a).Coins1,
+                                             Enemies.Enemy(a).Skills1)
             Case 1
                 isBoss = True
                 Select Case RegionID
@@ -108,7 +118,8 @@ Public Class MainForm
                                                      Enemies.Boss_R1(enemyid).CRate1,
                                                      Enemies.Boss_R1(enemyid).CDMG1,
                                                      Enemies.Boss_R1(enemyid).EXP1,
-                                                     Enemies.Boss_R1(enemyid).Coins1)
+                                                     Enemies.Boss_R1(enemyid).Coins1,
+                                             Enemies.Enemy(a).Skills1)
                 End Select
         End Select
     End Sub

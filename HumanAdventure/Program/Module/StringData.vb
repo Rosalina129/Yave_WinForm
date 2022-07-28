@@ -289,6 +289,21 @@
         {"Giant Beast", "巨人兽士"},
         {"King Titan Slime", "史莱姆巨人"}
         }
+    Public s_skill As String(,) = {
+        {"No Skill", "无技能"}，
+        {"Poison", "中毒"}，
+        {"Twining", "缠绕"}，
+        {"Alchemy", "炼金术"}，
+        {"Freeze", "冻结"}，
+        {"Burn", "燃烧"}，
+        {"Humidity", "潮湿"}，
+        {"Rampancy", "蔓生"}，
+        {"Rage", "暴怒"}，
+        {"Sneak-attack", "偷袭"}，
+        {"Stole", "偷窃"}，
+        {"Explosion", "爆炸"}，
+        {"Metaled", "如钢铁般强硬"}
+        }
     Public s_basic As String(,) = {
         {"No Basic", "无基础"}，
         {"Ordinary", "平凡"}，
@@ -302,23 +317,18 @@
         {"Timidity", "胆怯"}，
         {"Genius", "天才"}
         }
-    Public s_skill As String(,) = {
-        {"No Skill", "无技能"}，
-        {"Alchemy", "炼金术"}，
-        {"Freeze", "冻结"}，
-        {"Burn", "燃烧"}，
-        {"Humidity", "潮湿"}，
-        {"Rampancy", "蔓生"}，
-        {"Rage", "暴怒"}
-        }
     Public s_skilldes As String(,) = {
         {"No Skill", "无技能"}，
-        {"Felt the power of alchemy,", "感受到了炼金的力量，"}，
-        {"Deals frostbite damage to enemies.", "对敌方造成冻伤伤害。"}，
-        {"Deals burn damage to enemies.", "对敌方造成燃烧伤害。"}，
-        {"Deals spread-wet damage to enemies", "对敌方造成湿蔓伤害。"}，
-        {"Entangling an enemy has a chance to make it unable to attack. (Except ele. atk)", "对敌方造成缠绕伤害，有一定几率令对方无法发起攻击。（元素攻击除外）"}，
-        {"Deals double damage to enemies.", "对敌方造成二倍伤害。"}
+        {"Felt the power of alchemy,", "对敌方造成中毒伤害，并持续一段时间。"}，
+        {"Felt the power of alchemy,", "对敌方进行缠绕，小几率令对方无法攻击。"}，
+        {"Felt the power of alchemy,", "感受到了炼金的力量，默认会使用元素攻击。"}，
+        {"Deals Ice damage (Frostbite) to enemies.", "对敌方造成冰元素（冻伤）伤害。"}，
+        {"Deals Fire damage (Burn) to enemies.", "对敌方造成火元素（燃烧）伤害。"}，
+        {"Deals Water damage (Spread-wet) to enemies.", "对敌方造成水元素（湿蔓）伤害。"}，
+        {"Deals Earth damage (Growing) to enemies.", "对敌方造成土元素（生长）伤害。"}，
+        {"Deals double damage to enemies.", "对敌方造成二倍伤害。"}，
+        {"It's a chance to allow two damage.", "有一定几率允许伤害两次。"}，
+        {"The Steal skill will allow you to steal gold while attacking.", "偷盗技能会使你在攻击的时候偷到对方的金币。"}
         }
     Public s_item As String(,) = {
         {"None", "空"}，'0

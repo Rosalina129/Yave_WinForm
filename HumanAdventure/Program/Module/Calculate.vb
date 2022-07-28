@@ -33,10 +33,13 @@ Module Calculate
         End If
     End Function
     Public Function EleMessage(eleA As Integer, eleB As Integer, lang As Byte)
+        Dim a As String
         If ElementRates.Multi(eleA, eleB) > 1.3 Then
-            Return vbCrLf & s_string(101, lang)
+            a = vbCrLf & s_string(101, lang)
+            Return a
         ElseIf ElementRates.Multi(eleA, eleB) < 0.6 Then
-            Return vbCrLf & s_string(100, lang)
+            a = vbCrLf & s_string(100, lang)
         End If
+        Return a
     End Function
 End Module
