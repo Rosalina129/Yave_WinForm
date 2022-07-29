@@ -1305,7 +1305,7 @@ Public Class MainForm
     End Sub
     Private Sub UpgradeBut5_Click(sender As Object, e As EventArgs) Handles UpgradeBut5.Click
         With PlayerData
-            .CRate1 += MainForm.r1.NextDouble() * 0.01 + 0.1
+            .CRate1 += MainForm.r1.NextDouble() * 0.01 + 0.01
             UpgradePoint -= 2
         End With
     End Sub
