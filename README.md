@@ -4,9 +4,9 @@ Language: [简体中文](https://github.com/Rosalina129/WinForm_GameCollection/b
 
 Built with ![GitHub](https://img.shields.io/github/license/Rosalina129/WinForm_GameCollection?style=flat-square) license
 
-Current Version：![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Rosalina129/WinForm_GameCollection?include_prereleases)
+Current Version：![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Rosalina129/WinForm_GameCollection?include_prereleases&style=flat-square)
 
-Download latest：[0.0.3_alpha_2](https://github.com/Rosalina129/WinForm_GameCollection/releases/tag/0.0.3_alpha_2) | [Source Code](https://github.com/Rosalina129/WinForm_GameCollection/tree/main/HumanAdventure)
+Download latest：[0.0.5_alpha](https://github.com/Rosalina129/WinForm_GameCollection/releases/tag/v0.0.5_alpha) | [Source Code](https://github.com/Rosalina129/WinForm_GameCollection/tree/main/HumanAdventure)
 
 ## Game Rule
 It's WinForm Game that doesn't require complicated controls, just create character, and Idle! (Open Auto Battle)
