@@ -10,14 +10,14 @@
         Label7.Text = s_string(32, MainForm.langID)
         Label8.Text = s_string(33, MainForm.langID)
         Button1.Text = s_string(111, MainForm.langID)
-        With MainForm
-            TextBox1.Text = .PlayerData.HPM1
-            TextBox2.Text = .PlayerData.ATK1
-            TextBox3.Text = .PlayerData.DEF1
-            TextBox4.Text = .PlayerData.SE1
-            TextBox5.Text = .PlayerData.CRate1
-            TextBox6.Text = .PlayerData.CDMG1
-            TextBox7.Text = .PlayerData.Level1
+        With MainForm.PlayerData
+            TextBox1.Text = .HPM1
+            TextBox2.Text = .ATK1
+            TextBox3.Text = .DEF1
+            TextBox4.Text = .SE1
+            TextBox5.Text = .CRate1
+            TextBox6.Text = .CDMG1
+            TextBox7.Text = .Level1
         End With
     End Sub
 

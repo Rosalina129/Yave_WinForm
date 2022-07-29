@@ -24,8 +24,10 @@
         New InitEnemy(7, s_enemy(15, MainForm.langID), 2346, 2346, 75, 108, 0.05, 1, 149, 108, {0}),'11~20 R1, 10~15
         New InitEnemy(8, s_enemy(15, MainForm.langID), 1967, 1967, 83, 112, 0.05, 1, 149, 108, {0}),
         New InitEnemy(5, s_enemy(15, MainForm.langID), 1342, 1342, 110, 96, 0.05, 1, 149, 108, {0}),
-        New InitEnemy(0, s_enemy(16, MainForm.langID), 432, 432, 86, 140, 0.05, 0.5, 65, 370, {0}),
-        New InitEnemy(2, s_enemy(17, MainForm.langID), 510, 510, 116, 162, 0.05, 0.5, 78, 435, {0})
+        New InitEnemy(0, s_enemy(16, MainForm.langID), 432, 432, 86, 140, 0.05, 0.5, 65, 370, {10}),
+        New InitEnemy(1, s_enemy(17, MainForm.langID), 510, 510, 116, 162, 0.05, 0.5, 78, 435, {10, 4}),
+        New InitEnemy(2, s_enemy(17, MainForm.langID), 510, 510, 116, 162, 0.05, 0.5, 78, 435, {10, 5}),
+        New InitEnemy(3, s_enemy(17, MainForm.langID), 510, 510, 116, 162, 0.05, 0.5, 78, 435, {10, 6})
     }
     Public Shared ReadOnly Boss_R1 As InitEnemy() = {'0 Common 1 Ice 2 Fire 3 Water 4 Grass 5 Star 6 Metal 7 Electric 8 Shadow
         New InitEnemy(7, s_boss(0, MainForm.langID), 6000, 6000, 62, 40, 0.5, 1.5, 3200, 4000, {0}),'2km

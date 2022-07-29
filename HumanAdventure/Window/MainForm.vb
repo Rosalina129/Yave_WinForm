@@ -1415,12 +1415,14 @@ Public Class MainForm
         ItemShop.Show()
     End Sub
     Private Function StringCheck(ByVal result_boolean As Boolean)
+        Dim a As String = ""
         Select Case result_boolean
             Case True
-                Return s_string(191, langID)
+                a = s_string(191, langID)
             Case False
-                Return s_string(192, langID)
+                a = s_string(192, langID)
         End Select
+        Return a
     End Function
     Private Sub ImportantFilesCheckToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImportantFilesCheckToolStripMenuItem.Click
         Dim exepath = Environment.CurrentDirectory

@@ -16,7 +16,7 @@
     "Yave Yu", "Steve", "Alex", "John",
     "Jove", "Smith", "Faye", "Amber",
     "Save", "Kate", "Slash", "Orama",
-    "Tive", "Bill", "Jean", "Fluent"}
+    "Tive", "Bill", "Jean", "Fluent", "Collei", "Amber", "Wilison"}
     Public Shared Elementname() As String = {
     "Common",       '普通
     "Ice",          '冰
