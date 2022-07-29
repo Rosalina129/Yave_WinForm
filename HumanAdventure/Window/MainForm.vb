@@ -17,7 +17,7 @@ Public Class MainForm
     Dim TourDist() As UInt64 = {0, 0, 0, 0, 0, 0, 0, 0}                '100 = 1 Meters
     Dim Touring As Boolean                  'Detect is in Tour mode.
 
-    Dim Debug As Boolean = 1
+    Dim Debug As Boolean = 0
 
     'IO Variables
     Dim IOParameters As Integer
@@ -139,6 +139,7 @@ Public Class MainForm
                               )
             Case 1 'Function Error
         End Select
+        Application.Exit()
     End Sub
     Private Function VB6String(count As Integer)
         Dim a As String = " "

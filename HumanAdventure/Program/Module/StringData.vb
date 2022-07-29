@@ -185,7 +185,7 @@
         {"Awaken Using", "觉醒专用"},
         {"You get: ", "你获得了："},'183
         {"The current progress is in progress under development and does not represent final results.", "当前的进度为开发中，不代表最终成果。"},
-        {"An error occurred during function execution.", "函数执行的过程中出现错误。"},
+        {"An error occurred during function execution, so the program will stop running.", "函数执行的过程中出现错误，程序中止运行。"},
         {"Code:", "代码："},
         {">[Reason analysis]<", ">[原因分析]<"},
         {"Convert old saves...", "转换旧存档..."},'188
