@@ -121,6 +121,7 @@
     <Compile Include="Init\Enemies.vb" />
     <Compile Include="Init\InitArtifact.vb" />
     <Compile Include="Init\InitEquip.vb" />
+    <Compile Include="Init\InitWeapon.vb" />
     <Compile Include="Program\Module\Calculate.vb" />
     <Compile Include="Program\ElementRates.vb" />
     <Compile Include="Program\Module\ConstDefine.vb" />

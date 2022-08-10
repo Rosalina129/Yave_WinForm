@@ -66,8 +66,9 @@
             .GroupBox2.Text = s_string(89, langid)
             .TabControl2.TabPages(0).Text = s_string(90, langid)
             .TabControl2.TabPages(1).Text = s_string(91, langid)
-            .TabControl2.TabPages(2).Text = s_string(92, langid)
-            .TabControl2.TabPages(3).Text = s_string(1, langid)
+            .TabControl2.TabPages(2).Text = s_string(159, langid)
+            .TabControl2.TabPages(3).Text = s_string(92, langid)
+            .TabControl2.TabPages(4).Text = s_string(1, langid)
 
             .GroupBox5.Text = s_string(35, langid)
             .AutoSaveCheckBox.Text = s_string(62, langid)
@@ -102,10 +103,9 @@
             .Button12.Text = s_string(111, langid)
             .Label40.Text = s_string(156, langid) & ": x / 100 (m)"
 
-            .TabControl3.TabPages(0).Text = s_string(159, langid)
-            .TabControl3.TabPages(1).Text = s_string(160, langid)
-            .TabControl3.TabPages(2).Text = s_string(170, langid)
-            .TabControl3.TabPages(3).Text = s_string(171, langid)
+            .TabControl3.TabPages(0).Text = s_string(160, langid)
+            .TabControl3.TabPages(1).Text = s_string(170, langid)
+            .TabControl3.TabPages(2).Text = s_string(171, langid)
 
             .useitem1.Text = s_item(1, langid)
             .useitem2.Text = s_item(2, langid)
