@@ -1,6 +1,7 @@
 ﻿Public Class NewSave
     Public Skin As Integer
     Public Element As Integer
+    Public Diff As Integer
     Public CName As String
     Public Level As Integer
     Public XP As UInt64
@@ -21,6 +22,7 @@
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         PictureBox1.Image = InitData.SkinGallery(Me.ListBox1.SelectedIndex)
+        SkinName.Text = InitData.Yave_Name(Me.ListBox1.SelectedIndex)
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -32,6 +34,7 @@
             Dim Rand As New Random
             Skin = ListBox1.SelectedIndex
             Element = Rand.Next(0, 3)
+            Diff = DifficultySelect.SelectedIndex
             CName = TextBox1.Text
             Level = 1
             XP = 0
@@ -53,5 +56,6 @@
     End Sub
     Private Sub NewSave_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ListBox1.SelectedIndex = 0
+        DifficultySelect.SelectedIndex = 1
     End Sub
 End Class

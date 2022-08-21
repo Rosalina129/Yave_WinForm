@@ -19,6 +19,7 @@
     End Structure
     Public Structure player
         Public element_id As Integer
+        Public difficult As Integer
         Public level As Integer
         Public xp As xp
         Public health As health
@@ -30,6 +31,7 @@
         Public coins As Integer
         Public upgrade_point As Integer
         Public items() As items
+        Public equip() As equip
         Public artifact() As artifact
     End Structure
     Public Structure basic

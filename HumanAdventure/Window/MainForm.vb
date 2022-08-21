@@ -33,6 +33,7 @@ Public Class MainForm
     '729, 630
 
     Dim AutoPurchase As Integer
+    Dim DiffMultiply As Double
     Dim DAB As Boolean                      'Disable Action Buttons
     Dim DES As Integer                      'Disable Enemy Spawn
     Dim ABP As Byte
@@ -41,6 +42,7 @@ Public Class MainForm
     Dim SavedLabelShowTime As Integer
     Dim MTSIndex As Int16
     Dim TourTime As Integer
+    Public Shared OldSaveProgress As Boolean
 
     Public Shared UpgradePoint As Integer
     Dim Blockadd As Double
@@ -96,14 +98,14 @@ Public Class MainForm
                 End Select
                 CurrentEnemy = New InitEnemy(Enemies.Enemy(a).ID1,
                                              Enemies.Enemy(a).Name1,
-                                             Enemies.Enemy(a).HP1,
-                                             Enemies.Enemy(a).HPM1,
-                                             Enemies.Enemy(a).ATK1,
-                                             Enemies.Enemy(a).DEF1,
-                                             Enemies.Enemy(a).CRate1,
-                                             Enemies.Enemy(a).CDMG1,
-                                             Enemies.Enemy(a).EXP1,
-                                             Enemies.Enemy(a).Coins1,
+                                             Enemies.Enemy(a).HP1 * DiffMultiply,
+                                             Enemies.Enemy(a).HPM1 * DiffMultiply,
+                                             Enemies.Enemy(a).ATK1 * DiffMultiply,
+                                             Enemies.Enemy(a).DEF1 * DiffMultiply,
+                                             Enemies.Enemy(a).CRate1 * DiffMultiply,
+                                             Enemies.Enemy(a).CDMG1 * DiffMultiply,
+                                             Enemies.Enemy(a).EXP1 * DiffMultiply,
+                                             Enemies.Enemy(a).Coins1 * DiffMultiply,
                                              Enemies.Enemy(a).Skills1)
             Case 1
                 isBoss = True
@@ -111,15 +113,15 @@ Public Class MainForm
                     Case 0
                         CurrentEnemy = New InitEnemy(Enemies.Boss_R1(enemyid).ID1,
                                                      Enemies.Boss_R1(enemyid).Name1,
-                                                     Enemies.Boss_R1(enemyid).HP1,
-                                                     Enemies.Boss_R1(enemyid).HPM1,
-                                                     Enemies.Boss_R1(enemyid).ATK1,
-                                                     Enemies.Boss_R1(enemyid).DEF1,
-                                                     Enemies.Boss_R1(enemyid).CRate1,
-                                                     Enemies.Boss_R1(enemyid).CDMG1,
-                                                     Enemies.Boss_R1(enemyid).EXP1,
-                                                     Enemies.Boss_R1(enemyid).Coins1,
-                                             Enemies.Enemy(a).Skills1)
+                                             Enemies.Enemy(enemyid).HP1 * DiffMultiply,
+                                             Enemies.Enemy(enemyid).HPM1 * DiffMultiply,
+                                             Enemies.Enemy(enemyid).ATK1 * DiffMultiply,
+                                             Enemies.Enemy(enemyid).DEF1 * DiffMultiply,
+                                             Enemies.Enemy(enemyid).CRate1 * DiffMultiply,
+                                             Enemies.Enemy(enemyid).CDMG1 * DiffMultiply,
+                                             Enemies.Enemy(enemyid).EXP1 * DiffMultiply,
+                                             Enemies.Enemy(enemyid).Coins1 * DiffMultiply,
+                                             Enemies.Enemy(enemyid).Skills1)
                 End Select
         End Select
     End Sub
@@ -303,6 +305,20 @@ Public Class MainForm
                 useitemaction23.Enabled = True
                 useitemaction24.Enabled = True
             End If
+            Select Case PlayerData.Diff
+                Case 0
+                    DiffMultiply = 0.5
+                Case 1
+                    DiffMultiply = 1.0
+                Case 2
+                    DiffMultiply = 1.5
+                Case 3
+                    DiffMultiply = 2.0
+                Case 4
+                    DiffMultiply = 3.0
+                Case 5
+                    DiffMultiply = 5.0
+            End Select
         End With
     End Sub
     Private Function CheckMaterialItem(itemID As Integer)
@@ -642,7 +658,7 @@ Public Class MainForm
         Dim SaveJsonCache As New SaveJSON
         With SaveJsonCache
             'Save Version
-            .save_version = {5, 0, 0} 'Primary"Main"|Secondary"Hotfix"|Third"Edited"
+            .save_version = {5, 1, 0} 'Primary"Primary Update"|Secondary"Small Update"|Third"Edited"
             .tour_time = TourTime
             .character_name = PlayerData.CName1
             .death_count = DeathCount
@@ -656,6 +672,7 @@ Public Class MainForm
             Next
             .player.element_id = PlayerData.element1
             .player.level = PlayerData.Level1
+            .player.difficult = PlayerData.Diff
             .player.xp.current = PlayerData.XP1
             .player.xp.need = PlayerData.XPNeed1
             .player.health.current = PlayerData.HP1
@@ -722,6 +739,8 @@ Public Class MainForm
     End Sub
     Private Sub LoadJsonData(LoadFileName)
         Try
+            progress = False
+            OldSaveProgress = False
             CacheSaveFileName = LoadFileName
             PlayerData = New InitPlayer
             Dim fs As New FileStream(LoadFileName, FileMode.Open)
@@ -734,40 +753,83 @@ Public Class MainForm
             With LoadJsonDESab
                 Select Case .save_version(0)
                     Case 5
-                        PlayerData.Sk = .skin
-                        PlayerData.element1 = .player.element_id
-                        PlayerData.Level1 = .player.level
-                        PlayerData.CName1 = .character_name
-                        PlayerData.XP1 = .player.xp.current
-                        PlayerData.XPNeed1 = .player.xp.need
-                        PlayerData.HP1 = .player.health.current
-                        PlayerData.HPM1 = .player.health.max
-                        PlayerData.ATK1 = .player.attack
-                        PlayerData.DEF1 = .player.defense
-                        PlayerData.SE1 = .player.star_energy
-                        PlayerData.CRate1 = .player.crit_rate
-                        PlayerData.CDMG1 = .player.crit_damage
-                        PlayerData.Coins1 = .player.coins
-                        RegionID = .region_id
-                        Dim a As Integer
-                        Dim b As Integer
-                        For a = 0 To TourDist.Length - 1 Step 1
-                            TourDist(a) = .region_distance(a)
-                        Next
-                        a = 0
-                        UpgradePoint = .player.upgrade_point
-                        DeathCount = .death_count
-                        TourTime = .tour_time
-                        For b = 0 To .player.items.Length - 1 Step 1
-                            a = .player.items(b).id
-                            MaterialItem(a) = .player.items(b).count
-                            a = 0
-                        Next
-                        CurrentEnemy = New InitEnemy()
-                        isBattle = False
-                        BattlePanel.Visible = False
-                        progress = True
-                    Case Else
+                        Select Case .save_version(1)
+                            Case 0
+                                OldSaveDiff.ShowDialog()
+                                If OldSaveProgress = True Then
+                                    PlayerData.Sk = .skin
+                                    PlayerData.element1 = .player.element_id
+                                    PlayerData.Diff = OldSaveDiff.Diff
+                                    PlayerData.Level1 = .player.level
+                                    PlayerData.CName1 = .character_name
+                                    PlayerData.XP1 = .player.xp.current
+                                    PlayerData.XPNeed1 = .player.xp.need
+                                    PlayerData.HP1 = .player.health.current
+                                    PlayerData.HPM1 = .player.health.max
+                                    PlayerData.ATK1 = .player.attack
+                                    PlayerData.DEF1 = .player.defense
+                                    PlayerData.SE1 = .player.star_energy
+                                    PlayerData.CRate1 = .player.crit_rate
+                                    PlayerData.CDMG1 = .player.crit_damage
+                                    PlayerData.Coins1 = .player.coins
+                                    RegionID = .region_id
+                                    Dim a As Integer
+                                    Dim b As Integer
+                                    For a = 0 To TourDist.Length - 1 Step 1
+                                        TourDist(a) = .region_distance(a)
+                                    Next
+                                    TourDist(RegionID) = 0
+                                    a = 0
+                                    UpgradePoint = .player.upgrade_point
+                                    DeathCount = .death_count
+                                    TourTime = .tour_time
+                                    For b = 0 To .player.items.Length - 1 Step 1
+                                        a = .player.items(b).id
+                                        MaterialItem(a) = .player.items(b).count
+                                        a = 0
+                                    Next
+                                    CurrentEnemy = New InitEnemy()
+                                    isBattle = False
+                                    BattlePanel.Visible = False
+                                    progress = True
+                                End If
+                                Exit Select
+                            Case 1
+                                PlayerData.Sk = .skin
+                                PlayerData.element1 = .player.element_id
+                                PlayerData.Level1 = .player.level
+                                PlayerData.CName1 = .character_name
+                                PlayerData.XP1 = .player.xp.current
+                                PlayerData.XPNeed1 = .player.xp.need
+                                PlayerData.HP1 = .player.health.current
+                                PlayerData.HPM1 = .player.health.max
+                                PlayerData.ATK1 = .player.attack
+                                PlayerData.DEF1 = .player.defense
+                                PlayerData.SE1 = .player.star_energy
+                                PlayerData.CRate1 = .player.crit_rate
+                                PlayerData.CDMG1 = .player.crit_damage
+                                PlayerData.Coins1 = .player.coins
+                                RegionID = .region_id
+                                Dim a As Integer
+                                Dim b As Integer
+                                For a = 0 To TourDist.Length - 1 Step 1
+                                    TourDist(a) = .region_distance(a)
+                                Next
+                                a = 0
+                                UpgradePoint = .player.upgrade_point
+                                DeathCount = .death_count
+                                TourTime = .tour_time
+                                For b = 0 To .player.items.Length - 1 Step 1
+                                    a = .player.items(b).id
+                                    MaterialItem(a) = .player.items(b).count
+                                    a = 0
+                                Next
+                                CurrentEnemy = New InitEnemy()
+                                isBattle = False
+                                BattlePanel.Visible = False
+                                progress = True
+                                Exit Select
+                        End Select
                 End Select
             End With
         Catch ex As JsonReaderException
@@ -944,7 +1006,7 @@ Public Class MainForm
             NewSaveWindowProgress = False
             DES = 7500 + r1.Next(0, 5001)
             With NewSave
-                PlayerData = New InitPlayer(.Skin, .Element, .CName, .Level, .XP, .XPNeed, .HPM, .HP, .ATK, .DEF, .SE, .CRate, .CDMG, .Coins)
+                PlayerData = New InitPlayer(.Skin, .Element, .Diff, .CName, .Level, .XP, .XPNeed, .HPM, .HP, .ATK, .DEF, .SE, .CRate, .CDMG, .Coins)
             End With
             RegionID = NewSave.PlaceID
             Dim a As Integer
@@ -1331,7 +1393,6 @@ Public Class MainForm
                 End Try
             End If
         End If
-        ObjectTest(Panel10)
     End Sub
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         MsgBox(
@@ -1443,5 +1504,9 @@ Public Class MainForm
             resulttext = resulttext & StringCheck(result(a)) & " " & FileName(a) & vbCrLf
         Next
         DebugShow(resulttext)
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+
     End Sub
 End Class

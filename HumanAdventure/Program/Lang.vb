@@ -173,6 +173,15 @@
             .Button2.Text = s_string(22, langid)
             .Button3.Text = s_string(25, langid)
             .Text = s_string(23, langid)
+            .Button4.Text = s_string(138, langid)
+            .Label6.Text = s_string(195, langid)
+            .Label7.Text = s_string(196, langid)
+            .DifficultySelect.Items(0) = s_string(197, langid)
+            .DifficultySelect.Items(1) = s_string(198, langid)
+            .DifficultySelect.Items(2) = s_string(199, langid)
+            .DifficultySelect.Items(3) = s_string(200, langid)
+            .DifficultySelect.Items(4) = s_string(201, langid)
+            .DifficultySelect.Items(5) = s_string(202, langid)
         End With
         'ChangeName Strings
         With ChangeName
@@ -181,6 +190,19 @@
         'a
         With EleDescribe
             .Text = s_string(158, langid)
+        End With
+        With OldSaveDiff
+            .Text = s_string(205, langid)
+            .Title1.Text = s_string(203, langid)
+            .Title2.Text = s_string(204, langid)
+            .HelpButton.Text = s_string(138, langid)
+            .Button1.Text = s_string(22, langid)
+            .DifficultySelect.Items(0) = s_string(197, langid)
+            .DifficultySelect.Items(1) = s_string(198, langid)
+            .DifficultySelect.Items(2) = s_string(199, langid)
+            .DifficultySelect.Items(3) = s_string(200, langid)
+            .DifficultySelect.Items(4) = s_string(201, langid)
+            .DifficultySelect.Items(5) = s_string(202, langid)
         End With
     End Sub
 End Class

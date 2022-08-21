@@ -17,6 +17,11 @@
     "Jove", "Smith", "Faye", "Amber",
     "Save", "Kate", "Slash", "Orama",
     "Tive", "Bill", "Jean", "Fluent", "Collei", "Amber", "Wilison"}
+    Public Shared Yave_Name() As String = {
+        "Yave", "Wave", "Save", "Nave", "Fave", "Have", "Cave",
+        "Zave", "Tave", "Mave", "Bave", "Ave", "Helzong", "Shaff",
+        "Firaga", "Blizzaga", "Thundaga", "Yave Family #18", "Yave Family #19", "Yave Family #20", "Yave Family #21"
+    }
     Public Shared Elementname() As String = {
     "Common",       '普通
     "Ice",          '冰

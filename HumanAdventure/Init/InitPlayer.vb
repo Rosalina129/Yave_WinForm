@@ -1,6 +1,7 @@
 ﻿Public Class InitPlayer
     Dim Skin As Integer                 'SkinID
     Dim Element As Integer              'ElementID
+    Dim Difficult As Integer
     Dim CName As String                 'Character Name
     Dim Level As Integer                'Level
     Dim XP As UInt64                    'XP
@@ -17,9 +18,10 @@
     Dim Equip() As InitEquip
     Public Sub New()
     End Sub
-    Public Sub New(S As Integer, e As Integer, cn As String, l As Integer, xp As UInt64, xpn As UInt64, hpm As Integer, hp As Integer, atk As Integer, def As Integer, se As UInteger, cr As Double, cd As Double, co As Integer)
+    Public Sub New(S As Integer, e As Integer, diff As Integer, cn As String, l As Integer, xp As UInt64, xpn As UInt64, hpm As Integer, hp As Integer, atk As Integer, def As Integer, se As UInteger, cr As Double, cd As Double, co As Integer)
         Me.Skin = S
         Me.Element = e
+        Me.Diff = diff
         Me.CName = cn
         Me.Level = l
         Me.XP = xp
@@ -48,6 +50,14 @@
         End Get
         Set(value As Integer)
             Element = value
+        End Set
+    End Property
+    Public Property Diff As Integer
+        Get
+            Return Difficult
+        End Get
+        Set(value As Integer)
+            Difficult = value
         End Set
     End Property
 

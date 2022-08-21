@@ -31,8 +31,10 @@ Partial Class NewSave
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.DifficultySelect = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -40,6 +42,7 @@ Partial Class NewSave
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.SkinName = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,8 +104,11 @@ Partial Class NewSave
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.TextBox3)
-        Me.Panel2.Controls.Add(Me.TextBox2)
+        Me.Panel2.Controls.Add(Me.SkinName)
+        Me.Panel2.Controls.Add(Me.Button4)
+        Me.Panel2.Controls.Add(Me.DifficultySelect)
+        Me.Panel2.Controls.Add(Me.Label7)
+        Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.PictureBox1)
@@ -117,36 +123,47 @@ Partial Class NewSave
         Me.Panel2.Size = New System.Drawing.Size(512, 254)
         Me.Panel2.TabIndex = 10
         '
-        'TextBox3
+        'Button4
         '
-        Me.TextBox3.BackColor = System.Drawing.SystemColors.MenuBar
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox3.CausesValidation = False
-        Me.TextBox3.Location = New System.Drawing.Point(6, 201)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.ShortcutsEnabled = False
-        Me.TextBox3.Size = New System.Drawing.Size(503, 50)
-        Me.TextBox3.TabIndex = 17
-        Me.TextBox3.TabStop = False
-        Me.TextBox3.Text = "The game framework is still in Alpha testing and some options will not be availab" &
-    "le, please understand."
+        Me.Button4.Location = New System.Drawing.Point(132, 90)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 18
+        Me.Button4.Text = "Help"
+        Me.Button4.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'DifficultySelect
         '
-        Me.TextBox2.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(87, 113)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(199, 129)
-        Me.TextBox2.TabIndex = 15
+        Me.DifficultySelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.DifficultySelect.FormattingEnabled = True
+        Me.DifficultySelect.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
+        Me.DifficultySelect.Location = New System.Drawing.Point(5, 90)
+        Me.DifficultySelect.Name = "DifficultySelect"
+        Me.DifficultySelect.Size = New System.Drawing.Size(121, 23)
+        Me.DifficultySelect.TabIndex = 17
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(3, 72)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(55, 15)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "Difficulty"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(2, 51)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(110, 21)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "Other Settings"
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(3, 81)
+        Me.Button3.Location = New System.Drawing.Point(3, 136)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 14
@@ -156,7 +173,7 @@ Partial Class NewSave
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(84, 85)
+        Me.Label5.Location = New System.Drawing.Point(84, 140)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(108, 15)
         Me.Label5.TabIndex = 13
@@ -184,7 +201,7 @@ Partial Class NewSave
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(3, 55)
+        Me.Label4.Location = New System.Drawing.Point(3, 116)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(130, 15)
         Me.Label4.TabIndex = 10
@@ -210,6 +227,15 @@ Partial Class NewSave
         Me.ImageList1.Images.SetKeyName(4, "yave_5.png")
         Me.ImageList1.Images.SetKeyName(5, "yave_6.png")
         Me.ImageList1.Images.SetKeyName(6, "yave_7.png")
+        '
+        'SkinName
+        '
+        Me.SkinName.AutoSize = True
+        Me.SkinName.Location = New System.Drawing.Point(322, 103)
+        Me.SkinName.Name = "SkinName"
+        Me.SkinName.Size = New System.Drawing.Size(63, 15)
+        Me.SkinName.TabIndex = 19
+        Me.SkinName.Text = "SkinAvatar"
         '
         'NewSave
         '
@@ -251,6 +277,9 @@ Partial Class NewSave
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents Button3 As Button
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents DifficultySelect As ComboBox
+    Friend WithEvents Button4 As Button
+    Friend WithEvents SkinName As Label
 End Class
