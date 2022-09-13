@@ -319,6 +319,11 @@ Public Class MainForm
                 Case 5
                     DiffMultiply = 5.0
             End Select
+            TextBox2.Text = PlayerData.HPM1 & vbCrLf &
+                            PlayerData.ATK1 & vbCrLf &
+                            PlayerData.DEF1 & vbCrLf &
+                            Math.Round(PlayerData.CRate1 * 100, 2) & "%" & vbCrLf &
+                            Math.Round(PlayerData.CDMG1 * 100, 2) & "%"
         End With
     End Sub
     Private Function CheckMaterialItem(itemID As Integer)
@@ -404,6 +409,13 @@ Public Class MainForm
         Panel14.Visible = Debug
         ShowDebugToolStripMenuItem.Visible = Debug
     End Sub
+    Private Function NumSeparator(DigValue As Integer)
+        Dim a As String = ToString(DigValue)
+        Dim b As Integer
+        For b = 0 To Len(a) Step 1
+            DebugShow(b)
+        Next
+    End Function
     Private Sub UpgradeProp()
         With PlayerData
             If .Level1 <= MAX_LEVEL Then
