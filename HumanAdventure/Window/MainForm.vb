@@ -4,7 +4,7 @@ Imports System.Threading
 Imports Newtonsoft.Json
 Public Class MainForm
     Public Shared progress As Boolean               'Make public share
-    Public langID As Byte = 0                     '0 = English (US), 1 = Chinese Simplified (PRC)
+    Public Shared langID As Byte = 0                     '0 = English (US), 1 = Chinese Simplified (PRC)
     Public NewSaveWindowProgress As Boolean
     'Place ID.
     Dim RegionID As Integer
@@ -70,8 +70,8 @@ Public Class MainForm
     Public Shared Basic As InitBasic
 
     Public MaterialItem(s_item.Length) As Int16
-    Private Sub ErrorOccurred()
-        MsgBox("An unknown error occurred while attempting to perform this function.", vbYes, Me.Text)
+    Public Shared Sub ErrorOccurred()
+        MsgBox("An unknown error occurred while attempting to perform this function.", vbYes, MainForm.Text)
         Application.Exit()
     End Sub
     Private Function km(a As Double)

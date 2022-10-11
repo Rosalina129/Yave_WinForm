@@ -205,27 +205,7 @@
         {"EXTREMITY TOURS!!!", "!!极限旅行!!"},'202
         {"Looks like you're still using the old version?", "看起来你还在使用旧版本？"},
         {"So choose a difficulty and continue your adventure from scratch!", "所以选择一个难度继续从头开始冒险吧！"},
-        {"Select Difficulty", "选择难度"},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""},
-        {"", ""}
+        {"Select Difficulty", "选择难度"}
     }
     Public s_errorcode As String(,) = {
         {"No Error.", "无错误。"},
@@ -497,5 +477,12 @@
         {"", ""}，
         {"", ""}，
         {"", ""}
+        }
+    Public s_titlescreen As String(,) = {
+        {"Language", "语言"},
+        {"English (US)", "英语"},
+        {"Chinese Simplified (PRC)", "简体中文"},
+        {"New Save", "新存档"},
+        {"Load Save", "加载存档"}
         }
 End Module
