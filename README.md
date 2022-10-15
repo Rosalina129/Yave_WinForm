@@ -6,6 +6,8 @@ Built with ![GitHub](https://img.shields.io/github/license/Rosalina129/WinForm_G
 
 This WinForm Games is written with .NET Framework 4.0, you need to install first, [Install .NET Framework on Windows 10](https://docs.microsoft.com/zh-cn/dotnet/framework/install/on-windows-10)
 
+This project is no longer maintained because of the bloated code structure and the difficulty of late maintenance, and the new project is being accelerated.
+
 Current Version：![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Rosalina129/WinForm_GameCollection?include_prereleases&style=flat-square)
 
 Download latest：[0.0.5_alpha](https://github.com/Rosalina129/WinForm_GameCollection/releases/tag/v0.0.5_alpha) | [Source Code](https://github.com/Rosalina129/WinForm_GameCollection/tree/main/HumanAdventure)
