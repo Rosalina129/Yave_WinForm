@@ -1,11 +1,11 @@
 # Yave's Tours
 语言：[English](https://github.com/Rosalina129/WinForm_GameCollection/blob/main/README.md)
 
+__重要！！！__ 目前该项目已不再维护更新，原因：代码臃肿，为以后更新等工作带来极大困难，只能推倒重做。新项目在 [Yave](https://github.com/Rosalina129/Yave)。
+
 构建基于 ![GitHub](https://img.shields.io/github/license/Rosalina129/WinForm_GameCollection?style=flat-square) 协议
 
 此窗体游戏在 .NET Framework 4.0 编写，你需要先安装此运行库才能运行。
-
-目前版本：![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Rosalina129/WinForm_GameCollection?include_prereleases&style=flat-square)
 
 让 歪四 来一次比较丰富的旅行吧！[源代码](https://github.com/Rosalina129/WinForm_GameCollection/tree/main/HumanAdventure)
 
