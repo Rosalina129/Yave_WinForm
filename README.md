@@ -8,6 +8,9 @@ This WinForm Games is written with .NET Framework 4.0, you need to install first
 
 This project is no longer maintained because of the bloated code structure and the difficulty of late maintenance, and the new project is being accelerated.
 
+### 2023.5.7 Update
+The new refactoring is already in the [Yave](https://github.com/Rosalina129/Yave) project.
+
 Current Version：![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Rosalina129/WinForm_GameCollection?include_prereleases&style=flat-square)
 
 Download latest：[0.0.5_alpha](https://github.com/Rosalina129/WinForm_GameCollection/releases/tag/v0.0.5_alpha) | [Source Code](https://github.com/Rosalina129/WinForm_GameCollection/tree/main/HumanAdventure)
