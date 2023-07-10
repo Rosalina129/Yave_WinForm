@@ -1,4 +1,7 @@
 # Yave's Tours
+## Warning
+New reconstruction project has been in the [Yave](https://github.com/Rosalina129/Yave) in the Repository. So the project is currently archived.
+## Describes
 
 Language: [简体中文](https://github.com/Rosalina129/WinForm_GameCollection/blob/main/READER_CN.md)
 
@@ -9,7 +12,6 @@ This WinForm Games is written with .NET Framework 4.0, you need to install first
 This project is no longer maintained because of the bloated code structure and the difficulty of late maintenance, and the new project is being accelerated.
 
 ### 2023.5.7 Update
-The new refactoring is already in the [Yave](https://github.com/Rosalina129/Yave) project.
 
 Current Version：![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Rosalina129/WinForm_GameCollection?include_prereleases&style=flat-square)
 
