@@ -1,7 +1,7 @@
 # Yave's Tours
 语言：[English](https://github.com/Rosalina129/WinForm_GameCollection/blob/main/README.md)
 
-__重要！！！__ 目前该项目已不再维护更新，原因：代码臃肿，为以后更新等工作带来极大困难，只能推倒重做。新项目在 [Yave](https://github.com/Rosalina129/Yave)。
+__重要！！！__ 目前该项目已不再维护更新，原因：代码臃肿，为以后更新等工作带来极大困难，只能推倒重做。新项目在 [Yave](https://github.com/Rosalina129/Yave)。该项目已归档处理。
 
 构建基于 ![GitHub](https://img.shields.io/github/license/Rosalina129/WinForm_GameCollection?style=flat-square) 协议
 
